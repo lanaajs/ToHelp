@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+
+* {
+    margin: 0;
+    border: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #00AD7F;
+}
+
+@font-face {
+    font-family: 'Inter', sans-serif;
+    src: url();
+}
+
+
+@media screen and (max-width: 450px) {
+    
+    .titulo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 6%;
+        margin-right: 4%;
+        margin-top: 8%;
+    }
+
+    h2 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        color: white;
+        font-size: 24px;
+    }
+
+    .total {
+        display: flex;
+        justify-content: center;
+        height: 89%;
+        width: 100%;
+        position: absolute;
+        margin-top:8%;
+    }
+
+    .cards {
+        background-color: white;
+        width: 93%;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    h3 {
+        margin-left: 5%;
+        margin-top: 5%;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    h4 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        color: #585858;
+    }
+
+    p{
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        color: #585858;
+    }
+
+    .valores p{
+        font-weight: 700;
+        font-size: 14px;
+        color: #00AD7F;
+    }
+
+    .card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5%;
+    }
+
+    .cardfoto {
+        display: flex;
+        align-items: center;
+        margin-left: 5%;
+    }
+
+    .nome {
+        width: 12rem;
+        margin-left: 8%;
+    }
+
+    .valores {
+        margin-right: 5%;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Tablet ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 451px) and (max-width: 960px){
+
+    .titulo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 6%;
+        margin-right: 4%;
+        margin-top: 5%;
+    }
+
+    h2 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        color: white;
+        font-size: 25px;
+    }
+
+    .total {
+        display: flex;
+        justify-content: center;
+        height: 89%;
+        width: 100%;
+        position: absolute;
+        margin-top:5%;
+    }
+
+    .cards {
+        background-color: white;
+        width: 93%;
+        border-radius: 10px 10px 0px 0px;
+        margin: 0% 10% 0% 10%;
+    }
+
+    h3 {
+        margin-left: 5%;
+        margin-top: 5%;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    h4 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        color: #585858;
+    }
+
+    p{
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        color: #585858;
+    }
+
+    .valores p{
+        font-weight: 700;
+        font-size: 14px;
+        color: #00AD7F;
+    }
+
+    .card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5%;
+    }
+
+    .cardfoto {
+        display: flex;
+        align-items: center;
+        margin-left: 5%;
+    }
+
+    .nome {
+        width: 12rem;
+        margin-left: 8%;
+    }
+
+    .valores {
+        margin-right: 5%;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Desktop ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 961px){
+
+    .titulo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2% 2% 4% 3%;
+    }
+
+    h2 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        color: white;
+        font-size: 25px;
+    }
+
+    .total {
+        display: flex;
+        justify-content: center;
+        height: 89%;
+        width: 50%;
+        position: absolute;
+        margin-top:8%;
+        margin: 0% 25% 0% 25%;
+    }
+
+    .cards {
+        background-color: white;
+        width: 100%;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    h3 {
+        margin-left: 5%;
+        margin-top: 5%;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    h4 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        color: #585858;
+    }
+
+    p{
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        color: #585858;
+    }
+
+    .valores p{
+        font-weight: 700;
+        font-size: 14px;
+        color: #00AD7F;
+    }
+
+    .card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5%;
+    }
+
+    .cardfoto {
+        display: flex;
+        align-items: center;
+        margin-left: 5%;
+    }
+
+    .nome {
+        width: 12rem;
+        margin-left: 8%;
+    }
+
+    .valores {
+        margin-right: 5%;
+    }
+}

@@ -1,0 +1,442 @@
+*{
+    margin: 0;
+    border: 0;
+}
+body{
+    background-color: #106FFF;
+    height: 100%;
+    width: 100%
+}
+
+/* -Smartphone ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 450px){
+
+    /* -Cabeçalho- */
+    #cabecalho{
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0% 5% 0% 5%;
+    }
+    #logo{ 
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+    #logo img{
+        width: 35%;
+    }
+  
+    /* -Textos- */
+    #txt{
+        padding: 8% 5% 0% 5%;
+        line-height: 1.0;
+    }
+    #txt2{
+        display: none;
+    }
+    .p1{
+        color: white;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 34px;  
+    }
+    .p2{
+        color: transparent; /* Deixa o texto transparente */
+        -webkit-text-stroke: 0.8px white; /* Cria uma borda branca */
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 34px;  
+    }
+    .p3{
+        color: white;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 23px;
+    }
+
+
+    /* -Login- */
+    #form{
+        height: 650px;
+        background-color: #E0EDFE;
+        margin-top: 9%;
+        border-radius: 30px 30px 0px 0px;
+        padding: 15% 10% 0% 10%;
+        font-family: 'Inter', sans-serif;
+    }
+    h1{
+        margin-left: 2%;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 30px;
+        color: #0049FF;
+    }
+    /* -Login Area- */
+    #area{
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        margin: 4% 2% 2% 2%;
+        height: 50px;
+        border-radius: 10px;
+    }
+    #area p{
+        margin-left: 5%;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    #areaP1{
+        width: 40%;
+        margin: 2% 0% 2% 2%;
+        padding: 0% 9% 0% 1%;
+        display: flex;
+        align-items: center; 
+        border-radius: 5px;
+        background-color: #ECECEC;
+        color: #0049FF;
+    }
+    #areaP2{
+        width: 40%;
+        margin: 2% 2% 2% 0%;
+        padding: 0% 9% 0% 1%;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+    }
+    /* -Cadastro Inputs- */
+    #inputs{
+        margin: 8% 2% 2% 2%;
+    }
+    #inputs label{
+        color: #585858;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    #inputs input{
+        width: 100%;
+        height: 30px;
+        border-radius: 5px;
+    }
+    /* -Cadastro Botão- */
+    #botao{
+        margin-top: 15%;
+        display: flex;
+        justify-content: center;
+    }
+    #botao input{
+        width: 150px;
+        padding: 0% 12% 0% 12%;
+        border-radius: 30px;
+        background-color: #0049FF;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    /* -Login TextC- */ 
+    #textC{
+        width: 100%;
+        margin-top: 20%;
+        display: flex;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+        color: #585858;
+        text-align: center;
+    }
+    #textC a{
+        color: #0049FF;
+    } 
+}
+
+/* -Tablet ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 451px) and (max-width:  800px){
+
+    /* -Cabeçalho- */
+    #cabecalho{
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0% 4% 0% 4%;
+        margin-top: 1%;
+    }
+    #logo{ 
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+    #logo img{
+        height: 70px;
+    }
+ 
+
+    /* -Textos- */
+    #txt{
+        padding: 8% 5% 0% 5%;
+        line-height: 1.0;
+    }
+    #txt2{
+        display: none;
+    }
+    .p1{
+        color: white;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 40px;  
+    }
+    .p2{
+        color: transparent; /* Deixa o texto transparente */
+        -webkit-text-stroke: 0.8px white; /* Cria uma borda branca */
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 40px;  
+    }
+    .p3{
+        color: white;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 25px;
+    }
+
+
+    /* -Login- */
+    #form{
+        height: 700px;
+        background-color: #E0EDFE;
+        margin: 9% 5% 0% 5%;
+        border-radius: 30px 30px 0px 0px;
+        padding: 15% 20% 0% 20%;
+        font-family: 'Inter', sans-serif;
+    }
+    h1{
+        margin-left: 2%;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 30px;
+        color: #0049FF;
+    }
+    /* -Login Area- */
+    #area{
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        margin: 4% 2% 2% 2%;
+        height: 50px;
+        border-radius: 10px;
+    }
+    #area p{
+        margin-left: 5%;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    #areaP1{
+        width: 40%;
+        margin: 2% 0% 2% 2%;
+        padding: 0% 9% 0% 1%;
+        display: flex;
+        align-items: center; 
+        border-radius: 5px;
+        background-color: #ECECEC;
+        color: #0049FF;
+    }
+    #areaP2{
+        width: 40%;
+        margin: 2% 2% 2% 0%;
+        padding: 0% 9% 0% 1%;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+    }
+    /* -Cadastro Inputs- */
+    #inputs{
+        margin: 8% 2% 2% 2%;
+    }
+    #inputs label{
+        color: #585858;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    #inputs input{
+        width: 100%;
+        height: 30px;
+        border-radius: 5px;
+    }
+    /* -Cadastro Botão- */
+    #botao{
+        margin-top: 15%;
+        display: flex;
+        justify-content: center;
+    }
+    #botao input{
+        width: 150px;
+        padding: 0% 12% 0% 12%;
+        border-radius: 30px;
+        background-color: #0049FF;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    /* -Login TextC- */ 
+    #textC{
+        width: 100%;
+        margin-top: 20%;
+        display: flex;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+        color: #585858;
+        text-align: center;
+    }
+    #textC a{
+        color: #0049FF;
+    } 
+}
+
+/* -Desktop ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 801px){
+
+    /* -Cabeçalho- */
+    #cabecalho{
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0% 3% 0% 3%;
+        margin-top: 1%;
+    }
+    #logo{ 
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+    #logo img{
+        height: 70px;
+    }
+ 
+    /* -Textos- */
+    #txt{
+        display: none;
+    }
+    .p1{
+        color: white;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 40px;  
+    }
+    .p2{
+        color: transparent; /* Deixa o texto transparente */
+        -webkit-text-stroke: 0.8px white; /* Cria uma borda branca */
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 40px;  
+    }
+    .p3{
+        color: white;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 25px;
+    }
+
+
+    /* -Login- */
+    #respon{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    #txt2{
+        width: 40%;
+        align-items:  start;
+    }
+    #form{
+        width: 300px;
+        height: 60vh;
+        background-color: #E0EDFE;
+        margin: 3% 8% 0% 2%;
+        border-radius: 20px;
+        padding: 4%;
+        font-family: 'Inter', sans-serif;
+    }
+    h1{
+        margin-top: 5%;
+        margin-left: 2%;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 30px;
+        color: #0049FF;
+    }
+    /* -Login Area- */
+    #area{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 2% 0% 2% 0%;
+        margin: 4% 2% 2% 2%;
+        height: 50px;
+        border-radius: 10px;
+    }
+    #area p{
+        margin-left: 5%;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    #areaP1{
+        width: 40%;
+        margin: 2% 0% 2% 2%;
+        padding: 4.5% 9% 4.5% 1%;
+        display: flex;
+        align-items: center; 
+        border-radius: 5px;
+        background-color: #ECECEC;
+        color: #0049FF;
+    }
+    #areaP2{
+        width: 40%;
+        margin: 2% 2% 2% 0%;
+        padding: 4.5% 9% 4.5% 1%;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+    }
+    /* -Cadastro Inputs- */
+    #inputs{
+        margin: 8% 2% 2% 2%;
+    }
+    #inputs label{
+        color: #585858;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    #inputs input{
+        width: 100%;
+        height: 30px;
+        border-radius: 5px;
+    }
+    /* -Cadastro Botão- */
+    #botao{
+        margin-top: 15%;
+        display: flex;
+        justify-content: center;
+    }
+    #botao input{
+        width: 150px;
+        padding: 2%;
+        border-radius: 30px;
+        background-color: #0049FF;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    /* -Login TextC- */ 
+    #textC{
+        width: 100%;
+        margin-top: 20%;
+        display: flex;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+        color: #585858;
+        text-align: center;
+    }
+    #textC a{
+        color: #0049FF;
+    } 
+}
+
+#areaP1, #areaP2 :hover{
+    cursor: pointer;
+}

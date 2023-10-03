@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+
+* {
+    margin: 0;
+    border: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+
+#cabecalho {
+    display: flex;
+    justify-content: space-between;
+    margin: 8% 8% 5% 8%;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    color: #585858;
+}
+
+#perfil {
+    margin: -4% -5% 5% 8%;
+}
+
+#perfil span {
+    font-size: 40px;
+    color: gray;
+    background-color: rgb(187, 187, 187);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.foto_principal {
+    width: 82%;
+    height: 82%;
+    margin-left: 8.5%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5%;
+}
+
+.nome_cuidador {
+    width: 251px;
+    height: 48px;
+    padding: 3% 0% 0% 8.8%;
+    color: #585858;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: bold;
+}
+
+.local {
+    width: 251px;
+    height: 48.39px;
+    margin-left: 9%;
+    margin-top: -4%;
+    color: #585858;
+    font-size: 15px;
+    font-family: Inter;
+}
+
+.preco {
+    width: 171px;
+    height: 70px;
+    margin-left: 9%;
+    margin-top: -1%;
+    position: absolute;
+    color: #585858;
+    font-size: 32px;
+    font-family: Inter;
+    position: absolute;
+    font-weight: bold;
+
+}
+
+.transporte {
+    width: 134px;
+    height: 15px;
+    margin-left: 42%;
+    margin-top: 1.2%;
+    color: #56BB60;
+    font-size: 20px;
+    font-family: Inter;
+}
+
+.txtcuida {
+    width: 360px;
+    height: 55px;
+    margin-left: 9.5%;
+    margin-top: 8%;
+    text-align: justify;
+    color: #797979;
+    font-size: 13px;
+    font-family: Inter;
+}
+
+.contato {
+    width: 330px;
+    height: 53px;
+    margin-left: 9%;
+    margin-top: 38%;
+    color: #585858;
+    font-size: 24px;
+    font-family: Inter;
+}
+
+.caixa_num {
+    width: 240px;
+    height: 46px;
+    margin-left: 9%;
+    background: #D9D9D9;
+    border-radius: 10px;
+}
+
+.numero {
+    width: 199px;
+    height: 31px;
+    margin-left: 15%;
+    margin-top: -8%;
+    color: black;
+    font-size: 20px;
+    font-family: Inter;
+}
+
+.logo {
+    width: 100%;
+}
+
+.logo img {
+    width: 25%;
+    position: absolute;
+    margin-left: 40%;
+}
+
+.area_agenda {
+    margin: 15% 10% 5% 6.7%;
+    padding: 0.5%;
+    min-height: 20vh;
+}
+
+.wrapper {
+    width: 350px;
+    padding: 4%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.wrapper header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8%;
+}
+
+header .icons {
+    display: flex;
+}
+
+header .icons span {
+    height: 32px;
+    width: 32px;
+    margin: 0 1px;
+    cursor: pointer;
+    color: #878787;
+    text-align: center;
+    line-height: 32px;
+    font-size: 1.5rem;
+    user-select: none;
+    border-radius: 50%;
+}
+
+.icons span:last-child {
+    margin-right: 18px;
+}
+
+header .icons span:hover {
+    background: #f2f2f2;
+}
+
+header .dataAtual {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.calendario ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+    padding-right: 11.51%;
+}
+
+.calendario .dias {
+    margin-bottom: 15px;
+    padding-right: 11.51%;
+}
+
+.calendario li {
+    color: #333;
+    width: calc(100% / 7);
+    font-size: 1rem;
+}
+
+.calendario .semanas li {
+    font-weight: 500;
+    cursor: default;
+
+}
+
+.calendario .dias li {
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    margin-top: 20px;
+}
+
+.dias li.inactive {
+    color: #aaa;
+}
+
+.dias li.active {
+    color: black;
+    background-color: #b2cef3;
+    width: 10%;
+    margin-right: 2.14%;
+    margin-left: 2.15%;
+}
+
+.dias li.selected {
+    background-color: blue;
+    width: 10%;
+    margin-right: 2.14%;
+    margin-left: 2.15%;
+    color: #fff;
+}
+
+.horarios {
+    margin-left: 2%;
+}
+
+/* inputs do calendario */
+#infor {
+    display: flex;
+    margin: 10% 13%;
+}
+
+#infor p {
+    font-size: 12px;
+    margin-top: 1%;
+}
+
+#indQ {
+    color: rgb(156, 156, 156);
+    background-color: rgb(156, 156, 156);
+    margin-right: 2%;
+}
+
+#p1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    margin: 7% 7% 7% 2%;
+}
+
+#salvar {
+    margin-top: 10%;
+    margin-left: 2.5%;
+}
+
+#salvar input{
+    margin-left: 4%;
+    border: 1px solid black;
+    width: 30%;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 99999px;
+}
+
+#btncontratar {
+    margin-left: 20.5%;
+    margin-top: 10%;
+    background-color: gray;
+    border-radius: 10px;
+    width: 60%;
+    padding: 3%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+select {
+    margin-right: 3%;
+    width: 50%;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    font-weight: bold
+}
+
+.box-agenda {
+    background-color: white;
+    border: 1px solid none;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    height: 350px;
+}
+
+.avaliacoes {
+    width: 330px;
+    height: 53px;
+    margin-left: 5%;
+    margin-top: 15%;
+    color: #585858;
+    font-size: 24px;
+    font-family: Inter;
+}
+
+.nota {
+    width: 71px;
+    height: 60px;
+    margin-left: 5%;
+    color: #585858;
+    font-size: 40px;
+    font-family: Inter;
+    font-weight: bold;
+
+}
+
+.area_av {
+    margin-top: -5%;
+}
+
+.av {
+    display: flex;
+}
+
+.avaliacao {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5%;
+}
+
+.star-icon {
+    list-style-type: none;
+    cursor: pointer;
+    color: blue;
+    font-size: 30px;
+}
+
+.star-icon::before {
+    content: "\2605";
+}
+
+.star-icon.ativo~.star-icon::before {
+    content: "\2606";
+}
+
+.avaliacao:hover .star-icon::before {
+    content: "\2605";
+}
+
+.star-icon:hover~.star-icon::before {
+    content: "\2606";
+}
+
+.avaliacao1 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 15%;
+    margin-top: 8%;
+}
+
+.star-icon1 {
+    list-style-type: none;
+    cursor: pointer;
+    color: blue;
+    font-size: 25px;
+}
+
+.star-icon1::before {
+    content: "\2605";
+}
+
+.star-icon1.ativo~.star-icon1::before {
+    content: "\2606";
+}
+
+.avaliacao1:hover .star-icon1::before {
+    content: "\2605";
+}
+
+.star-icon1:hover~.star-icon1::before {
+    content: "\2606";
+}
+
+
+.perfil_avaliacao1 {
+    width: 56px;
+    height: 56px;
+    margin-left: 4%;
+    margin-top: 2%;
+    margin-bottom: 1.5%;
+    border-radius: 9999%;
+    border: 2px #106FFF dotted;
+}
+
+.grupo1 {
+    width: 301px;
+    height: 65px;
+    margin-left: 9%;
+    top: 16%;
+}
+
+.grupo1 .retangulo1 {
+    width: 301px;
+    height: 65px;
+    margin-left: 16%;
+    margin-top: -25%;
+    background: #E0EDFE;
+    border-radius: 10px;
+}
+
+.av_txt1 {
+    width: 250px;
+    height: 31px;
+    margin-left: 25%;
+    margin-top: -15%;
+    text-align: justify;
+    color: #585858;
+    font-size: 10px;
+    font-family: Inter;
+}

@@ -1,0 +1,373 @@
+*{
+    margin: 0;
+    border: 0;
+}
+body{
+    background-color: #E0EDFE;
+    height: 100%;
+    width: 100%
+}
+
+@media screen and (max-width: 450px){
+    header{
+        margin: 10% 7% 7%;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        color: black;
+    }
+
+    header h2{
+        font-size: 20px;
+    }
+
+    .setinha{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    main{
+        margin: 7%;
+    }
+
+    .box{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        width: 90%;
+        height: 170px;
+        font-family: 'Inter', sans-serif;
+        padding: 5%;
+        margin-top: 10% ;
+    }
+
+    .box2{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        width: 90%;
+        height: 170px;
+        font-family: 'Inter', sans-serif;
+        padding: 5%;
+        margin-top: 10% ;
+    }
+
+    .box3{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        width: 90%;
+        height: 140px;
+        font-family: 'Inter', sans-serif;
+        padding: 5%;
+        margin-top: 10% ;
+    }
+
+    .box4{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        width: 90%;
+        height: 140px;
+        font-family: 'Inter', sans-serif;
+        padding: 5%;
+        margin-top: 10% ;
+    }
+
+
+    .box h3{
+        font-size: 17px;
+        color: green;
+        font-weight: bold;
+    }
+    
+    .box2 h3{
+        font-size: 17px;
+        color: #106FFF;
+    }
+
+    .box3 h3{
+        font-size: 17px;
+        color: red;
+        font-weight: bold;
+    }
+
+    .box4 h3{
+        font-size: 17px;
+        color: rgb(46, 45, 45);
+        font-weight: bold;
+    }
+
+    .box p, .box2 p, .box3 p, .box4 p{
+        margin-top: 2.5%;
+        font-size: 14px;
+        font-weight: bold;
+        color: gray;
+    }
+    .valor{
+        font-weight: bold;
+        font-size: 14px;
+        color: rgba(0, 128, 0, 0.698);
+    }
+
+    .areabtn{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #btn{
+        background-color: rgb(252, 41, 41);
+        border-radius: 5px;
+        width: 120px;
+        padding: 1.4%;
+        color: white;
+    }
+
+} 
+
+
+/* -Tablet ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 451px) and (max-width: 960px){
+    header{
+        margin: 10% 7% 7%;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        color: black;
+    }
+
+    header h2{
+        font-size: 20px;
+    }
+
+    .setinha{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    main{
+        margin: 7%;
+    }
+
+    .box{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        width: 90%;
+        height: 100%;
+        font-family: 'Inter', sans-serif;
+        padding: 5%;
+        margin-top: 10% ;
+    }
+
+    .box2{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        width: 90%;
+        height: 100%;
+        font-family: 'Inter', sans-serif;
+        padding: 5%;
+        margin-top: 10% ;
+    }
+
+    .box3{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        width: 90%;
+        height: 100%;
+        font-family: 'Inter', sans-serif;
+        padding: 5%;
+        margin-top: 10% ;
+    }
+
+    .box4{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        width: 90%;
+        height: 100%;
+        font-family: 'Inter', sans-serif;
+        padding: 5%;
+        margin-top: 10% ;
+    }
+
+
+    .box h3{
+        font-size: 17px;
+        color: green;
+        font-weight: bold;
+    }
+    
+    .box2 h3{
+        font-size: 17px;
+        color: #106FFF;
+    }
+
+    .box3 h3{
+        font-size: 17px;
+        color: red;
+        font-weight: bold;
+    }
+
+    .box4 h3{
+        font-size: 17px;
+        color: rgb(46, 45, 45);
+        font-weight: bold;
+    }
+
+    .box p, .box2 p, .box3 p, .box4 p{
+        margin-top: 2.5%;
+        font-size: 14px;
+        font-weight: bold;
+        color: gray;
+    }
+    .valor{
+        font-weight: bold;
+        font-size: 14px;
+        color: rgba(0, 128, 0, 0.698);
+    }
+
+    .areabtn{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #btn{
+        background-color: rgb(252, 41, 41);
+        border-radius: 5px;
+        width: 120px;
+        padding: 1.4%;
+        color: white;
+    }
+}
+
+/* -Desktop ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 961px){
+    header{
+        margin: 3% 7% 7% 7%;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        color: black;
+    }
+
+    header h2{
+        font-size: 20px;
+    }
+
+    .setinha{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    main{
+        margin: 0% 25% 0% 25%;
+    }
+
+    .box{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        width: 60%;
+        height: 80%;
+        font-family: 'Inter', sans-serif;
+        padding: 3%;
+        margin: 10% 20% 10% 20%;
+    }
+
+    .box2{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        width: 60%;
+        height: 70%;
+        font-family: 'Inter', sans-serif;
+        padding: 3%;
+        margin: 10% 20% 10% 20%;
+    }
+
+    .box3{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        width: 60%;
+        height: 100%;
+        font-family: 'Inter', sans-serif;
+        padding: 3%;
+        margin: 10% 20% 10% 20%;
+    }
+
+    .box4{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        width: 60%;
+        height: 100%;
+        font-family: 'Inter', sans-serif;
+        padding: 3%;
+        margin: 10% 20% 10% 20%;
+    }
+
+
+    .box h3{
+        font-size: 17px;
+        color: green;
+        font-weight: bold;
+    }
+    
+    .box2 h3{
+        font-size: 17px;
+        color: #106FFF;
+    }
+
+    .box3 h3{
+        font-size: 17px;
+        color: red;
+        font-weight: bold;
+    }
+
+    .box4 h3{
+        font-size: 17px;
+        color: rgb(46, 45, 45);
+        font-weight: bold;
+    }
+
+    .box p, .box2 p, .box3 p, .box4 p{
+        margin-top: 2.5%;
+        font-size: 14px;
+        font-weight: bold;
+        color: gray;
+    }
+    .valor{
+        font-weight: bold;
+        font-size: 14px;
+        color: rgba(0, 128, 0, 0.698);
+    }
+
+    .areabtn{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #btn{
+        background-color: rgb(252, 41, 41);
+        border-radius: 5px;
+        width: 120px;
+        padding: 1.4%;
+        color: white;
+    }
+}    

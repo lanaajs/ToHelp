@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    top: 0;
+}
+
+body {
+    background-color: #E0EDFE;
+}
+
+@media screen and (max-width: 450px) {
+
+    .titulo {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 5%;
+        margin-top: 10%;
+    }
+
+    #bandcartao{
+        margin-top: 15%;
+    }
+
+    #cartao{
+        width: 40px;
+    }
+
+    #seta {
+        width: 70%;
+    }
+
+    .caixa-op{
+        position: absolute;
+        margin-top: 35%;
+        left: 5%;
+        background-color: #106FFF;
+        border-radius: 5%;
+        width: 90%;
+        height: 34%;
+    }
+
+    label{
+        display: flex;
+        padding: 5%;
+    }
+
+    .radio{
+        appearance: none;
+        width: 1.6em;
+        height: 1.6em;
+        margin-top: 5%;
+        margin-left: 1%;
+        border-radius: 50%;
+        outline: none;
+        border: 2px solid white;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 200ms ease-in-out; 
+    }
+
+    .radio::before{
+        content: '';
+        position: absolute;
+        width: 0.7em;
+        height: 0.7em;
+        background-color: white;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 400ms ease-in-out; 
+    }
+    
+    .radio:checked::before{
+        opacity: 1;
+    }
+
+    .radio:focus{
+        box-shadow: 0 0 5px rgb(254, 254, 254);
+    }
+
+    .formapag{
+        background-color: #EFE3E3;
+        margin-left: 3%;
+        padding: 3%;
+        border-radius: 50%;
+    }
+
+    .nomeforma{
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+
+    .linha{
+        height: 3px;
+        background-color: white;
+    }
+
+    .detalhespag{
+        position: absolute;
+        width: 90%;
+        height: 18%;
+        margin-left: 5%;
+        margin-top: 125%;
+        background-color: #F8F8F8;
+        border-radius: 5px;
+        box-shadow: 0px 5px 15px #999;
+    }
+
+    button{
+        margin-top: 25%;
+        margin-left: 23%;
+        width: 53%;
+        height: 28%;
+        background-color: #106FFF;
+        color: white;
+        border: none;
+        border-radius: 20px;  
+        box-shadow: 0px 5px 15px #999; 
+    }
+
+    #details{
+        margin-top: 5%;
+        margin-left: 2%;
+        line-height: 25px;
+    }
+
+    #details h3{
+        color: #585858;
+    }
+
+    #details p:not(#custo){
+        color: #797979;
+    }
+
+    #valores{
+        display: flex;
+    }
+
+    #custo{
+        margin-left: 5px;
+        font-weight: bold;
+        color: #2B7A1F;
+    }
+
+    h2{
+        font-family: 'Inter';
+        color: #585858;
+        margin-bottom: 2%;
+    }
+
+    h3{
+        font-family: 'Inter';
+
+    }
+
+    .caixa-op h3{
+        font-family: 'Inter';
+        color: white;
+        font-weight: normal;
+    }
+
+
+    p{
+        font-family: 'Inter';
+        color: #DEDEDE;
+        font-weight: normal; 
+    }
+}

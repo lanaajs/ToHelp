@@ -1,0 +1,290 @@
+*{
+    margin: 0;
+    border: 0;
+}
+body{
+    background-color: #e5f8e7;
+    height: 100%;
+    width: 100%
+}
+
+
+@media screen and (max-width: 450px){
+    header{
+        margin: 10% 7% 7%;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        color: black;
+    }
+
+    header h2{
+        font-size: 22px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        color: #585858;
+    }
+
+    .setinha{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .material-icons{
+        color: black;
+    }
+
+    .box{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        margin: 4%;
+        width: 90%;
+        height: 270px;
+        font-family: 'Inter', sans-serif;
+        padding-top: 3%;
+        padding-left: 3%;
+    }
+
+    .box h2{
+        font-size: 16px;
+    }
+
+    .box p{
+        margin-top: 2.5%;
+        font-size: 14px;
+    }
+
+    .text{
+        margin-left: 5%;
+    }
+
+    #valor{
+        color: green;
+    }
+
+    .buttons{
+        margin: 0;
+        text-align: center;
+    }
+
+    #aceitar{
+        background-color: green;
+        width: 30%;
+        margin-right: 30%;
+        color: white;
+        border-radius: 5px;
+        padding: 1%;
+     
+    }
+
+    #recusar{
+        background-color: red;
+        margin-right: 5%;
+        width: 30%;
+        color: white;
+        border-radius: 5px;
+        padding: 1%;
+     
+    }
+
+    .alert{
+        text-align: end;
+        margin-right: 3%;
+        font-size: 13px;
+        font-weight: bold;
+    }
+}    
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Tablet ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 451px) and (max-width: 1150px){
+
+    header{
+        margin: 5% 5% 5%;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        color: black;
+    }
+
+    header h2{
+        font-size: 22px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        color: #585858;
+    }
+
+    .setinha{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .material-icons{
+        color: black;
+    }
+
+    .box{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        margin: 4%;
+        width: 90%;
+        height: 100%;
+        font-family: 'Inter', sans-serif;
+        padding: 3% 
+    }
+
+    .box h2{
+        font-size: 16px;
+    }
+
+    .box p{
+        margin-top: 2%;
+        font-size: 14px;
+    }
+
+    .text{
+        margin-left: 5%;
+    }
+
+    #valor{
+        color: green;
+    }
+
+    .buttons{
+        margin: 0;
+        text-align: center;
+    }
+
+    #aceitar{
+        background-color: green;
+        width: 30%;
+        margin-right: 30%;
+        color: white;
+        border-radius: 5px;
+        padding: 1%;
+     
+    }
+
+    #recusar{
+        background-color: red;
+        margin-right: 5%;
+        width: 30%;
+        color: white;
+        border-radius: 5px;
+        padding: 1%;
+     
+    }
+
+    .alert{
+        text-align: end;
+        margin-right: 3%;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    #container{
+        padding: 0% 15% 0% 15%;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Desktop ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 1151px){
+
+    header{
+        margin: 3% 3% 3% 3%;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        color: black;
+    }
+
+    header h2{
+        font-family: 'Inter', sans-serif;
+        font-weight: bold;
+        color: #585858;
+        font-size: 24px;
+
+    }
+
+    .setinha{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .material-icons{
+        color: black;
+    }
+
+    .box{
+        background-color: white;
+        border: 1px solid none;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+        border-radius: 5px;
+        margin: 4%;
+        width: 55%;
+        height: 100%;
+        font-family: 'Inter', sans-serif;
+        padding-top: 3%;
+        padding-left: 2%;
+        padding-bottom: 2%;
+        margin: 0% 20% 5% 20%;
+    }
+
+    .box h2{
+        font-size: 16px;
+    }
+
+    .box p{
+        margin-top: 1.5%;
+        font-size: 14px;
+    }
+
+    .text{
+        margin-left: 5%;
+    }
+
+    #valor{
+        color: green;
+    }
+
+    .buttons{
+        margin: 0;
+        text-align: center;
+    }
+
+    #aceitar{
+        background-color: green;
+        width: 30%;
+        margin-right: 25%;
+        color: white;
+        border-radius: 5px;
+        padding: 1%;
+     
+    }
+
+    #recusar{
+        background-color: red;
+        margin-right: 5%;
+        width: 30%;
+        color: white;
+        border-radius: 5px;
+        padding: 1%;
+     
+    }
+
+    .alert{
+        text-align: end;
+        margin-right: 3%;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    #container{
+        padding: 0% 20% 0% 20%;
+    }
+}

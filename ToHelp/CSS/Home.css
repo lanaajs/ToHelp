@@ -1,0 +1,909 @@
+@import url('https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap');
+
+*{
+    margin: 0;
+    border: 0;
+}
+body{
+    height: 100%;
+    width: 100%
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: Archivo Balck;
+    src: url();
+}
+
+/* -Smartphone ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 450px){
+
+    /* -Cabeçalho- */
+    #cabecalho{
+        background-color: #106FFF;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0% 5% 0% 5%;
+    }
+    
+    #logo{ 
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+    #logo img{
+        height: 50px;
+    }
+
+    #gaveta{
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    #gaveta img{
+        width: 20%;
+    }
+
+    #btnEntrar{
+        display: none;
+    }
+
+    /* -Menu Mobile- */
+    #menu_mobile{
+        padding-top: 10%;
+        display: none;
+        height: 600px;
+        background-color: #106FFF;
+        justify-content: center;
+    }
+    #menu_desktop{
+        display: none;
+    }
+    #ul1{
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+    }
+    .itemUL{
+        padding: 0; 
+        margin: 0; 
+        text-align: center;
+        margin-bottom: 60%;
+    }
+    .linkUL{
+        text-decoration: none;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        
+    }
+    .itemEntrar{
+        padding: 0; 
+        margin: 0; 
+        text-align: center;
+        margin-bottom: 15%;
+        
+    }
+    .linkEntrar{
+        padding: 8% 40% 8% 40%;
+        margin-left: -11%;
+        border-radius: 20px;
+        background-color: white;
+        color: #0049FF;
+        font-size: 20px;
+        font-weight: bolder;
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+    }
+    .linkC{
+        color: white;
+        font-family: 'Inter', sans-serif;
+    }
+
+
+    /* -Banner- */
+    #banner{
+        background-image: url("../IMG/bannerHome.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 520px;  
+        font-family: 'Archivo Black', sans-serif;
+    }
+    #textBanner{ 
+        color: white;
+        font-size: 35px;
+        line-height: 1.0;
+        padding: 20% 0% 0% 6%;
+    }
+    #ps{
+        color: transparent; /* Deixa o texto transparente */
+        -webkit-text-stroke: 0.8px white; /* Cria uma borda branca */
+        font-weight: bold;
+    }
+    #linkBanner{
+        margin: 60% 0% 0% 6%;
+    }
+    #linkBanner a{
+        background-color: #0049FF;
+        padding: 4% 8% 4% 8%;
+        text-decoration: none;
+        color: white;
+        border-radius: 20px;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+    }
+
+
+    /* -Cuidadores- */
+    #cuidadores{
+        margin-top: 14%;
+        width: 100%;
+        height: 520px; 
+        font-family: 'Inter', sans-serif;
+    }
+    .text{
+        text-align: center;
+        padding: 0% 15% 0% 15%;
+        
+    }
+    .text h2{
+        font-family: 'Lily Script One', cursive;
+        color: #0049FF;
+        font-size: 35px;
+        line-height: 0.8;
+        margin-bottom: 9%;
+    }
+    
+    .carrosel{
+        margin: 3% 0;
+        width: 100%;
+    }
+
+    .area{
+        display: grid;
+        grid-auto-flow: column;
+        scroll-behavior:smooth;
+        gap: 1.8rem;
+        overflow-y: hidden;
+    }
+
+    .box{
+        scroll-snap-align: start;
+        border: 1px solid none;
+        box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        text-align: center;
+        margin: 5%;
+        width: 180px;
+        height: 300px;
+    }
+
+    .box img{
+        border: 2px solid #0049FF;
+        border-radius: 100%;
+        margin-top: 8%;
+        width: 50%;
+    }
+
+    .nome{
+        font-size: 17px;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        color: #0049FF;
+    }
+
+    .valor{
+        font-size: 20px;
+        text-align: justify;
+        margin: 1% 10%;
+    }
+
+    .descricao{
+        text-align: justify;
+        font-size: 12px;
+        margin: 7% 10%;
+    }
+
+    /* -Quem Somos- */
+    #quemSomos{
+        width: 100%;
+        height: 650px;
+        margin-top: 10%; 
+        font-family: 'Inter', sans-serif;
+    }
+    #quemSomos img{
+        width: 100%;
+        margin-top: 12%;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+    }
+
+    
+    /* -Sobre- */
+    #sobre{
+        height: 350px;
+        display: flex;   
+        margin: 5% 0% 0% 4%;
+        font-family: 'Inter', sans-serif;  
+    }
+    #textSobre p{
+        font-size: clamp(10px, 5vw, 15px);
+    }
+    #textSobre h2{      
+        font-family: 'Lily Script One', cursive;
+        color: #0049FF;
+        font-size: 35px;
+        margin-bottom: 9%;
+    }
+    #sobreImg{ 
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    #sobreImg img{
+        height: 250px;
+    }
+
+
+    /* -Rodapé- */
+    #rodape{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 7%;
+        background-color: #444343;
+        height: 200px;
+        font-family: 'Inter', sans-serif;
+    }
+    #rodape a:hover{
+        border-bottom: 1px solid white;
+    }
+    #f1{
+        padding: 4% 0% 0% 5%;
+        width: 35%;
+    }
+    #f1 li{
+        list-style-type: none;
+    }
+    #f1 a{
+        text-decoration: none;
+        color: white;
+        line-height: 1.7;
+        font-size: clamp(0.1em, 0.5em + 1vw, 1em);
+    }
+    #f1 img{
+        width: 35%;
+    }
+    #f2{
+        padding-top: 8%;
+        width: 45%;
+    }
+    #f2 li{
+        list-style-type: none;
+    }
+    #f2 a{
+        text-decoration: none;
+        color: white;
+        line-height: 1.7;
+        font-size: clamp(0.1em, 0.5em + 1vw, 1em);
+    }
+    #f2 h3{
+        color: white;
+        margin-bottom: 3%;
+        font-family: 'Lily Script One', cursive;
+    }
+    #cadastrese{  
+        padding: 2% 10% 2% 10%;
+        background: #585858;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+    #f3{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    #f3 img{
+        height: 160px;
+    }
+}
+
+
+/* -Tablet ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 451px) and (max-width: 960px){
+
+    /* -Cabeçalho- */
+    #cabecalho{
+        background-color: #106FFF;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0% 5% 0% 5%;
+    }
+    
+    #logo{ 
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+    #logo img{
+        height: 50px;
+    }
+
+    #gaveta{
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    #gaveta img{
+        width: 20%;
+    }
+
+    #btnEntrar{
+        display: none;
+    }
+
+    /* -Menu Mobile- */
+    #menu_mobile{
+        padding-top: 10%;
+        display: none;
+        height: 600px;
+        background-color: #106FFF;
+        justify-content: center;
+    }
+    #menu_desktop{
+        display: none;
+    }
+    #ul1{
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+    }
+    .itemUL{
+        padding: 0; 
+        margin: 0; 
+        text-align: center;
+        margin-bottom: 60%;
+    }
+    .linkUL{
+        text-decoration: none;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        
+    }
+    .itemEntrar{
+        padding: 0; 
+        margin: 0; 
+        text-align: center;
+        margin-bottom: 15%;
+        
+    }
+    .linkEntrar{
+        padding: 8% 40% 8% 40%;
+        margin-left: -11%;
+        border-radius: 20px;
+        background-color: white;
+        color: #0049FF;
+        font-size: 20px;
+        font-weight: bolder;
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+    }
+    .linkC{
+        color: white;
+        font-family: 'Inter', sans-serif;
+    }
+
+
+     /* -Banner- */
+     #banner{
+        background-image: url("../IMG/bannerHome2.png");
+        background-size: cover;
+        background-repeat: no-repeat ;
+        width: 100%;
+        height: 520px;;  
+        font-family: 'Archivo Black', sans-serif;
+    }
+    #textBanner{ 
+        color: white;
+        font-size: 40px;
+        line-height: 1.0;
+        padding: 15% 0% 0% 5%;
+    }
+    #ps{
+        color: transparent; /* Deixa o texto transparente */
+        -webkit-text-stroke: 0.8px white; /* Cria uma borda branca */
+        font-weight: bold;
+    }
+    #linkBanner{
+        margin: 20% 0% 0% 6%;
+    }
+    #linkBanner a{
+        background-color: #0049FF;
+        padding: 2% 4% 2% 4%;
+        text-decoration: none;
+        color: white;
+        border-radius: 15px;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+    }
+
+    /* -Cuidadores- */
+    #cuidadores{
+        margin-top: 14%;
+        width: 100%;
+        height: 520px; 
+        font-family: 'Inter', sans-serif;
+    }
+    .text{
+        text-align: center;
+        padding: 0% 15% 0% 15%;
+        
+    }
+    .text h2{
+        font-family: 'Lily Script One', cursive;
+        color: #0049FF;
+        font-size: 35px;
+        line-height: 0.8;
+        margin-bottom: 9%;
+    }
+    
+    .carrosel{
+        margin: 3% 0;
+        width: 100%;
+    }
+
+    .area{
+        display: grid;
+        grid-auto-flow: column;
+        scroll-behavior:smooth;
+        gap: 1.8rem;
+        overflow-y: hidden;
+    }
+
+    .box{
+        scroll-snap-align: start;
+        border: 1px solid none;
+        box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        text-align: center;
+        margin: 5%;
+        width: 180px;
+        height: 300px;
+    }
+
+    .box img{
+        border: 2px solid #0049FF;
+        border-radius: 100%;
+        margin-top: 8%;
+        width: 50%;
+    }
+
+    .nome{
+        font-size: 17px;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        color: #0049FF;
+    }
+
+    .valor{
+        font-size: 20px;
+        text-align: justify;
+        margin: 1% 10%;
+    }
+
+    .descricao{
+        text-align: justify;
+        font-size: 12px;
+        margin: 7% 10%;
+    }
+
+
+    /* -Quem Somos- */
+    #quemSomos{
+        width: 100%;
+        height: 80%;
+        margin-top: 10%; 
+        font-family: 'Inter', sans-serif;
+    }
+    #quemSomos img{
+        width: 80%;
+        margin-top: 12%;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+    }
+
+    
+    /* -Sobre- */
+    #sobre{
+        height: 350px;
+        display: flex;   
+        margin: 10% 8% 0% 8%;
+        font-family: 'Inter', sans-serif; 
+        justify-content: space-between; 
+    }
+    #textSobre{
+        width: 50%;
+    }
+    #textSobre p{
+        font-size: clamp(10px, 5vw, 16px);
+    }
+    #textSobre h2{      
+        font-family: 'Lily Script One', cursive;
+        color: #0049FF;
+        font-size: 35px;
+        margin-bottom: 9%;
+    }
+    #sobreImg{ 
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 40%;
+    }
+    #sobreImg img{
+        height: 100%;
+    }
+
+    /* -Rodapé- */
+    #rodape{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5%;
+        background-color: #444343;
+        height: 200px;
+        font-family: 'Inter', sans-serif;
+    }
+    #rodape a:hover{
+        border-bottom: 1px solid white;
+    }
+    #f1{
+        padding: 2% 0% 0% 5%;
+        width: 35%;
+    }
+    #f1 li{
+        list-style-type: none;
+    }
+    #f1 a{
+        text-decoration: none;
+        color: white;
+        line-height: 1.7;
+        font-size: clamp(0.1em, 0.5em + 1vw, 1em);
+    }
+    #f1 img{
+        width: 25%;
+    }
+    #f2{
+        padding-top: 5%;
+        width: 45%;
+    }
+    #f2 li{
+        list-style-type: none;
+    }
+    #f2 a{
+        text-decoration: none;
+        color: white;
+        line-height: 1.7;
+        font-size: clamp(0.1em, 0.5em + 1vw, 1em);
+    }
+    #f2 h3{
+        color: white;
+        margin-bottom: 3%;
+        font-family: 'Lily Script One', cursive;
+    }
+    #cadastrese{  
+        padding: 1% 8% 1% 8%;
+        background: #585858;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+    #f3{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    #f3 img{
+        height: 180px;
+    }
+}
+
+
+/* -Desktop ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 961px){
+
+    #cabecalho{
+        background-color: #106FFF;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        padding: 0% 2.5% 0% 2.5%;
+        justify-content: space-between;
+    }   
+    #logo{ 
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+    #logo img{
+        height: 70px;
+    }
+    #gaveta{
+        display: none;
+    }
+    #menu_mobile{
+        display: none;
+    }
+    
+    #menu_desktop{
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+    }
+    #btnEntrar{
+        width: 15%;
+        display: flex;
+        justify-content: end;
+        transition: 0.3s;
+    }
+
+    #btnEntrar:hover{
+        transition: 0.3s;
+        transform: scale(1.05,1.1) translateY(5px);
+    }
+    
+    .linkUL2{
+        text-decoration: none;
+        color: white;
+        font-family: 'Inter', sans-serif;   
+        font-size: 18px; 
+        transition: 0.3s;
+    }
+
+    .linkUL2:hover{
+        transition: 0.3s;
+        font-size: 19px;
+    }
+
+    .linkEntrar2{
+        padding: 5% 20% 5% 20%;
+        border-radius: 20px;
+        background-color: white;
+        color: #0049FF;
+        font-size: 15px;
+        font-weight: bolder;
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2), 0px 3px 10px 0px rgba(0,0,0,0.19);
+    }
+
+     /* -Banner- */
+     #banner{
+        background-image: url("../IMG/bannerHome3.png");
+        background-size: cover;
+        background-repeat: no-repeat ;
+        width: 100%;
+        height: 750px;  
+        font-family: 'Archivo Black', sans-serif;
+    }
+    #textBanner{ 
+        color: white;
+        font-size: 80px;
+        line-height: 1.0;
+        padding: 8% 0% 0% 5%;
+    }
+    #ps{
+        color: transparent; /* Deixa o texto transparente */
+        -webkit-text-stroke: 2px white; /* Cria uma borda branca */
+        font-weight: bold;
+    }
+    #linkBanner{
+        margin: 10% 0% 0% 6%;
+    }
+
+    #linkBanner a{
+        transition: 0.5s;
+        background-color: #0049FF;
+        padding: 1.5% 3.5% 1.5% 3.5%;
+        text-decoration: none;
+        color: white;
+        border-radius: 15px;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+    }
+
+    #linkBanner a:hover{
+        transition: 0.5s;
+        margin: 1%;
+        transform: scale(1.1,1.2) translateY(5px);
+    }
+
+
+    /* -Cuidadores- */
+    #cuidadores{
+        margin-top: 10%;
+        width: 100%;
+        height: 520px; 
+        font-family: 'Inter', sans-serif;
+    }
+    .text{
+        text-align: center;
+        padding: 0% 15% 0% 15%;
+        font-size: 150%;
+    }
+    .text h2{
+        font-family: 'Lily Script One', cursive;
+        color: #0049FF;
+        font-size: 45px;
+        line-height: 0.8;
+        text-align: center;
+        margin-bottom: 9%;
+    }
+    
+    .carrosel{
+        margin: -5% 0;
+        width: 100%;
+    }
+    .area{
+        display: flex;
+        justify-content: center;
+    }
+
+    .box{
+        scroll-snap-align: start;
+        border: 1px solid none;
+        box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        text-align: center;
+        margin: 10% 1% 7% 1%;
+        width: 250px;
+        height: 350px;
+    }
+
+    .box img{
+        border: 2px solid #0049FF;
+        border-radius: 100%;
+        margin-top: 8%;
+        width: 50%;
+    }
+
+    .nome{
+        font-size: 17px;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        color: #0049FF;
+    }
+
+    .valor{
+        font-size: 20px;
+        text-align: justify;
+        margin: 1% 10%;
+    }
+
+    .descricao{
+        text-align: justify;
+        font-size: 14px;
+        padding: 1.3rem;
+    }
+
+
+    /* -Quem Somos- */
+    #quemSomos{
+        width: 100%;
+        height: 100%;
+        margin-top: 15%; 
+        font-family: 'Inter', sans-serif;
+    }
+    #quemSomos img{
+        width: 60%;
+        margin-top: 12%;
+        margin-bottom: 6%;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+    }
+
+    /* -Sobre- */
+    #sobre{
+        height: 400px;
+        display: flex;   
+        margin: 10% 12% 10% 10%;
+        font-family: 'Inter', sans-serif; 
+        justify-content: space-between; 
+        align-items: center;
+    }
+    #textSobre{
+        width: 100%;
+        margin-bottom: 15%;
+    }
+    #textSobre p{
+        font-size: 150%;
+    }
+    #textSobre h2{      
+        font-family: 'Lily Script One', cursive;
+        color: #0049FF;
+        font-size: 40px;
+        margin-bottom: 9%;
+    }
+    #sobreImg{ 
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 60%;
+        margin-bottom: 5%;
+    }
+    #sobreImg img{
+        height: 90%;
+    }
+
+    /* -Rodapé- */
+    #rodape{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5%;
+        background-color: #444343;
+        height: 200px;
+        font-family: 'Inter', sans-serif;
+        height: 100%;
+    }
+    #rodape a:hover{
+        border-bottom: 1px solid white;
+    }
+    #f1{
+        padding: 1% 0% 0% 4%;
+        width: 35%;
+    }
+    #f1 li{
+        list-style-type: none;
+    }
+    #f1 a{
+        text-decoration: none;
+        color: white;
+        line-height: 1.7;
+        font-size: clamp(0.1em, 0.5em + 1vw, 1em);
+    }
+    #f1 img{
+        width: 80px;
+    }
+    #f2{
+        margin-top: 3%;
+        width: 45%;
+    }
+    #f2 li{
+        list-style-type: none;
+    }
+    #f2 a{
+        text-decoration: none;
+        color: white;
+        line-height: 1.7;
+        font-size: clamp(0.1em, 0.5em + 1vw, 1em);
+    }
+    #f2 h3{
+        color: white;
+        margin-bottom: 2%;
+        font-family: 'Lily Script One', cursive;
+    }
+  
+    #f3{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    #f3 img{
+        height: 180px;
+    }
+    
+}
+

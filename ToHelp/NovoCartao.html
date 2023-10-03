@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/NovoCartao.css">
+    <title>Novo cartao</title>
+</head>
+
+<body>
+
+    <div class="titulo">
+        <a href="#"><img id="seta" src="IMG/seta esquerda.png" alt="seta" /></a>
+        <h2>Novo cartão</h2>
+    </div>
+
+    <div class="cartao">
+        <div id="line1">
+            <div class="nome-cart-text">
+
+            </div>
+            <div class="aproximacao-div"><img class="aproximacao" src="IMG/aproximacao.png"  alt="aproximacao"></div>
+        </div>
+        <div id="line2">
+            <p>Número do Cartão</p>
+            <div class="numero-cart-text">
+                **** **** **** ****
+            </div>
+        </div>
+        <div id="line3">
+            <div id="vencimento-cart">
+                <p>Vencimento</p>
+                <div class="vencimento-text">
+                    mm/aa
+                </div>
+            </div>
+            <div id="cvv-cart">
+                <p>CVV</p>
+                <div class="cvv-text">
+                    ***
+                </div>
+            </div>
+            <div id="chip"><img src="IMG/flat-color-icons_sim-card-chip.png" alt="chipcartao"></div>
+        </div>
+    </div>
+
+    <form id="info-cartao" action="#">
+
+        <div id="inputs">
+            <div id="inpt">
+                <label for="Nome">Nome</label>
+
+                <div><input type="text" name="nome" id="nome" maxlength="50" placeholder="Digite seu nome" required
+
+                onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.key ==  ' '">
+                </div>
+            </div>
+
+            <div id="teste">
+                <label for="numcartao">Número do Cartão</label>
+
+                <input type="text" name="numcartao" id="numcartao" maxlength="19" placeholder="**** **** **** ****"
+
+                required onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+
+                <img id="imgg" src="IMG/bytesize_creditcard.png" alt="imagemcartao">
+            </div>
+
+            <div id="inpt">
+                <label for="cpf">CPF do Titular</label>
+
+                <div><input type="text" name="cpf" id="cpf" maxlength="14" placeholder="Digite seu CPF" required
+
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                </div>
+            </div>
+
+            <div id="final">
+                <div id="inptfinal">
+                    <label for="vencimento">Vencimento</label>
+
+                    <input type="text" name="vencimento" id="vencimento" maxlength="5" placeholder="mm/aa" required
+
+                    onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                </div>
+
+                <div id="inptfinal">
+                    <label for="cvv">CVV</label>
+
+                    <input type="text" name="cvv" id="cvv" maxlength="3" placeholder="Insira CVV"
+            
+                    onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                </div>
+            </div>
+    </form>
+    <script src="JS/novocartao.js"></script>
+    <button onclick="analisar()">
+        <h3>CONCLUIR</h3>
+    </button>
+</body>
+
+</html>

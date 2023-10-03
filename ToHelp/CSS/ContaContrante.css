@@ -1,0 +1,314 @@
+*{
+    margin: 0;
+    border: 0;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background-color: #106FFF;
+}
+
+@font-face {
+    font-family: Archivo Balck;
+    src: url();
+}
+
+#iconcinza{
+    background-color:#a3a3a3; /* ---- CONTA CONTRATANTE 1.1 ----*/
+}
+
+#btn_encontrar{
+    gap: 8px;
+}
+/* -Celular ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 450px){
+
+    /* -Cabeçalho- */
+    #cabecalho{
+        display: flex;
+        align-items: center;
+        height: 100px;
+        font-family: 'Inter', sans-serif;
+    }
+
+    #perfil{
+        background-color: rgb(187, 187, 187);
+        padding: 3%;
+        margin: 2% 4% 2% 4%;
+        border-radius: 50%;
+    }
+    #perfil span{
+        font-size: 40px;
+        color: gray;
+    }
+    #nNome{
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+    }
+    #nCadastro{
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+    }
+
+
+    /* -Principal- */
+    main{
+        border-radius: 30px 30px 0px 0px;
+        padding: 2% 0% 0% 8%;
+        background-color: #E0EDFE;
+        height: 120vh;
+        align-items: center;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .box{
+        display: flex;
+        align-items: center;
+        margin-top: 10%;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .box p{
+        font-size: 15px;
+        color: #585858;
+        font-weight: bold;
+    }
+
+    .icons{
+        padding: 2.5%;
+        color: white;
+        background-color: #106FFF;
+        border-radius: 50%;
+        margin-right: 3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icons span{
+        font-size: 30px;
+    }
+
+
+    /* -btn Encontrar- */
+    #encontrar{
+        display: flex;
+        justify-content: end;
+        margin: 35% 5% 5% 0%;
+
+    }
+    #encontrar a{
+        display: flex;
+        align-items: center;
+        color: white;
+        padding: 2% 4% 2% 4%;
+        border-radius: 20px;
+        background-color: #a3a3a3;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 15px;
+    }
+}
+
+
+
+/* -Tablet ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 451px) and (max-width: 960px){
+
+    /* -Cabeçalho- */
+    #cabecalho{
+        display: flex;
+        align-items: center;
+        height: 100px;
+        font-family: 'Inter', sans-serif;
+        margin-top: 1%;
+        padding: 0% 1% 0% 1%;
+    }
+
+    #perfil{
+        background-color: rgb(187, 187, 187);
+        padding: 2%;
+        margin: 2% 2% 2% 4%;
+        border-radius: 50%;
+    }
+    #perfil span{
+        font-size: 40px;
+        color: gray;
+    }
+    #nNome{
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+    }
+    #nCadastro{
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+    }
+
+
+    /* -Principal- */
+    main{
+        border-radius: 30px 30px 0px 0px;
+        padding: 2% 0% 40% 5%;
+        margin: 2% 5% 0% 5%;
+        background-color: #E0EDFE;
+        height: 120vh;
+        align-items: center;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .box{
+        display: flex;
+        align-items: center;
+        margin-top: 6%;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .box p{
+        font-size: 15px;
+        color: #585858;
+        font-weight: bold;
+    }
+
+    .icons{
+        padding: 2%;
+        color: white;
+        background-color: #106FFF;
+        border-radius: 50%;
+        margin-right: 3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icons span{
+        font-size: 30px;
+    }
+
+
+    /* -btn Encontrar- */
+    #encontrar{
+        display: flex;
+        justify-content: end;
+        margin: 35% 5% 5% 0%;
+
+    }
+    #encontrar a{
+        display: flex;
+        align-items: center;
+        color: white;
+        padding: 2% 4% 2% 4%;
+        border-radius: 20px;
+        background-color: #a3a3a3;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 15px;
+    }
+}
+
+
+/* -Desktop ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 961px){
+
+    /* -Cabeçalho- */
+    #cabecalho{
+        display: flex;
+        align-items: center;
+        height: 100px;
+        font-family: 'Inter', sans-serif;
+        margin-top: 1%;
+        padding: 0% 1% 0% 1%;
+    }
+
+    #perfil{
+        background-color: rgb(187, 187, 187);
+        padding: 0.5%;
+        margin: 2% 1% 2% 4%;
+        border-radius: 50%;
+    }
+    #perfil span{
+        font-size: 40px;
+        color: gray;
+    }
+    #nNome{
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+    }
+    #nCadastro{
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+    }
+
+
+    /* -Principal- */
+    main{
+        border-radius: 30px 30px 0px 0px;
+        padding: 50px 0% 5% 60px;
+        margin: 2% 20% 0% 20%;
+        background-color: #E0EDFE;
+        height: 100vh;
+        align-items: center;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .box{
+        display: flex;
+        margin: 5% 0 5% 0;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .box p{
+        margin-top: 1.5%;
+        font-size: 16px;
+        color: #585858;
+        font-weight: bold;
+    }
+
+    .icons{
+        padding: 1%;
+        color: white;
+        background-color: #106FFF;
+        border-radius: 50%;
+        margin-right: 1.5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icons span{
+        font-size: 30px;
+    }
+  
+    /* -btn Encontrar- */
+    #encontrar{
+        display: flex;
+        justify-content: end;
+        margin: 5% 5% 5% 0%;
+
+    }
+    #encontrar a{
+        display: flex;
+        align-items: center;
+        color: white;
+        padding: 1.5% 3% 1.5% 3%;
+        border-radius: 20px;
+        background-color: #a3a3a3;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,374 @@
+*{
+    margin: 0;
+    border: 0;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background-color: #00BF8C;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Mobile ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 450px){
+
+    /* -Cabeçalho- */
+    #cabecalho{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+    }
+    #cabecalho span{
+        font-size: clamp(20px, 5vw, 22px);
+        color: white;
+    }
+    #info1{
+        width: 80%;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        padding: 0% 0% 0% 5%;
+        
+    }
+    h1{
+        font-size: clamp(16px, 5vw, 18px);
+        margin-right: 2%;
+    }
+    #info2{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        color: white;
+        padding: 0% 5% 0% 0%;
+    }
+    a{
+        text-decoration: none;
+    }
+
+    /* -Formulario- */
+    #formulario{
+        flex-wrap: wrap;
+        border-radius: 30px 30px 0px 0px;
+        background-color: #e5f8e7;
+        padding: 9% 10% 0% 10%;
+        font-family: 'Inter', sans-serif;
+    }
+    label{
+        color: #585858;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    #formulario #email, #telefone, #cpf, #estado, #cidade, #bairro, #endereco, #numero, #complemento, #apresentacao{
+        border: 1px solid transparent;
+        width: 100%;
+        height: 30px;
+        border-radius: 5px;
+        padding-left: 2%;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .div1{
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    
+    .filho1{
+        margin: 0% 3% 0% 0%;
+    }
+    .filho2{
+        margin: 0% 0% 0% 3%;
+    }
+    textarea{
+        width: 100%;
+        resize: none;
+        border-radius: 5px;
+        padding: 2% 0% 0% 2%;
+        font-family: 'Inter', sans-serif;
+    }
+
+    input[type="file"] {
+        display: none;
+        }
+    
+    .arquivo{
+        padding: 10px 10px;
+        width: 40%;
+        background-color: #00BF8C;
+        border-radius: 20px;
+        color: white;
+        text-align: center;
+        display: block;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    #areabtn{
+        display: flex;
+        justify-content: center;
+    }
+    
+    #btnSalvar{
+        width: 25%;
+        padding: 3%;
+        border-radius: 30px;
+        background-color: #00BF8C;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 20%;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Tablet ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 451px) and (max-width: 1150px){
+
+    /* -Cabeçalho- */
+    #cabecalho{
+        margin: 3% 0% 1% 0%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+    }
+    #cabecalho span{
+        font-size: clamp(20px, 5vw, 22px);
+        color: white;
+    }
+    #info1{
+        width: 80%;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        padding: 0% 0% 0% 5%;
+        
+    }
+    h1{
+        font-size: clamp(16px, 5vw, 18px);
+        margin-right: 2%;
+    }
+    #info2{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        color: white;
+        padding: 0% 5% 0% 0%;
+    }
+    a{
+        text-decoration: none;
+    }
+
+    /* -Formulario- */
+    #formulario{
+        flex-wrap: wrap;
+        border-radius: 30px 30px 0px 0px;
+        background-color: #e5f8e7;
+        padding: 9% 10% 0% 10%;
+        margin: 0% 5% 0% 5%;
+        font-family: 'Inter', sans-serif;
+    }
+    label{
+        color: #585858;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    #email, #telefone, #cpf, #estado, #cidade, #bairro, #endereco, #numero, #complemento, #apresentacao{
+        border: 1px solid transparent;
+        width: 97%;
+        height: 30px;
+        border-radius: 5px;
+        padding-left: 2%;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .div1{
+        display: flex;      
+    }
+    
+    .filho1{
+        margin: 0% 3% 0% 0%;
+    }
+    .filho2{
+        margin: 0% 0% 0% 3%;
+    }
+    textarea{
+        width: 100%;
+        resize: none;
+        border-radius: 5px;
+        padding: 2% 0% 0% 2%;
+        font-family: 'Inter', sans-serif;
+    }
+
+    input[type="file"] {
+        display: none;
+        }
+    
+    .arquivo{
+        padding: 10px 10px;
+        width: 40%;
+        background-color: #00BF8C;
+        border-radius: 20px;
+        color: white;
+        text-align: center;
+        display: block;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    #areabtn{
+        display: flex;
+        justify-content: center;
+    }
+    
+    #btnSalvar{
+        width: 25%;
+        padding: 3%;
+        border-radius: 30px;
+        background-color: #00BF8C;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 20%;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Desktop ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 1151px){
+
+    /* -Cabeçalho- */
+    #cabecalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+    }
+    
+    #cabecalho span {
+        font-size: clamp(25px, 5vw, 22px);
+        color: white;
+    }
+    
+    #info1 {
+        width: 80%;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        padding: 0% 0% 0% 5%; 
+    }
+    
+    h1 {
+        font-size: clamp(16px, 5vw, 18px);
+        margin-right: 2%;
+    }
+    
+    #info2 {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        color: white;
+        padding: 0% 5% 0% 0%;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    main{
+        display: flex;
+        justify-content: center;
+    }
+
+    /* -Formulario- */
+    #formulario{
+        flex-wrap: wrap;
+        border-radius: 30px 30px 0px 0px;
+        background-color: #e5f8e7;
+        padding: 6% 7% 0% 7%;
+        margin: 0% 30% 0% 30%;
+        font-family: 'Inter', sans-serif;
+    }
+    label{
+        color: #585858;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    #email, #telefone, #cpf, #estado, #cidade, #bairro, #endereco, #numero, #complemento, #apresentacao{
+        border: 1px solid transparent;
+        width: 97%;
+        height: 30px;
+        border-radius: 5px;
+        padding-left: 2%;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .div1{
+        display: flex;      
+    }
+    
+    .filho1{
+        margin: 0% 3% 0% 0%;
+    }
+    .filho2{
+        margin: 0% 0% 0% 3%;
+    }
+    textarea{
+        width: 100%;
+        resize: none;
+        border-radius: 5px;
+        padding: 2% 0% 0% 2%;
+        font-family: 'Inter', sans-serif;
+    }
+
+    input[type="file"] {
+        display: none;
+        }
+    
+    .arquivo{
+        padding: 10px 10px;
+        width: 40%;
+        background-color: #00BF8C;
+        border-radius: 20px;
+        color: white;
+        text-align: center;
+        display: block;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    #areabtn{
+        display: flex;
+        justify-content: center;
+    }
+    
+    #btnSalvar{
+        width: 25%;
+        padding: 3%;
+        border-radius: 30px;
+        background-color: #00BF8C;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 20%;
+    }
+}
+
+
+
+
+
+
+
+
+
