@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/agendacuidadores.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        
+    <link rel="stylesheet" href="../../../public/assets/css/AgendaCuidadores.css">
+
+    <title>ToHelp</title>
+</head>
+
+<body>
+
+    <header id="cabecalho">
+        <h2>Buscar Cuidadores</h2>
+        <div id="perfil">
+            <span class="material-icons">person</span>
+        </div>
+    </header>
+
+    <img class="foto_principal" src="IMG/velhacoroca.jpeg" />
+
+    <div class="nome_cuidador">Maria Elizangela</div>
+    <div class="local">Camaçari/BA</div>
+
+    <div class="preco">R$ 64/hr</div>
+    <div class="transporte">+ Transporte</div>
+    <div class="txtcuida">Como Cuidadora de Idosos, minhas qualidades profissionais são reforçadas por uma sólida
+        formação acadêmica e uma ampla gama de cursos relacionados à área. Sou graduada em Gerontologia, o que me
+        proporcionou um conhecimento aprofundado sobre o processo de envelhecimento e os cuidados específicos
+        necessários
+        para garantir a qualidade de vida dos idosos. Além disso, fiz cursos especializados em primeiros socorros,
+        administração de medicamentos, cuidados com a demência e habilidades de comunicação eficaz.</div>
+
+    <div class="contato">Contato do cuidador</div>
+    <div class="caixa_num">
+        <div class="logo"><img src="IMG/whats.png"></div>
+    </div>
+
+    <div class="numero">
+        (71) 98327-8890</div>
+
+    <section class="area_agenda">
+        <section id="agenda">
+            <section id="main">
+                <div class="wrapper">
+                    <header>
+                        <p class="dataAtual"></p>
+                        <div class="icons">
+                            <span id="antes" class="material-symbols-rounded">chevron_left</span>
+                            <span id="depois" class="material-symbols-rounded">chevron_right</span>
+                        </div>
+                    </header>
+
+                    <div class="calendario">
+                        <ul class="semanas">
+                            <li><b>D</b></li>
+                            <li><b>S</b></li>
+                            <li><b>T</b></li>
+                            <li><b>Q</b></li>
+                            <li><b>Q</b></li>
+                            <li><b>S</b></li>
+                            <li><b>S</b></li>
+                        </ul>
+                        <ul class="dias"></ul>
+                        <div id="infor">
+                            <span id="indQ" class="material-symbols-outlined">check_box_outline_blank</span>
+                            <p id="ind">Indisponível</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <div class="salvamento">
+            <p id="p1">Selecione um dia para editá-lo</p>
+
+            <section id="salvar">
+                <label for="horario">Horário</label>
+                <input type="time" name="horario" id="horario">
+            </section>
+
+            <input type="button" id="btncontratar" onclick="cardSalvar()" value="CONTRATAR">
+        </div>
+
+        <script src="JS/Agenda.js"></script>
+    </section>
+
+    <div class="avaliacoes">Avaliações do cuidador</div>
+
+    <div class="av">
+        <div class="nota">4.7</div>
+        <ul class="avaliacao" id="nota">
+            <li class="star-icon ativo" data-avaliacao="1"></li>
+            <li class="star-icon" data-avaliacao="2"></li>
+            <li class="star-icon" data-avaliacao="3"></li>
+            <li class="star-icon" data-avaliacao="4"></li>
+            <li class="star-icon" data-avaliacao="5"></li>
+        </ul>
+    </div>
+
+    <section class="area_av">
+        <div class="av">
+            <ul class="avaliacao1" id="nota">
+                <li class="star-icon1 ativo" data-avaliacao="1"></li>
+                <li class="star-icon1" data-avaliacao="2"></li>
+                <li class="star-icon1" data-avaliacao="3"></li>
+                <li class="star-icon1" data-avaliacao="4"></li>
+                <li class="star-icon1" data-avaliacao="5"></li>
+            </ul>
+        </div>
+
+        <img class="perfil_avaliacao1" src="https://via.placeholder.com/56x56" />
+        <div class="grupo1">
+            <div class="retangulo1">
+            </div>
+            <div class="av_txt1"> Caso o horário desejado
+                para cada dia seja diferente, é necessário reservar individualmente.</div>
+        </div>
+        <div class="av">
+            <ul class="avaliacao1" id="nota">
+                <li class="star-icon1 ativo" data-avaliacao="1"></li>
+                <li class="star-icon1" data-avaliacao="2"></li>
+                <li class="star-icon1" data-avaliacao="3"></li>
+                <li class="star-icon1" data-avaliacao="4"></li>
+                <li class="star-icon1" data-avaliacao="5"></li>
+            </ul>
+        </div>
+        <img class="perfil_avaliacao1" src="https://via.placeholder.com/56x56" />
+        <div class="grupo1">
+            <div class="retangulo1">
+            </div>
+            <div class="av_txt1"> Caso o horário desejado
+                para cada dia seja diferente, é necessário reservar individualmente.</div>
+        </div>
+        <div class="av">
+            <ul class="avaliacao1" id="nota">
+                <li class="star-icon1 ativo" data-avaliacao="1"></li>
+                <li class="star-icon1" data-avaliacao="2"></li>
+                <li class="star-icon1" data-avaliacao="3"></li>
+                <li class="star-icon1" data-avaliacao="4"></li>
+                <li class="star-icon1" data-avaliacao="5"></li>
+            </ul>
+        </div>
+        <img class="perfil_avaliacao1" src="https://via.placeholder.com/56x56" />
+        <div class="grupo1">
+            <div class="retangulo1">
+            </div>
+            <div class="av_txt1"> Caso o horário desejado
+                para cada dia seja diferente, é necessário reservar individualmente.</div>
+        </div>
+    </section>
+
+</body>
+
+</html>

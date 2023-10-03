@@ -1,0 +1,11 @@
+{
+    "name": "tcc/to-help",
+    "description": "Projeto de TCC",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "require": {}
+}
