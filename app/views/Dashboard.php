@@ -155,13 +155,12 @@
                             <tr>
                         <tbody>
                             <?php
-                            include "../../Config.php";
-                            $sql = "select * from infoContratante";
-                            $result = $conn->query($sql);
+                            /*$sql = "select * from infoContratante";
+                            $result = $pdo->query($sql);
                             if (!$result) {
                                 die("Invalid query!");
                             }
-                            while ($row = $result->fetch_assoc()) {
+                            while ($row = $result) {
                                 echo "<tr>
                                     <td>$row[id]</th>
                                     <td>$row[nome_contr]</td>
@@ -176,9 +175,9 @@
                                     <a class='btn btn-success' href='#'>Editar</a>       
                                   </td>
                                 </tr>";
-                            }
+                            }*/
                             ?>
-                        </tbody>
+                        </tbody> 
                         </tr>
                         </tbody>
                     </table>
