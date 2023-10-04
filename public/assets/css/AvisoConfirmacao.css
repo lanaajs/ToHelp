@@ -18,6 +18,10 @@ main {
     font-family: 'Inter', sans-serif;
 }
 
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Celular ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 450px) {
 img {
     margin-top: 10%;
     width: 30%;
@@ -74,23 +78,66 @@ img {
 
 }
 
+}
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* Tablet ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 @media screen and (min-width: 451px) and (max-width: 800px) {
     img {
-        margin-top: 5%;
-        width: 20%;
+        margin: 3% 0 3% 0;
+        width: 70px;
     }
 
+    
     .card {
         display: inline-block;
         background-color: #535353;
-        padding: 2%;
-        width: 40%;
+        padding: 1%;
+        width: 200px;
         border-radius: 12px;
         font-size: 23px;
         color: white;
+    }
+    
+    .area {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .text {
+        margin-top: 5%;
+        width: 60%;
+        background-color: #E0EDFE;
+        border-radius: 20px;
+        font-size: 20px;
+        padding: 3%;
+    }
+    
+    #gratidao {
+        font-size: 24px;
+        font-weight: 700;
+    }
+    
+    #aguarde {
+        font-size: 19.5px;
+    }
+    
+    .text p {
+        margin: 4%;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    #btnConcluir {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        width: 200px;
+        padding: 1%;
+        background-color: #535353;
+        color: white;
+        border-radius: 20px;
+        font-size: 20px;
+    
     }
 }
 
@@ -100,15 +147,20 @@ img {
 @media screen and (min-width: 801px) {
 
     img {
-        margin-top: 2%;
-        width: 10%;
+        margin: 3% 0 3% 0;
+        width: 100px;
+    }
+
+    .area {
+        display: flex;
+        justify-content: center;
     }
 
     .card {
         display: inline-block;
         background-color: #535353;
-        padding: 1%;
-        width: 35%;
+        padding: 0.5%;
+        width: 300px;
         border-radius: 12px;
         font-size: 23px;
         color: white;
@@ -116,18 +168,18 @@ img {
 
     .text {
         margin-top: 3%;
-        width: 50%;
+        width: 30%;
         background-color: #E0EDFE;
         border-radius: 20px;
         font-size: 20px;
-        padding: 5%;
+        padding: 3%;
     }
 
     #btnConcluir {
-        margin-top: 5%;
+        margin-top: 3%;
         margin-bottom: 10%;
-        width: 35%;
-        padding: 2%;
+        padding: 0.5%;
+        width: 200px;
         background-color: #535353;
         color: white;
         border-radius: 20px;
