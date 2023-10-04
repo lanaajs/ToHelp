@@ -2,15 +2,13 @@
 
 use classes\Database;
 
-session_start();
-
-require_once('../Config.php');
-
-require_once('../vendor/autoload.php');
+require 'Inicializacao.php';
+router();
 
 
 
-$bd = new Database();
+
+//$bd = new Database();
 
 /*try{
     $contratantes = $bd->select("SELECT * FROM infoContratante");

@@ -3,6 +3,9 @@
     "description": "Projeto de TCC",
     "type": "project",
     "autoload": {
+        "files":[
+            "app/router/Router.php"
+        ],
         "psr-4": {
             "app\\": "app/",
             "classes\\": "classes/"
