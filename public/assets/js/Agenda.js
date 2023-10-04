@@ -95,6 +95,7 @@ dias.addEventListener("click", (event) => {
 // Inicializar o calendário
 renderCalendar();
 
+// função para agenda
 function cardSalvar() {
     const card = document.querySelector('.area-bloco');
     const div = document.querySelector('.salvamento');
@@ -102,4 +103,40 @@ function cardSalvar() {
     card.style.display = "flex";
     div.style.display = "none";
 
+}
+
+// função para notificação da agenda do cuidadores
+function notificacao() {
+    Toastify({
+        text: "Caso o horário desejado para cada dia seja diferente, é necessário reservar individualmente.",
+        className: "toast",
+        duration: 3000,
+        newWindow: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #ff0000, #ec5353)",
+
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
+}
+
+// função para agenda do cuidadores
+function btnBloqueado() {
+    const card = document.getElementById('area');
+    const feed = document.getElementById('feed');
+    const btnbloq = document.getElementById('btncontratar_bloq');
+    const btndes = document.getElementById('btncontratar_desbloq');
+
+    btnbloq.style.display = "none";
+    btndes.style.display = "block";
+    feed.style.display = "none";
+    card.style.display = "block";
+
+}
+
+function btnDesbloqueado() {
+    window.location.href = "../views/ConfirmacaoCuidador.html";
 }

@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/agendacuidadores.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-        
-    <link rel="stylesheet" href="../../../public/assets/css/AgendaCuidadores.css">
 
+    <link rel="stylesheet" href="../../../public/assets/css/AgendaCuidadores.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>ToHelp</title>
 </head>
 
@@ -26,7 +25,7 @@
         </div>
     </header>
 
-    <img class="foto_principal" src="IMG/velhacoroca.jpeg" />
+    <img class="foto_principal" src="../../public/assets/img/velhacoroca.jpeg" />
 
     <div class="nome_cuidador">Maria Elizangela</div>
     <div class="local">Camaçari/BA</div>
@@ -42,7 +41,7 @@
 
     <div class="contato">Contato do cuidador</div>
     <div class="caixa_num">
-        <div class="logo"><img src="IMG/whats.png"></div>
+        <div class="logo"><img src="../../public/assets/img/whats.png"></div>
     </div>
 
     <div class="numero">
@@ -85,80 +84,118 @@
 
             <section id="salvar">
                 <label for="horario">Horário</label>
-                <input type="time" name="horario" id="horario">
+                <input type="time" name="horario" id="horario" onclick="notificacao()">
             </section>
 
-            <input type="button" id="btncontratar" onclick="cardSalvar()" value="CONTRATAR">
+            <div id="area">
+                <div id="blocoInfor">
+                    <div id="bloco">
+                        <p id="title">Resumo do Contrato</p>
+
+                        <div class="hor">
+                            <p>Dia: 03-10-2023</p>
+                            <p id="hor1">Transporte:
+                            <div class="valor">A combinar</div>
+                            </p>
+                        </div>
+                        <div class="hor">
+                            <p>Horário: 22-24:00 </p>
+                            <p id="hor2">Valor:
+                            <div class="valor">R$ 128,00 + transporte</div>
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="area-bloco">
+                    <h4>Para quem é o serviço</h4>
+                    <div class="box">
+                        <h3>Nome do dependente 1</h3>
+                        <p>Cadastro: P02300888</p>
+                    </div>
+
+                    <div class="box">
+                        <h3>Nome do dependente 2</h3>
+                        <p>Cadastro: P02300999</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <input type="button" id="btncontratar_bloq" onclick="btnBloqueado()" value="CONTRATAR">
+            <input type="button" id="btncontratar_desbloq" onclick="btnDesbloqueado()" value="CONTRATAR">
         </div>
 
-        <script src="JS/Agenda.js"></script>
+        <script src="../../public/assets/js/Agenda.js"></script>
     </section>
 
-    <div class="avaliacoes">Avaliações do cuidador</div>
-
-    <div class="av">
-        <div class="nota">4.7</div>
-        <ul class="avaliacao" id="nota">
-            <li class="star-icon ativo" data-avaliacao="1"></li>
-            <li class="star-icon" data-avaliacao="2"></li>
-            <li class="star-icon" data-avaliacao="3"></li>
-            <li class="star-icon" data-avaliacao="4"></li>
-            <li class="star-icon" data-avaliacao="5"></li>
-        </ul>
+    <div id="feed">
+        <div class="avaliacoes">Avaliações do cuidador</div>
+        <div class="av">
+            <div class="nota">4.7</div>
+            <ul class="avaliacao" id="nota">
+                <li class="star-icon ativo" data-avaliacao="1"></li>
+                <li class="star-icon" data-avaliacao="2"></li>
+                <li class="star-icon" data-avaliacao="3"></li>
+                <li class="star-icon" data-avaliacao="4"></li>
+                <li class="star-icon" data-avaliacao="5"></li>
+            </ul>
+        </div>
+        <section class="area_av">
+            <div class="av">
+                <ul class="avaliacao1" id="nota">
+                    <li class="star-icon1 ativo" data-avaliacao="1"></li>
+                    <li class="star-icon1" data-avaliacao="2"></li>
+                    <li class="star-icon1" data-avaliacao="3"></li>
+                    <li class="star-icon1" data-avaliacao="4"></li>
+                    <li class="star-icon1" data-avaliacao="5"></li>
+                </ul>
+            </div>
+            <img class="perfil_avaliacao1" src="https://via.placeholder.com/56x56" />
+            <div class="grupo1">
+                <div class="retangulo1">
+                </div>
+                <div class="av_txt1"> Caso o horário desejado
+                    para cada dia seja diferente, é necessário reservar individualmente.</div>
+            </div>
+            <div class="av">
+                <ul class="avaliacao1" id="nota">
+                    <li class="star-icon1 ativo" data-avaliacao="1"></li>
+                    <li class="star-icon1" data-avaliacao="2"></li>
+                    <li class="star-icon1" data-avaliacao="3"></li>
+                    <li class="star-icon1" data-avaliacao="4"></li>
+                    <li class="star-icon1" data-avaliacao="5"></li>
+                </ul>
+            </div>
+            <img class="perfil_avaliacao1" src="https://via.placeholder.com/56x56" />
+            <div class="grupo1">
+                <div class="retangulo1">
+                </div>
+                <div class="av_txt1"> Caso o horário desejado
+                    para cada dia seja diferente, é necessário reservar individualmente.</div>
+            </div>
+            <div class="av">
+                <ul class="avaliacao1" id="nota">
+                    <li class="star-icon1 ativo" data-avaliacao="1"></li>
+                    <li class="star-icon1" data-avaliacao="2"></li>
+                    <li class="star-icon1" data-avaliacao="3"></li>
+                    <li class="star-icon1" data-avaliacao="4"></li>
+                    <li class="star-icon1" data-avaliacao="5"></li>
+                </ul>
+            </div>
+            <img class="perfil_avaliacao1" src="https://via.placeholder.com/56x56" />
+            <div class="grupo1">
+                <div class="retangulo1">
+                </div>
+                <div class="av_txt1"> Caso o horário desejado
+                    para cada dia seja diferente, é necessário reservar individualmente.</div>
+            </div>
+        </section>
     </div>
 
-    <section class="area_av">
-        <div class="av">
-            <ul class="avaliacao1" id="nota">
-                <li class="star-icon1 ativo" data-avaliacao="1"></li>
-                <li class="star-icon1" data-avaliacao="2"></li>
-                <li class="star-icon1" data-avaliacao="3"></li>
-                <li class="star-icon1" data-avaliacao="4"></li>
-                <li class="star-icon1" data-avaliacao="5"></li>
-            </ul>
-        </div>
-
-        <img class="perfil_avaliacao1" src="https://via.placeholder.com/56x56" />
-        <div class="grupo1">
-            <div class="retangulo1">
-            </div>
-            <div class="av_txt1"> Caso o horário desejado
-                para cada dia seja diferente, é necessário reservar individualmente.</div>
-        </div>
-        <div class="av">
-            <ul class="avaliacao1" id="nota">
-                <li class="star-icon1 ativo" data-avaliacao="1"></li>
-                <li class="star-icon1" data-avaliacao="2"></li>
-                <li class="star-icon1" data-avaliacao="3"></li>
-                <li class="star-icon1" data-avaliacao="4"></li>
-                <li class="star-icon1" data-avaliacao="5"></li>
-            </ul>
-        </div>
-        <img class="perfil_avaliacao1" src="https://via.placeholder.com/56x56" />
-        <div class="grupo1">
-            <div class="retangulo1">
-            </div>
-            <div class="av_txt1"> Caso o horário desejado
-                para cada dia seja diferente, é necessário reservar individualmente.</div>
-        </div>
-        <div class="av">
-            <ul class="avaliacao1" id="nota">
-                <li class="star-icon1 ativo" data-avaliacao="1"></li>
-                <li class="star-icon1" data-avaliacao="2"></li>
-                <li class="star-icon1" data-avaliacao="3"></li>
-                <li class="star-icon1" data-avaliacao="4"></li>
-                <li class="star-icon1" data-avaliacao="5"></li>
-            </ul>
-        </div>
-        <img class="perfil_avaliacao1" src="https://via.placeholder.com/56x56" />
-        <div class="grupo1">
-            <div class="retangulo1">
-            </div>
-            <div class="av_txt1"> Caso o horário desejado
-                para cada dia seja diferente, é necessário reservar individualmente.</div>
-        </div>
-    </section>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>

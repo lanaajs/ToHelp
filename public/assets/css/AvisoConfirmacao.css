@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #106FFF;
+    color: #585858;
+}
+
+main {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+img {
+    margin-top: 10%;
+    width: 30%;
+}
+
+.card {
+    display: inline-block;
+    background-color: #535353;
+    padding: 3%;
+    width: 50%;
+    border-radius: 12px;
+    font-size: 23px;
+    color: white;
+}
+
+.area {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    margin-top: 5%;
+    width: 60%;
+    background-color: #E0EDFE;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 5%;
+}
+
+#gratidao {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#aguarde {
+    font-size: 19.5px;
+}
+
+.text p {
+    margin: 4%;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#btnConcluir {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 40%;
+    padding: 2%;
+    background-color: #535353;
+    color: white;
+    border-radius: 20px;
+    font-size: 20px;
+
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Tablet ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 451px) and (max-width: 800px) {
+    img {
+        margin-top: 5%;
+        width: 20%;
+    }
+
+    .card {
+        display: inline-block;
+        background-color: #535353;
+        padding: 2%;
+        width: 40%;
+        border-radius: 12px;
+        font-size: 23px;
+        color: white;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Desktop ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 801px) {
+
+    img {
+        margin-top: 2%;
+        width: 10%;
+    }
+
+    .card {
+        display: inline-block;
+        background-color: #535353;
+        padding: 1%;
+        width: 35%;
+        border-radius: 12px;
+        font-size: 23px;
+        color: white;
+    }
+
+    .text {
+        margin-top: 3%;
+        width: 50%;
+        background-color: #E0EDFE;
+        border-radius: 20px;
+        font-size: 20px;
+        padding: 5%;
+    }
+
+    #btnConcluir {
+        margin-top: 5%;
+        margin-bottom: 10%;
+        width: 35%;
+        padding: 2%;
+        background-color: #535353;
+        color: white;
+        border-radius: 20px;
+        font-size: 20px;
+    }
+}
