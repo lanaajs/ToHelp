@@ -1,4 +1,25 @@
-function analisar(){
+const telefone = document.querySelector("#telefone");
+const cpf = document.querySelector("#cpf");
+
+telefone.addEventListener("keyup", (e) => {
+    
+        const valuesOfInput = e.target.value.replaceAll("-", "");
+
+        if (e.target.value.length < 12) {
+            e.target.value = valuesOfInput.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+        } 
+})
+
+cpf.addEventListener("keyup", (e) => {
+    
+        const valuesOfInput = e.target.value.replaceAll(".", "");
+
+        if (e.target.value.length < 12) {
+            e.target.value = valuesOfInput.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, "$1.$2.$3-$4");
+        }
+})
+
+function analisar() {
     var email = document.getElementById("email");
     var tel = document.getElementById("telefone");
     var cpf = document.getElementById("cpf");
@@ -8,77 +29,20 @@ function analisar(){
     var endereco = document.getElementById("endereco");
     var numero = document.getElementById("numero");
     var complemento = document.getElementById("complemento");
-
-
     var apre = document.getElementById("apresentacao");
+    var info = [email, tel, cpf, estado, cidade, bairro, endereco, numero, complemento, apre];
 
-    
-    if(email.value != "" && tel.value != "" && cpf.value != "" && estado.value != "" && cidade.value != "" && bairro.value != "" && endereco.value != "" && numero.value != "" && complemento.value != "" && apre.value != ""){
+    for (var i = 0; i <= info.length; i++) {
+
+        if (info[i].value == "") {
+            info[i].style.borderColor = 'red'
+        } else {
+            info[i].style.borderColor = 'green';
+        }
+    }
+
+    if (email.value != "" && tel.value != "" && cpf.value != "" && estado.value != "" && cidade.value != "" && bairro.value != "" && endereco.value != "" && numero.value != "" && complemento.value != "" && apre.value != "") {
         window.location = "AnaliseCurriculo.html"
     }
-
-    
-    if(email.value == ""){
-        email.style.borderColor = 'red';
-    }else{
-        email.style.borderColor = 'green';
-    }
-
-
-    if(tel.value == ""){
-        tel.style.borderColor = 'red';
-    }else{
-        tel.style.borderColor = 'green';
-    }
-
-
-    if(cpf.value == ""){
-        cpf.style.borderColor = 'red';
-    }else{
-        cpf.style.borderColor = 'green';
-    }
-
-    if(estado.value == ""){
-        estado.style.borderColor = 'red';
-    }else{
-        estado.style.borderColor = 'green';
-    }
-
-    if(cidade.value == ""){
-        cidade.style.borderColor = 'red';
-    }else{
-        cidade.style.borderColor = 'green';
-    }
-
-    if(bairro.value == ""){
-        bairro.style.borderColor = 'red';
-    }else{
-        bairro.style.borderColor = 'green';
-    }
-
-    if(endereco.value == ""){
-        endereco.style.borderColor = 'red';
-    }else{
-        endereco.style.borderColor = 'green';
-    }
-    
-    if(numero.value == ""){
-        numero.style.borderColor = 'red';
-    }else{
-        numero.style.borderColor = 'green';
-    }
-    
-    if(complemento.value == ""){
-        complemento.style.borderColor = 'red';
-    }else{
-        complemento.style.borderColor = 'green';
-    }
-    
-    if(apre.value == ""){
-        apre.style.borderColor = 'red';
-    }else{
-        apre.style.borderColor = 'green';
-    }
-
 
 }
