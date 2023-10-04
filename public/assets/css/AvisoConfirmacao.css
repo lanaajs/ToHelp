@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 * {
     margin: 0;
     border: 0;
@@ -7,7 +9,7 @@
 body {
     height: 100%;
     width: 100%;
-    background-color: #00AD7F;
+    background-color: #106FFF;
     color: #585858;
 }
 
@@ -43,7 +45,7 @@ img {
 .text {
     margin-top: 5%;
     width: 60%;
-    background-color: #E5F7E7;
+    background-color: #E0EDFE;
     border-radius: 20px;
     font-size: 20px;
     padding: 5%;
@@ -105,7 +107,7 @@ img {
     .text {
         margin-top: 5%;
         width: 60%;
-        background-color: #E5F7E7;
+        background-color: #E0EDFE;
         border-radius: 20px;
         font-size: 20px;
         padding: 3%;
@@ -167,7 +169,7 @@ img {
     .text {
         margin-top: 3%;
         width: 30%;
-        background-color: #E5F7E7;
+        background-color: #E0EDFE;
         border-radius: 20px;
         font-size: 20px;
         padding: 3%;

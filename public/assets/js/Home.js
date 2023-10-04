@@ -4,9 +4,9 @@ function showMenu(){
 
     if(mobileMenu.style.display == 'flex'){
         mobileMenu.style.display = 'none';
-        logo.setAttribute("src", "./IMG/menu.png");
+        logo.setAttribute("src", "../../public/assets/img/menu.png");
     }else{
         mobileMenu.style.display = 'flex';
-        logo.setAttribute("src", "./IMG/close.png");
+        logo.setAttribute("src", "../../public/assets/img/close.png");
     }
 }
