@@ -1,26 +1,7 @@
 <?php
 
-$rotas = [
-
-
-
-
-
+return [
+    '/' => 'Home@index', // quando estiver na página inicial, chamará o método index dentro do controller Home
+    'user/create' => 'User@cadastro', //URIs fixas
+    'user/login' => 'User@login'
 ];
-
-$acao = 'home';
-// verifica se existe ação na query string
-if(isset($_GET['a'])){
-    if(!key_exists($rotas, $_GET['  A'])){
-        $acao = 'home';
-
-    } else{
-        $acao = $_GET['a'];
-    }
-
-
-}
-
-
-
-?>
