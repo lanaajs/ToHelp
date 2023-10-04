@@ -62,73 +62,18 @@ function analise() {
     var endereco = document.getElementById("endereco");
     var numero = document.getElementById("numero");
     var complemento = document.getElementById("complemento");
+    var info = [email, nome, sobrenome, cpf, datanasc, tel, state, endereco, numero, 
+    complemento];
 
-
-    if (email.value == "") {
-        email.style.borderColor = 'red';
-    } else {
-        email.style.borderColor = 'green';
+    for (var i = 0; i <= info.length; i++) {
+           
+        if (info[i].value == "") {
+            info[i].style.borderColor = 'red'
+        } else {
+            info[i].style.borderColor = 'green';
+        }
     }
 
-    if (nome.value == "") {
-        nome.style.borderColor = 'red';
-    } else {
-        nome.style.borderColor = 'green';
-    }
-
-    if (sobrenome.value == "") {
-        sobrenome.style.borderColor = 'red';
-    } else {
-        sobrenome.style.borderColor = 'green';
-    }
-
-    if (cpf.value == "") {
-        cpf.style.borderColor = 'red';
-    } else {
-        cpf.style.borderColor = 'green';
-    }
-
-    if (datanasc.value == "") {
-        datanasc.style.borderColor = 'red';
-    } else {
-        datanasc.style.borderColor = 'green';
-    }
-
-    if (tel.value == "") {
-        tel.style.borderColor = 'red';
-    } else {
-        tel.style.borderColor = 'green';
-    }
-
-    if (state.value == "") {
-        state.style.borderColor = 'red';
-    } else {
-        state.style.borderColor = 'green';
-    }
-
-    if (city.value == "") {
-        city.style.borderColor = 'red';
-    } else {
-        city.style.borderColor = 'green';
-    }
-
-    if (endereco.value == "") {
-        endereco.style.borderColor = 'red';
-    } else {
-        endereco.style.borderColor = 'green';
-    }
-
-    if (numero.value == "") {
-        numero.style.borderColor = 'red';
-    } else {
-        numero.style.borderColor = 'green';
-    }
-
-    if (complemento.value == "") {
-        complemento.style.borderColor = 'red';
-    } else {
-        complemento.style.borderColor = 'green';
-    }
 
     if (email != "" && nome.value != "" && sobrenome.value != "" && cpf.value != "" && datanasc != "" && tel.value != "" && state.value != "" && city.value != "" && endereco.value != "" && numero.value != "" && complemento.value != "") {
         window.location = "ContaContratante.html"
@@ -155,114 +100,18 @@ function analiseDependente() {
     var inputHorario2 = document.getElementById('horario2');
     var inputHorario3 = document.getElementById('horario3');
     var rotina = document.getElementById("rotina");
+    var info = [nome, sobrenome, cpf, datanasc, tel, state, city, endereco, numero,
+    complemento, comorbidades, alergias, medicamento, dia, inputHorario, inputHorario2,
+    inputHorario3, rotina];
 
-   
-    if (nome.value == "") {
-        nome.style.borderColor = 'red';
-    } else {
-        nome.style.borderColor = 'green';
-    }
 
-    if (sobrenome.value == "") {
-        sobrenome.style.borderColor = 'red';
-    } else {
-        sobrenome.style.borderColor = 'green';
-    }
-
-    if (cpf.value == "") {
-        cpf.style.borderColor = 'red';
-    } else {
-        cpf.style.borderColor = 'green';
-    }
-
-    if (datanasc.value == "") {
-        datanasc.style.borderColor = 'red';
-    } else {
-        datanasc.style.borderColor = 'green';
-    }
-
-    if (tel.value == "") {
-        tel.style.borderColor = 'red';
-    } else {
-        tel.style.borderColor = 'green';
-    }
-
-    if (state.value == "") {
-        state.style.borderColor = 'red';
-    } else {
-        state.style.borderColor = 'green';
-    }
-
-    if (city.value == "") {
-        city.style.borderColor = 'red';
-    } else {
-        city.style.borderColor = 'green';
-    }
-
-    if (endereco.value == "") {
-        endereco.style.borderColor = 'red';
-    } else {
-        endereco.style.borderColor = 'green';
-    }
-
-    if (numero.value == "") {
-        numero.style.borderColor = 'red';
-    } else {
-        numero.style.borderColor = 'green';
-    }
-
-    if (complemento.value == "") {
-        complemento.style.borderColor = 'red';
-    } else {
-        complemento.style.borderColor = 'green';
-    }
-
-    if (comorbidades.value == "") {
-        comorbidades.style.borderColor = 'red';
-    } else {
-        comorbidades.style.borderColor = 'green';
-    }
-
-    if (alergias.value == "") {
-        alergias.style.borderColor = 'red';
-    } else {
-        alergias.style.borderColor = 'green';
-    }
-
-    if (medicamento.value == "") {
-        medicamento.style.borderColor = 'red';
-    } else {
-        medicamento.style.borderColor = 'green';
-    }
-
-    if (dia.value == "") {
-        dia.style.borderColor = 'red';
-    } else {
-        dia.style.borderColor = 'green';
-    }
-
-    if (inputHorario.value == "") {
-        inputHorario.style.borderColor = 'red';
-    } else {
-        inputHorario.style.borderColor = 'green';
-    }
-
-    if (inputHorario2.value == "") {
-        inputHorario2.style.borderColor = 'red';
-    } else {
-        inputHorario2.style.borderColor = 'green';
-    }
-
-    if (inputHorario3.value == "") {
-        inputHorario3.style.borderColor = 'red';
-    } else {
-        inputHorario3.style.borderColor = 'green';
-    }
-
-    if (rotina.value == "") {
-        rotina.style.borderColor = 'red';
-    } else {
-        rotina.style.borderColor = 'green';
+    for (var i = 0; i <= info.length; i++) {
+           
+        if (info[i].value == "") {
+            info[i].style.borderColor = 'red'
+        } else {
+            info[i].style.borderColor = 'green';
+        }
     }
 
     if (nome.value != "" && sobrenome.value != "" && cpf.value != "" && datanasc != "" && tel.value != "" && state.value != "" && city.value != "" && endereco.value != "" && numero.value != "" && complemento.value != "" && comorbidades.value != "" && alergias.value != "" && medicamento.value != "" && dia.value != "" && inputHorario.value != "" && inputHorario2.value != "" && inputHorario3.value != "" &&  rotina.value != "") {
@@ -271,26 +120,3 @@ function analiseDependente() {
 
 
 }
-/*
-function addCard() {
-    // Pegar os valores dos inputs
-    const inputNome = document.getElementById("nome");
-  
-    window.localStorage("EditarInfoDependenteFechado.html");
-
-    // Criar o elemento card
-    const card = document.createElement("div");
-    card.classList.add("card");
-  
-    if (
-      inputNome.value !== null &&
-      inputNome.value !== undefined &&
-      inputNome.value !== ""
-    ) {
-      // Adicionar texto e valor dos inputs ao card
-      const card2 = document.createElement("p");
-      card2.innerHTML = card2.value;
-      card.appendChild(card2);
-    }
-  }
-*/
