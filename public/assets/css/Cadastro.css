@@ -145,11 +145,26 @@ input::placeholder{
         font-size: 14px;
     }
 
-    #inputs input {
-        border: 1px solid transparent;
+    input {
+        border: 2px solid transparent;
+        outline: none;
         width: 100%;
         height: 30px;
         border-radius: 5px;
+        padding-left: 2%;
+        font-family: 'Inter', sans-serif;
+    }
+
+    input[type="text"]:focus {
+        border: 2px solid #055CE0;
+    }
+
+    input[type="email"]:focus {
+        border: 2px solid #055CE0;
+    }
+
+    input::placeholder {
+        color: rgb(190, 190, 190);
     }
 
     .input-area {
@@ -310,11 +325,26 @@ input::placeholder{
         font-size: 14px;
     }
 
-    #inputs input {
-        border: 1px solid transparent;
+    input {
+        border: 2px solid transparent;
+        outline: none;
         width: 100%;
         height: 30px;
         border-radius: 5px;
+        padding-left: 2%;
+        font-family: 'Inter', sans-serif;
+    }
+
+    input[type="text"]:focus {
+        border: 2px solid #055CE0;
+    }
+
+    input[type="email"]:focus {
+        border: 2px solid #055CE0;
+    }
+
+    input::placeholder {
+        color: rgb(190, 190, 190);
     }
 
     
@@ -496,11 +526,25 @@ input::placeholder{
         font-size: 14px;
     }
 
-    #inputs input {
+    /* #inputs input {
         border: 1px solid transparent;
         width: 100%;
         height: 30px;
         border-radius: 5px;
+    } */
+
+    .input {
+        border: 2px solid transparent;
+        outline: none;
+        width: 100%;
+        height: 30px;
+        border-radius: 5px;
+        padding-left: 2%;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .input:focus {
+        border: 2px solid #055CE0;
     }
 
     .input-area {

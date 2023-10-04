@@ -11,7 +11,7 @@
 <body>
 
     <div class="titulo">
-        <a href="#"><img id="seta" src="IMG/seta esquerda.png" alt="seta" /></a>
+        <a href="#"><img id="seta" src="../../public/assets/img/seta esquerda.png" alt="seta" /></a>
         <h2>Novo cartão</h2>
     </div>
 
@@ -20,7 +20,7 @@
             <div class="nome-cart-text">
 
             </div>
-            <div class="aproximacao-div"><img class="aproximacao" src="IMG/aproximacao.png"  alt="aproximacao"></div>
+            <div class="aproximacao-div"><img class="aproximacao" src="../../public/assets/img/aproximacao.png"  alt="aproximacao"></div>
         </div>
         <div id="line2">
             <p>Número do Cartão</p>
@@ -41,7 +41,7 @@
                     ***
                 </div>
             </div>
-            <div id="chip"><img src="IMG/flat-color-icons_sim-card-chip.png" alt="chipcartao"></div>
+            <div id="chip"><img src="../../public/assets/img/flat-color-icons_sim-card-chip.png" alt="chipcartao"></div>
         </div>
     </div>
 
@@ -51,7 +51,7 @@
             <div id="inpt">
                 <label for="Nome">Nome</label>
 
-                <div><input type="text" name="nome" id="nome" maxlength="50" placeholder="Digite seu nome" required
+                <div><input type="text" name="nome" id="nome" maxlength="50" placeholder="Digite seu nome" 
 
                 onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.key ==  ' '">
                 </div>
@@ -62,15 +62,15 @@
 
                 <input type="text" name="numcartao" id="numcartao" maxlength="19" placeholder="**** **** **** ****"
 
-                required onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 
-                <img id="imgg" src="IMG/bytesize_creditcard.png" alt="imagemcartao">
+                <img id="imgg" src="../../public/assets/img/bytesize_creditcard.png" alt="imagemcartao">
             </div>
 
             <div id="inpt">
                 <label for="cpf">CPF do Titular</label>
 
-                <div><input type="text" name="cpf" id="cpf" maxlength="14" placeholder="Digite seu CPF" required
+                <div><input type="text" name="cpf" id="cpf" maxlength="14" placeholder="Digite seu CPF" 
 
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                 </div>
@@ -80,7 +80,7 @@
                 <div id="inptfinal">
                     <label for="vencimento">Vencimento</label>
 
-                    <input type="text" name="vencimento" id="vencimento" maxlength="5" placeholder="mm/aa" required
+                    <input type="text" name="vencimento" id="vencimento" maxlength="5" placeholder="mm/aa" 
 
                     onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                 </div>
@@ -94,7 +94,7 @@
                 </div>
             </div>
     </form>
-    <script src="JS/novocartao.js"></script>
+    <script src="../../public/assets/js/novocartao.js"></script>
     <button onclick="analisar()">
         <h3>CONCLUIR</h3>
     </button>

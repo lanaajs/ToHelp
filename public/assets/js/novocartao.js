@@ -79,37 +79,16 @@ function analisar() {
     var cpf = document.getElementById("cpf");
     var vencimento = document.getElementById("vencimento");
     var cvv = document.getElementById("cvv");
+    var info = [nome, numcartao, cpf, vencimento, cvv];
 
-    if (nome.value == "") {
-        nome.style.borderColor = 'red';
-    }else{
-        nome.style.borderColor = 'green';
+    for (var i = 0; i <= info.length; i++) {
+           
+        if (info[i].value == "") {
+            info[i].style.borderColor = 'red'
+        } else {
+            info[i].style.borderColor = 'green';
+        }
     }
-
-    if (numcartao.value == "") {
-        numcartao.style.borderColor = 'red';
-    }else{
-        numcartao.style.borderColor = 'green';
-    }
-
-    if (cpf.value == "") {
-        cpf.style.borderColor = 'red';
-    }else{
-        cpf.style.borderColor = 'green';
-    }
-
-    if (vencimento.value == "") {
-        vencimento.style.borderColor = 'red';
-    }else{
-        vencimento.style.borderColor = 'green';
-    }
-
-    if (cvv.value == "") {
-        cvv.style.borderColor = 'red';
-    }else{
-        cvv.style.borderColor = 'green';
-    }
-
 }
 
 
