@@ -181,16 +181,6 @@ body{
         padding: 0% 1% 0% 1%;
     }
 
-    #perfil{
-        background-color: rgb(187, 187, 187);
-        padding: 0.5%;
-        margin: 2% 1% 2% 4%;
-        border-radius: 50%;
-    }
-    #perfil span{
-        font-size: 40px;
-        color: gray;
-    }
     #nNome{
         font-size: 20px;
         font-weight: bold;
@@ -243,5 +233,68 @@ body{
 
     .icons span{
         font-size: 30px;
+    }
+
+    /*foto de perfil*/
+    .boxfoto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+    
+    .w-100{
+        width: 70px;
+    }
+    
+    .h-100{
+        height: 70px;
+    }
+    
+    .m-2{
+        margin: 12px;
+    }
+    
+    .p-4{
+        padding: 2px;
+    }
+
+    #image-preview{
+        width: 100%;
+        height: 100%;
+    }
+    
+    /**/
+    #form-form{
+        & .image-upload{
+            position: relative;
+            width: 70px;
+            height: 70px;
+            border: 2px solid white;
+            border-radius: 100%;
+            box-shadow: 2px 3px 12px #00000060;
+            overflow: hidden;
+        }
+    
+        & .image-upload img{
+            object-fit: cover;
+        }
+    
+        & .image-upload i{
+            position: absolute;
+            margin: 0 auto;
+            font-size: 70px;
+            color: green;
+        }
+    
+        & #image-field{
+            position: absolute;
+            margin: 0 auto;
+            width: 70px;
+            height: 70px;
+            opacity: 0;
+        }
     }
 }
