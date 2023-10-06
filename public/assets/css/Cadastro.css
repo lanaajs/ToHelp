@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 * {
     margin: 0;
     border: 0;
@@ -194,6 +196,11 @@ input::placeholder{
         font-size: 15px;
         font-weight: bold;
     }
+
+    .toast {
+        width: 80%;
+        font-family: 'Inter';
+    }
 }
 
 /* -Tablet ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -374,6 +381,11 @@ input::placeholder{
         color: white;
         font-size: 15px;
         font-weight: bold;
+    }
+
+    .toast {
+        width: 80%;
+        font-family: 'Inter';
     }
 }
 
@@ -574,6 +586,11 @@ input::placeholder{
         color: white;
         font-size: 15px;
         font-weight: bold;
+    }
+
+    .toast {
+        width: 80%;
+        font-family: 'Inter';
     }
 }
 

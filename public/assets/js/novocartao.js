@@ -43,7 +43,7 @@ numcartao.addEventListener("keyup", (e) => {
 cpf.addEventListener("keyup", (e) => {
     if (e.target.value.length < 14) {
         const valuesOfInput = e.target.value.replaceAll(".", "");
-      
+
         if (e.target.value.length < 12) {
             e.target.value = valuesOfInput.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, "$1.$2.$3-$4");
         }
@@ -82,13 +82,31 @@ function analisar() {
     var info = [nome, numcartao, cpf, vencimento, cvv];
 
     for (var i = 0; i <= info.length; i++) {
-           
+
         if (info[i].value == "") {
-            info[i].style.borderColor = 'red'
+            info[i].style.borderColor = 'red';
         } else {
             info[i].style.borderColor = 'green';
         }
+        
+        if (i == 1) {
+            Toastify({
+                text: "Campo não preenchido",
+                className: "toast",
+                duration: 3000,
+                newWindow: true,
+                gravity: "top", // `top` or `bottom`
+                position: "center", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #ff0000, #ec5353)",
+                    
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
+        }
     }
 }
+
 
 
