@@ -178,3 +178,336 @@ h2{
         font-family: 'Inter';
     }
 }
+
+@media screen and (min-width: 451px) and (max-width: 1150px)
+{
+
+    
+    .titulo {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 5%;
+        margin-top: 10%;
+    }
+
+    #seta {
+        width: 70%;
+    }
+
+    .cartao{
+        background: linear-gradient(to bottom, #055CE0, #6994FF);
+        margin-left: 19.5%;
+        margin-top: 15%;
+        padding-top:5px;
+        width: 60%;
+        height: 25%;
+        border-radius: 10px;
+    }
+
+    .cartao p{
+        font-weight: lighter;
+    }
+
+    #line1{
+        display: flex;
+        margin-top: 8%;
+        margin-left: 5%;
+        justify-content: space-between;
+        font-size: large;
+    }
+
+    .nome-cart-text{
+        margin-top: 1%;
+    }
+
+    .aproximacao{
+        width: 50%;
+        transform: rotate(-90deg);
+    }
+
+    #line2{
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+
+    #line3{
+        display: flex;
+        margin-top: 7%;
+        margin-left: 5%;
+        justify-content: space-between;
+    }
+
+    #cvv{
+        margin-right: 15%;
+    }
+
+    #chip{
+        margin-right: 5%;
+    }
+
+    #inputs{
+        margin-top: 10%;
+        margin-left: 18%;
+        line-height: 35px;
+        
+    }
+
+    input{
+        width: 70%;
+        padding: 3%;
+        border: 2px solid transparent;
+        outline: none;
+        border-radius:5px;
+        color: #585858;
+        background-color:#f9f3f3;
+        box-shadow: 0px 5px 10px #999;
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 3%;
+    }
+
+    #teste{
+        display: flex;
+        flex-direction: column;
+    }
+
+    input[type="text"]:focus{
+        border: 3px solid #055CE0;
+    }
+
+    label{
+        font-family: 'Inter';
+        color: #585858;
+        font-weight: normal; 
+    }
+
+    #cpf-lab{
+        margin-top: 5%;
+    }
+
+    #cart{
+        display: flex;
+    }
+
+    #numcart input{
+        border-radius: 5px 0px 0px 5px;
+        width: 94%;
+        padding: 3%;  
+    }
+
+    #inptfinal{
+        width:42% ;
+    }
+
+    
+    #imgg{
+        position: absolute;
+        right: 23%;
+        margin-top: 6.2%;
+        width: 5%;
+    }
+
+    #final{
+        margin-top: 5%;
+        display: flex;
+    }
+
+    #vencimento2{
+        width: 50%;
+    }
+
+    #cvv2 input{
+        width: 50%;
+        margin-right: 50px;
+    }
+
+    #button{
+        margin-top: 10%;
+        margin-left: 17%;
+        width: 40%;
+        padding: 3%;
+        background-color: #106FFF;
+        color: white;
+        border: none;
+        border-radius: 20px;  
+        box-shadow: 0px 5px 15px #999; 
+    }
+
+    .toast{
+        width: 80%;
+        font-family: 'Inter';
+    }
+}
+
+@media screen and (min-width: 1151px){
+
+    
+    
+    main{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    
+    .titulo {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 5%;
+        margin-top: 3%;
+    }
+
+    #seta {
+        width: 70%;
+    }
+
+    .cartao{
+        background: linear-gradient(to bottom, #055CE0, #6994FF);
+        margin-right: 8%;
+        margin-left: 17%;
+        margin-top: 8.5%;
+        padding-top:5px;
+        width: 35%;
+        height: 25%;
+        border-radius: 10px;
+        
+    }
+
+    .cartao p{
+        font-weight: lighter;
+    }
+
+    #line1{
+        display: flex;
+        margin-top: 8%;
+        margin-left: 5%;
+        justify-content: space-between;
+        font-size: large;
+    }
+
+    .nome-cart-text{
+        margin-top: 1%;
+    }
+
+    .aproximacao{
+        width: 50%;
+        transform: rotate(-90deg);
+    }
+
+    #line2{
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+
+    #line3{
+        display: flex;
+        margin-top: 7%;
+        margin-left: 5%;
+        justify-content: space-between;
+    }
+
+    #cvv{
+        margin-right: 15%;
+    }
+
+    #chip{
+        margin-right: 5%;
+    }
+
+    #inputs{
+        margin-top: 5%;
+        margin-left: 18%;
+        line-height: 35px;
+        width: 120%;
+    }
+
+    input{
+        width: 70%;
+        padding: 3%;
+        border: 2px solid transparent;
+        outline: none;
+        border-radius:5px;
+        color: #585858;
+        background-color:#f9f3f3;
+        box-shadow: 0px 5px 10px #999;
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 3%;
+    }
+
+    #teste{
+        display: flex;
+        flex-direction: column;
+    }
+
+    input[type="text"]:focus{
+        border: 3px solid #055CE0;
+    }
+
+    label{
+        font-family: 'Inter';
+        color: #585858;
+        font-weight: normal; 
+    }
+
+    #cpf-lab{
+        margin-top: 5%;
+    }
+
+    #cart{
+        display: flex;
+    }
+
+    #numcart input{
+        border-radius: 5px 0px 0px 5px;
+        width: 94%;
+        padding: 3%;  
+    }
+
+    #inptfinal{
+        width:42% ;
+    }
+
+    
+    #imgg{
+        position: absolute;
+        right: 57%;
+        margin-top: 3.1%;
+        width: 3%;
+    }
+
+    #final{
+        margin-top: 5%;
+        display: flex;
+    }
+
+    #vencimento2{
+        width: 50%;
+    }
+
+    #cvv2 input{
+        width: 50%;
+        margin-right: 50px;
+    }
+
+    #button{
+        margin-top: 6%;
+        margin-left: 17%;
+        width: 40%;
+        padding: 3%;
+        background-color: #106FFF;
+        color: white;
+        border: none;
+        border-radius: 20px;  
+        box-shadow: 0px 5px 15px #999; 
+    }
+
+    .toast{
+        width: 80%;
+        font-family: 'Inter';
+    }
+}
+
+
