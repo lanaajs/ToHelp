@@ -43,12 +43,12 @@ function logar(){
 
     if(usuario){
     if(cpf.value == '123123-12' && senha.value == '12345678'){
-        window.location = "ContaContratante.html"
+        window.location = "ContaContratante.html";
     }
 
     }else{
         if(cpf.value == '123123-13' && senha.value == '12345679'){
-            window.location = "ContaCuidador.html"
+            window.location = "ContaCuidador.html";
 
         }
     }
