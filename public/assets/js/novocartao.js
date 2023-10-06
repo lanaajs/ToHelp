@@ -108,6 +108,17 @@ function analisar() {
             }).showToast();
         }
     }
+
+    if (
+        nome.value != "" &&
+        nuncartao.value != "" &&
+        cpf.value != "" &&
+        vencimento.value != "" &&
+        cvv.value != "" 
+      ) {
+        window.location = "FormadePagamento.html";
+      }
+
 }
 
 
