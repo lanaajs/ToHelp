@@ -79,7 +79,6 @@ function analisar() {
     var endereco = document.getElementById("endereco");
     var complemento = document.getElementById("complemento");
     var array = [nome, email, tel, dependente, cpf, city, state, number, endereco, complemento];
-    var log = 0;
 
     for (var i = 0; i <= array.length; i++) {
 

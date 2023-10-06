@@ -5,5 +5,4 @@ function contratante(){
     agenda= document.getElementById("agenda").style.display = 'none';
     extratos = document.getElementById("extratos").style.display = 'none';
 
-    
 }
