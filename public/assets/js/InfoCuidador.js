@@ -31,16 +31,19 @@ function analisar() {
     var complemento = document.getElementById("complemento");
     var apre = document.getElementById("apresentacao");
     var info = [email, tel, cpf, estado, cidade, bairro, endereco, numero, complemento, apre];
+    var controller =  false;
+
 
     for (var i = 0; i <= info.length; i++) {
 
         if (info[i].value == "") {
-            info[i].style.borderColor = 'red'
+            info[i].style.borderColor = 'red';
+            controller = true;
         } else {
             info[i].style.borderColor = 'green';
         }
 
-        if (i == 1) {
+        if (controller && i == 1) {
             Toastify({
                 text: "Campo não preenchido",
                 className: "toast",
@@ -55,6 +58,7 @@ function analisar() {
                 },
                 onClick: function () { } // Callback after click
             }).showToast();
+            controller = false;
         }
     }
 

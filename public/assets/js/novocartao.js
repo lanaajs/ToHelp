@@ -80,16 +80,18 @@ function analisar() {
     var vencimento = document.getElementById("vencimento");
     var cvv = document.getElementById("cvv");
     var info = [nome, numcartao, cpf, vencimento, cvv];
+    var controller =  false;
 
     for (var i = 0; i <= info.length; i++) {
 
         if (info[i].value == "") {
             info[i].style.borderColor = 'red';
+            controller = true;
         } else {
             info[i].style.borderColor = 'green';
         }
         
-        if (i == 1) {
+        if (controller && i == 1) {
             Toastify({
                 text: "Campo não preenchido",
                 className: "toast",
