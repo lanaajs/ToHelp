@@ -1,45 +1,9 @@
 function contratante() {
-  document.body.style.backgroundColor = "#106FFF";
-  document.getElementById("form").style.backgroundColor = "#E0EDFE";
-  document.getElementById("h1").style.color = "#0049FF";
-
-  document.getElementById("areaP1").style.color = "#0049FF";
-  document.getElementById("areaP1").style.backgroundColor = "#ECECEC";
-  document.getElementById("areaP2").style.color = "black";
-  document.getElementById("areaP2").style.backgroundColor = "white";
-  document.getElementById("check").style.display = "flex";
-  document.getElementById("check2").style.display = "flex";
-  document.getElementById("checkbox").style.display = "flex";
-  document.getElementById("checkbox2").style.display = "flex";
-  document.getElementById("form").style.height = "100%";
-
-  document.getElementById("dependente").style.display = "inline";
-
-  document.getElementById("btn").style.backgroundColor = "#0049FF";
-
-  alterarFocus("2px solid #055CE0");
+  window.location = '../views/CadastroContratante.html'
 }
 
 function cuidador() {
-  document.body.style.backgroundColor = "#00AD7F";
-  document.getElementById("form").style.backgroundColor = "#E5F7E7";
-  document.getElementById("h1").style.color = "#00AD7F";
-
-  document.getElementById("areaP1").style.color = "black";
-  document.getElementById("areaP1").style.backgroundColor = "white";
-  document.getElementById("areaP2").style.color = "#00AD7F";
-  document.getElementById("areaP2").style.backgroundColor = "#ECECEC";
-  document.getElementById("check").style.display = "none";
-  document.getElementById("check2").style.display = "none";
-  document.getElementById("checkbox").style.display = "none";
-  document.getElementById("checkbox2").style.display = "none";
-  document.getElementById("form").style.height = "50rem";
-
-  document.getElementById("dependente").style.display = "none";
-
-  document.getElementById("btn").style.backgroundColor = "#00AD7F";
-
-  alterarFocus("2px solid #00AD7F");
+  window.location = '../views/CadastroCuidador.html'
 }
 
 function alterarFocus(style) {
