@@ -39,6 +39,23 @@ function analisar() {
         } else {
             info[i].style.borderColor = 'green';
         }
+
+        if (i == 1) {
+            Toastify({
+                text: "Campo não preenchido",
+                className: "toast",
+                duration: 3000,
+                newWindow: true,
+                gravity: "top", // `top` or `bottom`
+                position: "center", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #ff0000, #ec5353)",
+                    
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
+        }
     }
 
     if (email.value != "" && tel.value != "" && cpf.value != "" && estado.value != "" && cidade.value != "" && bairro.value != "" && endereco.value != "" && numero.value != "" && complemento.value != "" && apre.value != "") {

@@ -16,7 +16,7 @@ function contratante() {
     document.getElementById('dependente').style.display = 'inline';
 
     document.getElementById('btn').style.backgroundColor = '#0049FF';
-    
+
     alterarFocus("2px solid #055CE0");
 
 }
@@ -45,7 +45,7 @@ function cuidador() {
 
 }
 
-function alterarFocus(style){
+function alterarFocus(style) {
     const input = document.querySelectorAll('input');
     input.forEach(function (input) {
         input.addEventListener("focus", function () {
@@ -87,6 +87,24 @@ function analisar() {
         } else {
             array[i].style.borderColor = 'green';
         }
+        
+        if (i == 1) {
+            Toastify({
+                text: "Campo não preenchido",
+                className: "toast",
+                duration: 3000,
+                newWindow: true,
+                gravity: "top", // `top` or `bottom`
+                position: "center", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #ff0000, #ec5353)",
+
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
+        }
+
     }
 
     if (nome.value != "" && email.value != "" && tel.value != "" && dependente.value != "" && cpf.value != "" && state.value != "" && city.value != "" && endereco.value != "" && number.value != "" && complemento.value != "") {

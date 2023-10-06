@@ -1,3 +1,23 @@
+const telefone = document.querySelector("#tel");
+const cpf = document.querySelector("#cpf");
+
+telefone.addEventListener("keyup", (e) => {
+
+    const valuesOfInput = e.target.value.replaceAll("-", "");
+
+    if (e.target.value.length < 12) {
+        e.target.value = valuesOfInput.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+    }
+})
+
+cpf.addEventListener("keyup", (e) => {
+
+    const valuesOfInput = e.target.value.replaceAll(".", "");
+
+    if (e.target.value.length < 12) {
+        e.target.value = valuesOfInput.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, "$1.$2.$3-$4");
+    }
+})
 
 function addMedicamento() {
 
@@ -31,7 +51,7 @@ function addMedicamento() {
 
         // Adicionar botão de excluir ao card
         const deleteButton = document.createElement("button");
-        deleteButton.innerHTML="<span class=material-icons>delete</span>"
+        deleteButton.innerHTML = "<span class=material-icons>delete</span>"
         deleteButton.classList.add("deleteButton");
         deleteButton.addEventListener("click", function () {
             cardContainer.removeChild(card);
@@ -62,18 +82,34 @@ function analise() {
     var endereco = document.getElementById("endereco");
     var numero = document.getElementById("numero");
     var complemento = document.getElementById("complemento");
-    var info = [email, nome, sobrenome, cpf, datanasc, tel, state, endereco, numero, 
-    complemento];
+    var info = [email, nome, sobrenome, cpf, datanasc, tel, state, city, endereco, numero, complemento];
 
     for (var i = 0; i <= info.length; i++) {
-           
+
         if (info[i].value == "") {
             info[i].style.borderColor = 'red'
         } else {
             info[i].style.borderColor = 'green';
         }
-    }
 
+        if (i == 1) {
+            Toastify({
+                text: "Campo não preenchido",
+                className: "toast",
+                duration: 3000,
+                newWindow: true,
+                gravity: "top", // `top` or `bottom`
+                position: "center", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #ff0000, #ec5353)",
+                    
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
+        }
+    
+    }
 
     if (email != "" && nome.value != "" && sobrenome.value != "" && cpf.value != "" && datanasc != "" && tel.value != "" && state.value != "" && city.value != "" && endereco.value != "" && numero.value != "" && complemento.value != "") {
         window.location = "ContaContratante.html"
@@ -101,20 +137,39 @@ function analiseDependente() {
     var inputHorario3 = document.getElementById('horario3');
     var rotina = document.getElementById("rotina");
     var info = [nome, sobrenome, cpf, datanasc, tel, state, city, endereco, numero,
-    complemento, comorbidades, alergias, medicamento, dia, inputHorario, inputHorario2,
-    inputHorario3, rotina];
-
+        complemento, comorbidades, alergias, medicamento, dia, inputHorario, inputHorario2,
+        inputHorario3, rotina];
+    var analise = false;
 
     for (var i = 0; i <= info.length; i++) {
-           
+
         if (info[i].value == "") {
+            analise = true;
             info[i].style.borderColor = 'red'
         } else {
             info[i].style.borderColor = 'green';
         }
+
+        if (i == 1) {
+            Toastify({
+                text: "Campo não preenchido",
+                className: "toast",
+                duration: 3000,
+                newWindow: true,
+                gravity: "top", // `top` or `bottom`
+                position: "center", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #ff0000, #ec5353)",
+                    
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
+        }
+    
     }
 
-    if (nome.value != "" && sobrenome.value != "" && cpf.value != "" && datanasc != "" && tel.value != "" && state.value != "" && city.value != "" && endereco.value != "" && numero.value != "" && complemento.value != "" && comorbidades.value != "" && alergias.value != "" && medicamento.value != "" && dia.value != "" && inputHorario.value != "" && inputHorario2.value != "" && inputHorario3.value != "" &&  rotina.value != "") {
+    if (nome.value != "" && sobrenome.value != "" && cpf.value != "" && datanasc != "" && tel.value != "" && state.value != "" && city.value != "" && endereco.value != "" && numero.value != "" && complemento.value != "" && comorbidades.value != "" && alergias.value != "" && medicamento.value != "" && dia.value != "" && inputHorario.value != "" && inputHorario2.value != "" && inputHorario3.value != "" && rotina.value != "") {
         window.location = "ContaContratante.html"
     }
 
