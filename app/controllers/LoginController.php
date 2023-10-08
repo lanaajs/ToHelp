@@ -8,7 +8,7 @@ class LoginControllerr
     function indexctr()
     {
         echo 'oi';
-        require '../app/views/LoginContratante.php';
+        require '/app/views/LoginContratante.php';
     }
     
     function indexcuid()

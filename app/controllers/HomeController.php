@@ -8,7 +8,7 @@ class HomeController
 
     function index()
     {
-        require 'app/views/Index.php';
+        require 'app/views/Index.html';
     }
     
 }

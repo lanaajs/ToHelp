@@ -3,7 +3,7 @@
     require __DIR__ . '/../../vendor/autoload.php';
 
     $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
-        $r->addRoute('GET', '/', HomeController::class.'@index');
+        $r->addRoute('GET', '', HomeController::class.'@index');
         $r->addRoute('GET', '/login', LoginController::class.'@indexctr');
         $r->addRoute(['GET', 'POST'], '/login/cuidador', LoginController::class.'@indexcuid');
         $r->addRoute(['GET', 'POST'], '/cadastro/contratante', CadastroController::class.'@indexctr');
