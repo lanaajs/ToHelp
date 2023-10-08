@@ -1,46 +1,26 @@
 <?php
 
+$httpMethod = $_SERVER['REQUEST_METHOD'];
+$uri = $_SERVER['REQUEST_URI'];
 
-function routes(){
-    return require 'routes.php';
+if (false !== $pos = strpos($uri, '?')) {
+    $uri = substr($uri, 0, $pos);
 }
+$uri = rawurldecode($uri);
 
-function matchExactUri($uri, $routes){
-    if(array_key_exists($uri, $routes)){
-        return [];
-    }
-    return [];
+
+$routeInfo = $dispatcher->dispatch($httpMethod, $uri);
+switch ($routeInfo[0]) {
+    case FastRoute\Dispatcher::NOT_FOUND:
+        echo 'Erro, página não encontrada';
+        break;
+    case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
+        $allowedMethods = $routeInfo[1];
+        echo 'sem permissão';
+        break;
+    case FastRoute\Dispatcher::FOUND:
+        $handler = $routeInfo[1];
+        $vars = $routeInfo[2];
+ 
+        break;
 }
-
-
-function router(){
-    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    //echo $uri;
-
-    $routes = routes();
-    $matchedUri = matchExactUri($uri, $routes);
-   
-}
-
-
-
-
-
-
-
-/*$acao = 'home';
-// verifica se existe ação na query string
-if(isset($_GET['a'])){
-    if(!key_exists($rotas, $_GET['  A'])){
-        $acao = 'home';
-
-    } else{
-        $acao = $_GET['a'];
-    }
-
-
-}*/
-
-
-
-?>
