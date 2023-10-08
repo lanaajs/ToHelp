@@ -10,7 +10,11 @@ use Exception;
 
         // se liga ao banco de dados
         private function ligar(){
-            require '../Config.php';           
+            $host = "localhost";
+            $user = "root";
+            $password = "2004";
+            $db = "tohelpdb";  
+         
             $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
             try {
                 $this->ligacao = new \PDO($dsn, $user, $password); // Use o namespace completo \PDO

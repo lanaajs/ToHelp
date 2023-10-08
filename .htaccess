@@ -1,0 +1,12 @@
+<!-- <IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} ^/index\.php$ [NC]
+RewriteRule ^(.*)$ /app/layouts/index.php [L]
+</IfModule>
+
+<IfModule mod_rewrite.c> # Redireciona domínio com o www para endereço sem o www
+    RewriteEngine on
+    RewriteCond %{HTTP_HOST} ^www.meusite.com [NC]
+    RewriteRule ^(.*)$ http://meusite.com/$1 [L,R=301]
+</IfModule>  -->

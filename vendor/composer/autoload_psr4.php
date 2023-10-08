@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'classes\\' => array($baseDir . '/classes'),
-    'app\\' => array($baseDir . '/app'),
+    'app\\controllers\\' => array($baseDir . '/app/controllers'),
+    'Tohelp\\Tohelp\\' => array($baseDir . '/src'),
+    'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
 );

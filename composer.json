@@ -1,15 +1,14 @@
 {
-    "name": "tcc/to-help",
-    "description": "Projeto de TCC",
+    "name": "tohelp/tohelp",
+    "description": "TCC ToHelp",
     "type": "project",
     "autoload": {
-        "files":[
-            "app/router/Router.php"
-        ],
         "psr-4": {
-            "app\\": "app/",
-            "classes\\": "classes/"
+            "Tohelp\\Tohelp\\": "src/",
+            "app\\controllers\\": "app/controllers/"
         }
     },
-    "require": {}
+    "require": {
+        "nikic/fast-route": "^1.3"
+    }
 }
