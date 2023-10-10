@@ -161,11 +161,11 @@ h2{
         margin-right: 50px;
     }
 
-    button{
+    #button{
         margin-top: 10%;
         margin-left: 12%;
         width: 53%;
-        padding: 3%;
+        padding: 2.5%;
         background-color: #106FFF;
         color: white;
         border: none;
@@ -327,7 +327,7 @@ h2{
         margin-top: 10%;
         margin-left: 17%;
         width: 40%;
-        padding: 3%;
+        padding: 2.5%;
         background-color: #106FFF;
         color: white;
         border: none;
@@ -496,7 +496,7 @@ h2{
         margin-top: 6%;
         margin-left: 17%;
         width: 40%;
-        padding: 3%;
+        padding: 2.5%;
         background-color: #106FFF;
         color: white;
         border: none;
