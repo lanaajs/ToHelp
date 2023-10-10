@@ -8,8 +8,8 @@ if (false !== $pos = strpos($uri, '?')) {
 }
 $uri = rawurldecode($uri);
 
-var_dump($uri);
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
+//var_dump($_SERVER['REQUEST_URI']);
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
         echo 'Erro, página não encontrada';
@@ -21,7 +21,13 @@ switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
- 
-     
+        // ... call $handler with $vars
+    
+        //require $handler;
+        list($class, $method)=explode('@', $handler);
+        call_user_func_array([new $class, $method], $vars);
         break;
 }
+
+
+

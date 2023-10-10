@@ -2,19 +2,17 @@
 
 namespace app\controllers;
 
-class LoginControllerr 
+class LoginController
 {
 
     function indexctr()
     {
-        echo 'oi';
-        require '/app/views/LoginContratante.php';
+        require 'app/layouts/LoginContratante.html';
     }
-    
+
     function indexcuid()
     {
-        echo 'ooi';
-        require 'app/views/LoginCuidador.html';
+        require 'app/layouts/LoginCuidador.html';
     }
     
 }
