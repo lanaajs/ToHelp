@@ -9,7 +9,8 @@ body {
     background-color: #E0EDFE;
 }
 
-@media screen and (max-width: 451px) {
+/* CELULAR */
+@media screen and (max-width: 450px) {
 
     main{
         display: flex;
@@ -23,6 +24,12 @@ body {
         justify-content: space-between;
         margin-right: 5%;
         margin-top: 10%;
+    }
+
+    #text{
+        position: absolute;
+        margin-top: 14%;
+        margin-left: 40%;
     }
 
     #bandcartao{
@@ -39,11 +46,11 @@ body {
 
     .caixa-op{
         margin-top: 15%;
-        margin-left: 5%;
+        margin-left: 9%;
         background-color: #106FFF;
         border-radius: 10px;
-        width: 90%;
-        height: 34%;
+        width: 80%;
+        height: 30%;
     }
 
     label{
@@ -104,17 +111,19 @@ body {
     }
 
     .detalhespag{
-        width: 90%;
+        width: 80%;
         padding: 1%;
         margin-top: 15%;
-        margin-left: 4%;
+        margin-left: 8%;
         background-color: #F8F8F8;
         border-radius: 10px;
         box-shadow: 0px 5px 15px #999;
+        font-size: 14px;
     }
 
     button{
-        margin-top: 20%;
+        margin-top: 15%;
+        margin-bottom: 5%;
         margin-left: 23%;
         width: 53%;
         padding: 2.5%;
@@ -174,6 +183,7 @@ body {
     }
 }
 
+/* TABLET */
 @media screen and (min-width: 451px) and (max-width: 1150px)
 {
 
@@ -189,6 +199,12 @@ body {
         justify-content: space-between;
         margin-right: 5%;
         margin-top: 10%;
+    }
+
+    #text{
+        position: absolute;
+        margin-top: 12%;
+        margin-left: 65%;
     }
 
     #bandcartao{
@@ -280,8 +296,9 @@ body {
     }
 
     button{
-        margin-top: 10%;
-        margin-left: 35.5%;
+        margin-top: 15%;
+        margin-bottom: 5%;
+        margin-left: 38%;
         width: 25%;
         padding: 2.5%;
         background-color: #106FFF;
@@ -340,6 +357,7 @@ body {
     }
 }
 
+/* DESKTOP */
 @media screen and (min-width: 1151px){
 
     html{
@@ -359,13 +377,18 @@ body {
     }
 
     .titulo {
-        width: 49%;
+        width: 18%;
         font-weight: bold;
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-right: 5%;
-        margin-top:3%;
+        margin-top: 2%;
+    }
+
+    #text{
+        margin-top: 2%;
+        margin-left: 2%;
     }
 
     #bandcartao{
@@ -381,10 +404,9 @@ body {
     }
 
     .caixa-op{
-        margin-top: 3%;
         background-color: #106FFF;
         border-radius: 0px 20px 20px 0px;
-        width: 50%;
+        width: 45%;
     }
 
     label{
@@ -445,10 +467,13 @@ body {
     } 
 
     .coluna2{
+        position: absolute;
+        margin-top: 5%;
+        margin-left: 50%;
         display: flex;
         flex-direction: column;
         margin-right: 15%;
-        height: 100%;
+        height: 85%;
     }
 
     .detalhespag{
@@ -471,11 +496,14 @@ body {
         margin-top: 10%;
         margin-left: 85%;
         padding: 4%;
-        background-color: #106FFF;
+        background-color: gray;
         color: white;
         border: none;
         border-radius: 20px;  
         box-shadow: 0px 5px 15px #999; 
+        position: absolute;
+        margin-top: 140%;
+        margin-left: 85%;
     }
 
     #details{
