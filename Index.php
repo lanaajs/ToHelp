@@ -1,13 +1,10 @@
 <?php
 
-    use app\controllers\HomeController;
+use app\controllers\HomeController;
 
-    //require __DIR__.'/vendor/autoload.php';
-    require __DIR__.'/app/router/Routes.php';
-    
-    //require 'app/views/Index.html';
-    $homeController = new HomeController;
-    $homeController->index();
-    
-    ?>
-    
+    require __DIR__. '/vendor/autoload.php';
+    require 'app/router/Routes.php';
+
+
+    //$teste = new HomeController();
+    //$teste->index();

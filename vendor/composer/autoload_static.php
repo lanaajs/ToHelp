@@ -15,10 +15,6 @@ class ComposerStaticInit1d542187516b1be49e6aac35cd62f1c6
         array (
             'app\\controllers\\' => 16,
         ),
-        'T' => 
-        array (
-            'Tohelp\\Tohelp\\' => 14,
-        ),
         'F' => 
         array (
             'FastRoute\\' => 10,
@@ -29,10 +25,6 @@ class ComposerStaticInit1d542187516b1be49e6aac35cd62f1c6
         'app\\controllers\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/controllers',
-        ),
-        'Tohelp\\Tohelp\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
         'FastRoute\\' => 
         array (

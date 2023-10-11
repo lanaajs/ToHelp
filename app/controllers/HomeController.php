@@ -5,10 +5,9 @@ namespace app\controllers;
 class HomeController 
 {
 
-
     function index()
     {
-        require 'app/views/Index.html';
+        require 'app/layouts/index.html';
     }
     
 }
