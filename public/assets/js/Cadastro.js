@@ -1,9 +1,9 @@
 function contratante() {
-  window.location = '../views/CadastroContratante.html'
+  window.location = '/cadastro/contratante'
 }
 
 function cuidador() {
-  window.location = '../views/CadastroCuidador.html'
+  window.location = '/cadastro/cuidador'
 }
 
 function alterarFocus(style) {
@@ -53,47 +53,38 @@ function analisar() {
   ];
   var controller = false;
 
-  for (var i = 0; i <= array.length; i++) {
-    if (array[i].value == "") {
-      array[i].style.borderColor = "red";
-      controller = true;
-    } else {
-      array[i].style.borderColor = "green";
-    }
+  if (nome.value != "" && email.value != "" && tel.value != "" && dependente.value != "" && cpf.value != "" && state.value != "" && city.value != "" && endereco.value != "" && number.value != "" && complemento.value != "") {
+    window.location = "/login/contratante";
+  } else {
+    for (var i = 0; i <= array.length; i++) {
+      if (array[i].value == "") {
+        array[i].style.borderColor = "red";
+        controller = true;
+      } else {
+        array[i].style.borderColor = "green";
+      }
 
-    if (controller && i==1) {
-      Toastify({
-        text: "Campo não preenchido",
-        className: "toast",
-        duration: 3000,
-        newWindow: true,
-        gravity: "top", // `top` or `bottom`
-        position: "center", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-          background: "linear-gradient(to right, #ff0000, #ec5353)",
-        },
-        onClick: function () {}, // Callback after click
-      }).showToast();
-      controller = false;
+      if (controller && i == 1) {
+        Toastify({
+          text: "Campo não preenchido",
+          className: "toast",
+          duration: 3000,
+          newWindow: true,
+          gravity: "top", // `top` or `bottom`
+          position: "center", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #ff0000, #ec5353)",
+          },
+          onClick: function () { }, // Callback after click
+        }).showToast();
+        controller = false;
+      }
     }
-  }
-
-  if (
-    nome.value != "" &&
-    email.value != "" &&
-    tel.value != "" &&
-    dependente.value != "" &&
-    cpf.value != "" &&
-    state.value != "" &&
-    city.value != "" &&
-    endereco.value != "" &&
-    number.value != "" &&
-    complemento.value != ""
-  ) {
-    window.location = "Login.html";
   }
 }
+
+
 
 const telefone = document.querySelector("#tel");
 const cpf = document.querySelector("#cpf");

@@ -32,7 +32,7 @@
         </div>
 
         <div id="btnEntrar">
-            <a href="../views/LoginContratante.html" class="linkEntrar2">LOGIN</a>
+            <a href="/login/contratante" class="linkEntrar2">LOGIN</a>
         </div>
 
         <div id="gaveta">

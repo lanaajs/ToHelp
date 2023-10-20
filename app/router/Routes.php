@@ -1,27 +1,112 @@
 <?php
 
-
-use app\controllers\LoginController;
+use app\controllers\AgendaController;
+use app\controllers\AnaliseCurriculoController;
+use app\controllers\BuscarCuidController;
+use app\controllers\CadastroController;
+use app\controllers\CarregController;
+use app\controllers\ConfirmacaoCuidController;
+use app\controller\ContasController;
+use app\controller\ContratosController;
+use app\controller\DashboardController;
+use app\controller\EditInfoDepController;
+use app\controller\ExtratosController;
+use app\controller\FormaPagController;
 use app\controllers\HomeController;
-
-//require_once __DIR__ .'/Routing.php';
+use app\controller\InformacoesController;
+use app\controllers\LoginController;
+use app\controller\NovoCartaoController;
+use app\controller\RelatoriosController;
+use FastRoute\RouteCollector;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
+
+    //Rotas para as página de agenda do cuidador e do contratante.
+    $r->addGroup('/agenda', function (RouteCollector $r) {
+        $r->addRoute(['GET', 'POST'], '/contratante', AgendaController::class . '@indexAgendaCtr');
+        $r->addRoute(['GET', 'POST'], '/cuidador', AgendaController::class . '@indexAgendaCuid');
+    });
+
+    //Rota para a página de análise de currículo do cuidador.
+    $r->addRoute('GET', '/analisecurriculo', AnaliseCurriculoController::class . '@indexCurriculo');
+
+    //Rota para a página de buscar cuidadores.
+    $r->addRoute('GET', '/buscarcuidadores', BuscarCuidController::class . '@indexBuscarCuid');
+
+    //Rotas para as páginas de cadastros de informação tanto dos contrarantes quanto dos cuidadores.
+    $r->addGroup('/cadastro', function (RouteCollector $r) {
+        $r->addRoute(['GET', 'POST'], '/dependente', CadastroController::class . '@indexdep');
+        $r->addRoute(['GET', 'POST'], '/contratante', CadastroController::class . '@indexctr');
+        $r->addRoute(['GET', 'POST'], '/cuidador', CadastroController::class . '@indexcuid');
+    });
+
+    //Rotas para as páginas de carregamento.
+    $r->addGroup('/carregamento', function (RouteCollector $r) {
+        $r->addRoute('GET', '/contratante', CarregController::class . '@indexCarregCntr');
+        $r->addRoute('GET', '/cuidador', CarregController::class . '@indexCarregCuid');
+    });
+
+    //Rota para confirmação do cuidador.
+    $r->addRoute('GET', '/confirmacaocuidador', ConfirmacaoCuidController::class . '@indexConfirmacao');
+
+    //Rotas para as contas dos contratantes e dos cuidadores.
+    $r->addGroup('/conta', function (RouteCollector $r) {
+        $r->addRoute('GET', '/contratante', ContasController::class . '@indexContaCntr');
+        $r->addRoute('GET', '/cuidador', ContasController::class . '@indexContaCuid');
+    });
+
+    //Rotas para as páginas de contrato do contratante e cuidador.
+    $r->addGroup('/contratos', function (RouteCollector $r) {
+        $r->addRoute(['GET', 'POST'], '/contratante', ContratosController::class . '@indexContratoCntr');
+        $r->addRoute(['GET', 'POST'], '/cuidador', ContratosController::class . '@indexContratoCuid');
+    });
+
+    //Rota para a página do Dashboard.
+    $r->addRoute('GET', '/monitoramento', DashboardController::class . '@indexDashboard');
+
+    //Rotas para as páginas de editar informações dos dependentes.
+    $r->addGroup('/editarinformacoes/dependente', function (RouteCollector $r) {
+        $r->addRoute(['GET', 'POST'], '/aberto', EditInfoDepController::class . '@indexEditInfoDepAberto');
+        $r->addRoute('GET', '/', EditInfoDepController::class . '@indexEditInfoDepFechado');
+    });
+
+    //Rotas para as páginas de extrato do contratante e cuidador.
+    $r->addGroup('/extrato', function (RouteCollector $r) {
+        $r->addRoute('GET', '/contratante', ExtratosController::class . '@indexExtratoCntr');
+        $r->addRoute('GET', '/cuidador', ExtratosController::class . '@indexExtratoCuid');
+    });
+
+    //Rota para as formas de pagamento.
+    $r->addRoute('GET', '/formapagamento', FormaPagController::class . '@indexPagamento');
+
+    //Rota para a página principal da aplicação.
     $r->addRoute('GET', '/', HomeController::class . '@index');
-    $r->addRoute('GET', '/login/contratante', LoginController::class . '@indexctr');
-    $r->addRoute('GET', '/login/cuidador', LoginController::class . '@indexcuid');
-    // $r->addRoute(['GET', 'POST'], '/login/cuidador', LoginController::class . '@indexcuid');
-    // $r->addRoute(['GET', 'POST'], '/cadastro/contratante', CadastroController::class . '@indexctr');
-    // $r->addRoute(['GET', 'POST'], '/cadastro/cuidador', CadastroController::class . '@indexcuid');
 
+    //Rotas para as páginas de informaçao tanto do cuidador quanto do usuário.
+    $r->addGroup('/info', function (RouteCollector $r) {
+        $r->addRoute(['GET', 'POST'], '/contratante', InformacoesController::class . '@indexInfoCntr');
+        $r->addRoute(['GET', 'POST'], '/cuidador', InformacoesController::class . '@indexInfoCuid');
+    });
 
+    //Rotas para os logins tanto dos contratantes quanto dos cuidadores.
+    $r->addGroup('/login', function (RouteCollector $r) {
+        $r->addRoute(['GET', 'POST'], '/contratante', LoginController::class . '@indexctr');
+        $r->addRoute(['GET', 'POST'], '/cuidador', LoginController::class . '@indexcuid');
+    });
 
-    // {id} must be a number (\d+)
-    // $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
-    // The /{title} suffix is optional
-    //$r->addRoute('GET', '/articles/{id:\d+}[/{title}]', 'get_article_handler');
+    //Rota para a página de novo cartao.
+    $r->addRoute(['GET', 'POST'], '/novocartao', NovoCartaoController::class . '@indexNovoCart');
+
+    //Rotas para as páginas de relatório (aberto e fechado) dos contratantes e cuidadores.
+    $r->addGroup('/relatorio', function (RouteCollector $r) {
+        $r->addRoute('GET', '/contratante', RelatoriosController::class . '@indexRelatCntrFechado');
+        $r->addRoute(['GET', 'POST'], '/contratante/aberto', RelatoriosController::class . '@indexRelatCntrAberto');
+        $r->addRoute('GET', '/cuidador', RelatoriosController::class . '@indexRelatCuidFechado');
+        $r->addRoute(['GET', 'POST'], '/cuidador/aberto', RelatoriosController::class . '@indexRelatCuidAberto');
+    });
+
 });
 
-require 'Router.php';
+require 'Router.php'; 

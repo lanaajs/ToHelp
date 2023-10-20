@@ -78,7 +78,7 @@
             </div>
 
             <div id="textC">
-                <p>Ainda não possui Login? <a href="../views/CadastroCuidador.html" id="textCL">Cadastre-se</a></p> 
+                <p>Ainda não possui Login? <a href="/cadastro/cuidador" id="textCL">Cadastre-se</a></p> 
             </div>
             
         </section>

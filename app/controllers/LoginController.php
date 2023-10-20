@@ -7,12 +7,12 @@ class LoginController
 
     function indexctr()
     {
-        require 'app/layouts/LoginContratante.html';
+        require 'app/layouts/LoginContratante.php';
     }
 
     function indexcuid()
     {
-        require 'app/layouts/LoginCuidador.html';
+        require 'app/layouts/LoginCuidador.php';
     }
     
 }

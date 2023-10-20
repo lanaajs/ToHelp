@@ -694,6 +694,7 @@ html{
         background-image: url("../IMG/bannerHome3.png");
         background-size: cover;
         background-repeat: no-repeat ;
+        background-position: right 40%;
         width: 100%;
         height: 750px;  
         font-family: 'Archivo Black', sans-serif;

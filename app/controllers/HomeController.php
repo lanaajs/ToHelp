@@ -7,7 +7,7 @@ class HomeController
 
     function index()
     {
-        require 'app/layouts/index.html';
+        require 'app/layouts/index.php';
     }
     
 }
