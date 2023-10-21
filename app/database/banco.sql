@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS infoDependente (
   dtnasc_dep DATE NOT NULL,
   telefone_dep VARCHAR(15) NULL UNIQUE,
   parentesco ENUM("Pai", "Mãe", "Filho(a)", "Irmão", "Irmã", "Neto(a)", "Tio", "Tia", "Sobrinho(a)", "Bisneto(a)", "Primo(a)", "Sobrinho(a)-neto(a)", "Trineto(a)", "Sobrinho(a)-bisneto(a)", "Sogro(a)", "Genro", "Nora", "Padrasto", "Madrasta", "Enteado(a)") NOT NULL,
-  id_contr_FK INT NOT NULL,
+  id_contr_FK INT,
   dt_cadastro_dep DATETIME NOT NULL,
   PRIMARY KEY(id, CPF_dep, id_contr_FK),
   FOREIGN KEY(id_contr_FK) REFERENCES infoContratante(id)
