@@ -139,7 +139,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th >#</th>
                                 <th>Nome</th>
                                 <th>Sobrenome</th>
                                 <th>CPF</th>
@@ -158,7 +158,7 @@
 
                             use classes\Database;
 
-                            require_once "classes/Database.php";
+                            require_once "../../classes/Database.php";
 
                             // Criar uma conexão com o banco de dados
                             $database = new Database();
@@ -187,7 +187,7 @@
                                         </td>
                                     </tr>";
                             }
-
+                            $database->desligar();
 
                             ?>
                         </tbody>
@@ -200,7 +200,7 @@
 
         <!-- **************** ENDEREÇOS DOS CONTRATANTES **************** -->
 
-        <div id="endcontr" class="infos">
+        <div id="endcontr" class="infos endcont">
             <div class="container mt-3">
                 <div class="datagrid">
                     <table class="table table-bordered">
@@ -220,7 +220,7 @@
                         <tbody>
                             <?php
 
-                            require_once "classes/Database.php";
+                            require_once "../../classes/Database.php";
 
                             // Criar uma conexão com o banco de dados
                             $database = new Database();
@@ -250,6 +250,7 @@
                                     </tr>";
                             }
 
+                            $database->desligar();
 
                             ?>
                         </tbody>
@@ -287,7 +288,7 @@
                         <tbody>
                             <?php
 
-                            require_once "classes/Database.php";
+                            require_once "../../classes/Database.php";
 
                             // Cria uma conexão com o banco de dados
                             $database = new Database();
@@ -319,6 +320,8 @@
                                         </td>
                                     </tr>";
                             }
+
+                            $database->desligar();
 
                             ?>
                         </tbody>
@@ -418,7 +421,7 @@
                         <tbody>
                             <?php
 
-                            require_once "classes/Database.php";
+                            require_once "../../classes/Database.php";
 
                             // Cria uma conexão com o banco de dados
                             $database = new Database();
@@ -473,7 +476,7 @@
                         <tbody>
                             <?php
 
-                            require_once "classes/Database.php";
+                            require_once "../../classes/Database.php";
 
                             // Cria uma conexão com o banco de dados
                             $database = new Database();
@@ -535,7 +538,7 @@
                             <?php
                             //use classes\Database;
 
-                            require_once "classes/Database.php";
+                            require_once "../../classes/Database.php";
 
                             // Criar uma conexão com o banco de dados
                             $database = new Database();

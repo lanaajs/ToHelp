@@ -1,7 +1,3 @@
-function dashboard(){
-    document.getElementById('infodash').style.display = 'block';  
-    document.getElementById('infocontr').style.display = 'none';  
-}
 
 function contratantes(){
     document.getElementById('opcao1').style.display = 'block';  
@@ -21,25 +17,101 @@ function cuidadores(){
     document.getElementById('opcao1').style.display = 'none';  
 }
 
-function infopescontr(){
-    
+function dashboard(){
+    document.getElementById('infodash').style.display = 'block';  
+    document.getElementById('endcontr').style.display = 'none';
+    document.getElementById('infocontr').style.display = 'none'; 
+    document.getElementById('infodep').style.display = 'none';
+    document.getElementById('contratos').style.display = 'none';
+    document.getElementById('depcontr').style.display = 'none';
+    document.getElementById('extrcontr').style.display = 'none';
+    document.getElementById('metpagcontr').style.display = 'none';
+
+
+
 }
 
-function enderecocontr(){
+function infopescontr(){
+    document.getElementById('infocontr').style.display = 'block';
+    document.getElementById('endcontr').style.display = 'none';
+    document.getElementById('infodash').style.display = 'none';  
+    document.getElementById('infodep').style.display = 'none';
+    document.getElementById('contratos').style.display = 'none';
+    document.getElementById('depcontr').style.display = 'none';
+    document.getElementById('extrcontr').style.display = 'none';
+    document.getElementById('metpagcontr').style.display = 'none';
+}
 
-    
+function endcontr(){
+    document.getElementById('endcontr').style.display = 'block';
+    document.getElementById('contratos').style.display = 'none';
+    document.getElementById('infocontr').style.display = 'none';
+    document.getElementById('infodash').style.display = 'none';  
+    document.getElementById('infodep').style.display = 'none';
+    document.getElementById('depcontr').style.display = 'none';
+    document.getElementById('extrcontr').style.display = 'none';
+    document.getElementById('metpagcontr').style.display = 'none';
+}
+
+
+function infopesdep(){
+    document.getElementById('infodep').style.display = 'block'; 
+    document.getElementById('infodash').style.display = 'none';  
+    document.getElementById('infocontr').style.display = 'none';
+    document.getElementById('endcontr').style.display = 'none';
+    document.getElementById('contratos').style.display = 'none';
+    document.getElementById('depcontr').style.display = 'none';
+    document.getElementById('extrcontr').style.display = 'none';
+    document.getElementById('metpagcontr').style.display = 'none';
 }
 
 function contratos(){
-
-    
+    document.getElementById('infodash').style.display = 'none';  
+    document.getElementById('endcontr').style.display = 'none'; 
+    document.getElementById('contratos').style.display = 'block';
+    document.getElementById('extrcontr').style.display = 'none';
+    document.getElementById('infodep').style.display = 'none'; 
+    document.getElementById('infocontr').style.display = 'none';
+    document.getElementById('depcontr').style.display = 'none';
+    document.getElementById('metpagcontr').style.display = 'none';
 }
 
-function infopesdep(){
+function depencontr(){
+    document.getElementById('depencontr').style.display = 'block';
+    document.getElementById('extrcontr').style.display = 'none';
+    document.getElementById('contratos').style.display = 'none';
+    document.getElementById('infodep').style.display = 'none'; 
+    document.getElementById('infodash').style.display = 'none';  
+    document.getElementById('infocontr').style.display = 'none';
+    document.getElementById('endcontr').style.display = 'none';  
+    document.getElementById('metpagcontr').style.display = 'none';
+ 
+}
+
+function extratos(){
+    document.getElementById('infodash').style.display = 'none';  
+    document.getElementById('extrcontr').style.display = 'block';
+    document.getElementById('depcontr').style.display = 'none';
+    document.getElementById('contratos').style.display = 'none';
+    document.getElementById('infodep').style.display = 'none'; 
+   
+    document.getElementById('infocontr').style.display = 'none';
+    document.getElementById('endcontr').style.display = 'none';   
+    document.getElementById('metpagcontr').style.display = 'none';
 
 }
 
-function enderecodep(){
+function metpagcontr(){
+    document.getElementById('metpagcontr').style.display = 'block';
+    document.getElementById('infodash').style.display = 'none';  
+    document.getElementById('extrcontr').style.display = 'none';
+    document.getElementById('depcontr').style.display = 'none';
+    document.getElementById('contratos').style.display = 'none';
+    document.getElementById('infodep').style.display = 'none'; 
 
-    
+    document.getElementById('infocontr').style.display = 'none';
+    document.getElementById('endcontr').style.display = 'none';   
+   
+
 }
+
