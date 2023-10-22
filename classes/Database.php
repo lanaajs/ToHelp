@@ -27,7 +27,7 @@ use Exception;
             }
         }
         //desliga-se do banco de dados
-        private function desligar(){
+        public function desligar(){
             $this->ligacao = null;
         }
 
