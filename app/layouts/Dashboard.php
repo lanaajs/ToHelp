@@ -139,16 +139,18 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th >#</th>
+                                <th>#</th>
                                 <th>Nome</th>
                                 <th>Sobrenome</th>
                                 <th>CPF</th>
+                                <th>RG</th>
+                                <th>Data de Nascimento</th>
                                 <th>Email</th>
-                                <th>Telefone</th>
+                                <th>Celular</th>
+                                <th>Gênero</th>
                                 <th>Senha</th>
                                 <th>Data de Cadastro</th>
                                 <th>Tipo de Contratante</th>
-                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -173,18 +175,17 @@
                             foreach ($contratantes as $contratante) {
                                 echo "<tr>
                                         <td>{$contratante->id}</td>
-                                        <td>{$contratante->CPF_contr}</td>
                                         <td>{$contratante->nome_contr}</td>
                                         <td>{$contratante->sobrenome_contr}</td>
+                                        <td>{$contratante->CPF_contr}</td>
+                                        <td>{$contratante->RG_contr}</td>
+                                        <td>{$contratante->dt_nasc}</td>
                                         <td>{$contratante->email_contr}</td>
-                                        <td>{$contratante->telefone}</td>
+                                        <td>{$contratante->celular_contr}</td>
+                                        <td>{$contratante->genero}</td>
                                         <td>{$contratante->senha_contr}</td>
                                         <td>{$contratante->dt_cadastro}</td>
                                         <td>{$contratante->tipo_contr}</td>
-                                        <td>
-                                            <a class='btn btn-success' href='#'>Editar</a>      
-                                            <a class='btn btn-danger' href='#'>Excluir</a>      
-                                        </td>
                                     </tr>";
                             }
                             $database->desligar();
@@ -208,9 +209,9 @@
                             <tr>
                                 <th>#</th>
                                 <th>Id Contratante</th>
+                                <th>CEP</th>
                                 <th>Estado</th>
                                 <th>Cidade</th>
-                                <th>Endereço</th>
                                 <th>Número</th>
                                 <th>Complemento</th>
                             </tr>
@@ -240,13 +241,11 @@
                                 echo "<tr>
                                         <td>{$contratante->id}</td>
                                         <td>{$contratante->id_contr_FK}</td>
+                                        <td>{$contratante->CEP_contr}</td>
                                         <td>{$contratante->estado_contr}</td>
                                         <td>{$contratante->cidade_contr}</td>
-                                        <td>{$contratante->endereco_contr}</td>
                                         <td>{$contratante->numero_contr}</td>
-                                        <td>{$contratante->complemento_contr}</td>
-                                        <td>    
-                                        </td>
+                                        <td>{$contratante->complemento_contr}</td>   
                                     </tr>";
                             }
 

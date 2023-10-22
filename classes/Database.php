@@ -9,7 +9,7 @@ use Exception;
 
 
         // se liga ao banco de dados
-        private function ligar(){
+        public function ligar(){
             $host = "localhost";
             $user = "root";
             $password = "2004";
