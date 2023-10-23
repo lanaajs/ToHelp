@@ -156,7 +156,31 @@ select {
     background-color: #00BF8C;
     transition: all 0.3s linear;
     cursor: pointer;
+}
 
+.container form button,
+.NextBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 45px;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: #00BF8C;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.NextBtn .btnText{
+    max-width: 150px;
+    text-align: center;
+}
+
+form .NextBtn i {
+    margin: 0 10px;
 }
 
 .container form .btnText {
@@ -173,6 +197,8 @@ form .buttons button,
 }
 
 
+
+
 form button:hover {
     background-color: #04916b;
 }
@@ -186,7 +212,7 @@ form .backBtn i {
     transform: rotate(180deg);
 }
 
-form .buttons {
+form .btnn .buttons {
     display: flex;
     align-items: center;
     min-width: 100%;
@@ -302,10 +328,13 @@ form .buttons {
 }
 
 .btnn {
+    width: 100%;
     margin-top: 50px;
+}
+
+.buttons{
     display: flex;
     justify-content: space-between;
-    align-items: last baseline;
 }
 
 .btnn p {
@@ -345,8 +374,8 @@ form .buttons {
     cursor: pointer;
 }
 
-.details .buttons {
-    margin-top: 10%;
+.buttons {
+    margin-top: -5%;
 }
 
 
@@ -417,9 +446,9 @@ figcaption {
     text-align: center;
 }
 
-.container form {
+/* .container form {
     overflow-y: scroll;
-}
+} */
 
 .container form::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -524,11 +553,6 @@ figcaption {
 
     form .fields .input-field {
         width: 90%;
-    }
-
-    .buttons {
-        width: 90%;
-        margin-left: 20px;
     }
 
     .cad {

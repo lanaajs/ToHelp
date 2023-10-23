@@ -5,6 +5,7 @@
 -- CREATE DATABASE IF NOT EXISTS tohelpDB;
 -- USE tohelpDB;
 
+
 -- -- Table infoContratante
 -- CREATE TABLE IF NOT EXISTS infoContratante(
 --   id INT NOT NULL AUTO_INCREMENT,
@@ -33,6 +34,8 @@
 --   CEP_contr VARCHAR(9) NOT NULL,
 --   estado_contr VARCHAR(45) NOT NULL,
 --   cidade_contr VARCHAR(45) NOT NULL,
+--   bairro_contr VARCHAR(45) NOT NULL,
+--   end_contr VARCHAR(45) NOT NULL,
 --   numero_contr VARCHAR(5) NOT NULL,
 --   complemento_contr VARCHAR(100) NULL,
 --   id_contr_FK INT NOT NULL,
@@ -40,10 +43,10 @@
 --   FOREIGN KEY(id_contr_FK) REFERENCES infoContratante(id)
 -- ) ENGINE = InnoDB;
 
--- INSERT INTO enderecoContratante (CEP_contr, estado_contr, cidade_contr, numero_contr, complemento_contr, id_contr_FK)
+-- INSERT INTO enderecoContratante (CEP_contr, estado_contr, cidade_contr,bairro_contr, end_contr, numero_contr, complemento_contr, id_contr_FK)
 -- VALUES
---     ('12345-678', 'SP', 'São Paulo', '123', 'Apt 4B', 1),
---     ('54321-987', 'RJ', 'Rio de Janeiro', '456', 'Casa', 2);
+--     ('12345-678', 'SP', 'São Paulo','Valinhos','Rua Amarela','123', 'Apt 4B', 1),
+--     ('54321-987', 'RJ', 'Rio de Janeiro','Ipanema','Avenida Brotas', '456', 'Casa', 2);
 
 
 -- -- Table infoDependente
@@ -72,6 +75,8 @@
 --   CEP_dep VARCHAR(9) NOT NULL,
 --   estado_dep VARCHAR(45) NOT NULL,
 --   cidade_dep VARCHAR(45) NOT NULL,
+--   bairro_dep VARCHAR(45) NOT NULL,
+--   end_dep VARCHAR(45) NOT NULL,
 --   numero_dep VARCHAR(5) NOT NULL,
 --   complemento_dep VARCHAR(100) NULL,
 --   id_dep_FK INT NOT NULL,
@@ -79,10 +84,10 @@
 --   FOREIGN KEY(id_dep_FK) REFERENCES infoDependente(id)
 -- ) ENGINE = InnoDB;
 
--- INSERT INTO enderecoDependente (CEP_dep, estado_dep, cidade_dep, numero_dep, complemento_dep, id_dep_FK)
+-- INSERT INTO enderecoDependente (CEP_dep, estado_dep, cidade_dep, bairro_dep, end_dep, numero_dep, complemento_dep, id_dep_FK)
 -- VALUES
---     ('54321-987', 'RJ', 'Rio de Janeiro', '456', 'Casa', 1),
---     ('12345-678', 'SP', 'São Paulo', '321', 'Apt 2C', 2);
+--     ('54321-987', 'RJ', 'Rio de Janeiro','Boreal', 'Rua Juca Bel','456', 'Casa', 1),
+--     ('12345-678', 'SP', 'São Paulo','Mocaa', 'Rua K' ,'321', 'Apt 2C', 2);
 
 -- -- Table infoMedDependente
 -- CREATE TABLE IF NOT EXISTS infoMedDependente (

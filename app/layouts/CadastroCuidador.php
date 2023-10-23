@@ -48,211 +48,192 @@
                 </div>
             </div>
 
-            <form action="#">
-                <div class="form first">
+            <form action="/cadastro/cuidador" method="POST">
+                <div class="form first active">
                     <div class="details personal">
                         <span class="title">Informações Pessoais</span>
 
                         <div class="fields">
                             <div class="input-field">
-                                <label>Nome</label>
-                                <input type="text" placeholder="Insira seu nome">
+                                <label for="nome_cuid">Nome</label>
+                                <input type="text" placeholder="Insira seu nome" name="nome_cuid">
                             </div>
 
                             <div class="input-field">
-                                <label>Sobrenome</label>
-                                <input type="text" placeholder="Insira seu sobrenome">
+                                <label for="sobrenome_cuid">Sobrenome</label>
+                                <input type="text" placeholder="Insira seu sobrenome" name="sobrenome_cuid">
                             </div>
 
                             <div class="input-field">
-                                <label>CPF</label>
-                                <input type="text" placeholder="Insira seu CPF">
+                                <label for="CPF_cuid">CPF</label>
+                                <input type="text" placeholder="Insira seu CPF" name="CPF_cuid">
                             </div>
 
                             <div class="input-field">
-                                <label>RG</label>
-                                <input type="text" placeholder="Insira seu RG">
+                                <label for="RG_cuid">RG</label>
+                                <input type="text" placeholder="Insira seu RG" name="RG_cuid">
                             </div>
 
                             <div class="input-field">
-                                <label>Date de Nascimento</label>
-                                <input type="date" placeholder="Insira sua data de nascimento">
+                                <label for="dt_nasc">Date de Nascimento</label>
+                                <input type="date" placeholder="Insira sua data de nascimento" name="dt_nasc">
                             </div>
 
                             <div class="input-field">
-                                <label>Email</label>
-                                <input type="text" placeholder="Insira seu email">
+                                <label for="email_cuid">Email</label>
+                                <input type="text" placeholder="Insira seu email" name="email_cuid">
                             </div>
 
                             <div class="input-field">
-                                <label>Celular</label>
-                                <input type="number" placeholder="Insira seu telefone celular">
+                                <label for="celular_cuid">Celular</label>
+                                <input type="number" placeholder="Insira seu telefone celular" name="celular_cuid">
                             </div>
 
                             <div class="input-field">
-                                <label>Gênero</label>
-                                <select>
+                                <label for="genero">Gênero</label>
+                                <select name="genero">
                                     <option disabled selected>Selecione o gênero</option>
-                                    <option>Masculino</option>
-                                    <option>Feminino</option>
-                                    <option>Outros</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                                    <option value="Outros">Outros</option>
                                 </select>
                             </div>
 
                             <div class="input-field">
-                                <label>CEP</label>
-                                <input type="text" placeholder="Insira seu CEP">
+                                <label for="CEP_cuid">CEP</label>
+                                <input type="text" placeholder="Insira seu CEP" name="CEP_cuid">
                             </div>
 
                             <div class="input-field">
-                                <label>Estado</label>
-                                <input type="text" placeholder="Insira um estado">
+                                <label for="estado_cuid">Estado</label>
+                                <input type="text" placeholder="Insira um estado" name="estado_cuid">
                             </div>
 
                             <div class="input-field">
-                                <label>Cidade</label>
-                                <input type="text" placeholder="Insira uma cidade">
+                                <label for="cidade_cuid">Cidade</label>
+                                <input type="text" placeholder="Insira uma cidade" name="cidade_cuid">
+                            </div>
+                            <div class="input-field">
+                                <label for="bairro_cuid">Bairro</label>
+                                <input type="text" placeholder="Insira uma cidade" name="bairro_cuid">
                             </div>
 
                             <div class="input-field">
-                                <label>Número</label>
-                                <input type="text" placeholder="Insira um número">
+                                <label for="end_cuid">Endereço</label>
+                                <input type="text" placeholder="Insira uma cidade" name="end_cuid">
                             </div>
 
                             <div class="input-field">
-                                <label>Complemento</label>
-                                <input type="text" placeholder="Insira um complemento">
+                                <label for="numero_cuid">Número</label>
+                                <input type="text" placeholder="Insira um número" name="numero_cuid">
                             </div>
 
                             <div class="input-field">
-                                <label>Senha</label>
-                                <input id="senha" type="text" placeholder="Crie uma senha">
+                                <label for="complemento_cuid">Complemento</label>
+                                <input type="text" placeholder="Insira um complemento" name="complemento_cuid">
+                            </div>
+
+                            <div class="input-field">
+                                <label for="senha_cuid">Senha</label>
+                                <input id="senha" type="text" placeholder="Crie uma senha" name="senha_cuid">
                             </div>
                         </div>
                     </div>
                     <div class="btnn">
-                        <button class="nextBtn">
-                            <span class="btnText">Prosseguir</span>
-                            <i class="uil uil-navigator"></i>
-                        </button>
-                        <p style="color: black;">Já possui cadastro? <a href="">Faça Login </a></p>
-                    </div>
-                </div>
-
-                <div class="form second">
-                    <div class="details address">
-                        <span class="title">Informações Curriculares</span>
-
-                        <div class="fields">
-                            <div class="inputAll">
-                                <div class="input-field">
-                                    <label for="inp1" id="difbtn">Foto do RG (frente)
-                                        <span class="material-icons upload">upload</span>
-                                    </label>
-                                    <input id="inp1" type="file">
-                                </div>
-                                <div class="arqvnome">
-                                    <p id="nome1">Nenhum arquivo selecionado.</p>
-                                </div>
-                            </div>
-
-                            <div class="inputAll">
-                                <div class="input-field">
-                                    <label for="inp2" id="difbtn">Foto do RG (verso)
-                                        <span class="material-icons upload">upload</span>
-                                    </label>
-                                    <input id="inp2" type="file">
-                                </div>
-                                <div class="arqvnome">
-                                    <p id="nome2">Nenhum arquivo selecionado.</p>
-                                </div>
-                            </div>
-
-                            <div class="inputAll">
-                                <div class="input-field">
-                                    <label for="inp3" id="difbtn">Currículo
-                                        <span class="material-icons upload">upload</span>
-                                    </label>
-                                    <input id="inp3" type="file">
-                                </div>
-                                <div class="arqvnome">
-                                    <p id="nome3">Nenhum arquivo selecionado.</p>
-                                </div>
-                            </div>
-
-                            <div class="inputAll">
-                                <div class="input-field">
-                                    <label for="inp4" id="difbtn">Certificados
-                                        <span class="material-icons upload">upload</span>
-                                    </label>
-                                    <input id="inp4" type="file" id="certificados" class="img" multiple>
-                                </div>
-                                <div class="arqvnome">
-                                    <p id="nome4">Nenhum arquivo selecionado.</p>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="details family">
-                        <div class="fields">
-                            <div class="container2">
-                                <figure class="image-container">
-                                    <img id="chosen-image">
-                                    <figcaption id="file-name"></figcaption>
-                                </figure>
-
-                                <input type="file" id="upload-button" accept="image/*">
-                                <label id="lbll" for="upload-button">
-                                    <i class="fas fa-upload"></i> &nbsp; Selecione uma foto de perfil
-                                </label>
-                            </div>
-                            <!-- <div class="input-field">
-                                <label>Father nomee</label>
-                                <input type="text" placeholder="Enter father name" >
-                            </div>
-    
-                            <div class="input-field">
-                                <label>Mother Name</label>
-                                <input type="text" placeholder="Enter mother name" >
-                            </div>
-    
-                            <div class="input-field">
-                                <label>Grandfather</label>
-                                <input type="text" placeholder="Enter grandfther name" >
-                            </div>
-    
-                            <div class="input-field">
-                                <label>Spouse Name</label>
-                                <input type="text" placeholder="Enter spouse name" >
-                            </div>
-    
-                            <div class="input-field">
-                                <label>Father in Law</label>
-                                <input type="text" placeholder="Father in law name" >
-                            </div>
-    
-                            <div class="input-field">
-                                <label>Mother in Law</label>
-                                <input type="text" placeholder="Mother in law name" >
-                            </div> -->
-                        </div>
-
                         <div class="buttons">
-                            <div class="backBtn">
-                                <i class="uil uil-navigator"></i>
-                                <span class="btnText">Voltar</span>
-                            </div>
-
-                            <button class="submit">
-                                <span class="btnText">Concluir</span>
+                            <button class="nextBtn">
+                                <span class="btnText">Prosseguir</span>
                                 <i class="uil uil-navigator"></i>
                             </button>
+                            <p style="color: black;">Já possui cadastro? <a href="">Faça Login </a></p>
                         </div>
                     </div>
-                </div>
+
+                    <div class="form second">
+                        <div class="details address">
+                            <span class="title">Informações Curriculares</span>
+
+                            <div class="fields">
+                                <div class="inputAll">
+                                    <div class="input-field">
+                                        <label for="rg_frente" id="difbtn">Foto do RG (frente)
+                                            <span class="material-icons upload">upload</span>
+                                        </label>
+                                        <input name="rg_frente" id="inp1" type="file">
+                                    </div>
+                                    <div class="arqvnome">
+                                        <p id="nome1">Nenhum arquivo selecionado.</p>
+                                    </div>
+                                </div>
+
+                                <div class="inputAll">
+                                    <div class="input-field">
+                                        <label for="rg_verso" id="difbtn">Foto do RG (verso)
+                                            <span class="material-icons upload">upload</span>
+                                        </label>
+                                        <input name="rg_verso" id="inp2" type="file">
+                                    </div>
+                                    <div class="arqvnome">
+                                        <p id="nome2">Nenhum arquivo selecionado.</p>
+                                    </div>
+                                </div>
+
+                                <div class="inputAll">
+                                    <div class="input-field">
+                                        <label for="curriculo" id="difbtn">Currículo
+                                            <span class="material-icons upload">upload</span>
+                                        </label>
+                                        <input name="curriculo" id="inp3" type="file">
+                                    </div>
+                                    <div class="arqvnome">
+                                        <p id="nome3">Nenhum arquivo selecionado.</p>
+                                    </div>
+                                </div>
+
+                                <div class="inputAll">
+                                    <div class="input-field">
+                                        <label for="certificado" id="difbtn">Certificados
+                                            <span class="material-icons upload">upload</span>
+                                        </label>
+                                        <input name="certificado" type="file" id="certificados" class="img" multiple>
+                                    </div>
+                                    <div class="arqvnome">
+                                        <p id="nome4">Nenhum arquivo selecionado.</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="details family">
+                            <div class="fields">
+                                <div class="container2">
+                                    <figure class="image-container">
+                                        <img id="chosen-image">
+                                        <figcaption id="file-name"></figcaption>
+                                    </figure>
+
+                                    <input type="file" id="upload-button" accept="image/*" name="foto_cuid">
+                                    <label id="lbll" for="upload-button">
+                                        <i class="fas fa-upload"></i> &nbsp; Selecione uma foto de perfil
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="buttons">
+                                <div class="backBtn">
+                                    <i class="uil uil-navigator"></i>
+                                    <span class="btnText">Voltar</span>
+                                </div>
+
+                                <button class="submit">
+                                    <span class="btnText">Concluir</span>
+                                    <i class="uil uil-navigator"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
             </form>
         </div>
     </div>
