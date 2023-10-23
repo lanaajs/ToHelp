@@ -39,7 +39,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->addGroup('/cadastro', function (RouteCollector $r) {
         $r->addRoute(['GET', 'POST'], '/dependente', CadastroController::class . '@indexdep');
         $r->addRoute('GET', '/contratante', CadastroController::class . '@indexctr');
-        $r->addRoute('POST', '/contratante', CadastroController::class . '@validarCadastro');
+        $r->addRoute('POST', '/contratante', CadastroController::class . '@validarCadastroContr');
         $r->addRoute('GET', '/cuidador', CadastroController::class . '@indexcuid');
         $r->addRoute('POST', '/cuidador', CadastroController::class . '@validarCadastroCuid');
     });
@@ -95,7 +95,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     //Rotas para os logins tanto dos contratantes quanto dos cuidadores.
     $r->addGroup('/login', function (RouteCollector $r) {
         $r->addRoute('GET', '/contratante', LoginController::class . '@indexctr');
-        $r->addRoute('POST', '/contratante', LoginController::class . '@validarLogin');
+        $r->addRoute('POST', '/contratante', LoginController::class . '@validarLoginContr');
         $r->addRoute('GET', '/cuidador', LoginController::class . '@indexcuid');
         $r->addRoute('POST', '/cuidador', LoginController::class . '@validarLoginCuid'); 
     });

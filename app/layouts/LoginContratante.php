@@ -63,7 +63,7 @@
                             </div>
                         </div>
                     </div>
-                    <input type="hidden" name="login" value="logar"> 
+                    <input type="hidden" name="logincontr" value="logarcontr"> 
                     <div class="btnn">
                         <button type="submit" class="nextBtn">
                             <span class="btnText">Entrar</span>
