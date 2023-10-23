@@ -23,11 +23,17 @@ require __DIR__ . '/../../vendor/autoload.php';
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
 
-    //Rotas para as página de agenda do cuidador e do contratante.
-    $r->addGroup('/agenda', function (RouteCollector $r) {
-        $r->addRoute(['GET', 'POST'], '/contratante', AgendaController::class . '@indexAgendaCtr');
-        $r->addRoute(['GET', 'POST'], '/cuidador', AgendaController::class . '@indexAgendaCuid');
+
+    $r->addGroup('/contratante', function(RouteCollector $r){
+        $r->addRoute(['GET', 'POST'], '/agenda', AgendaController::class . '@indexAgendaCtr');
+        $r->addRoute(['GET', 'POST'], '/cadastro/dependente', CadastroController::class . '@indexdep');
     });
+
+    $r->addGroup('/cuidador', function(RouteCollector $r){
+        $r->addRoute(['GET', 'POST'], '/agenda', AgendaController::class . '@indexAgendaCtr');
+    });
+
+
 
     //Rota para a página de análise de currículo do cuidador.
     $r->addRoute('GET', '/analisecurriculo', AnaliseCurriculoController::class . '@indexCurriculo');
@@ -37,7 +43,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
     //Rotas para as páginas de cadastros de informação tanto dos contrarantes quanto dos cuidadores.
     $r->addGroup('/cadastro', function (RouteCollector $r) {
-        $r->addRoute(['GET', 'POST'], '/dependente', CadastroController::class . '@indexdep');
+    
         $r->addRoute('GET', '/contratante', CadastroController::class . '@indexctr');
         $r->addRoute('POST', '/contratante', CadastroController::class . '@validarCadastroContr');
         $r->addRoute('GET', '/cuidador', CadastroController::class . '@indexcuid');

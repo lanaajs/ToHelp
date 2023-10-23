@@ -113,6 +113,15 @@
                                 <label for="cidade_cuid">Cidade</label>
                                 <input type="text" placeholder="Insira uma cidade" name="cidade_cuid">
                             </div>
+                            <div class="input-field">
+                                <label for="bairro_cuid">Bairro</label>
+                                <input type="text" placeholder="Insira uma cidade" name="bairro_cuid">
+                            </div>
+
+                            <div class="input-field">
+                                <label for="end_cuid">Endereço</label>
+                                <input type="text" placeholder="Insira uma cidade" name="end_cuid">
+                            </div>
 
                             <div class="input-field">
                                 <label for="numero_cuid">Número</label>
@@ -132,10 +141,10 @@
                     </div>
                     <div class="btnn">
                         <div class="buttons">
-                            <div class="NextBtn">                             
+                            <button class="nextBtn">
                                 <span class="btnText">Prosseguir</span>
                                 <i class="uil uil-navigator"></i>
-                            </div>
+                            </button>
                             <p style="color: black;">Já possui cadastro? <a href="">Faça Login </a></p>
                         </div>
                     </div>

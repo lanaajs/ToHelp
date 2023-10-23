@@ -88,16 +88,20 @@ class CadastroController
             $cep = $_POST['CEP_cuid'];
             $estado = $_POST['estado_cuid'];
             $cidade = $_POST['cidade_cuid'];
+            $bairro = $_POST['bairro_cuid'];
+            $endereco = $_POST['end_cuid'];
             $numero = $_POST['numero_cuid'];
             $complemento = $_POST['complemento_cuid'];
 
-            $sql = "INSERT INTO enderecoCuidador (CEP_cuid, estado_cuid, cidade_cuid, numero_cuid, complemento_cuid, id_contr_FK) 
-        VALUES (:CEP_cuid, :estado_cuid, :cidade_cuid, :numero_cuid, :complemento_cuid, :id_contr_FK)";
+            $sql = "INSERT INTO enderecoCuidador (CEP_cuid, estado_cuid, cidade_cuid, bairro_cuid, end_cuid, numero_cuid, complemento_cuid, id_contr_FK) 
+        VALUES (:CEP_cuid, :estado_cuid, :cidade_cuid, :bairro_cuid, :end_cuid, :numero_cuid, :complemento_cuid, :id_contr_FK)";
 
             $parametros = array(
                 ':CEP_cuid' => $cep,
                 ':estado_cuid' => $estado,
                 ':cidade_cuid' => $cidade,
+                ':bairro_cuid' => $bairro,
+                ':end_cuid' => $endereco,
                 ':numero_cuid' => $numero,
                 ':complemento_cuid' => $complemento,
                 ':id_contr_FK' => $lastId

@@ -1,7 +1,4 @@
-const form = document.querySelector("form"),
-    nextBtn = form.querySelector(".nextBtn"),
-    backBtn = form.querySelector(".backBtn"),
-    allInput = form.querySelectorAll(".first input");
+
 
 let file1 = document.getElementById("inp1");
 let file2 = document.getElementById("inp2");
@@ -18,21 +15,23 @@ let chosenImage = document.getElementById("chosen-image");
 let fileName = document.getElementById("file-name");
 let currentSection = 0;
 
-nextBtn.addEventListener("click", () => {
-    if (currentSection < form.querySelectorAll(".form").length - 1) {
-        form.querySelectorAll(".form")[currentSection].classList.remove("active");
-        currentSection++;
-        form.querySelectorAll(".form")[currentSection].classList.add("active");
-    }
-});
+const form = document.querySelector("form"),
+    nextBtn = form.querySelector(".nextBtn"),
+    backBtn = form.querySelector(".backBtn"),
+    allInput = form.querySelectorAll(".first input");
 
-backBtn.addEventListener("click", () => {
-    if (currentSection > 0) {
-        form.querySelectorAll(".form")[currentSection].classList.remove("active");
-        currentSection--;
-        form.querySelectorAll(".form")[currentSection].classList.add("active");
-    }
-});
+
+nextBtn.addEventListener("click", () => {
+    allInput.forEach(input => {
+        if (input.value != "") {
+            form.classList.add('secActive');
+        } else {
+            form.classList.remove('secActive');
+        }
+    })
+})
+
+backBtn.addEventListener("click", () => form.classList.remove('secActive'));
 
 file1.addEventListener("input", () => {
     if (file1.files.length) {

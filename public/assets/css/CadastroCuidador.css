@@ -212,12 +212,6 @@ form .backBtn i {
     transform: rotate(180deg);
 }
 
-form .buttons {
-    display: flex;
-    align-items: center;
-    min-width: 100%;
-}
-
 form .btnn .buttons {
     display: flex;
     align-items: center;
@@ -334,10 +328,13 @@ form .btnn .buttons {
 }
 
 .btnn {
+    width: 100%;
     margin-top: 50px;
+}
+
+.buttons{
     display: flex;
     justify-content: space-between;
-    align-items: last baseline;
 }
 
 .btnn p {
@@ -377,8 +374,8 @@ form .btnn .buttons {
     cursor: pointer;
 }
 
-.details .buttons {
-    margin-top: 10%;
+.buttons {
+    margin-top: -5%;
 }
 
 
@@ -449,9 +446,9 @@ figcaption {
     text-align: center;
 }
 
-.container form {
+/* .container form {
     overflow-y: scroll;
-}
+} */
 
 .container form::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -556,11 +553,6 @@ figcaption {
 
     form .fields .input-field {
         width: 90%;
-    }
-
-    .buttons {
-        width: 90%;
-        margin-left: 20px;
     }
 
     .cad {
