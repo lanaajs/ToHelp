@@ -12,17 +12,17 @@ use Exception;
         public function ligar(){
             $host = "localhost";
             $user = "root";
-            $password = "2004";
+            $password = "Dorea201204#";
             $db = "tohelpdb";  
          
             $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
             try {
-                $this->ligacao = new \PDO($dsn, $user, $password); // Use o namespace completo \PDO
+                $this->ligacao = new \PDO($dsn, $user, $password); 
                 
                 if ($this->ligacao) {
                     echo "";
                 }
-            } catch (\PDOException $e) { // Use o namespace completo \PDOException
+            } catch (\PDOException $e) { 
                 echo $e->getMessage();
             }
         }

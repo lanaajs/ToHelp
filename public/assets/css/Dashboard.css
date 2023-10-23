@@ -266,8 +266,4 @@ body {
         min-width: 120px;
     }
 
-    #endcontr, #infocontr, #infodep ,#contratos, #depcontr, #extrcontr ,#metpagcontr{
-        display: none;
-    }
-
 }
