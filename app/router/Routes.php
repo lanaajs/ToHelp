@@ -38,8 +38,10 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     //Rotas para as páginas de cadastros de informação tanto dos contrarantes quanto dos cuidadores.
     $r->addGroup('/cadastro', function (RouteCollector $r) {
         $r->addRoute(['GET', 'POST'], '/dependente', CadastroController::class . '@indexdep');
-        $r->addRoute(['GET', 'POST'], '/contratante', CadastroController::class . '@indexctr');
-        $r->addRoute(['GET', 'POST'], '/cuidador', CadastroController::class . '@indexcuid');
+        $r->addRoute('GET', '/contratante', CadastroController::class . '@indexctr');
+        $r->addRoute('POST', '/contratante', CadastroController::class . '@validarCadastro');
+        $r->addRoute('GET', '/cuidador', CadastroController::class . '@indexcuid');
+        $r->addRoute('POST', '/cuidador', CadastroController::class . '@validarCadastroCuid');
     });
 
     //Rotas para as páginas de carregamento.
@@ -52,7 +54,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->addRoute('GET', '/confirmacaocuidador', ConfirmacaoCuidController::class . '@indexConfirmacao');
 
     //Rotas para as contas dos contratantes e dos cuidadores.
-    $r->addGroup('/conta', function (RouteCollector $r) {
+    $r->addGroup('/conta/{id:\d+}', function (RouteCollector $r) {
         $r->addRoute('GET', '/contratante', ContasController::class . '@indexContaCntr');
         $r->addRoute('GET', '/cuidador', ContasController::class . '@indexContaCuid');
     });
@@ -92,9 +94,12 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
     //Rotas para os logins tanto dos contratantes quanto dos cuidadores.
     $r->addGroup('/login', function (RouteCollector $r) {
-        $r->addRoute(['GET', 'POST'], '/contratante', LoginController::class . '@indexctr');
-        $r->addRoute(['GET', 'POST'], '/cuidador', LoginController::class . '@indexcuid');
+        $r->addRoute('GET', '/contratante', LoginController::class . '@indexctr');
+        $r->addRoute('POST', '/contratante', LoginController::class . '@validarLogin');
+        $r->addRoute('GET', '/cuidador', LoginController::class . '@indexcuid');
+        $r->addRoute('POST', '/cuidador', LoginController::class . '@validarLoginCuid'); 
     });
+
 
     //Rota para a página de novo cartao.
     $r->addRoute(['GET', 'POST'], '/novocartao', NovoCartaoController::class . '@indexNovoCart');

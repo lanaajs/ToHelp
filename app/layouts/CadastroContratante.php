@@ -46,98 +46,101 @@
                     </div>
                 </div>
             </div>
-            <form action="#">
+            <form action="/cadastro/contratante" method="POST">
                 <div class="form first">
                     <div class="details personal">
                         <span class="title">Informações Pessoais</span>
                         <div class="fields">
                             <div class="input-field">
-                                <label>Nome</label>
-                                <input type="text" placeholder="Insira seu nome" required>
+                                <label for="nome_contr">Nome</label>
+                                <input type="text" placeholder="Insira seu nome" id="nome_contr" name="nome_contr" required>
                             </div>
                             <div class="input-field">
-                                <label>Sobrenome</label>
-                                <input type="text" placeholder="Insira seu sobrenome" required>
+                                <label for="sobrenome_contr">Sobrenome</label>
+                                <input type="text" placeholder="Insira seu sobrenome" id="sobrenome_contr" name="sobrenome_contr" required>
                             </div>
                             <div class="input-field">
-                                <label>CPF</label>
-                                <input type="text" placeholder="Insira seu CPF" required>
+                                <label for="CPF_contr">CPF</label>
+                                <input type="text" placeholder="Insira seu CPF" id="CPF_contr" name="CPF_contr" required>
                             </div>
                             <div class="input-field">
-                                <label>RG</label>
-                                <input type="text" placeholder="Insira seu RG" required>
+                                <label for="RG_contr">RG</label>
+                                <input type="text" placeholder="Insira seu RG" id="RG_contr" name="RG_contr" required>
                             </div>
                             <div class="input-field">
-                                <label>Date de Nascimento</label>
-                                <input type="date" placeholder="Insira sua data de nascimento" required>
+                                <label for="dt_nasc">Date de Nascimento</label>
+                                <input type="date" id="dt_nasc" name="dt_nasc" required>
                             </div>
                             <div class="input-field">
-                                <label>Email</label>
-                                <input type="text" placeholder="Insira seu email" required>
+                                <label for="email_contr">Email</label>
+                                <input type="text" placeholder="Insira seu email" id="email_contr" name="email_contr" required>
                             </div>
                             <div class="input-field">
-                                <label>Celular</label>
-                                <input type="number" placeholder="Insira seu telefone celular" required>
+                                <label for="celular_contr">Celular</label>
+                                <input type="number" placeholder="Insira seu telefone celular" id="celular_contr" name="celular_contr" required>
                             </div>
                             <div class="input-field">
-                                <label>Gênero</label>
-                                <select required>
+                                <label for="genero">Gênero</label>
+                                <select name="genero" required>
                                     <option disabled selected>Selecione o gênero</option>
-                                    <option>Masculino</option>
-                                    <option>Feminino</option>
-                                    <option>Outros</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                                    <option value="Outros">Outros</option>
                                 </select>
                             </div>
                             <div class="input-field">
-                                <label>CEP</label>
-                                <input type="text" placeholder="Insira seu CEP" required>
+                                <label for="CEP_contr">CEP</label>
+                                <input type="text" placeholder="Insira seu CEP" id="CEP_contr" name="CEP_contr" required>
                             </div>
                             <div class="input-field">
-                                <label>Estado</label>
-                                <input type="text" placeholder="Insira um estado" required>
+                                <label for="estado_contr">Estado</label>
+                                <input type="text" placeholder="Insira um estado" id="estado_contr" name="estado_contr" required>
                             </div>
                             <div class="input-field">
-                                <label>Cidade</label>
-                                <input type="text" placeholder="Insira uma cidade" required>
+                                <label for="cidade_contr">Cidade</label>
+                                <input type="text" placeholder="Insira uma cidade" id="cidade_contr" name="cidade_contr" required>
                             </div>
                             <div class="input-field">
-                                <label>Número</label>
-                                <input type="text" placeholder="Insira um número" required>
+                                <label for="numero_contr">Número</label>
+                                <input type="text" placeholder="Insira um número" id="numero_contr" name="numero_contr" required>
                             </div>
                         </div>
                     </div>
                     <div class="details ID">
                         <div class="fields">
                             <div class="input-field">
-                                <label>Complemento</label>
-                                <input type="text" placeholder="Insira um complemento" required>
+                                <label for="complemento_contr">Complemento</label>
+                                <input type="text" placeholder="Insira um complemento" id="complemento_contr" name="complemento_contr" required>
                             </div>
                             <div class="input-field">
-                                <label>Senha</label>
-                                <input id="senha" type="text" placeholder="Crie uma senha" required>
+                                <label for="senha_contr">Senha</label>
+                                <input id="senha" type="text" placeholder="Crie uma senha" id="senha_contr" name="senha_contr" required>
                             </div>
                             <div class="input-field">
-                                <label>Selecione uma opção</label>
-                                <div class="mark"><input type="radio" id="check" name="escolha" value="1"
-                                        onclick="textBox(this)">
+                                <label for="tipo_contr">Selecione uma opção</label>
+                                <div class="mark">
+                                    <input type="radio" id="check" name="tipo_contr" value="0">
                                     <p>Sou responsável por mim e desejo me cadastrar</p>
                                 </div>
-                                <div class="mark" id="markdois"><input type="radio" id="check" name="escolha" value="2"
-                                        onclick="textBox(this)">
-                                    <p> Sou responsável legal e desejo cadastrar meu dependente</p>
+                                <div class="mark" id="markdois">
+                                    <input type="radio" id="check" name="tipo_contr" value="1">
+                                    <p>Sou responsável legal e desejo cadastrar meu dependente</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="btnn">                         
+                        <input type="hidden" name="cadastro" value="cadastrar"> 
+                        <div class="btnn">
                             <button class="nextBtn">
                                 <span class="btnText">Prosseguir</span>
                                 <i class="uil uil-navigator"></i>
                             </button>
-                            <p style="color: black;">Já possui cadastro? <a href="">Faça Login </a></p>
-                    </div>
+                            <p style="color: black;">Já possui cadastro? <a href="/login/contratante">Faça Login</a></p>
+                        </div>
                     </div>
                 </div>
+            </form>
         </div>
     </div>
 </body>
+
 </html>

@@ -48,23 +48,24 @@
                 </div>
             </div>
 
-            <form action="#">
+            <form action="/login/contratante" method="POST">
                 <div class="form first">
                     <div class="details personal">
                         <div class="fields">
                             <div class="input-field">
-                                <label>CPF</label>
-                                <input type="text" placeholder="Insira seu CPF">
+                                <label for="CPF_contr">CPF</label>
+                                <input type="text" placeholder="Insira seu CPF" name="CPF_contr" required>
                             </div>
 
                             <div class="input-field">
-                                <label>Senha</label>
-                                <input id="senha" type="text" placeholder="Insira sua senha">
+                                <label for="senha_contr">Senha</label>
+                                <input id="senha" placeholder="Insira sua senha" name="senha_contr" required>
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" name="login" value="logar"> 
                     <div class="btnn">
-                        <button class="nextBtn">
+                        <button type="submit" class="nextBtn">
                             <span class="btnText">Entrar</span>
                             <i class="uil uil-navigator"></i>
                         </button>
