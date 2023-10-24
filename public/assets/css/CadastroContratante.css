@@ -313,18 +313,33 @@ form .buttons button,
     justify-content: center;
 }
 
-@media (max-width: 927px) {
-    .container form {
-        overflow-y: scroll;
-    }
-
+.container form {
+    overflow-y: scroll;
 }
+
+.container form::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 4px;
+    height: 10px;
+}
+
+.container form::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+#num{
+    margin-right: 34%;
+}
+
 
 @media (max-width: 849px) {
 
-    .container form::-webkit-scrollbar {
-        display: none;
+    #num{
+        margin-right: 0;
     }
+    
 
     form .fields .input-field {
         width: calc(100% / 2 - 15px);

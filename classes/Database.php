@@ -8,14 +8,13 @@ class Database
 {
     public $ligacao;
 
-
     // se liga ao banco de dados
     public function ligar()
     {
         try {
             $host = "localhost";
             $user = "root";
-            $password = "Divergente2@X";
+            $password = "2004";
             $db = "tohelpdb";
 
             $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
@@ -30,6 +29,21 @@ class Database
         $this->ligacao = null;
     }
 
+    public function iniciarTransacao()
+    {
+        $this->ligacao->beginTransaction();
+    }
+
+    public function confirmarTransacao()
+    {
+        $this->ligacao->commit();
+    }
+
+    public function cancelarTransacao()
+    {
+        $this->ligacao->rollBack();
+    }
+
     public function select($sql, $parametros = null)
     {
 
@@ -37,7 +51,6 @@ class Database
             throw new Exception('A instrução não é um SELECT');
         }
 
-        $this->ligar();
         $resultados = null;
 
         try {
@@ -54,8 +67,6 @@ class Database
             return false;
         }
 
-        $this->desligar();
-
         return $resultados;
     }
 
@@ -65,7 +76,6 @@ class Database
             throw new Exception('A instrução não é um INSERT');
         }
 
-        $this->ligar();
         $resultados = null;
 
         try {
@@ -80,8 +90,7 @@ class Database
             }
 
             $lastInsertId = (int)$this->ligacao->lastInsertId();
-             // Obtém o último ID inserido
-            $this->desligar();
+            // Obtém o último ID inserido
 
             return $lastInsertId;
         } catch (\PDOException $e) {
@@ -96,7 +105,6 @@ class Database
             throw new Exception('A instrução não é um UPDATE');
         }
 
-        $this->ligar();
         $resultados = null;
 
         try {
@@ -113,7 +121,6 @@ class Database
             return false;
         }
 
-        $this->desligar();
 
         return $resultados;
     }
@@ -125,7 +132,6 @@ class Database
             throw new Exception('Instrução SQL inválida');
         }
 
-        $this->ligar();
         $resultados = null;
 
         try {
@@ -141,8 +147,6 @@ class Database
         } catch (\PDOException $e) {
             return false;
         }
-
-        $this->desligar();
 
         return $resultados;
     }
@@ -154,7 +158,6 @@ class Database
             throw new Exception('A instrução não é um DELETE');
         }
 
-        $this->ligar();
         $resultados = null;
 
         try {
@@ -170,8 +173,6 @@ class Database
         } catch (\PDOException $e) {
             return false;
         }
-
-        $this->desligar();
 
         return $resultados;
     }

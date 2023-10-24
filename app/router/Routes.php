@@ -61,8 +61,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
     //Rotas para as contas dos contratantes e dos cuidadores.
     $r->addGroup('/conta/{id:\d+}', function (RouteCollector $r) {
-        $r->addRoute('GET', '/contratante', ContasController::class . '@indexContaCntr');
-        $r->addRoute('GET', '/cuidador', ContasController::class . '@indexContaCuid');
+        $r->addRoute(['GET', 'POST'], '/contratante', ContasController::class . '@indexContaCntr');
+        $r->addRoute(['GET', 'POST'], '/cuidador', ContasController::class . '@indexContaCuid');
     });
 
     //Rotas para as páginas de contrato do contratante e cuidador.

@@ -55,13 +55,13 @@ body {
     transition: 0.3s ease;
 }
 
-.container form .form.second {
+/* .container form .form.second {
     opacity: 0;
     pointer-events: none;
     transform: translateX(100%);
-}
+} */
 
-form.secActive .form.second {
+/* form.secActive .form.second {
     opacity: 1;
     pointer-events: auto;
     transform: translateX(0);
@@ -71,7 +71,7 @@ form.secActive .form.first {
     opacity: 0;
     pointer-events: none;
     transform: translateX(-100%);
-}
+} */
 
 .container form .title {
     display: block;
@@ -174,7 +174,7 @@ select {
     cursor: pointer;
 }
 
-.NextBtn .btnText{
+.NextBtn .btnText {
     max-width: 150px;
     text-align: center;
 }
@@ -189,14 +189,6 @@ form .NextBtn i {
     width: 120px;
     justify-content: start;
 }
-
-form .buttons button,
-.backBtn {
-    margin-right: 14px;
-    width: 120px;
-}
-
-
 
 
 form button:hover {
@@ -328,11 +320,22 @@ form .btnn .buttons {
 }
 
 .btnn {
-    width: 100%;
-    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
 }
 
-.buttons{
+.details.family {
+    width: 100%;
+}
+
+.form.second {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.buttons {
     display: flex;
     justify-content: space-between;
 }
@@ -375,7 +378,11 @@ form .btnn .buttons {
 }
 
 .buttons {
-    margin-top: -5%;
+    margin-top: 5%;
+}
+
+.button p {
+    margin-left: 50px;
 }
 
 
@@ -446,9 +453,9 @@ figcaption {
     text-align: center;
 }
 
-/* .container form {
+.container form {
     overflow-y: scroll;
-} */
+}
 
 .container form::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -460,8 +467,17 @@ figcaption {
     border-radius: 4px;
     background-color: rgba(0, 0, 0, .5);
     box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-    
 }
+
+.input-field #sobre{
+    min-width: 10em;
+    min-height: 80px;
+}
+
+#inpdif{
+    width: 100%;
+}
+
 
 
 @media (max-width: 850px) {
@@ -488,6 +504,8 @@ figcaption {
         width: calc(100% / 2 - 15px);
     }
 
+
+
     .total {
         min-width: 100%;
         display: flex;
@@ -508,11 +526,7 @@ figcaption {
         justify-content: center;
     }
 
-    .btnn {
-        display: inline-block;
-        align-items: center;
-        justify-content: center;
-    }
+
 
     .btnn p {
         margin-top: 10px;
@@ -582,10 +596,26 @@ figcaption {
     }
 
 
+    .buttons p{
+        display: none;
+    }
 
-}
-
-@media (max-width: 300px) {
-
+    .container2 {
+        min-width: 250px;
+    }
     
+    .image-container {
+        width: 90%;
+    }
+    
+    .image-container img {
+        max-width: 80%;
+        max-height: 150px;
+    }
+    
+    
+    
+    
+
+
 }

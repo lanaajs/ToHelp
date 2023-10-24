@@ -6,8 +6,7 @@ namespace app\controllers;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['cadastrocontr']) && $_POST['cadastrocontr'] === 'cadastrarcontr') {
         CadastroController::validarCadastroContr();
-    }
-    if (isset($_POST['cadastrocuid']) && $_POST['cadastrocuid'] === 'cadastrarcuid') {
+    } else if (isset($_POST['cadastrocuid']) && $_POST['cadastrocuid'] === 'cadastrarcuid') {
         CadastroController::validarCadastroCuid();
     }
 }
@@ -36,6 +35,8 @@ class CadastroController
     {
         require_once __DIR__ . '/../../classes/Database.php';
         $db = new \classes\Database();
+        $db->ligar();
+        $db->iniciarTransacao();
 
         try {
             $nome = $_POST['nome_cuid'];
@@ -48,43 +49,25 @@ class CadastroController
             $genero = $_POST['genero'];
             $senha = $_POST['senha_cuid'];
 
-            $sql = "INSERT INTO infoCuidador (nome_cuid, sobrenome_cuid, CPF_contr, RG_cuid, dt_nasc, email_cuid, celular_cuid, genero, senha_cuid, dt_cadastro, tipo_contr) 
-                VALUES (:nome_cuid, :sobrenome_cuid, :CPF_contr, :RG_cuid, :dt_nasc, :email_cuid, :celular_cuid, :genero, :senha_cuid, NOW(), :tipo_contr)";
+            $sqlCuidador = "INSERT INTO infoCuidador (nome_cuid, sobrenome_cuid, CPF_cuid, RG_cuid, dt_nasc, email_cuid, celular_cuid, genero, senha_cuid, dt_cadastro, tipo_contr) 
+            VALUES (:nome_cuid, :sobrenome_cuid, :CPF_cuid, :RG_cuid, :dt_nasc, :email_cuid, :celular_cuid, :genero, :senha_cuid, NOW(), :tipo_contr)";
 
-            $parametros = array(
+            $parametrosCuidador = array(
                 ':nome_cuid' => $nome,
                 ':sobrenome_cuid' => $sobrenome,
-                ':CPF_contr' => $cpf,
+                ':CPF_cuid' => $cpf,
                 ':RG_cuid' => $rg,
                 ':dt_nasc' => $dtnasc,
                 ':email_cuid' => $email,
                 ':celular_cuid' => $celular,
                 ':genero' => $genero,
-                ':senha_cuid' => $senha
+                ':senha_cuid' => $senha,
+                ':tipo_contr' => $tipo
             );
 
-            // Execute a função de inserção no banco de dados
-            $db->ligar();
-            $lastId = $db->insert($sql, $parametros);
-            try {
-                if ($lastId !== false) {
-                    // Inserção bem-sucedida
-                    //echo "Cadastro realizado com sucesso! Último ID inserido: $lastId <br>";
-                    header('Location: /login/cuidador'); // ESSA REDIREÇÃO TEM QUE SER NO JS!!!
-                } else {
-                    // Falha na inserção   
-                    echo "Erro ao cadastrar. Por favor, tente novamente.";
-                }
-            } catch (\PDOException $e) {
-                echo "Erro: " . $e->getMessage();
-            }
-        } catch (\PDOException $e) {
+            $lastIdCuidador = $db->insert($sqlCuidador, $parametrosCuidador);
 
-            echo "Erro: " . $e->getMessage();
-        }
-        /*---------------------------------------------------*/
-
-        try {
+            /*------------------------------------------------------------------*/
             $cep = $_POST['CEP_cuid'];
             $estado = $_POST['estado_cuid'];
             $cidade = $_POST['cidade_cuid'];
@@ -93,10 +76,10 @@ class CadastroController
             $numero = $_POST['numero_cuid'];
             $complemento = $_POST['complemento_cuid'];
 
-            $sql = "INSERT INTO enderecoCuidador (CEP_cuid, estado_cuid, cidade_cuid, bairro_cuid, end_cuid, numero_cuid, complemento_cuid, id_contr_FK) 
-        VALUES (:CEP_cuid, :estado_cuid, :cidade_cuid, :bairro_cuid, :end_cuid, :numero_cuid, :complemento_cuid, :id_contr_FK)";
+            $sqlEndereco = "INSERT INTO enderecoCuidador (CEP_cuid, estado_cuid, cidade_cuid, bairro_cuid, end_cuid, numero_cuid, complemento_cuid, id_contr_FK) 
+            VALUES (:CEP_cuid, :estado_cuid, :cidade_cuid, :bairro_cuid, :end_cuid, :numero_cuid, :complemento_cuid, :id_contr_FK)";
 
-            $parametros = array(
+            $parametrosEndereco = array(
                 ':CEP_cuid' => $cep,
                 ':estado_cuid' => $estado,
                 ':cidade_cuid' => $cidade,
@@ -104,27 +87,45 @@ class CadastroController
                 ':end_cuid' => $endereco,
                 ':numero_cuid' => $numero,
                 ':complemento_cuid' => $complemento,
-                ':id_contr_FK' => $lastId
+                ':id_contr_FK' => $lastIdCuidador
             );
 
-            // Execute a função de inserção no banco de dados
-            $result = $db->insert($sql, $parametros);
+            $resultEndereco = $db->insert($sqlEndereco, $parametrosEndereco);
 
-            try {
-                if (is_numeric($result) && $result > 0) {
-                    // Inserção bem-sucedida
-                    //var_dump($result);
-                    echo "Cadastro realizado com sucesso!";
-                } else {
-                    // Falha na inserção
-                    echo "Erro ao cadastrar. Por favor, tente novamente.";
-                }
-            } catch (\PDOException $e) {
-                echo "Erro: " . $e->getMessage();
+            /*------------------------------------------------------------------*/
+            $rgf = $_POST['rg_frente'];
+            $rgv = $_POST['rg_verso'];
+            $curriculo = $_POST['curriculo'];
+            $certif = $_POST['certificado'];
+            $sobre = $_POST['sobre_txt'];
+
+            $sqlInfoCurricular = "INSERT INTO infoCurricular (rg_frente, rg_verso, curriculo, certificado, sobre_txt, id_cuid_FK) 
+            VALUES (:rg_frente, :rg_verso, :curriculo, :certificado, :sobre_txt, :id_cuid_FK)";
+
+            $parametrosInfoCurricular = array(
+                ':rg_frente' => $rgf,
+                ':rg_verso' => $rgv,
+                ':curriculo' => $curriculo,
+                ':certificado' => $certif,
+                ':sobre_txt' => $sobre,
+                ':id_cuid_FK' => $lastIdCuidador
+            );
+
+            $resultInfoCurricular = $db->insert($sqlInfoCurricular, $parametrosInfoCurricular);
+
+            if ($lastIdCuidador !== false && $resultEndereco !== false && $resultInfoCurricular !== false) {
+                $db->confirmarTransacao();
+                echo "Cadastro realizado com sucesso! Último ID inserido: $lastIdCuidador <br>";
+                header('Location: /login/cuidador');
+            } else {
+                $db->cancelarTransacao();
+                echo "Erro ao cadastrar. Por favor, tente novamente.";
             }
-        } catch (\PDOException $p) {
-            // Captura de exceção do PDO
-            echo "Erro: " . $p->getMessage();
+        } catch (\PDOException $e) {
+            $db->cancelarTransacao();
+            $db->desligar();
+            echo "Cadastro cancelado <br>";
+            echo "Erro: " . $e->getMessage();
         }
     }
 
@@ -134,12 +135,14 @@ class CadastroController
 
         require_once __DIR__ . '/../../classes/Database.php';
         $db = new \classes\Database();
+        $db->ligar();
+        $db->iniciarTransacao();
 
         try {
-            $nome = $_POST['nome_cuid'];
-            $sobrenome = $_POST['sobrenome_cuid'];
-            $cpf = $_POST['CPF_cuid'];
-            $rg = $_POST['RG_cuid'];
+            $nome = $_POST['nome_contr'];
+            $sobrenome = $_POST['sobrenome_contr'];
+            $cpf = $_POST['CPF_contr'];
+            $rg = $_POST['RG_contr'];
             $dtnasc = $_POST['dt_nasc'];
             $email = $_POST['email_contr'];
             $celular = $_POST['celular_contr'];
@@ -147,14 +150,14 @@ class CadastroController
             $senha = $_POST['senha_contr'];
             $tipo = $_POST['tipo_contr'];
 
-            $sql = "INSERT INTO infoContratante (nome_cuid, sobrenome_cuid, CPF_cuid, RG_cuid, dt_nasc, email_contr, celular_contr, genero, senha_contr, dt_cadastro, tipo_contr) 
-                VALUES (:nome_cuid, :sobrenome_cuid, :CPF_cuid, :RG_cuid, :dt_nasc, :email_contr, :celular_contr, :genero, :senha_contr, NOW(), :tipo_contr)";
+            $sqlContratante = "INSERT INTO infoContratante (nome_contr, sobrenome_contr, CPF_contr, RG_contr, dt_nasc, email_contr, celular_contr, genero, senha_contr, dt_cadastro, tipo_contr) 
+                VALUES (:nome_contr, :sobrenome_contr, :CPF_contr, :RG_contr, :dt_nasc, :email_contr, :celular_contr, :genero, :senha_contr, NOW(), :tipo_contr)";
 
-            $parametros = array(
-                ':nome_cuid' => $nome,
-                ':sobrenome_cuid' => $sobrenome,
-                ':CPF_cuid' => $cpf,
-                ':RG_cuid' => $rg,
+            $parametrosContratante = array(
+                ':nome_contr' => $nome,
+                ':sobrenome_contr' => $sobrenome,
+                ':CPF_contr' => $cpf,
+                ':RG_contr' => $rg,
                 ':dt_nasc' => $dtnasc,
                 ':email_contr' => $email,
                 ':celular_contr' => $celular,
@@ -163,64 +166,46 @@ class CadastroController
                 ':tipo_contr' => $tipo
             );
 
-            // Execute a função de inserção no banco de dados
-            $db->ligar();
-            $lastId = $db->insert($sql, $parametros);
-            try {
-                if ($lastId !== false) {
-                    // Inserção bem-sucedida
-                    //echo "Cadastro realizado com sucesso! Último ID inserido: $lastId <br>";
-                    header('Location: /login/contratante'); // ESSA REDIREÇÃO TEM QUE SER NO JS!!!
-                } else {
-                    // Falha na inserção   
-                    echo "Erro ao cadastrar. Por favor, tente novamente.";
-                }
-            } catch (\PDOException $e) {
-                echo "Erro: " . $e->getMessage();
-            }
-        } catch (\PDOException $e) {
+            $lastIdContratante = $db->insert($sqlContratante, $parametrosContratante);
 
-            echo "Erro: " . $e->getMessage();
-        }
-        /*---------------------------------------------------*/
-
-        try {
+            /*------------------------------------------------------------------*/
             $cep = $_POST['CEP_contr'];
             $estado = $_POST['estado_contr'];
             $cidade = $_POST['cidade_contr'];
+            $bairro = $_POST['bairro_contr'];
+            $endereco = $_POST['end_contr'];
             $numero = $_POST['numero_contr'];
             $complemento = $_POST['complemento_contr'];
 
-            $sql = "INSERT INTO enderecoContratante (CEP_contr, estado_contr, cidade_contr, numero_contr, complemento_contr, id_contr_FK) 
-        VALUES (:CEP_contr, :estado_contr, :cidade_contr, :numero_contr, :complemento_contr, :id_contr_FK)";
+            $sqlEndereco = "INSERT INTO enderecoContratante (CEP_contr, estado_contr, cidade_contr, bairro_contr, end_contr, numero_contr, complemento_contr, id_contr_FK) 
+            VALUES (:CEP_contr, :estado_contr, :cidade_contr, :bairro_contr, :end_contr, :numero_contr, :complemento_contr, :id_contr_FK)";
 
-            $parametros = array(
+            $parametrosEndereco = array(
                 ':CEP_contr' => $cep,
                 ':estado_contr' => $estado,
                 ':cidade_contr' => $cidade,
+                ':bairro_contr' => $bairro,
+                ':end_contr' => $endereco,
                 ':numero_contr' => $numero,
                 ':complemento_contr' => $complemento,
-                ':id_contr_FK' => $lastId
+                ':id_contr_FK' => $lastIdContratante
             );
 
-            // Execute a função de inserção no banco de dados
-            $result = $db->insert($sql, $parametros);
+            $resultEndereco = $db->insert($sqlEndereco, $parametrosEndereco);
 
-            try {
-                if (is_numeric($result) && $result > 0) {
-                    // Inserção bem-sucedida
-                    //var_dump($result);
-                    echo "Cadastro realizado com sucesso!";
-                } else {
-                    // Falha na inserção
-                    echo "Erro ao cadastrar. Por favor, tente novamente.";
-                }
-            } catch (\PDOException $e) {
-                echo "Erro: " . $e->getMessage();
+            if ($lastIdContratante !== false && $resultEndereco !== false) {
+                $db->confirmarTransacao();
+                echo "Cadastro realizado com sucesso! Último ID inserido: $lastIdContratante <br>";
+                header('Location: /login/contratante');
+            } else {
+                $db->cancelarTransacao();
+                echo "Erro ao cadastrar. Por favor, tente novamente.";
             }
-        } catch (\PDOException $p) {
-            // Captura de exceção do PDO
-            echo "Erro: " . $p->getMessage();
+        } catch (\PDOException $e) {
+            $db->cancelarTransacao();
+            $db->desligar();
+            echo "Cadastro cancelado <br>";
+            echo "Erro: " . $e->getMessage();
         }
     }
 }

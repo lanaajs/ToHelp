@@ -139,15 +139,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="btnn">
-                        <div class="buttons">
-                            <button class="nextBtn">
-                                <span class="btnText">Prosseguir</span>
-                                <i class="uil uil-navigator"></i>
-                            </button>
-                            <p style="color: black;">Já possui cadastro? <a href="">Faça Login </a></p>
-                        </div>
-                    </div>
+
 
                     <div class="form second">
                         <div class="details address">
@@ -156,7 +148,7 @@
                             <div class="fields">
                                 <div class="inputAll">
                                     <div class="input-field">
-                                        <label for="rg_frente" id="difbtn">Foto do RG (frente)
+                                        <label for="inp1" id="difbtn">Foto do RG (frente)
                                             <span class="material-icons upload">upload</span>
                                         </label>
                                         <input name="rg_frente" id="inp1" type="file">
@@ -168,7 +160,7 @@
 
                                 <div class="inputAll">
                                     <div class="input-field">
-                                        <label for="rg_verso" id="difbtn">Foto do RG (verso)
+                                        <label for="inp2" id="difbtn">Foto do RG (verso)
                                             <span class="material-icons upload">upload</span>
                                         </label>
                                         <input name="rg_verso" id="inp2" type="file">
@@ -180,7 +172,7 @@
 
                                 <div class="inputAll">
                                     <div class="input-field">
-                                        <label for="curriculo" id="difbtn">Currículo
+                                        <label for="inp3" id="difbtn">Currículo
                                             <span class="material-icons upload">upload</span>
                                         </label>
                                         <input name="curriculo" id="inp3" type="file">
@@ -192,16 +184,20 @@
 
                                 <div class="inputAll">
                                     <div class="input-field">
-                                        <label for="certificado" id="difbtn">Certificados
+                                        <label for="inp4" id="difbtn">Certificados
                                             <span class="material-icons upload">upload</span>
                                         </label>
-                                        <input name="certificado" type="file" id="certificados" class="img" multiple>
+                                        <input name="certificado" type="file" id="inp4" class="img" multiple>
                                     </div>
                                     <div class="arqvnome">
                                         <p id="nome4">Nenhum arquivo selecionado.</p>
                                     </div>
                                 </div>
 
+                                <div id='inpdif' class="input-field">
+                                    <label>Sobre Você</label>
+                                    <input id="sobre" type="text" placeholder="Escreva sobre você" name="sobre_txt">
+                                </div>
 
                             </div>
                         </div>
@@ -214,26 +210,25 @@
                                         <figcaption id="file-name"></figcaption>
                                     </figure>
 
-                                    <input type="file" id="upload-button" accept="image/*" name="foto_cuid">
+                                    <input type="file" id="upload-button" accept="image/*">
                                     <label id="lbll" for="upload-button">
                                         <i class="fas fa-upload"></i> &nbsp; Selecione uma foto de perfil
                                     </label>
                                 </div>
                             </div>
-
-                            <div class="buttons">
-                                <div class="backBtn">
-                                    <i class="uil uil-navigator"></i>
-                                    <span class="btnText">Voltar</span>
+                            <input type="hidden" name="cadastrocuid" value="cadastrarcuid"> 
+                            <div class="btnn">
+                                <div class="buttons">
+                                    <button class="nextBtn">
+                                        <span class="btnText">Concluir</span>
+                                        <i class="uil uil-navigator"></i>
+                                    </button>
+                                    <p style="color: black;">Já possui cadastro? <a href="">Faça Login </a></p>
                                 </div>
-
-                                <button class="submit">
-                                    <span class="btnText">Concluir</span>
-                                    <i class="uil uil-navigator"></i>
-                                </button>
                             </div>
                         </div>
                     </div>
+                </div>
             </form>
         </div>
     </div>
