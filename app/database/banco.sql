@@ -151,6 +151,8 @@
 --   CEP_cuid VARCHAR(9) NOT NULL,
 --   estado_cuid VARCHAR(45) NOT NULL,
 --   cidade_cuid VARCHAR(45) NOT NULL,
+--   bairro_cuid VARCHAR(45) NOT NULL,
+--   end_cuid VARCHAR(45) NOT NULL,
 --   numero_cuid VARCHAR(5) NOT NULL,
 --   complemento_cuid VARCHAR(100) NULL,
 --   infoCuidador_id INT NOT NULL,
@@ -158,10 +160,10 @@
 --   FOREIGN KEY(infoCuidador_id) REFERENCES infoCuidador(id)
 -- ) ENGINE = InnoDB;
 
--- INSERT INTO enderecoCuidador (CEP_cuid, estado_cuid, cidade_cuid, numero_cuid, complemento_cuid, infoCuidador_id)
+-- INSERT INTO enderecoCuidador (CEP_cuid, estado_cuid, cidade_cuid, bairro_cuid, end_cuid, numero_cuid, complemento_cuid, infoCuidador_id)
 -- VALUES
---     ('54321-987', 'RJ', 'Rio de Janeiro', '456', 'Casa', 1),
---     ('12345-678', 'SP', 'São Paulo', '321', 'Apt 2C', 2);
+--     ('54321-987', 'RJ', 'Rio de Janeiro','Laranjeiras','Rua Laranja', '456', 'Casa', 1),
+--     ('12345-678', 'SP', 'São Paulo', 'Joana Angelica','Av. Macapá', '758', 'Ao lado do mercado',2);
 
 
 -- -- Table infoCurricular
@@ -170,15 +172,17 @@
 --   rg_frente VARCHAR(200) NOT NULL,
 --   rg_verso VARCHAR(200) NOT NULL,
 --   curriculo VARCHAR(200) NOT NULL,
+--   certificado VARCHAR(200) NOT NULL,
+--   sobre_txt TEXT(1000) NOT NULL,
 --   id_cuid_FK INT NOT NULL,
 --   PRIMARY KEY(id, id_cuid_FK),
 --   FOREIGN KEY(id_cuid_FK) REFERENCES infoCuidador(id)
 -- ) ENGINE = InnoDB;
 
--- INSERT INTO infoCurricular (rg_frente, rg_verso, curriculo, id_cuid_FK)
+-- INSERT INTO infoCurricular (rg_frente, rg_verso, curriculo, sobre_txt, id_cuid_FK)
 -- VALUES
---     ('/path/rg1.png', '/path/rg2.png', '/path/curriculo1.pdf', 1),
---     ('/path/rg3.png', '/path/rg4.png', '/path/curriculo2.pdf', 2);
+--     ('/path/rg1.png', '/path/rg2.png', '/path/curriculo1.pdf','Trabalho como cuidador a 6 anos', 1),
+--     ('/path/rg3.png', '/path/rg4.png', '/path/curriculo2.pdf','Amo trabalhar com idosos', 2);
 
 
 -- -- Table fotoPerfilCuid

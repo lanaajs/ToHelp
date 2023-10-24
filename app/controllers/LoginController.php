@@ -107,7 +107,7 @@ class LoginController
                 $_SESSION['contr_id'] = $usuario->id;
 
                 // Redirecione o usuário para a página apropriada com base no tipo de conta (cntr ou cuid)
-                header("Location: /conta/00000{$_SESSION['contr_id']}/contratante");
+                header("Location: /conta/{$_SESSION['contr_id']}");
 
                 // Encerre o script para evitar saída adicional
                 exit();

@@ -100,14 +100,22 @@
                                 <label for="cidade_contr">Cidade</label>
                                 <input type="text" placeholder="Insira uma cidade" id="cidade_contr" name="cidade_contr" required>
                             </div>
+                            
                             <div class="input-field">
+                                <label for="bairro_contr">Bairro</label>
+                                <input type="text" placeholder="Insira uma cidade" name="bairro_contr">
+                            </div>
+
+                            <div class="input-field">
+                                <label for="end_contr">Endereço</label>
+                                <input type="text" placeholder="Insira uma cidade" name="end_contr">
+                            </div>
+
+                            <div id="num" class="input-field">
                                 <label for="numero_contr">Número</label>
                                 <input type="text" placeholder="Insira um número" id="numero_contr" name="numero_contr" required>
                             </div>
-                        </div>
-                    </div>
-                    <div class="details ID">
-                        <div class="fields">
+
                             <div class="input-field">
                                 <label for="complemento_contr">Complemento</label>
                                 <input type="text" placeholder="Insira um complemento" id="complemento_contr" name="complemento_contr" required>
@@ -116,6 +124,7 @@
                                 <label for="senha_contr">Senha</label>
                                 <input id="senha" type="text" placeholder="Crie uma senha" id="senha_contr" name="senha_contr" required>
                             </div>
+
                             <div class="input-field">
                                 <label for="tipo_contr">Selecione uma opção</label>
                                 <div class="mark">
@@ -128,7 +137,9 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="hidden" name="cadastro" value="cadastrar"> 
+                    </div>
+                    <div class="details ID">
+                        <input type="hidden" name="cadastrocontr" value="cadastrarcontr">
                         <div class="btnn">
                             <button class="nextBtn">
                                 <span class="btnText">Prosseguir</span>
