@@ -9,6 +9,12 @@
 
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="../../public/assets/css/CadastroCuidador.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">   
+
+    <!----======== JS ======== -->
+    <script src="../../public/assets/js/Cadastro.js"></script>
+    <script src="../../public/assets/js/CadastroCuidador.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -18,7 +24,7 @@
     <title>ToHelp Cadastro</title>
 </head>
 
-<body>
+<body onload="senhaTAM()">
     <div class="tudo">
 
         <div class="total">
@@ -56,42 +62,42 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label for="nome_cuid">Nome</label>
-                                <input type="text" placeholder="Insira seu nome" name="nome_cuid">
+                                <input type="text" placeholder="Insira seu nome" name="nome_cuid" id="nome" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="sobrenome_cuid">Sobrenome</label>
-                                <input type="text" placeholder="Insira seu sobrenome" name="sobrenome_cuid">
+                                <input type="text" placeholder="Insira seu sobrenome" name="sobrenome_cuid" id="sobrenome" required>  
                             </div>
 
                             <div class="input-field">
                                 <label for="CPF_cuid">CPF</label>
-                                <input type="text" placeholder="Insira seu CPF" name="CPF_cuid">
+                                <input type="text" placeholder="Insira seu CPF" name="CPF_cuid" id="cpf" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="RG_cuid">RG</label>
-                                <input type="text" placeholder="Insira seu RG" name="RG_cuid">
+                                <input type="text" placeholder="Insira seu RG" name="RG_cuid" id="rg" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="dt_nasc">Date de Nascimento</label>
-                                <input type="date" placeholder="Insira sua data de nascimento" name="dt_nasc">
+                                <input type="date" placeholder="Insira sua data de nascimento" name="dt_nasc" id="date" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="email_cuid">Email</label>
-                                <input type="text" placeholder="Insira seu email" name="email_cuid">
+                                <input type="text" placeholder="Insira seu email" name="email_cuid" id="email" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="celular_cuid">Celular</label>
-                                <input type="number" placeholder="Insira seu telefone celular" name="celular_cuid">
+                                <input type="text" placeholder="Insira seu telefone celular" name="celular_cuid" id="tel" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="genero">Gênero</label>
-                                <select name="genero">
+                                <select name="genero" id="genero" required>
                                     <option disabled selected>Selecione o gênero</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Feminino">Feminino</option>
@@ -101,41 +107,41 @@
 
                             <div class="input-field">
                                 <label for="CEP_cuid">CEP</label>
-                                <input type="text" placeholder="Insira seu CEP" name="CEP_cuid">
+                                <input type="text" placeholder="Insira seu CEP" name="CEP_cuid" id="cep" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="estado_cuid">Estado</label>
-                                <input type="text" placeholder="Insira um estado" name="estado_cuid">
+                                <input type="text" placeholder="Insira um estado" name="estado_cuid" id="estado" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="cidade_cuid">Cidade</label>
-                                <input type="text" placeholder="Insira uma cidade" name="cidade_cuid">
+                                <input type="text" placeholder="Insira uma cidade" name="cidade_cuid" id="cidade" required>
                             </div>
                             <div class="input-field">
                                 <label for="bairro_cuid">Bairro</label>
-                                <input type="text" placeholder="Insira uma cidade" name="bairro_cuid">
+                                <input type="text" placeholder="Insira uma cidade" name="bairro_cuid" id="bairro" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="end_cuid">Endereço</label>
-                                <input type="text" placeholder="Insira uma cidade" name="end_cuid">
+                                <input type="text" placeholder="Insira uma cidade" name="end_cuid" id="endereco" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="numero_cuid">Número</label>
-                                <input type="text" placeholder="Insira um número" name="numero_cuid">
+                                <input type="text" placeholder="Insira um número" name="numero_cuid" id="numero" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="complemento_cuid">Complemento</label>
-                                <input type="text" placeholder="Insira um complemento" name="complemento_cuid">
+                                <input type="text" placeholder="Insira um complemento" name="complemento_cuid" id="complemento" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="senha_cuid">Senha</label>
-                                <input id="senha" type="text" placeholder="Crie uma senha" name="senha_cuid">
+                                <input id="senha" type="password" placeholder="Crie uma senha" name="senha_cuid" required>
                             </div>
                         </div>
                     </div>
@@ -151,7 +157,7 @@
                                         <label for="inp1" id="difbtn">Foto do RG (frente)
                                             <span class="material-icons upload">upload</span>
                                         </label>
-                                        <input name="rg_frente" id="inp1" type="file">
+                                        <input name="rg_frente" id="inp1" type="file" required>
                                     </div>
                                     <div class="arqvnome">
                                         <p id="nome1">Nenhum arquivo selecionado.</p>
@@ -163,7 +169,7 @@
                                         <label for="inp2" id="difbtn">Foto do RG (verso)
                                             <span class="material-icons upload">upload</span>
                                         </label>
-                                        <input name="rg_verso" id="inp2" type="file">
+                                        <input name="rg_verso" id="inp2" type="file" required>
                                     </div>
                                     <div class="arqvnome">
                                         <p id="nome2">Nenhum arquivo selecionado.</p>
@@ -175,7 +181,7 @@
                                         <label for="inp3" id="difbtn">Currículo
                                             <span class="material-icons upload">upload</span>
                                         </label>
-                                        <input name="curriculo" id="inp3" type="file">
+                                        <input name="curriculo" id="inp3" type="file" required>
                                     </div>
                                     <div class="arqvnome">
                                         <p id="nome3">Nenhum arquivo selecionado.</p>
@@ -187,7 +193,7 @@
                                         <label for="inp4" id="difbtn">Certificados
                                             <span class="material-icons upload">upload</span>
                                         </label>
-                                        <input name="certificado" type="file" id="inp4" class="img" multiple>
+                                        <input name="certificado" type="file" id="inp4" class="img" multiple> 
                                     </div>
                                     <div class="arqvnome">
                                         <p id="nome4">Nenhum arquivo selecionado.</p>
@@ -196,7 +202,7 @@
 
                                 <div id='inpdif' class="input-field">
                                     <label>Sobre Você</label>
-                                    <input id="sobre" type="text" placeholder="Escreva sobre você" name="sobre_txt">
+                                    <input id="sobre" type="text" placeholder="Escreva sobre você" name="sobre_txt" required>
                                 </div>
 
                             </div>
@@ -216,14 +222,14 @@
                                     </label>
                                 </div>
                             </div>
-                            <input type="hidden" name="cadastrocuid" value="cadastrarcuid"> 
+                            <input type="hidden" name="cadastrocuid" value="cadastrarcuid" required> 
                             <div class="btnn">
                                 <div class="buttons">
-                                    <button class="nextBtn">
+                                    <button class="nextBtn" onclick="analisar()" id="btn">
                                         <span class="btnText">Concluir</span>
                                         <i class="uil uil-navigator"></i>
                                     </button>
-                                    <p style="color: black;">Já possui cadastro? <a href="">Faça Login </a></p>
+                                    <p style="color: black;">Já possui cadastro? <a href="/login/cuidador">Faça Login </a></p>
                                 </div>
                             </div>
                         </div>
@@ -233,7 +239,7 @@
         </div>
     </div>
 
-    <script src="../../public/assets/js/CadastroCuidador.js"></script>
+
 </body>
 
 </html>

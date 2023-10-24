@@ -6,56 +6,50 @@ function cuidador() {
   window.location = '/cadastro/cuidador'
 }
 
-function alterarFocus(style) {
-  const input = document.querySelectorAll("input");
-  input.forEach(function (input) {
-    input.addEventListener("focus", function () {
-      input.style.border = style;
-    });
 
-    input.addEventListener("blur", function () {
-      input.style.border = "none";
-    });
-  });
-}
-
-var selecionado = null;
-
-function textBox(textbox) {
-  if (selecionado !== null && selecionado !== textbox) {
-    selecionado.checked = false;
-  }
-  selecionado = textbox;
-}
 
 function analisar() {
   var nome = document.getElementById("nome");
+  var sobrenome = document.getElementById("sobrenome");
+  var cpf = document.getElementById("cpf");
+  var rg = document.getElementById("rg");
   var email = document.getElementById("email");
   var tel = document.getElementById("tel");
-  var dependente = document.getElementById("dependentes");
-  var cpf = document.getElementById("cpf");
-  var city = document.getElementById("city");
-  var state = document.getElementById("state");
-  var number = document.getElementById("numero");
+  var cep = document.getElementById("cep");
+  var state = document.getElementById("estado");
+  var city = document.getElementById("cidade");
+  var bairro = document.getElementById("bairro");
   var endereco = document.getElementById("endereco");
+  var number = document.getElementById("numero");
   var complemento = document.getElementById("complemento");
+  var senha = document.getElementById("senha");
+
+  var date = document.getElementById("date");
+
+  var sobre = document.getElementById("sobre")
+
+
+  var controller =  false;
+
   var array = [
     nome,
+    sobrenome,
+    cpf,
+    rg,
     email,
     tel,
-    dependente,
-    cpf,
-    city,
+    cep,
     state,
-    number,
+    city,
+    bairro,
     endereco,
+    number,
     complemento,
+    senha,
+    date,
+    sobre
   ];
-  var controller = false;
 
-  if (nome.value != "" && email.value != "" && tel.value != "" && dependente.value != "" && cpf.value != "" && state.value != "" && city.value != "" && endereco.value != "" && number.value != "" && complemento.value != "") {
-    window.location = "/login/contratante";
-  } else {
     for (var i = 0; i <= array.length; i++) {
       if (array[i].value == "") {
         array[i].style.borderColor = "red";
@@ -64,49 +58,129 @@ function analisar() {
         array[i].style.borderColor = "green";
       }
 
+
       if (controller && i == 1) {
         Toastify({
-          text: "Campo não preenchido",
+            text: "Campo não preenchido",
+            className: "toast",
+            duration: 1500,
+            newWindow: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "linear-gradient(to right, #ff0000, #ec5353)",
+                
+            },
+            onClick: function () { } // Callback after click
+        }).showToast();
+        controller = false;
+    }
+    }
+
+}
+
+function senhaTAM(){
+  var senha = document.getElementById("senha");
+  var btn = document.getElementById("btn");
+
+  var controller = false;
+
+ 
+  btn.addEventListener("click", function(){
+    var limiter = senha.value
+    if(limiter.length == 8){
+      senha.style.borderColor = "green"
+    }else{
+      senha.style.borderColor = "red"
+      controller = true;
+    }
+
+    if (controller) {
+      Toastify({
+          text: "A senha tem que ter 8 caracteres",
           className: "toast",
-          duration: 3000,
+          duration: 1500,
           newWindow: true,
           gravity: "top", // `top` or `bottom`
           position: "center", // `left`, `center` or `right`
           stopOnFocus: true, // Prevents dismissing of toast on hover
           style: {
-            background: "linear-gradient(to right, #ff0000, #ec5353)",
+              background: "linear-gradient(to right, #ff0000, #ec5353)",
+              
           },
-          onClick: function () { }, // Callback after click
-        }).showToast();
-        controller = false;
-      }
-    }
+          onClick: function () { } // Callback after click
+      }).showToast();
+      controller = false;
   }
+
+  });
+
+  const cpfInput = document.getElementById("cpf");
+
+cpfInput.addEventListener("input", function() {
+ 
+  const cpf = cpfInput.value.replace(/\D/g, "");
+
+  if (cpf.length <= 3) {
+    cpfInput.value = cpf;
+  } else if (cpf.length <= 6) {
+    cpfInput.value = cpf.substring(0, 3) + "." + cpf.substring(3);
+  } else if (cpf.length <= 9) {
+    cpfInput.value = cpf.substring(0, 3) + "." + cpf.substring(3, 6) + "." + cpf.substring(6);
+  } else {
+    cpfInput.value = cpf.substring(0, 3) + "." + cpf.substring(3, 6) + "." + cpf.substring(6, 9) + "-" + cpf.substring(9, 11);
+  }
+});
+
+const cepInput = document.getElementById("cep");
+
+cepInput.addEventListener("input", function() {
+ 
+  const cep = cepInput.value.replace(/\D/g, "");
+
+  if (cep.length <= 3) {
+    cepInput.value = cep;
+  } else if (cep.length <= 9    ) {
+    cepInput.value = cep.substring(0, 5) + "-" + cep.substring(5,8);
+  }
+});
+
+const telInput = document.getElementById("tel");
+
+telInput.addEventListener("input", function() {
+  let tel = telInput.value.replace(/\D/g, "");
+
+  if (tel.length <= 2) {
+    telInput.value = tel;
+  } else if (tel.length <= 6) {
+    telInput.value = `(${tel.substring(0, 2)}) ${tel.substring(2)}`;
+  } else if (tel.length <= 10) {
+    telInput.value = `(${tel.substring(0, 2)}) ${tel.substring(2, 6)}-${tel.substring(6)}`;
+  } else {
+    telInput.value = `(${tel.substring(0, 2)}) ${tel.substring(2, 7)}-${tel.substring(7, 11)}`;
+  }
+});
+
+const rgInput = document.getElementById("rg");
+
+rgInput.addEventListener("input", function () {
+  let rg = rgInput.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+
+  // Formata o RG no formato XX.XXX.XXX-X
+  if (rg.length <= 2) {
+    rgInput.value = rg;
+  } else if (rg.length <= 5) {
+    rgInput.value = `${rg.substring(0, 2)}.${rg.substring(2)}`;
+  } else if (rg.length <= 8) {
+    rgInput.value = `${rg.substring(0, 2)}.${rg.substring(2, 5)}.${rg.substring(5)}`;
+  } else {
+    rgInput.value = `${rg.substring(0, 2)}.${rg.substring(2, 5)}.${rg.substring(5, 8)}-${rg.substring(8,10)}`;
+  }
+});
+
 }
 
 
 
-const telefone = document.querySelector("#tel");
-const cpf = document.querySelector("#cpf");
-
-telefone.addEventListener("keyup", (e) => {
-  const valuesOfInput = e.target.value.replaceAll("-", "");
-
-  if (e.target.value.length < 12) {
-    e.target.value = valuesOfInput.replace(
-      /(\d{2})(\d{5})(\d{4})/,
-      "($1) $2-$3"
-    );
-  }
-});
-
-cpf.addEventListener("keyup", (e) => {
-  const valuesOfInput = e.target.value.replaceAll(".", "");
-
-  if (e.target.value.length < 12) {
-    e.target.value = valuesOfInput.replace(
-      /(\d{3})(\d{3})(\d{3})(\d{0,2})/,
-      "$1.$2.$3-$4"
-    );
-  }
-});
+  

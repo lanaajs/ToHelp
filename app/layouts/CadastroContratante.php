@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - codingnepalweb.com -->
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!----======== CSS ======== -->
-    <link rel="stylesheet" href="../../public/assets/css/CadastroContratante.css">
+     <!----======== CSS ======== -->
+     <link rel="stylesheet" href="../../public/assets/css/CadastroContratante.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">   
+
+    <!----======== JS ======== -->
+    <script src="../../public/assets/js/Cadastro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -18,7 +23,7 @@
     <title>ToHelp Cadastro</title>
 </head>
 
-<body>
+<body onload="senhaTAM()">
 
     <div class="tudo">
         <div class="total">
@@ -53,35 +58,35 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label for="nome_contr">Nome</label>
-                                <input type="text" placeholder="Insira seu nome" id="nome_contr" name="nome_contr" required>
+                                <input type="text" placeholder="Insira seu nome" id="nome" name="nome_contr" required>
                             </div>
                             <div class="input-field">
                                 <label for="sobrenome_contr">Sobrenome</label>
-                                <input type="text" placeholder="Insira seu sobrenome" id="sobrenome_contr" name="sobrenome_contr" required>
+                                <input type="text" placeholder="Insira seu sobrenome" id="sobrenome" name="sobrenome_contr" required>
                             </div>
                             <div class="input-field">
                                 <label for="CPF_contr">CPF</label>
-                                <input type="text" placeholder="Insira seu CPF" id="CPF_contr" name="CPF_contr" required>
+                                <input type="text" placeholder="Insira seu CPF" id="cpf" name="CPF_contr" required>
                             </div>
                             <div class="input-field">
                                 <label for="RG_contr">RG</label>
-                                <input type="text" placeholder="Insira seu RG" id="RG_contr" name="RG_contr" required>
+                                <input type="text" placeholder="Insira seu RG" id="rg" name="RG_contr" required>
                             </div>
                             <div class="input-field">
                                 <label for="dt_nasc">Date de Nascimento</label>
-                                <input type="date" id="dt_nasc" name="dt_nasc" required>
+                                <input type="date" id="date" name="dt_nasc" required>
                             </div>
                             <div class="input-field">
                                 <label for="email_contr">Email</label>
-                                <input type="text" placeholder="Insira seu email" id="email_contr" name="email_contr" required>
+                                <input type="text" placeholder="Insira seu email" id="email" name="email_contr" required>
                             </div>
                             <div class="input-field">
                                 <label for="celular_contr">Celular</label>
-                                <input type="number" placeholder="Insira seu telefone celular" id="celular_contr" name="celular_contr" required>
+                                <input type="text" placeholder="Insira seu telefone celular" id="tel" name="celular_contr" required>
                             </div>
                             <div class="input-field">
                                 <label for="genero">Gênero</label>
-                                <select name="genero" required>
+                                <select name="genero" id="genero" required>
                                     <option disabled selected>Selecione o gênero</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Feminino">Feminino</option>
@@ -90,39 +95,39 @@
                             </div>
                             <div class="input-field">
                                 <label for="CEP_contr">CEP</label>
-                                <input type="text" placeholder="Insira seu CEP" id="CEP_contr" name="CEP_contr" required>
+                                <input type="text" placeholder="Insira seu CEP" id="cep" name="CEP_contr" required>
                             </div>
                             <div class="input-field">
                                 <label for="estado_contr">Estado</label>
-                                <input type="text" placeholder="Insira um estado" id="estado_contr" name="estado_contr" required>
+                                <input type="text" placeholder="Insira um estado" id="estado" name="estado_contr" required>
                             </div>
                             <div class="input-field">
                                 <label for="cidade_contr">Cidade</label>
-                                <input type="text" placeholder="Insira uma cidade" id="cidade_contr" name="cidade_contr" required>
+                                <input type="text" placeholder="Insira uma cidade" id="cidade" name="cidade_contr" required>
                             </div>
                             
                             <div class="input-field">
                                 <label for="bairro_contr">Bairro</label>
-                                <input type="text" placeholder="Insira uma cidade" name="bairro_contr">
+                                <input type="text" placeholder="Insira uma bairro" id="bairro" name="bairro_contr">
                             </div>
 
                             <div class="input-field">
                                 <label for="end_contr">Endereço</label>
-                                <input type="text" placeholder="Insira uma cidade" name="end_contr">
+                                <input type="text" placeholder="Insira uma endereço" id="endereco" name="end_contr">
                             </div>
 
                             <div id="num" class="input-field">
                                 <label for="numero_contr">Número</label>
-                                <input type="text" placeholder="Insira um número" id="numero_contr" name="numero_contr" required>
+                                <input type="text" placeholder="Insira um número" id="numero" name="numero_contr" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="complemento_contr">Complemento</label>
-                                <input type="text" placeholder="Insira um complemento" id="complemento_contr" name="complemento_contr" required>
+                                <input type="text" placeholder="Insira um complemento" id="complemento" name="complemento_contr" required>
                             </div>
                             <div class="input-field">
                                 <label for="senha_contr">Senha</label>
-                                <input id="senha" type="text" placeholder="Crie uma senha" id="senha_contr" name="senha_contr" required>
+                                <input id="senha" type="password" placeholder="Crie uma senha" id="senha" name="senha_contr" required>
                             </div>
 
                             <div class="input-field">
@@ -141,7 +146,7 @@
                     <div class="details ID">
                         <input type="hidden" name="cadastrocontr" value="cadastrarcontr">
                         <div class="btnn">
-                            <button class="nextBtn">
+                            <button class="nextBtn" id="btn" onclick="analisar()">
                                 <span class="btnText">Prosseguir</span>
                                 <i class="uil uil-navigator"></i>
                             </button>
