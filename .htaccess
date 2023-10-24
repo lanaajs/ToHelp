@@ -1,3 +1,15 @@
+<!-- RewriteEngine On  -->
+<!-- Sinalizamos ao sistema que estamos ligando a reescrita da forma com a qual ele executa a leitura da URL-->
+
+<!-- RewriteCond %{REQUEST_FILENAME} !-f  -->
+<!-- Condição referente a exixtência do arquivo -->
+
+<!-- RewriteCond %{REQUEST_FILENAME} !-d  -->
+<!-- Condição referente a exixtência da pasta -->
+
+<!-- RewriteRule ^(.*)$ /app/layouts/index.php?url=$1 [NC]  -->
+<!-- Reescreve uma regra dizendo que qualquer coisa que for escrita na URL após o domínio vai fazer com que o site seja direcionado para o index.php  -->
+
 <!-- <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /

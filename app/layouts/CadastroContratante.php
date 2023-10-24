@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <title>ToHelp Cadastro</title>
 </head>
 
@@ -95,7 +96,9 @@
                             </div>
                             <div class="input-field">
                                 <label for="CEP_contr">CEP</label>
-                                <input type="text" placeholder="Insira seu CEP" id="cep" name="CEP_contr" required>
+ 
+                                <input type="text" placeholder="Insira seu CEP" id="CEP" name="CEP_contr" required>
+
                             </div>
                             <div class="input-field">
                                 <label for="estado_contr">Estado</label>
@@ -108,17 +111,22 @@
                             
                             <div class="input-field">
                                 <label for="bairro_contr">Bairro</label>
-                                <input type="text" placeholder="Insira uma bairro" id="bairro" name="bairro_contr">
-                            </div>
+                              <input type="text" placeholder="Insira uma cidade" id="bairro" name="bairro_contr">
+
+                          </div>
 
                             <div class="input-field">
                                 <label for="end_contr">Endereço</label>
                                 <input type="text" placeholder="Insira uma endereço" id="endereco" name="end_contr">
-                            </div>
+
+                                                            </div>
 
                             <div id="num" class="input-field">
                                 <label for="numero_contr">Número</label>
+
                                 <input type="text" placeholder="Insira um número" id="numero" name="numero_contr" required>
+
+                   
                             </div>
 
                             <div class="input-field">
@@ -157,6 +165,7 @@
             </form>
         </div>
     </div>
+    <script src="/public/assets/js/cep.js" type='module' defer></script>
 </body>
 
 </html>

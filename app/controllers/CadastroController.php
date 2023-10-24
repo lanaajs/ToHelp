@@ -116,7 +116,7 @@ class CadastroController
             if ($lastIdCuidador !== false && $resultEndereco !== false && $resultInfoCurricular !== false) {
                 $db->confirmarTransacao();
                 echo "Cadastro realizado com sucesso! Último ID inserido: $lastIdCuidador <br>";
-                header('Location: /login/cuidador');
+                header('Location: /cuidador/login');
             } else {
                 $db->cancelarTransacao();
                 echo "Erro ao cadastrar. Por favor, tente novamente.";
@@ -196,7 +196,7 @@ class CadastroController
             if ($lastIdContratante !== false && $resultEndereco !== false) {
                 $db->confirmarTransacao();
                 echo "Cadastro realizado com sucesso! Último ID inserido: $lastIdContratante <br>";
-                header('Location: /login/contratante');
+                header('Location: /contratante/login');
             } else {
                 $db->cancelarTransacao();
                 echo "Erro ao cadastrar. Por favor, tente novamente.";

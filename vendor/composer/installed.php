@@ -2,6 +2,8 @@
     'root' => array(
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
+
+        'reference' => '3fc3125e85f99092594c3d1eddd8bd8d31da0b3e',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,6 +24,8 @@
         'tohelp/tohelp' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
+
+            'reference' => '3fc3125e85f99092594c3d1eddd8bd8d31da0b3e',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
