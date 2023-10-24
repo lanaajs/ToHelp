@@ -101,26 +101,26 @@
 
                             <div class="input-field">
                                 <label for="CEP_cuid">CEP</label>
-                                <input type="text" placeholder="Insira seu CEP" name="CEP_cuid">
+                                <input type="text" placeholder="Insira seu CEP" id="CEP" name="CEP_cuid">
                             </div>
 
                             <div class="input-field">
                                 <label for="estado_cuid">Estado</label>
-                                <input type="text" placeholder="Insira um estado" name="estado_cuid">
+                                <input type="text" placeholder="Insira um estado" id="estado" name="estado_cuid">
                             </div>
 
                             <div class="input-field">
                                 <label for="cidade_cuid">Cidade</label>
-                                <input type="text" placeholder="Insira uma cidade" name="cidade_cuid">
+                                <input type="text" placeholder="Insira uma cidade" id="cidade" name="cidade_cuid">
                             </div>
                             <div class="input-field">
                                 <label for="bairro_cuid">Bairro</label>
-                                <input type="text" placeholder="Insira uma cidade" name="bairro_cuid">
+                                <input type="text" placeholder="Insira uma cidade" id="bairro" name="bairro_cuid">
                             </div>
 
                             <div class="input-field">
                                 <label for="end_cuid">Endereço</label>
-                                <input type="text" placeholder="Insira uma cidade" name="end_cuid">
+                                <input type="text" placeholder="Insira uma cidade" id="endereco" name="end_cuid">
                             </div>
 
                             <div class="input-field">
@@ -232,8 +232,8 @@
             </form>
         </div>
     </div>
-
     <script src="../../public/assets/js/CadastroCuidador.js"></script>
+    <script src="/public/assets/js/cep.js" type='module' defer></script>
 </body>
 
 </html>
