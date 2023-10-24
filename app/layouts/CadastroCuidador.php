@@ -19,6 +19,56 @@
 </head>
 
 <body>
+    
+    <?php
+        if(isset($_POST['cadastrocuid'])) {
+            // Verifica se o formulário foi enviado
+
+            // Arquivos adicionais
+            $rg_frente = $_FILES['rg_frente'];
+            $rg_verso = $_FILES['rg_verso'];
+            $curriculo = $_FILES['curriculo'];
+            $certificados = $_FILES['certificado'];
+            $foto_perfil = $_FILES['foto_perfil'];
+
+            // Exemplo de como mover um arquivo (neste caso, rg_frente)
+            if($rg_frente['name'] != "") {
+                $extensao = pathinfo($rg_frente['name'], PATHINFO_EXTENSION);
+                $novo_nome = "rg_frente." . $extensao;
+                move_uploaded_file($rg_frente['tmp_name'], 'uploads_arq_cuid/' . $novo_nome);
+            }
+
+            // Exemplo de como mover um arquivo (neste caso, rg_verso)
+            if($rg_verso['name'] != "") {
+                $extensao = pathinfo($rg_verso['name'], PATHINFO_EXTENSION);
+                $novo_nome = "rg_verso." . $extensao;
+                move_uploaded_file($rg_verso['tmp_name'], 'uploads_arq_cuid/' . $novo_nome);
+            }
+
+            // Exemplo de como mover um arquivo (neste caso, curriculo)
+            if($curriculo['name'] != "") {
+                $extensao = pathinfo($curriculo['name'], PATHINFO_EXTENSION);
+                $novo_nome = "curriculo." . $extensao;
+                move_uploaded_file($curriculo['tmp_name'], 'uploads_arq_cuid/' . $novo_nome);
+            }
+
+            // Exemplo de como mover um arquivo (neste caso, certificados)
+            if($certificados['name'] != "") {
+                $extensao = pathinfo($certificados['name'], PATHINFO_EXTENSION);
+                $novo_nome = "certificados." . $extensao;
+                move_uploaded_file($certificados['tmp_name'], 'uploads_arq_cuid/' . $novo_nome);
+            }
+
+            // Exemplo de como mover um arquivo (neste caso, foto de perfil)
+            if($foto_perfil['name'] != "") {
+                $extensao = pathinfo($foto_perfil['name'], PATHINFO_EXTENSION);
+                $novo_nome = "foto_perfil." . $extensao;
+                move_uploaded_file($foto_perfil['tmp_name'], 'uploads_arq_cuid/' . $novo_nome);
+            }
+        }
+    ?>
+
+
     <div class="tudo">
 
         <div class="total">
@@ -48,7 +98,7 @@
                 </div>
             </div>
 
-            <form action="/cadastro/cuidador" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
                 <div class="form first active">
                     <div class="details personal">
                         <span class="title">Informações Pessoais</span>
@@ -210,7 +260,7 @@
                                         <figcaption id="file-name"></figcaption>
                                     </figure>
 
-                                    <input type="file" id="upload-button" accept="image/*">
+                                    <input type="file" name="foto_perfil" id="upload-button" accept="image/*">
                                     <label id="lbll" for="upload-button">
                                         <i class="fas fa-upload"></i> &nbsp; Selecione uma foto de perfil
                                     </label>
