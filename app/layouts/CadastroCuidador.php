@@ -9,6 +9,12 @@
 
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="../../public/assets/css/CadastroCuidador.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">   
+
+    <!----======== JS ======== -->
+    <script src="../../public/assets/js/CadastroCuidador.js"></script>
+    <script src="../../public/assets/js/Cadastro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -18,7 +24,7 @@
     <title>ToHelp Cadastro</title>
 </head>
 
-<body>
+<body onload="senhaTAM()">
     <div class="tudo">
 
         <div class="total">
@@ -56,42 +62,42 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label>Nome</label>
-                                <input type="text" placeholder="Insira seu nome">
+                                <input id="nome" type="text" placeholder="Insira seu nome">
                             </div>
 
                             <div class="input-field">
                                 <label>Sobrenome</label>
-                                <input type="text" placeholder="Insira seu sobrenome">
+                                <input id="sobrenome" type="text" placeholder="Insira seu sobrenome">
                             </div>
 
                             <div class="input-field">
                                 <label>CPF</label>
-                                <input type="text" placeholder="Insira seu CPF">
+                                <input id="cpf" type="text" placeholder="Insira seu CPF">
                             </div>
 
                             <div class="input-field">
                                 <label>RG</label>
-                                <input type="text" placeholder="Insira seu RG">
+                                <input id="rg" type="text" placeholder="Insira seu RG">
                             </div>
 
                             <div class="input-field">
                                 <label>Date de Nascimento</label>
-                                <input type="date" placeholder="Insira sua data de nascimento">
+                                <input id="date" type="date" placeholder="Insira sua data de nascimento">
                             </div>
 
                             <div class="input-field">
                                 <label>Email</label>
-                                <input type="text" placeholder="Insira seu email">
+                                <input id="email" type="text" placeholder="Insira seu email">
                             </div>
 
                             <div class="input-field">
                                 <label>Celular</label>
-                                <input type="number" placeholder="Insira seu telefone celular">
+                                <input id="tel" type="text" placeholder="Insira seu telefone celular">
                             </div>
 
                             <div class="input-field">
                                 <label>Gênero</label>
-                                <select>
+                                <select id="genero">
                                     <option disabled selected>Selecione o gênero</option>
                                     <option>Masculino</option>
                                     <option>Feminino</option>
@@ -101,41 +107,41 @@
 
                             <div class="input-field">
                                 <label>CEP</label>
-                                <input type="text" placeholder="Insira seu CEP">
+                                <input id="cep" type="text" placeholder="Insira seu CEP">
                             </div>
 
                             <div class="input-field">
                                 <label>Estado</label>
-                                <input type="text" placeholder="Insira um estado">
+                                <input id="state" type="text" placeholder="Insira um estado">
                             </div>
 
                             <div class="input-field">
                                 <label>Cidade</label>
-                                <input type="text" placeholder="Insira uma cidade">
+                                <input id="city" type="text" placeholder="Insira uma cidade">
                             </div>
 
                             <div class="input-field">
                                 <label>Número</label>
-                                <input type="text" placeholder="Insira um número">
+                                <input id="number" type="text" placeholder="Insira um número">
                             </div>
 
                             <div class="input-field">
                                 <label>Complemento</label>
-                                <input type="text" placeholder="Insira um complemento">
+                                <input id="complemento" type="text" placeholder="Insira um complemento">
                             </div>
 
                             <div class="input-field">
                                 <label>Senha</label>
-                                <input id="senha" type="text" placeholder="Crie uma senha">
+                                <input id="senha" type="password" placeholder="Crie uma senha">
                             </div>
                         </div>
                     </div>
                     <div class="btnn">
-                        <button class="nextBtn">
+                        <button class="nextBtn" onclick="analisar()" id="btn">
                             <span class="btnText">Prosseguir</span>
                             <i class="uil uil-navigator"></i>
                         </button>
-                        <p style="color: black;">Já possui cadastro? <a href="">Faça Login </a></p>
+                        <p style="color: black;">Já possui cadastro? <a href="/login/cuidador">Faça Login </a></p>
                     </div>
                 </div>
 
@@ -257,7 +263,7 @@
         </div>
     </div>
 
-    <script src="../../public/assets/js/CadastroCuidador.js"></script>
+    
 </body>
 
 </html>

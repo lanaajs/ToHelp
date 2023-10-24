@@ -9,6 +9,11 @@
 
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="../../public/assets/css/CadastroContratante.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">   
+
+    <!----======== JS ======== -->
+    <script src="../../public/assets/js/Cadastro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -18,7 +23,7 @@
     <title>ToHelp Cadastro</title>
 </head>
 
-<body>
+<body onload="senhaTAM()">
 
     <div class="tudo">
         <div class="total">
@@ -53,36 +58,36 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label>Nome</label>
-                                <input type="text" placeholder="Insira seu nome" required>
+                                <input type="text" placeholder="Insira seu nome" id="nome" required>
                             </div>
                             <div class="input-field">
                                 <label>Sobrenome</label>
-                                <input type="text" placeholder="Insira seu sobrenome" required>
+                                <input type="text" placeholder="Insira seu sobrenome" id="sobrenome" required>
                             </div>
                             <div class="input-field">
                                 <label>CPF</label>
-                                <input type="text" placeholder="Insira seu CPF" required>
+                                <input type="text" placeholder="Insira seu CPF" id="cpf" required>
                             </div>
                             <div class="input-field">
                                 <label>RG</label>
-                                <input type="text" placeholder="Insira seu RG" required>
+                                <input type="text" placeholder="Insira seu RG" id="rg" required>
                             </div>
                             <div class="input-field">
                                 <label>Date de Nascimento</label>
-                                <input type="date" placeholder="Insira sua data de nascimento" required>
+                                <input type="date" placeholder="Insira sua data de nascimento" id="date" required>
                             </div>
                             <div class="input-field">
                                 <label>Email</label>
-                                <input type="text" placeholder="Insira seu email" required>
+                                <input type="text" placeholder="Insira seu email" id="email" required>
                             </div>
                             <div class="input-field">
                                 <label>Celular</label>
-                                <input type="number" placeholder="Insira seu telefone celular" required>
+                                <input type="text" placeholder="Insira seu telefone celular" id="tel" required>
                             </div>
                             <div class="input-field">
                                 <label>Gênero</label>
-                                <select required>
-                                    <option disabled selected>Selecione o gênero</option>
+                                <select required id="genero">
+                                    <option value="opcao1">Selecione o gênero</option>
                                     <option>Masculino</option>
                                     <option>Feminino</option>
                                     <option>Outros</option>
@@ -90,19 +95,19 @@
                             </div>
                             <div class="input-field">
                                 <label>CEP</label>
-                                <input type="text" placeholder="Insira seu CEP" required>
+                                <input type="text" placeholder="Insira seu CEP" id="cep" required>
                             </div>
                             <div class="input-field">
                                 <label>Estado</label>
-                                <input type="text" placeholder="Insira um estado" required>
+                                <input type="text" placeholder="Insira um estado" id="state" required>
                             </div>
                             <div class="input-field">
                                 <label>Cidade</label>
-                                <input type="text" placeholder="Insira uma cidade" required>
+                                <input type="text" placeholder="Insira uma cidade" id="city" required>
                             </div>
                             <div class="input-field">
                                 <label>Número</label>
-                                <input type="text" placeholder="Insira um número" required>
+                                <input type="text" placeholder="Insira um número" id="number" required>
                             </div>
                         </div>
                     </div>
@@ -110,11 +115,11 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label>Complemento</label>
-                                <input type="text" placeholder="Insira um complemento" required>
+                                <input type="text" placeholder="Insira um complemento" id="complemento" required>
                             </div>
                             <div class="input-field">
                                 <label>Senha</label>
-                                <input id="senha" type="text" placeholder="Crie uma senha" required>
+                                <input id="senha" type="password" placeholder="Crie uma senha" id="senha" required>
                             </div>
                             <div class="input-field">
                                 <label>Selecione uma opção</label>
@@ -129,14 +134,15 @@
                             </div>
                         </div>
                         <div class="btnn">                         
-                            <button class="nextBtn">
+                            <button class="nextBtn" onclick="analisar()" id="btn">
                                 <span class="btnText">Prosseguir</span>
                                 <i class="uil uil-navigator"></i>
                             </button>
-                            <p style="color: black;">Já possui cadastro? <a href="">Faça Login </a></p>
+                            <p style="color: black;">Já possui cadastro? <a href="/login/contratante">Faça Login </a></p>
                     </div>
                     </div>
                 </div>
+                </form>
         </div>
     </div>
 </body>

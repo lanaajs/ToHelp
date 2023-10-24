@@ -7,9 +7,10 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+html, body {margin: 0; height: 100%; overflow: hidden}
 
 body {
-    background: #00BF8C;
+    background: #00AD7F;
 }
 
 .container {
@@ -38,7 +39,7 @@ body {
     height: 3px;
     width: 27px;
     border-radius: 8px;
-    background-color: #00BF8C;
+    background-color:  #00AD7F;
 }
 
 .container form {
@@ -89,24 +90,11 @@ form.secActive .form.first {
     flex-wrap: wrap;
 }
 
-.container form .second .fields {
-    display: block;
-}
-
-.container form .second .fields label {
-    background-color: #00BF8C;
-    color: rgb(0, 0, 0);
-    border-radius: 5px;
-    margin-top: 20px;
-    min-width: 180px;
-    padding: 10px;
-}
-
-
 form .fields .input-field {
     display: flex;
     width: calc(100% / 3 - 15px);
     flex-direction: column;
+    margin: 4px 0;
 }
 
 .input-field label {
@@ -148,12 +136,14 @@ select {
     align-items: center;
     justify-content: center;
     height: 45px;
+    max-width: 200px;
+    width: 100%;
     border: none;
     outline: none;
     color: #fff;
     border-radius: 5px;
     margin: 25px 0;
-    background-color: #00BF8C;
+    background-color: #00AD7F;
     transition: all 0.3s linear;
     cursor: pointer;
 
@@ -162,19 +152,11 @@ select {
 .container form .btnText {
     font-size: 14px;
     font-weight: 400;
-    width: 120px;
-    justify-content: start;
-}
 
-form .buttons button,
-.backBtn {
-    margin-right: 14px;
-    width: 120px;
 }
-
 
 form button:hover {
-    background-color: #04916b;
+    background-color: #00AD7F;
 }
 
 form button i,
@@ -189,13 +171,15 @@ form .backBtn i {
 form .buttons {
     display: flex;
     align-items: center;
-    min-width: 100%;
 }
 
-
+form .buttons button,
+.backBtn {
+    margin-right: 14px;
+}
 
 #senha {
-    border-color: #00BF8C;
+    border-color: #00AD7F;
 }
 
 .mark {
@@ -212,7 +196,7 @@ form .buttons {
     position: relative;
     display: flex;
     justify-content: space-between;
-    background-color: #00BF8C;
+    background-color: #00AD7F;
     margin: 4% 0% 2% 2%;
     height: 50px;
     border-radius: 10px;
@@ -234,7 +218,6 @@ form .buttons {
     display: flex;
     align-items: center;
     border-radius: 5px;
-
 }
 
 #areaP2 {
@@ -255,60 +238,56 @@ form .buttons {
     justify-content: space-between;
 }
 
-#txt {
+#txt{
     line-height: 1.0;
     margin-top: 2%;
     margin-right: 10%;
 
 }
 
-.p1 {
+.p1{
     color: white;
     font-family: 'Archivo Black', sans-serif;
-    font-size: 34px;
+    font-size: 34px;  
 }
-
-.p2 {
-    color: transparent;
-    -webkit-text-stroke: 0.8px white;
+.p2{
+    color: transparent; 
+    -webkit-text-stroke: 0.8px white; 
     font-family: 'Archivo Black', sans-serif;
-    font-size: 34px;
-    letter-spacing: 0.03em;
+    font-size: 34px;  
+	letter-spacing: 0.03em;
 }
-
-.p3 {
+.p3{
     color: white;
     font-family: 'Archivo Black', sans-serif;
     font-size: 23px;
 }
 
-#logo {
+#logo{ 
     display: flex;
     align-items: center;
     justify-content: end;
 }
-
-#logo img {
+#logo img{
     width: 30vh;
     display: block;
-    margin-right: auto;
+  margin-right: auto;
 }
 
-.total {
+.total{
     position: relative;
     max-width: 300px;
     width: 100%;
     margin: 0 15px;
 }
 
-.btnn {
-    margin-top: 50px;
+.btnn{
     display: flex;
     justify-content: space-between;
     align-items: last baseline;
 }
 
-.btnn p {
+.btnn p{
     margin-top: 10px;
     margin-left: 10px;
     font-size: 12px;
@@ -317,16 +296,16 @@ form .buttons {
     padding: 5px;
 }
 
-.btnn p a {
-    color: #00BF8C;
+.btnn p a{
+    color: #106FFF;
     text-decoration: none;
 }
 
-#check:checked {
-    background-color: #00BF8C;
+#check:checked{
+    background-color: #00AD7F;
 }
 
-.tudo {
+.tudo{
     min-height: 100vh;
     display: flex;
     align-items: center;

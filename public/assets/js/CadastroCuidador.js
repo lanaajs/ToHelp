@@ -1,3 +1,11 @@
+function contratante() {
+    window.location = '/cadastro/contratante'
+  }
+  
+  function cuidador() {
+    window.location = '/cadastro/cuidador'
+  }
+
 const form = document.querySelector("form"),
     nextBtn = form.querySelector(".nextBtn"),
     backBtn = form.querySelector(".backBtn"),

@@ -9,6 +9,11 @@
 
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="../../public/assets/css/LoginContratante.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">    
+
+    <!----======== JS ======== -->
+    <script src="../../public/assets/js/Login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -18,7 +23,7 @@
     <title>Tohelp Login</title>
 </head>
 
-<body>
+<body onload="verificar()">
     <div class="tudo">
 
         <div class="total">
@@ -54,21 +59,21 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label>CPF</label>
-                                <input type="text" placeholder="Insira seu CPF">
+                                <input id="cpf"  type="text" placeholder="Insira seu CPF">
                             </div>
 
                             <div class="input-field">
                                 <label>Senha</label>
-                                <input id="senha" type="text" placeholder="Insira sua senha">
+                                <input id="senha" type="password" placeholder="Insira sua senha">
                             </div>
                         </div>
                     </div>
                     <div class="btnn">
-                        <button class="nextBtn">
+                        <button class="nextBtn" id="btn">
                             <span class="btnText">Entrar</span>
                             <i class="uil uil-navigator"></i>
                         </button>
-                        <p style="color: black;">Não possui login? <a href="">Faça o cadastro</a></p>
+                        <p style="color: black;">Não possui login? <a href="/cadastro/contratante">Faça o cadastro</a></p>
                     </div>
                 </div>
             </form>
