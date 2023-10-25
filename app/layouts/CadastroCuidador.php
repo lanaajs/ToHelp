@@ -24,7 +24,13 @@
     <title>ToHelp Cadastro</title>
 </head>
 
-<body onload="senhaTAM()">
+<body onload="senhaTAMCuid()">
+
+
+        <div id="setinha">
+            <a href=""><img src="../../public/assets/img/iconamoon_arrow-up-2-duotone.png" alt=""></a>
+        </div>
+
     <div class="tudo">
 
         <div class="total">
@@ -112,26 +118,20 @@
 
                             <div class="input-field">
                                 <label for="estado_cuid">Estado</label>
-                            
-
                                 <input type="text" placeholder="Insira um estado" id="estado" name="estado_cuid">
                             </div>
 
                             <div class="input-field">
                                 <label for="cidade_cuid">Cidade</label>
-
                                 <input type="text" placeholder="Insira uma cidade" name="cidade_cuid" id="cidade" required>
                             </div>
                             <div class="input-field">
                                 <label for="bairro_cuid">Bairro</label>
                                 <input type="text" placeholder="Insira uma cidade" name="bairro_cuid" id="bairro" required>
-
-
                             </div>
 
                             <div class="input-field">
                                 <label for="end_cuid">Endereço</label>
-
                                 <input type="text" placeholder="Insira uma cidade" id="endereco" name="end_cuid">
                             </div>
 
@@ -145,9 +145,14 @@
                                 <input type="text" placeholder="Insira um complemento" name="complemento_cuid" id="complemento" required>
                             </div>
 
-                            <div class="input-field">
+                            <div class="input-field ">
                                 <label for="senha_cuid">Senha</label>
                                 <input id="senha" type="password" placeholder="Crie uma senha" name="senha_cuid" required>
+                            </div>
+
+                            <div id="num" class="input-field">
+                                <label for="senhaConfirm_cuid">Confirme sua senha</label>
+                                <input type="password" placeholder="Confirme sua senha" id="senhaconfirm" name="senhaConfirm_cuid" required>
                             </div>
                         </div>
                     </div>
@@ -235,7 +240,7 @@
                                         <span class="btnText">Concluir</span>
                                         <i class="uil uil-navigator"></i>
                                     </button>
-                                    <p style="color: black;">Já possui cadastro? <a href="/login/cuidador">Faça Login </a></p>
+                                    <p style="color: black;">Já possui cadastro? <a href="/cuidador/login">Faça Login </a></p>
                                 </div>
                             </div>
                         </div>
