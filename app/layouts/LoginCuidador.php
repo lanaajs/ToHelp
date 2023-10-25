@@ -20,10 +20,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <title>Tohelp Login</title>
 </head>
 
 <body  onload="verificar()">
+
+        <div id="setinha">
+            <a href=""><img src="../../public/assets/img/iconamoon_arrow-up-2-duotone.png" alt=""></a>
+        </div>
+
     <div class="tudo">
 
         <div class="total">
@@ -74,7 +80,7 @@
                             <span class="btnText">Entrar</span>
                             <i class="uil uil-navigator"></i>
                         </button>
-                        <p style="color: black;">Não possui login? <a href="/cadastro/cuidador">Faça o cadastro</a></p>
+                        <p style="color: black;">Não possui login? <a href="/cuidador/cadastro">Faça o cadastro</a></p>
                     </div>
                 </div>
             </form>

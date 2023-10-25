@@ -1,9 +1,9 @@
 function contratante() {
-  window.location = '/cadastro/contratante'
+  window.location = '/contratante/cadastro'
 }
 
 function cuidador() {
-  window.location = '/cadastro/cuidador'
+  window.location = '/cuidador/cadastro'
 }
 
 
@@ -15,7 +15,7 @@ function analisar() {
   var rg = document.getElementById("rg");
   var email = document.getElementById("email");
   var tel = document.getElementById("tel");
-  var cep = document.getElementById("cep");
+  var cep = document.getElementById("CEP");
   var state = document.getElementById("estado");
   var city = document.getElementById("cidade");
   var bairro = document.getElementById("bairro");
@@ -23,6 +23,8 @@ function analisar() {
   var number = document.getElementById("numero");
   var complemento = document.getElementById("complemento");
   var senha = document.getElementById("senha");
+  var senhaconfirm = document.getElementById("senhaconfirm");
+  
 
   var date = document.getElementById("date");
 
@@ -47,16 +49,25 @@ function analisar() {
     complemento,
     senha,
     date,
-    sobre
+    sobre,
+    senhaconfirm  
   ];
 
-    for (var i = 0; i <= array.length; i++) {
-      if (array[i].value == "") {
-        array[i].style.borderColor = "red";
-        controller = true;
-      } else {
-        array[i].style.borderColor = "green";
-      }
+  for (var i = 0; i <= array.length; i++) {
+    if (array[i].value == "") {
+      array[i].style.borderColor = "red";
+  
+      (function(element) {
+        setTimeout(function() {
+          element.style.borderColor = "#aaa"; // Define a cor da borda de volta para transparente após 1 segundo
+        }, 2500);
+      })(array[i]);
+      
+      controller = true;
+  
+    } else {
+      array[i].style.borderColor = "green";
+    }
 
 
       if (controller && i == 1) {
@@ -82,6 +93,7 @@ function analisar() {
 
 function senhaTAM(){
   var senha = document.getElementById("senha");
+  var senhaconfirm = document.getElementById("senhaconfirm")
   var btn = document.getElementById("btn");
 
   var controller = false;
@@ -93,6 +105,12 @@ function senhaTAM(){
       senha.style.borderColor = "green"
     }else{
       senha.style.borderColor = "red"
+
+        setTimeout(function() {
+          senha.style.borderColor = "#106FFF"; // Define a cor da borda de volta para transparente após 1 segundo
+        }, 2500);
+  
+
       controller = true;
     }
 
@@ -116,6 +134,43 @@ function senhaTAM(){
 
   });
 
+
+    btn.addEventListener("click", function(){
+      if(senhaconfirm.value != senha.value){
+        controller = true;
+        senhaconfirm.style.borderColor = "red";
+
+        
+      }else if(senhaconfirm.value == ""){
+        senhaconfirm.style.borderColor = "red";
+
+        setTimeout(function() {
+          senhaconfirm.style.borderColor = "#106FFF"; // Define a cor da borda de volta para transparente após 1 segundo
+        }, 2500);
+        
+      }else{
+        senhaconfirm.style.borderColor = "green";
+      }
+
+      if (controller) {
+        Toastify({
+            text: "Senhas diferentes",
+            className: "toast",
+            duration: 1500,
+            newWindow: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "linear-gradient(to right, #ff0000, #ec5353)",
+                
+            },
+            onClick: function () { } // Callback after click
+        }).showToast();
+        controller = false;
+    }
+    })
+
   const cpfInput = document.getElementById("cpf");
 
 cpfInput.addEventListener("input", function() {
@@ -133,7 +188,7 @@ cpfInput.addEventListener("input", function() {
   }
 });
 
-const cepInput = document.getElementById("cep");
+const cepInput = document.getElementById("CEP");
 
 cepInput.addEventListener("input", function() {
  
