@@ -9,6 +9,7 @@
 
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="../../public/assets/css/CadastroCuidador.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">   
 
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -105,42 +106,42 @@
                         <div class="fields">
                             <div class="input-field">
                                 <label for="nome_cuid">Nome</label>
-                                <input type="text" placeholder="Insira seu nome" name="nome_cuid">
+                                <input type="text" placeholder="Insira seu nome" id="nome" name="nome_cuid" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="sobrenome_cuid">Sobrenome</label>
-                                <input type="text" placeholder="Insira seu sobrenome" name="sobrenome_cuid">
+                                <input type="text" placeholder="Insira seu sobrenome" id="sobrenome" name="sobrenome_cuid" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="CPF_cuid">CPF</label>
-                                <input type="text" placeholder="Insira seu CPF" name="CPF_cuid">
+                                <input type="text" placeholder="Insira seu CPF" id="cpf" name="CPF_cuid" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="RG_cuid">RG</label>
-                                <input type="text" placeholder="Insira seu RG" name="RG_cuid">
+                                <input type="text" placeholder="Insira seu RG" id="rg" name="RG_cuid" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="dt_nasc">Date de Nascimento</label>
-                                <input type="date" placeholder="Insira sua data de nascimento" name="dt_nasc">
+                                <input type="date" placeholder="Insira sua data de nascimento"  id="date" name="dt_nasc" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="email_cuid">Email</label>
-                                <input type="text" placeholder="Insira seu email" name="email_cuid">
+                                <input type="email" placeholder="Insira seu email" id="email" name="email_cuid" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="celular_cuid">Celular</label>
-                                <input type="number" placeholder="Insira seu telefone celular" name="celular_cuid">
+                                <input type="number" placeholder="Insira seu telefone celular" id="tel" name="celular_cuid" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="genero">Gênero</label>
-                                <select name="genero">
+                                <select name="genero" id="genero">
                                     <option disabled selected>Selecione o gênero</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Feminino">Feminino</option>
@@ -150,43 +151,43 @@
 
                             <div class="input-field">
                                 <label for="CEP_cuid">CEP</label>
-                                <input type="text" placeholder="Insira seu CEP" id="CEP" name="CEP_cuid">
+                                <input type="text" placeholder="Insira seu CEP" id="CEP" name="CEP_cuid" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="estado_cuid">Estado</label>
-                                <input type="text" placeholder="Insira um estado" id="estado" name="estado_cuid">
+                                <input type="text" placeholder="Insira um estado" id="estado" name="estado_cuid" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="cidade_cuid">Cidade</label>
 
-                                <input type="text" placeholder="Insira uma cidade" name="cidade_cuid" id="cidade" required>
+                                <input type="text" placeholder="Insira uma cidade"  id="cidade" name="cidade_cuid" required>
                             </div>
                             <div class="input-field">
                                 <label for="bairro_cuid">Bairro</label>
-                                <input type="text" placeholder="Insira uma cidade" name="bairro_cuid" id="bairro" required>
+                                <input type="text" placeholder="Insira uma bairro" id="bairro" name="bairro_cuid"  required>
 
                             </div>
 
                             <div class="input-field">
                                 <label for="end_cuid">Endereço</label>
-                                <input type="text" placeholder="Insira uma cidade" id="endereco" name="end_cuid">
+                                <input type="text" placeholder="Insira uma endereço" id="endereco" name="end_cuid" required>
                             </div>
 
                             <div class="input-field">
                                 <label for="numero_cuid">Número</label>
-                                <input type="text" placeholder="Insira um número" name="numero_cuid">
+                                <input type="text" placeholder="Insira um número" id="numero" name="numero_cuid" required> 
                             </div>
 
                             <div class="input-field">
                                 <label for="complemento_cuid">Complemento</label>
-                                <input type="text" placeholder="Insira um complemento" name="complemento_cuid">
+                                <input type="text" placeholder="Insira um complemento" id="complemento" name="complemento_cuid" required>
                             </div>
 
                             <div class="input-field ">
                                 <label for="senha_cuid">Senha</label>
-                                <input id="senha" type="text" placeholder="Crie uma senha" name="senha_cuid">
+                                <input id="senha" type="password" placeholder="Crie uma senha" name="senha_cuid" required>
                             </div>
 
                             <div id="num" class="input-field">
@@ -275,7 +276,7 @@
                             <input type="hidden" name="cadastrocuid" value="cadastrarcuid"> 
                             <div class="btnn">
                                 <div class="buttons">
-                                    <button class="nextBtn">
+                                    <button class="nextBtn" id="btn" onclick="analisar()">
                                         <span class="btnText">Concluir</span>
                                         <i class="uil uil-navigator"></i>
                                     </button>
@@ -290,7 +291,9 @@
             </form>
         </div>
     </div>
+    <script src="../../public/assets/js/Cadastro.js"></script>
     <script src="../../public/assets/js/CadastroCuidador.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="/public/assets/js/cep.js" type='module' defer></script>
 </body>
 

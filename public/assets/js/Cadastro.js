@@ -6,8 +6,6 @@ function cuidador() {
   window.location = '/cuidador/cadastro'
 }
 
-
-
 function analisar() {
   var nome = document.getElementById("nome");
   var sobrenome = document.getElementById("sobrenome");
@@ -28,7 +26,7 @@ function analisar() {
 
   var date = document.getElementById("date");
 
-  var sobre = document.getElementById("sobre")
+  var sobre = document.getElementById("sobre");
 
 
   var controller =  false;
