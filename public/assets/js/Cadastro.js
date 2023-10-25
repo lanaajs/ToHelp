@@ -1,9 +1,9 @@
 function contratante() {
-  window.location = '/cadastro/contratante'
+  window.location = '/contratante/cadastro'
 }
 
 function cuidador() {
-  window.location = '/cadastro/cuidador'
+  window.location = '/cuidador/cadastro'
 }
 
 

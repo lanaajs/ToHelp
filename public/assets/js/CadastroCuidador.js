@@ -18,6 +18,15 @@ let uploadButton = document.getElementById("upload-button");
 let chosenImage = document.getElementById("chosen-image");
 let fileName = document.getElementById("file-name");
 
+function contratante() {
+    window.location = '/contratante/cadastro'
+  }
+  
+  function cuidador() {
+    window.location = '/cuidador/cadastro'
+  }
+  
+
 
 document.addEventListener("DOMContentLoaded", function () {
     file1.addEventListener("input", () => {
