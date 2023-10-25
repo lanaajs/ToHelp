@@ -32,7 +32,7 @@
         </div>
 
         <div id="btnEntrar">
-            <a href="/login/contratante" class="linkEntrar2">LOGIN</a>
+            <a href="/contratante/login" class="linkEntrar2">LOGIN</a>
         </div>
 
         <div id="gaveta">
