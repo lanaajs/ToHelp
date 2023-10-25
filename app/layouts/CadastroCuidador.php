@@ -18,7 +18,12 @@
     <title>ToHelp Cadastro</title>
 </head>
 
-<body>
+<body onload="senhaTAMCuid()">
+
+
+        <div id="setinha">
+            <a href=""><img src="../../public/assets/img/iconamoon_arrow-up-2-duotone.png" alt=""></a>
+        </div>
     
     <?php
         if(isset($_POST['cadastrocuid'])) {
@@ -155,11 +160,13 @@
 
                             <div class="input-field">
                                 <label for="cidade_cuid">Cidade</label>
-                                <input type="text" placeholder="Insira uma cidade" id="cidade" name="cidade_cuid">
+
+                                <input type="text" placeholder="Insira uma cidade" name="cidade_cuid" id="cidade" required>
                             </div>
                             <div class="input-field">
                                 <label for="bairro_cuid">Bairro</label>
-                                <input type="text" placeholder="Insira uma cidade" id="bairro" name="bairro_cuid">
+                                <input type="text" placeholder="Insira uma cidade" name="bairro_cuid" id="bairro" required>
+
                             </div>
 
                             <div class="input-field">
@@ -177,9 +184,14 @@
                                 <input type="text" placeholder="Insira um complemento" name="complemento_cuid">
                             </div>
 
-                            <div class="input-field">
+                            <div class="input-field ">
                                 <label for="senha_cuid">Senha</label>
                                 <input id="senha" type="text" placeholder="Crie uma senha" name="senha_cuid">
+                            </div>
+
+                            <div id="num" class="input-field">
+                                <label for="senhaConfirm_cuid">Confirme sua senha</label>
+                                <input type="password" placeholder="Confirme sua senha" id="senhaconfirm" name="senhaConfirm_cuid" required>
                             </div>
                         </div>
                     </div>
@@ -267,7 +279,9 @@
                                         <span class="btnText">Concluir</span>
                                         <i class="uil uil-navigator"></i>
                                     </button>
-                                    <p style="color: black;">Já possui cadastro? <a href="">Faça Login </a></p>
+
+                                    <p style="color: black;">Já possui cadastro? <a href="/cuidador/login">Faça Login </a></p>
+
                                 </div>
                             </div>
                         </div>

@@ -24,6 +24,11 @@
 </head>
 
 <body  onload="verificar()">
+
+        <div id="setinha">
+            <a href=""><img src="../../public/assets/img/iconamoon_arrow-up-2-duotone.png" alt=""></a>
+        </div>
+
     <div class="tudo">
 
         <div class="total">
@@ -74,7 +79,7 @@
                             <span class="btnText">Entrar</span>
                             <i class="uil uil-navigator"></i>
                         </button>
-                        <p style="color: black;">Não possui login? <a href="/cadastro/contratante">Faça o cadastro</a></p>
+                        <p style="color: black;">Não possui login? <a href="/contratante/cadastro">Faça o cadastro</a></p>
                     </div>
                 </div>
             </form>
