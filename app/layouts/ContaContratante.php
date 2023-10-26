@@ -105,22 +105,15 @@ session_start();
       </div>
     </a>
 
-    <a href="/contratante/login">
-      <?php
-      session_destroy();
-      header("Location: /contratante/login");
-      ?>
+    <a href="/contratante/login">      
       <div class="box">
         <div class="icons">
           <span class="material-icons">logout</span>
         </div>
+        <input type="hidden" name="sair">
         <p>Sair</p>
       </div>
     </a>
-
-    <div id="encontrar">
-      <a id="btn_encontrar" href="../views/BuscarCuidadores.html">BUSCAR CUIDADORES<span class="material-icons">east</span></a>
-    </div>
   </main>
 </body>
 
