@@ -1,13 +1,13 @@
 
 function contratante(){
 
-    window.location = '/login/contratante'
+    window.location = '/contratante/login'
  
 }
 
 function cuidador(){
 
-    window.location = '/login/cuidador'
+    window.location = '/cuidador/login'
    
 }
 

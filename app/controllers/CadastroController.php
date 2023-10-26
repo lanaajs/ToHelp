@@ -47,7 +47,7 @@ class CadastroController
             $email = $_POST['email_cuid'];
             $celular = $_POST['celular_cuid'];
             $genero = $_POST['genero'];
-            $senha = $_POST['senha_cuid'];
+            $senha = password_hash($_POST['senha_cuid'], PASSWORD_DEFAULT);
 
             $sqlCuidador = "INSERT INTO infoCuidador (nome_cuid, sobrenome_cuid, CPF_cuid, RG_cuid, dt_nasc, email_cuid, celular_cuid, genero, senha_cuid, dt_cadastro, tipo_contr) 
             VALUES (:nome_cuid, :sobrenome_cuid, :CPF_cuid, :RG_cuid, :dt_nasc, :email_cuid, :celular_cuid, :genero, :senha_cuid, NOW(), :tipo_contr)";
@@ -147,7 +147,7 @@ class CadastroController
             $email = $_POST['email_contr'];
             $celular = $_POST['celular_contr'];
             $genero = $_POST['genero'];
-            $senha = $_POST['senha_contr'];
+            $senha = password_hash($_POST['senha_contr'], PASSWORD_DEFAULT);
             $tipo = $_POST['tipo_contr'];
 
             $sqlContratante = "INSERT INTO infoContratante (nome_contr, sobrenome_contr, CPF_contr, RG_contr, dt_nasc, email_contr, celular_contr, genero, senha_contr, dt_cadastro, tipo_contr) 

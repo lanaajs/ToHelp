@@ -74,7 +74,7 @@
                             <span class="btnText">Entrar</span>
                             <i class="uil uil-navigator"></i>
                         </button>
-                        <p style="color: black;">Não possui login? <a href="/cadastro/cuidador">Faça o cadastro</a></p>
+                        <p style="color: black;">Não possui login? <a href="/cuidador/cadastro">Faça o cadastro</a></p>
                     </div>
                 </div>
             </form>

@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <form action="/cadastro/contratante" method="POST">
+            <form action="/contratante/cadastro" method="POST">
                 <div class="form first">
                     <div class="details personal">
                         <span class="title">Informações Pessoais</span>

@@ -41,7 +41,7 @@ class LoginController
         $db->ligar();
 
         // Consulte o banco de dados para verificar se as credenciais são válidas
-        $sql = "SELECT * FROM infoCuidador WHERE CPF_cuid = :cpf";
+        $sql = "SELECT * FROM infoCuidador WHERE CPF_cuid = :cpf LIMIT 1";
         $parametros = [':cpf' => $cpf];
         $resultado = $db->select($sql, $parametros);
 
@@ -50,7 +50,8 @@ class LoginController
             $usuario = $resultado[0];
 
             // Verifique se a senha fornecida coincide com a senha armazenada no banco de dados
-            if ($senha === $usuario->senha_cuid) {
+            if (password_verify($senha, $usuario['senha_cuid'])) {
+                // $senha === $usuario->senha_cuid
                 // Senha válida
 
                 session_start();
@@ -89,7 +90,7 @@ class LoginController
         $db->ligar();
 
         // Consulte o banco de dados para verificar se as credenciais são válidas
-        $sql = "SELECT * FROM infoContratante WHERE CPF_contr = :cpf";
+        $sql = "SELECT * FROM infoContratante WHERE CPF_contr = :cpf LIMIT 1";
         $parametros = [':cpf' => $cpf];
         $resultado = $db->select($sql, $parametros);
 
@@ -98,9 +99,9 @@ class LoginController
             $usuario = $resultado[0];
 
             // Verifique se a senha fornecida coincide com a senha armazenada no banco de dados
-            if ($senha === $usuario->senha_contr) {
+            if (password_verify($senha, $usuario['senha_contr'])) {
                 // Senha válida
-
+                // $senha === $usuario->senha_contr
                 session_start();
 
                 // Armazene o ID do usuário na variável de sessão
