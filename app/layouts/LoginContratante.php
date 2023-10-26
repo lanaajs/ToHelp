@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <form action="/login/contratante" method="POST">
+            <form action="/contratante/login" method="POST">
                 <div class="form first">
                     <div class="details personal">
                         <div class="fields">

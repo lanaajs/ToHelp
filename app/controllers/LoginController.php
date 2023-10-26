@@ -98,22 +98,26 @@ class LoginController
             // Um registro correspondente foi encontrado
             $usuario = $resultado[0];
 
+
+
             // Verifique se a senha fornecida coincide com a senha armazenada no banco de dados
-            if (password_verify($senha, $usuario['senha_contr'])) {
+            if (password_verify($senha, $usuario->senha_contr)) {
                 // Senha válida
                 // $senha === $usuario->senha_contr
-                session_start();
 
                 // Armazene o ID do usuário na variável de sessão
+                session_start();
                 $_SESSION['contr_id'] = $usuario->id;
+                $_SESSION['contr_nome'] = $usuario->nome_contr;
+                $_SESSION['contr_sobrenome'] = $usuario->sobrenome_contr;
 
                 // Redirecione o usuário para a página apropriada com base no tipo de conta (cntr ou cuid)
-                header("Location: /cuidador/conta/00000{$_SESSION['contr_id']}");
+                header("Location: /contratante/conta/{$_SESSION['contr_id']}");
+
 
                 // Encerre o script para evitar saída adicional
                 exit();
-            } else {
-                // Senha incorreta
+            } else {  
                 echo "Senha incorreta. Tente novamente.";
             }
         } else {
