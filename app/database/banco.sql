@@ -17,7 +17,7 @@
 --   email_contr VARCHAR(100) NOT NULL,
 --   celular_contr VARCHAR(15) NOT NULL UNIQUE,
 --   genero ENUM("Masculino","Feminino","Outros") NOT NULL,
---   senha_contr VARCHAR(8) NOT NULL,
+--   senha_contr VARCHAR(255) NOT NULL,
 --   dt_cadastro DATETIME NOT NULL,
 --   tipo_contr ENUM("0","1") NOT NULL, -- 0 NÃO POSSUI DEPENDENTES, 1 POSSUI UM OU MAIS DEPENDENTES --
 --   PRIMARY KEY(id, CPF_contr)
@@ -134,7 +134,7 @@
 --   email_cuid VARCHAR(100) NOT NULL,
 --   celular_cuid VARCHAR(15) NOT NULL UNIQUE,
 --   genero ENUM("Masculino","Feminino","Outros") NOT NULL,
---   senha_cuid VARCHAR(8) NOT NULL,
+--   senha_cuid VARCHAR(255) NOT NULL,
 --   dt_cadastro DATETIME NOT NULL,
 --   PRIMARY KEY(id, CPF_cuid)
 -- ) ENGINE = InnoDB;
@@ -179,10 +179,10 @@
 --   FOREIGN KEY(id_cuid_FK) REFERENCES infoCuidador(id)
 -- ) ENGINE = InnoDB;
 
--- INSERT INTO infoCurricular (rg_frente, rg_verso, curriculo, sobre_txt, id_cuid_FK)
+-- INSERT INTO infoCurricular (rg_frente, rg_verso, curriculo, certificado, sobre_txt, id_cuid_FK)
 -- VALUES
---     ('/path/rg1.png', '/path/rg2.png', '/path/curriculo1.pdf','Trabalho como cuidador a 6 anos', 1),
---     ('/path/rg3.png', '/path/rg4.png', '/path/curriculo2.pdf','Amo trabalhar com idosos', 2);
+--     ('/path/rg1.png', '/path/rg2.png', '/path/curriculo1.pdf','/path/certif1.png','Trabalho como cuidador a 6 anos', 1),
+--     ('/path/rg3.png', '/path/rg4.png', '/path/curriculo2.pdf','/path/certif2.png', 'Amo trabalhar com idosos', 2);
 
 
 -- -- Table fotoPerfilCuid

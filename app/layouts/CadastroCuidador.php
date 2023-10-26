@@ -92,7 +92,7 @@
                 </div>
             </div>
 
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="/cuidador/cadastro" method="POST" enctype="multipart/form-data">
                 <div class="form first active">
                     <div class="details personal">
                         <span class="title">Informações Pessoais</span>
