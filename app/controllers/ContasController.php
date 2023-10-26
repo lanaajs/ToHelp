@@ -1,15 +1,15 @@
 <?php
 
-namespace app\controller;
+namespace app\controllers;
 
 class ContasController
 {
-    function indexContaCntr()
+    function indexContaCntr($id)
     {
         require 'app/layouts/ContaContratante.php';
     }
 
-    function indexContaCuid()
+    function indexContaCuid($id)
     {
         require 'app/layouts/ContaCuidador.php';
     }

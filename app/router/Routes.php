@@ -6,17 +6,17 @@ use app\controllers\BuscarCuidController;
 use app\controllers\CadastroController;
 use app\controllers\CarregController;
 use app\controllers\ConfirmacaoCuidController;
-use app\controller\ContasController;
-use app\controller\ContratosController;
-use app\controller\DashboardController;
-use app\controller\EditInfoDepController;
-use app\controller\ExtratosController;
-use app\controller\FormaPagController;
+use app\controllers\ContasController;
+use app\controllers\ContratosController;
+use app\controllers\DashboardController;
+use app\controllers\EditInfoDepController;
+use app\controllers\ExtratosController;
+use app\controllers\FormaPagController;
 use app\controllers\HomeController;
-use app\controller\InformacoesController;
+use app\controllers\InformacoesController;
 use app\controllers\LoginController;
-use app\controller\NovoCartaoController;
-use app\controller\RelatoriosController;
+use app\controllers\NovoCartaoController;
+use app\controllers\RelatoriosController;
 use FastRoute\RouteCollector;
 
 require __DIR__ . '/../../vendor/autoload.php';
@@ -45,7 +45,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/confirmacaocuidador', ConfirmacaoCuidController::class . '@indexConfirmacao');
 
         //Rota para a conta do contratante.
-        $r->addRoute(['GET', 'POST'], '/^conta/{id:[0-9]+}$', ContasController::class . '@indexContaCntr');
+        $r->addRoute(['GET', 'POST'], '/conta/{id:[0-9]+}', ContasController::class . '@indexContaCntr');
 
         //Rota para a página de contratos.
         $r->addRoute(['GET', 'POST'], '/^contratos/{id:[0-9]+}$', ContratosController::class . '@indexContratoCntr');
@@ -75,7 +75,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->addGroup('/cuidador', function (RouteCollector $r) {
 
         //Rota para página de carregamento.
-        $r->addRoute(['GET', 'POST'], '/^agenda/{id:[0-9]+}$', AgendaController::class . '@indexAgendaCtr');
+        $r->addRoute(['GET', 'POST'], '/^agenda/{id:[0-9]+}$', AgendaController::class . '@indexAgendaCuid');
 
         //Rota para a página de análise de currículo do cuidador.
         $r->addRoute('GET', '/analisecurriculo', AnaliseCurriculoController::class . '@indexCurriculo');
@@ -88,16 +88,16 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/carregamento', CarregController::class . '@indexCarregCntr');
 
         //Rota para a página de conta do cuidador.
-        $r->addRoute(['GET', 'POST'], '/^conta/{id:[0-9]+}$', ContasController::class . '@indexContaCntr');
+        $r->addRoute(['GET', 'POST'], '/conta/{id:[0-9]+}', ContasController::class . '@indexContaCuid');
 
         //Rota para a página de contratos.
-        $r->addRoute(['GET', 'POST'], '/^contratos/{id:[0-9]+}$', ContratosController::class . '@indexContratoCntr');
+        $r->addRoute(['GET', 'POST'], '/^contratos/{id:[0-9]+}$', ContratosController::class . '@indexContratoCuid');
 
         //Rota para a página de extratos.
-        $r->addRoute('GET', '/^extrato/{id:[0-9]+}$', ExtratosController::class . '@indexExtratoCntr');
+        $r->addRoute('GET', '/^extrato/{id:[0-9]+}$', ExtratosController::class . '@indexExtratoCuid');
 
         //Rota para a página de editar informações.
-        $r->addRoute(['GET', 'POST'], '/^editarinfo/{id:[0-9]+}$', InformacoesController::class . '@indexInfoCntr');
+        $r->addRoute(['GET', 'POST'], '/^editarinfo/{id:[0-9]+}$', InformacoesController::class . '@indexInfoCuid');
 
         //Rota para a página de login.
         $r->addRoute('GET', '/login', LoginController::class . '@indexcuid');
