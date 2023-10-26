@@ -32,7 +32,7 @@
         </div>
 
         <div id="btnEntrar">
-            <a href="/login/contratante" class="linkEntrar2">LOGIN</a>
+            <a href="/contratante/login" class="linkEntrar2">LOGIN</a>
         </div>
 
         <div id="gaveta">
@@ -48,8 +48,8 @@
                 <li class="itemUL"><a href="" class="linkUL">Serviços</a></li>
                 <li class="itemUL"><a href="#quemSomos" class="linkUL">Quem Somos</a></li>
                 <li class="itemUL"><a href="#cuidadores" class="linkUL">Nossos Cuidadores</a></li>
-                <li class="itemEntrar"><a href="../views/LoginContratante.html" class="linkEntrar">LOGIN</a></li>
-                <li class="itemUL"><a href="../views/CadastroContratante.html" class="linkC">Cadastre-se</a></li>
+                <li class="itemEntrar"><a href="/contratante/login" class="linkEntrar">LOGIN</a></li>
+                <li class="itemUL"><a href="/contratante/cadastro" class="linkC">Cadastre-se</a></li>
             </ul>
         </div>
 

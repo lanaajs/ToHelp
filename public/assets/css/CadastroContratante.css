@@ -178,7 +178,7 @@ form .buttons button,
     margin-right: 14px;
 }
 
-#senha {
+#senha,#senhaconfirm {
     border-color: #106FFF;
 }
 
@@ -219,6 +219,7 @@ form .buttons button,
     align-items: center;
     border-radius: 5px;
     background-color: #f7f6f6;
+    cursor: pointer;
 }
 
 #areaP2 {
@@ -229,8 +230,18 @@ form .buttons button,
     align-items: center;
     border-radius: 5px;
     color: white;
-
+    cursor: pointer;
 }
+
+#setinha{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#setinha img{
+    margin: 30px 30px 0 0
+}
+
 .cad {
     height: 40px;
     display: flex;
@@ -306,7 +317,7 @@ form .buttons button,
 }
 
 .tudo{
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;

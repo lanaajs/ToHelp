@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="pt-br">
 
@@ -26,7 +26,15 @@
 
 <body onload="senhaTAM()">
 
+        <div id="setinha">
+            <a href=""><img src="../../public/assets/img/iconamoon_arrow-up-2-duotone.png" alt=""></a>
+        </div>
+
+
     <div class="tudo">
+
+        
+
         <div class="total">
             <div id="logo">
                 <img src="../../public/assets/img/LogoBranca.png" alt="">
@@ -121,21 +129,24 @@
 
                                                             </div>
 
-                            <div id="num" class="input-field">
+                            <div class="input-field">
                                 <label for="numero_contr">Número</label>
 
                                 <input type="text" placeholder="Insira um número" id="numero" name="numero_contr" required>
-
-                   
                             </div>
 
                             <div class="input-field">
                                 <label for="complemento_contr">Complemento</label>
                                 <input type="text" placeholder="Insira um complemento" id="complemento" name="complemento_contr" required>
                             </div>
-                            <div class="input-field">
+                            <div class="input-field senha">
                                 <label for="senha_contr">Senha</label>
-                                <input id="senha" type="password" placeholder="Crie uma senha" id="senha" name="senha_contr" required>
+                                <input type="password" placeholder="Crie uma senha" id="senha" name="senha_contr" required>
+                            </div>
+
+                            <div class="input-field senha">
+                                <label for="senhaConfirm_contr">Confirme sua senha</label>
+                                <input type="password" placeholder="Confirme sua senha" id="senhaconfirm" name="senhaConfirm_contr" required>
                             </div>
 
                             <div class="input-field">
@@ -158,7 +169,7 @@
                                 <span class="btnText">Prosseguir</span>
                                 <i class="uil uil-navigator"></i>
                             </button>
-                            <p style="color: black;">Já possui cadastro? <a href="/login/contratante">Faça Login</a></p>
+                            <p style="color: black;">Já possui cadastro? <a href="/contratante/login">Faça Login</a></p>
                         </div>
                     </div>
                 </div>

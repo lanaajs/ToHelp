@@ -102,11 +102,15 @@ form.secActive .form.first {
     padding: 10px;
 }
 
+#num{
+    margin-right: 34%;
+}
 
 form .fields .input-field {
     display: flex;
     width: calc(100% / 3 - 15px);
     flex-direction: column;
+    margin: 4px 0;
 }
 
 .input-field label {
@@ -196,9 +200,7 @@ form .btnn .buttons {
     min-width: 100%;
 }
 
-
-
-#senha {
+#senha,#senhaconfirm {
     border-color: #00BF8C;
 }
 
@@ -238,7 +240,7 @@ form .btnn .buttons {
     display: flex;
     align-items: center;
     border-radius: 5px;
-
+    cursor: pointer;
 }
 
 #areaP2 {
@@ -250,6 +252,17 @@ form .btnn .buttons {
     border-radius: 5px;
     color: #00BF8C;
     background-color: #f7f6f6;
+    cursor: pointer;
+
+}
+
+#setinha{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#setinha img{
+    margin: 30px 30px 0 0
 }
 
 .cad {
@@ -345,7 +358,7 @@ form .btnn .buttons {
 }
 
 .tudo {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -475,9 +488,6 @@ figcaption {
         margin-left: 0px;
         margin-top: 10px;
     }
-}
-
-@media (max-width: 750px) {
     .container form {
         overflow-y: scroll;
     }
