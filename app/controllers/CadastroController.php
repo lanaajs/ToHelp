@@ -26,9 +26,9 @@ class CadastroController
         require 'app/layouts/CadastroCuidador.php';
     }
 
-    function indexdep()
+    function indexdep(int $id)
     {
-        require 'app/layouts/CadastroDependente.php';
+        require 'app/layouts/CadastrarDependente.php';
     }
 
     public static function validarCadastroCuid()
