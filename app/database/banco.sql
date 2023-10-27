@@ -2,8 +2,8 @@
 -- SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 -- SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
--- CREATE DATABASE IF NOT EXISTS tohelpDB;
--- USE tohelpDB;
+-- CREATE DATABASE IF NOT EXISTS tohelpdb;
+-- USE tohelpdb;
 
 
 -- -- Table infoContratante
@@ -53,21 +53,23 @@
 -- CREATE TABLE IF NOT EXISTS infoDependente (
 --   id INT NOT NULL AUTO_INCREMENT,
 --   CPF_dep VARCHAR(14) NOT NULL UNIQUE,
+--   RG_dep VARCHAR(13) NOT NULL UNIQUE,
 --   nome_dep VARCHAR(45) NOT NULL,
 --   sobrenome_dep VARCHAR(100) NOT NULL,
 --   dtnasc_dep DATE NOT NULL,
---   telefone_dep VARCHAR(15) NULL UNIQUE,
---   parentesco ENUM("Pai", "Mãe", "Filho(a)", "Irmão", "Irmã", "Neto(a)", "Tio", "Tia", "Sobrinho(a)", "Bisneto(a)", "Primo(a)", "Sobrinho(a)-neto(a)", "Trineto(a)", "Sobrinho(a)-bisneto(a)", "Sogro(a)", "Genro", "Nora", "Padrasto", "Madrasta", "Enteado(a)"),
+--   celular_dep VARCHAR(15) NULL UNIQUE,
+--   genero ENUM("Masculino","Feminino","Outros") NOT NULL,
+--   parentesco ENUM("Filho(a)", "Irmão", "Irmã", "Neto(a)", "Tio", "Tia", "Sobrinho(a)", "Bisneto(a)", "Primo(a)", "Sogro(a)", "Genro", "Nora", "Enteado(a)"),
 --   id_contr_FK INT,
 --   dt_cadastro_dep DATETIME NOT NULL,
 --   PRIMARY KEY(id, CPF_dep, id_contr_FK),
 --   FOREIGN KEY(id_contr_FK) REFERENCES infoContratante(id)
 -- ) ENGINE = InnoDB;
 
--- INSERT INTO infoDependente (CPF_dep, nome_dep, sobrenome_dep, dtnasc_dep, telefone_dep, parentesco, id_contr_FK, dt_cadastro_dep)
+-- INSERT INTO infoDependente (CPF_dep, RG_dep, nome_dep, sobrenome_dep, dtnasc_dep, celular_dep, genero, parentesco, id_contr_FK, dt_cadastro_dep)
 -- VALUES
---     ('98765432102', 'Carlos', 'Silva', '2000-03-12', '987654321', 'Filho(a)', 2, NOW()),
---     ('65432198703', 'Ana', 'Santos', '1995-08-20', '654321987', 'Sobrinho(a)', 2, NOW());
+--     ('98765432102', '00.000.000-11', 'Carlos', 'Silva', '2000-03-12', '987654321', 'Masculino', 'Filho(a)', 2, NOW()),
+--     ('65432198703', '00.000.000-22' ,'Ana', 'Santos', '1995-08-20', '654321987', 'Feminino', 'Sobrinho(a)', 2, NOW());
 
 -- -- Table enderecoDependente
 -- CREATE TABLE IF NOT EXISTS enderecoDependente (
@@ -134,7 +136,7 @@
 --   email_cuid VARCHAR(100) NOT NULL,
 --   celular_cuid VARCHAR(15) NOT NULL UNIQUE,
 --   genero ENUM("Masculino","Feminino","Outros") NOT NULL,
---   senha_cuid VARCHAR(255) NOT NULL,
+--   senha_cuid VARCHAR(8) NOT NULL,
 --   dt_cadastro DATETIME NOT NULL,
 --   PRIMARY KEY(id, CPF_cuid)
 -- ) ENGINE = InnoDB;
@@ -181,8 +183,8 @@
 
 -- INSERT INTO infoCurricular (rg_frente, rg_verso, curriculo, certificado, sobre_txt, id_cuid_FK)
 -- VALUES
---     ('/path/rg1.png', '/path/rg2.png', '/path/curriculo1.pdf','/path/certif1.png','Trabalho como cuidador a 6 anos', 1),
---     ('/path/rg3.png', '/path/rg4.png', '/path/curriculo2.pdf','/path/certif2.png', 'Amo trabalhar com idosos', 2);
+--     ('/path/rg1.png', '/path/rg2.png', '/path/curriculo1.pdf','path/certificado1.pdf','Trabalho como cuidador a 6 anos', 1),
+--     ('/path/rg3.png', '/path/rg4.png', '/path/curriculo2.pdf','path/certificado1.pdf','Amo trabalhar com idosos', 2);
 
 
 -- -- Table fotoPerfilCuid

@@ -30,7 +30,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute(['GET', 'POST'], '/^agenda/{id:[0-9]+}$', AgendaController::class . '@indexAgendaCtr');
 
         //Rota para as página de cadastro de dependente e cadastro de contratante.
-        $r->addRoute(['GET', 'POST'], '/^cadastro/dependente/{id:[0-9]+}$', CadastroController::class . '@indexdep');
+        $r->addRoute('GET', '/cadastrodep/{id:[0-9]+}', CadastroController::class . '@indexdep');
+        $r->addRoute('POST', '/cadastrodep/{id:[0-9]+}', CadastroController::class . '@validarCadastroDepn');
 
         $r->addRoute('GET', '/cadastro', CadastroController::class . '@indexctr');
         $r->addRoute('POST', '/cadastro', CadastroController::class . '@validarCadastroContr');
@@ -70,7 +71,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('GET', '/^relatorio/{id:[0-9]+}$', RelatoriosController::class . '@indexRelatCntrFechado');
         $r->addRoute(['GET', 'POST'], '/^relatorioaberto/{id:[0-9]+}$', RelatoriosController::class . '@indexRelatCntrAberto');
     });
-    
+
 
     $r->addGroup('/cuidador', function (RouteCollector $r) {
 
@@ -113,14 +114,13 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->addRoute('GET', '/monitoramento', DashboardController::class . '@indexDashboard');
 
     //Rotas para as páginas de editar informações dos dependentes.
-    $r->addGroup('/editarinformacoes/dependente', function (RouteCollector $r) {
+    $r->addGroup('/editarinfodep/{id:[0-9]+}', function (RouteCollector $r) {
         $r->addRoute(['GET', 'POST'], '/aberto', EditInfoDepController::class . '@indexEditInfoDepAberto');
-        $r->addRoute('GET', '/' , EditInfoDepController::class . '@indexEditInfoDepFechado');
+        $r->addRoute('GET', '/', EditInfoDepController::class . '@indexEditInfoDepFechado');
     });
 
     //Rota para a página principal da aplicação.
     $r->addRoute('GET', '/', HomeController::class . '@index');
-
 });
 
 require 'Router.php';
