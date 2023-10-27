@@ -209,7 +209,6 @@ class CadastroController
             echo "Erro: " . $e->getMessage();
         }
     }
-
     public static function validarCadastroDepn()
     {
         require_once __DIR__ . '/../../classes/Database.php';
