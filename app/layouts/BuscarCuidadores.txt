@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
-    <link rel="stylesheet" href="../../../public/assets/css/BuscarCuidadores.css">
+    <link rel="stylesheet" href="../../public/assets/css/BuscarCuidadores.css">
     <link rel="icon" type="image/x-icon" href="../../public/assets/img/LogoPreta.png">
     <title>To Help</title>
 </head>
