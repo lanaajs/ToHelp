@@ -28,7 +28,7 @@ class CadastroController
 
     function indexdep()
     {
-        require 'app/layouts/CadastroCuidador.php';
+        require 'app/layouts/CadastroDependente.php';
     }
 
     public static function validarCadastroCuid()
@@ -202,6 +202,123 @@ class CadastroController
                 echo "Erro ao cadastrar. Por favor, tente novamente.";
             }
         } catch (\PDOException $e) {
+            $db->cancelarTransacao();
+            $db->desligar();
+            echo "Cadastro cancelado <br>";
+            echo "Erro: " . $e->getMessage();
+        }
+    }
+
+    public static function validarCadastroDepn()
+    {
+        require_once __DIR__ . '/../../classes/Database.php';
+        $db = new \classes\Database();
+        $db->ligar();
+        $db->iniciarTransacao();
+
+        try{    
+
+            require_once __DIR__ . '/LoginController.php';
+
+            $nome = $_POST['nome_dep'];
+            $sobrenome = $_POST['sobrenome_dep'];
+            $cpf = $_POST['CPF_dep'];
+            $rg = $_POST['RG_dep'];
+            $genero = $_POST['genero'];
+            $dtnsc = $_POST['dt_nasc'];
+            $celular = $_POST['celular_dep'];
+            $parentesco = $_POST['parentesco'];
+
+
+            $sqlDependente = "INSERT INTO infoDependente (nome_dep, sobrenome_dep, CPF_dep, RG_dep, dt_nasc, celular_dep, genero, parentesco, id_contr_FK, dt_cadastro_dep)
+                VALUES(:nome_dep, :sobrenome_dep, :CPF_dep, :RG_dep,:dt_nasc, :celular_dep, :genero, :parentesco, :id_contr_FK, NOW())";
+
+            $parametrosDependente = array(
+                ':nome_dep' => $nome,
+                ':sobrenome_dep' => $sobrenome,
+                ':CPF_dep' => $cpf,
+                ':RG_dep' => $rg,
+                ':dt_nasc' => $dtnsc,
+                ':celular_dep' => $celular,
+                ':genero' => $genero,
+                ':parentesco' => $parentesco,
+                ':id_contr_FK' => $_SESSION['contr_id']
+            );
+
+            $lastIdDependente = $db->insert($sqlDependente, $parametrosDependente);
+
+            /*------------------------------------------------------------------*/
+            
+            $cep = $_POST['CEP_dep'];
+            $estado = $_POST['estado_dep'];
+            $cidade = $_POST['cidade_dep'];
+            $bairro = $_POST['bairro_dep'];
+            $endereco = $_POST['end_dep'];
+            $numero = $_POST['numero_dep'];
+            $complemento = $_POST['complemento_dep'];
+
+            $sqlEndereco = "INSERT INTO enderecoContratante (CEP_dep, estado_dep, cidade_dep, bairro_dep, end_dep, numero_dep, complemento_dep, id_dep_FK) 
+            VALUES (:CEP_dep, :estado_dep, :cidade_dep, :bairro_dep, :end_dep, :numero_dep, :complemento_dep, :id_dep_FK)";
+
+            $parametrosEndereco = array(
+            ':CEP_dep' => $cep,
+            ':estado_dep' => $estado,
+            ':cidade_dep' => $cidade,
+            ':bairro_dep' => $bairro,
+            ':end_dep' => $endereco,
+            ':numero_dep' => $numero,
+            ':complemento_dep' => $complemento,
+            ':id_dep_FK' => $lastIdDependente
+            );
+
+            $resultEndereco = $db->insert($sqlEndereco, $parametrosEndereco);
+
+            /*------------------------------------------------------------------*/
+
+            $comorbidades = ['comorbidades_dep'];
+            $alergias = ['alergias_dep'];
+            $rotina = ['rotina_dep'];
+
+            $sqlInfoMedDependentes = "INSERT INTO infoMedDependente (comorbidades_dep, alergias_dep, rotina_dep, id_dep_FK)
+                VALUES (:comorbidades_dep, :alergias_dep, :rotina_dep, :id_dep_FK)";
+
+            $parametrosInfoMedDependentes = array(
+                ':comorbidades_dep' => $comorbidades,
+                ':alergias_dep' => $alergias,
+                ':rotina_dep' => $rotina,
+                'id_dep_FK' => $lastIdDependente
+            );
+
+            $resultInfoMedDependentes = $db->insert($sqlInfoMedDependentes, $parametrosInfoMedDependentes);
+
+            /*------------------------------------------------------------------*/
+
+            $nomeMed = ['nomeMed'];
+            $horaMed = ['horaMed'];
+            $diaMed = ['diaMed'];
+
+            $sqlMedicamentosDependente = "INSERT INTO medicamentoDependente (nomeMed, horaMed, diaMed, id_dep_FK)
+                VALUES (:nomeMed, :horaMed, :diaMed, :id_dep_FK)";
+            
+            $parametrosMedicamentosDependente = array(
+                ':nomeMed' => $nomeMed,
+                ':horaMed' => $horaMed,
+                ':diaMed' => $diaMed,
+                ':id_dep_FK' => $lastIdDependente
+            );
+
+            $resultMedicamentosDependente = $dp->insert($sqlMedicamentosDependente, $parametrosMedicamentosDependente);
+
+            
+            if ($lastIdDependente !== false && $resultEndereco !== false && $resultInfoMedDependentes !== false && $resultMedicamentosDependente !== false) {
+                $db->confirmarTransacao();
+                echo "Cadastro realizado com sucesso! Último ID inserido: $lastIdCuidador <br>";
+                header('Location: /editarinfodep/{id:[0-9]+}/');
+            } else {
+                $db->cancelarTransacao();
+                echo "Erro ao cadastrar. Por favor, tente novamente.";
+            }
+        }catch (\PDOException $e) {
             $db->cancelarTransacao();
             $db->desligar();
             echo "Cadastro cancelado <br>";
