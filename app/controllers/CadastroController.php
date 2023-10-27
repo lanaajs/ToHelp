@@ -8,9 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         CadastroController::validarCadastroContr();
     } else if (isset($_POST['cadastrocuid']) && $_POST['cadastrocuid'] === 'cadastrarcuid') {
         CadastroController::validarCadastroCuid();
+    } else if (isset($_POST['cadastrodep']) && $_POST['cadastrodep'] === 'cadastrardep') {
+        CadastroController::validarCadastroDepn();
     }
 }
-
 
 
 class CadastroController
@@ -26,9 +27,9 @@ class CadastroController
         require 'app/layouts/CadastroCuidador.php';
     }
 
-    function indexdep()
+    function indexdep(int $id)
     {
-        require 'app/layouts/CadastroDependente.php';
+        require 'app/layouts/CadastrarDependente.php';
     }
 
     public static function validarCadastroCuid()
@@ -216,7 +217,7 @@ class CadastroController
         $db->ligar();
         $db->iniciarTransacao();
 
-        try{    
+        try {
 
             require_once __DIR__ . '/LoginController.php';
 
@@ -248,7 +249,7 @@ class CadastroController
             $lastIdDependente = $db->insert($sqlDependente, $parametrosDependente);
 
             /*------------------------------------------------------------------*/
-            
+
             $cep = $_POST['CEP_dep'];
             $estado = $_POST['estado_dep'];
             $cidade = $_POST['cidade_dep'];
@@ -261,14 +262,14 @@ class CadastroController
             VALUES (:CEP_dep, :estado_dep, :cidade_dep, :bairro_dep, :end_dep, :numero_dep, :complemento_dep, :id_dep_FK)";
 
             $parametrosEndereco = array(
-            ':CEP_dep' => $cep,
-            ':estado_dep' => $estado,
-            ':cidade_dep' => $cidade,
-            ':bairro_dep' => $bairro,
-            ':end_dep' => $endereco,
-            ':numero_dep' => $numero,
-            ':complemento_dep' => $complemento,
-            ':id_dep_FK' => $lastIdDependente
+                ':CEP_dep' => $cep,
+                ':estado_dep' => $estado,
+                ':cidade_dep' => $cidade,
+                ':bairro_dep' => $bairro,
+                ':end_dep' => $endereco,
+                ':numero_dep' => $numero,
+                ':complemento_dep' => $complemento,
+                ':id_dep_FK' => $lastIdDependente
             );
 
             $resultEndereco = $db->insert($sqlEndereco, $parametrosEndereco);
@@ -299,7 +300,7 @@ class CadastroController
 
             $sqlMedicamentosDependente = "INSERT INTO medicamentoDependente (nomeMed, horaMed, diaMed, id_dep_FK)
                 VALUES (:nomeMed, :horaMed, :diaMed, :id_dep_FK)";
-            
+
             $parametrosMedicamentosDependente = array(
                 ':nomeMed' => $nomeMed,
                 ':horaMed' => $horaMed,
@@ -309,7 +310,7 @@ class CadastroController
 
             $resultMedicamentosDependente = $dp->insert($sqlMedicamentosDependente, $parametrosMedicamentosDependente);
 
-            
+
             if ($lastIdDependente !== false && $resultEndereco !== false && $resultInfoMedDependentes !== false && $resultMedicamentosDependente !== false) {
                 $db->confirmarTransacao();
                 echo "Cadastro realizado com sucesso! Último ID inserido: $lastIdCuidador <br>";
@@ -318,7 +319,7 @@ class CadastroController
                 $db->cancelarTransacao();
                 echo "Erro ao cadastrar. Por favor, tente novamente.";
             }
-        }catch (\PDOException $e) {
+        } catch (\PDOException $e) {
             $db->cancelarTransacao();
             $db->desligar();
             echo "Cadastro cancelado <br>";

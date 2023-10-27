@@ -187,7 +187,7 @@
                         </div>
 
                         <div class="details ID">
-                            <input type="hidden" name="cadastrocontr" value="cadastrarcontr">
+                            <input type="hidden" name="cadastrodep" value="cadastrardep">
                             <div class="btnn">
                                 <button class="nextBtn" id="btn" onclick="analisar()">
                                     <span class="btnText">Prosseguir</span>
