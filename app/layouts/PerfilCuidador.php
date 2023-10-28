@@ -26,15 +26,17 @@
 <body>
 
     <!--==Product-Page=================================-->
-    <header>
-    <div class="header">
-            <img id="logo" src="../../public/assets/img/LogoPreta.png" alt="">
-            <a id="linkperfil" href="/contratante/conta/1">
-                <span class="material-symbols-outlined">
-                    account_circle
-                </span>
-            </a>
+    <header id="cabecalho">
+
+        <div id="logo">
+            <img src="../../public/assets/img/LogoBranca.png" alt="">
         </div>
+
+        <a id="linkperfil" href="/contratante/conta/1">
+            <span class="material-symbols-outlined">
+                account_circle
+            </span>
+        </a>
     </header>
     <section id="product-page">
         <div class="product-details">
@@ -119,15 +121,15 @@
                         <div class="product-size">
                         </div>
                         <div class="input-field">
-                                <div class="mark">
-                                    <input type="radio" id="check" name="tipo_contr" value="0">
-                                    <p id="depen">Walter Cabral Santos - Código: D00004</p>
-                                </div>
-                                <div class="mark" id="markdois">
-                                    <input type="radio" id="check" name="tipo_contr" value="1">
-                                    <p id="depen">Maria Joana Santos - Código: D00008</p>
-                                </div>
+                            <div class="mark">
+                                <input type="radio" id="check" name="tipo_contr" value="0">
+                                <p id="depen">Walter Cabral Santos - Código: D00004</p>
                             </div>
+                            <div class="mark" id="markdois">
+                                <input type="radio" id="check" name="tipo_contr" value="1">
+                                <p id="depen">Maria Joana Santos - Código: D00008</p>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
