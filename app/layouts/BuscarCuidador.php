@@ -5,12 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link id="u-theme-google-font" rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../../public/assets/css/BuscarCuidador.css">
     <title>Document</title>
 </head>
@@ -56,10 +53,40 @@
     <section class="sec2">
         <div class="topo">
             <h1 class="titulo-sec2">Encontre os melhores <br> cuidadores aqui</h1>
-            <div class="input">
-                <input id="inp" type="text">
-                <span class="material-icons">search</span>
-            </div>
+            <form action="">
+                <div class="input">
+                    <input id="inp" type="text" placeholder="Digite aqui">
+                    <button id="buscar"><span class="material-icons">search</span></button>
+                </div>
+                <div class="caixastotal">
+                    <div class="caixas">
+                        <select name="estado_cuid" id="selecao">
+                            <option disabled selected>Selecione o estado</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                        <select name="cidade_cuid" id="selecao">
+                            <option disabled selected>Selecione a cidade</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                        <select name="genero" id="selecao">
+                            <option disabled selected>Selecione um gênero</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                        <select name="especialidade" id="selecao">
+                            <option disabled selected>Selecione uma especialidade</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+            </form>
         </div>
 
         <div class="cuidadores1">

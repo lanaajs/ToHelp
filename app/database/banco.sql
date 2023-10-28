@@ -154,7 +154,7 @@
 --     ('Dipirona', '09:00:00', 'Terça-feira', 2), -- Associado ao Dependente Ana --
 --     ('Ibuprofeno', '14:30:00', 'Quinta-feira', 2); -- Associado ao Dependente Ana --
     
--- <<<<<<< HEAD
+
 -- -- Table infoCuidador
 -- CREATE TABLE IF NOT EXISTS infoCuidador (
 --   id INT NOT NULL AUTO_INCREMENT,
@@ -170,23 +170,6 @@
 --   dt_cadastro DATETIME NOT NULL,
 --   PRIMARY KEY(id, CPF_cuid)
 -- ) ENGINE = InnoDB;
--- =======
--- -- -- Table infoCuidador
--- -- CREATE TABLE IF NOT EXISTS infoCuidador (
--- --   id INT NOT NULL AUTO_INCREMENT,
--- --   nome_cuid VARCHAR(45) NOT NULL,
--- --   sobrenome_cuid VARCHAR(100) NOT NULL,
--- --   CPF_cuid VARCHAR(14) NOT NULL UNIQUE,
--- --   RG_cuid VARCHAR(13) NOT NULL UNIQUE,
--- --   dt_nasc DATE NOT NULL,
--- --   email_cuid VARCHAR(100) NOT NULL,
--- --   celular_cuid VARCHAR(15) NOT NULL UNIQUE,
--- --   genero ENUM("Masculino","Feminino","Outros") NOT NULL,
--- --   senha_cuid VARCHAR(8) NOT NULL,
--- --   dt_cadastro DATETIME NOT NULL,
--- --   PRIMARY KEY(id, CPF_cuid)
--- -- ) ENGINE = InnoDB;
--- >>>>>>> 75705b78b35134ba9622f44403b22ab0a4d48ecd
 
 -- INSERT INTO infoCuidador (nome_cuid, sobrenome_cuid, CPF_cuid, RG_cuid, dt_nasc, email_cuid, celular_cuid, genero, senha_cuid, dt_cadastro)
 -- VALUES

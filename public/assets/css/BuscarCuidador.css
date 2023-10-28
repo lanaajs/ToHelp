@@ -6,7 +6,7 @@ html {
     height: 100%;
 }
 
-#linkperfil{
+#linkperfil {
     text-decoration: none;
     color: black;
 }
@@ -16,11 +16,11 @@ header {
     padding-bottom: 20px;
     min-width: 100%;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: end;
 }
 
-.material-symbols-outlined{
+.material-symbols-outlined {
     font-size: 35px;
     margin-right: 70px;
 }
@@ -76,7 +76,7 @@ p {
     gap: 20px;
 }
 
-.tudo2{
+.tudo2 {
     max-width: 500px;
     margin-left: 50px;
 }
@@ -109,6 +109,21 @@ hr {
     margin-top: 7vh;
 }
 
+select{
+    padding: 10px;
+    border: none;
+    background: linear-gradient(45deg, #253fb6 0%, #293ad6 28%, #2c6dd5 91%, #2c6dd5 100%);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+select option {
+    color: black;
+    border: none;
+  }
+
+
 .input {
     display: flex;
     justify-content: center;
@@ -117,11 +132,20 @@ hr {
 }
 
 #inp {
-    min-width: 20%;
-    border: 2px solid white;
-    background-color: rgba(255, 255, 255, 0.2);
+    min-width: 40%;
+    border: none;
+    background: linear-gradient(45deg, #5e73cf 0%, #293ad6 28%, #2c6dd5 91%, #2c6dd5 100%);
     border-radius: 10px;
-    color: white;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+}
+
+#inp:focus{
+    outline: none;
+}
+
+#inp::placeholder{
+    color: rgb(255, 255, 255);
 }
 
 .material-icons {
@@ -177,7 +201,7 @@ h3 {
     padding-bottom: 50px;
 }
 
-footer{
+footer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,25 +212,48 @@ footer{
     font-family: Roboto, sans-serif;
 }
 
-a{
+a {
     text-decoration: none;
     color: rgb(163, 226, 255);
 }
 
+#buscar {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.caixas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.caixastotal {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
 
 @media (max-width: 800px) {
-    .sec1{
+    .sec1 {
         display: block;
     }
-    
-    .tudo2{
+
+    .tudo2 {
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content:center ;
+        justify-content: center;
         margin: auto;
         margin-top: 50px;
     }
-
-
 }

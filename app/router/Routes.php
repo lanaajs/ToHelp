@@ -37,7 +37,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
         $r->addRoute('POST', '/cadastro', CadastroController::class . '@validarCadastroContr');
 
         //Rota para a página de buscar cuidadores.
-        $r->addRoute('GET', '/^buscarcuidadores/{id:[0-9]+}$', BuscarCuidController::class . '@indexBuscarCuid');
+        $r->addRoute('GET', '/buscar/{id:[0-9]+}', BuscarCuidController::class . '@indexBuscarCuid');
 
         //Rota para a página de carregamento.
         $r->addRoute('GET', '/carregamento', CarregController::class . '@indexCarregCntr');
