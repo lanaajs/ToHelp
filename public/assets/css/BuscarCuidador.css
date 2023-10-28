@@ -123,6 +123,30 @@ select option {
     border: none;
   }
 
+  #buscar {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.caixas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.caixastotal {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 
 .input {
     display: flex;
@@ -217,29 +241,7 @@ a {
     color: rgb(163, 226, 255);
 }
 
-#buscar {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
 
-.caixas {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 20px;
-}
-
-.caixastotal {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
 
 
 
@@ -256,4 +258,21 @@ a {
         margin: auto;
         margin-top: 50px;
     }
+
+    .caixas{
+        width: 80%;
+        display: block;
+    }
+
+    #selecao{
+        width: 80%;
+        margin-top: 10px;
+        margin-left: 25px;
+    }
+
+    .material-symbols-outlined {
+        font-size: 35px;
+        margin-right: 30px;
+    }
+
 }
