@@ -4,7 +4,7 @@ namespace app\controllers;
 
 class BuscarCuidController
 {
-    function indexBuscarCuid()
+    function indexBuscarCuid(int $id)
     {
         require 'app/layouts/BuscarCuidadores.php';
     }
