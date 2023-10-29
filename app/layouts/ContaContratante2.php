@@ -19,8 +19,8 @@
             <img src="../../public/assets/img/LogoBranca.png" alt="">
         </div>
 
-        <a id="linkperfil" href="/contratante/conta/1">
-            <span class="material-symbols-outlined">
+        <a id="linkperfil" href="#">
+            <span class="material-symbols-outlined md-36">
                 account_circle
             </span>
         </a>

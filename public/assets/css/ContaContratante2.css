@@ -88,9 +88,11 @@ body{margin-top:20px;
     }
     
     .material-symbols-outlined {
-        font-size: 40px;
+        font-size: 50vh;
         margin-right: 70px;
     }
+
+    .material-symbols-outlined.md-36{ font-size: 36px; }
     
  #linkperfil{
     color: white;
