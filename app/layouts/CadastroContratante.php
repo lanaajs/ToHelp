@@ -96,7 +96,7 @@
                             <div class="input-field">
                                 <label for="genero">Gênero</label>
                                 <select name="genero" id="genero" required>
-                                    <option disabled selected>Selecione o gênero</option>
+                                    <option value="none" disabled selected>Selecione o gênero</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Feminino">Feminino</option>
                                     <option value="Outros">Outros</option>
