@@ -22,6 +22,7 @@ function analisar() {
   var complemento = document.getElementById("complemento");
   var senha = document.getElementById("senha");
   var senhaconfirm = document.getElementById("senhaconfirm");
+  var genero = document.getElementById("genero");
   
 
   var date = document.getElementById("date");
@@ -65,6 +66,20 @@ function analisar() {
   
     } else {
       array[i].style.borderColor = "green";
+    }
+
+    if(genero.value == "none"){
+      genero.style.borderColor = "red";
+
+      (function(element) {
+        setTimeout(function() {
+          element.style.borderColor = "#aaa"; // Define a cor da borda de volta para transparente após 1 segundo
+        }, 2500);
+      })(genero);
+
+      controller = true;
+    }else{
+      genero.style.borderColor = "green";
     }
 
 
