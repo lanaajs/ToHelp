@@ -190,6 +190,11 @@ select option {
     border-radius: 20px;
 }
 
+#cuidVideo{
+    max-width: 200px; 
+    border-radius: 20px; 
+    display: none;
+}
 h2 {
     font-family: Ubuntu, sans-serif;
     font-size: 15px;
