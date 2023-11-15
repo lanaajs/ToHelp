@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../public/assets/css/NovoCartao.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <title>Novo cartao</title>
+    
+    <link rel="icon" type="image/x-icon" href="../../public/assets/img/LogoPreta.png">
+    <title>ToHelp - Novo cartao</title>
 </head>
 
 <body>
@@ -17,36 +19,42 @@
     </div>
 
     <main>
-        <div class="cartao">
-            <div id="line1">
-                <div class="nome-cart-text">
+
+        <div id=centro>
+            <div class="cartao">
+                <div id="line1">
+                    <div class="nome-cart-text">
+                    </div>
+                    <div class="aproximacao-div"><img class="aproximacao" src="../../public/assets/img/aproximacao.png"
+                            alt="aproximacao"></div>
                 </div>
-                <div class="aproximacao-div"><img class="aproximacao" src="../../public/assets/img/aproximacao.png"
-                        alt="aproximacao"></div>
-            </div>
-            <div id="line2">
-                <p>Número do Cartão</p>
-                <div class="numero-cart-text">
-                    **** **** **** ****
-                </div>
-            </div>
-            <div id="line3">
-                <div id="vencimento-cart">
-                    <p>Vencimento</p>
-                    <div class="vencimento-text">
-                        mm/aa
+                <div id="line2">
+                    <p>Número do Cartão</p>
+                    <div class="numero-cart-text">
+                        **** **** **** ****
                     </div>
                 </div>
-                <div id="cvv-cart">
-                    <p>CVV</p>
-                    <div class="cvv-text">
-                        ***
+                <div id="line3">
+                    <div id="vencimento-cart">
+                        <p>Vencimento</p>
+                        <div class="vencimento-text">
+                            mm/aa
+                        </div>
                     </div>
+                    <div id="cvv-cart">
+                        <p>CVV</p>
+                        <div class="cvv-text">
+                            ***
+                        </div>
+                    </div>
+                    <div id="chip"><img src="../../public/assets/img/flat-color-icons_sim-card-chip.png" alt="chipcartao"></div>
                 </div>
-                <div id="chip"><img src="../../public/assets/img/flat-color-icons_sim-card-chip.png" alt="chipcartao"></div>
             </div>
         </div>
-        <form id="info-cartao" action="#">
+        
+
+        <div centro2>
+            <form id="info-cartao" action="#">
             <div id="inputs">
                 <div id="inpt">
                     <label for="Nome">Nome</label>
@@ -54,11 +62,13 @@
                             onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.key ==  ' '">
                     </div>
                 </div>
-                <div id="teste">
+                <div id="inpt">
                     <label for="numcartao">Número do Cartão</label>
-                    <input type="text" name="numcartao" id="numcartao" maxlength="19" placeholder="**** **** **** ****"
-                        onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                    <img id="imgg" src="../../public/assets/img/bytesize_creditcard.png" alt="imagemcartao">
+                   
+                        <input type="text" name="numcartao" id="numcartao" maxlength="19" placeholder="**** **** **** ****"
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        <img id="imgg" src="../../public/assets/img/bytesize_creditcard.png" alt="imagemcartao">
+                   
                 </div>
                 <div id="inpt">
                     <label for="cpf" id="cpf-lab">CPF do Titular</label>
@@ -78,8 +88,10 @@
                             onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                     </div>
                 </div>
-        </form>
-        <input type="button" id="button" onclick="analisar()" value="CONCLUIR">
+            </form>
+            <input type="button" id="button" onclick="analisar()" value="CONCLUIR">
+        </div>
+        
     </main>
 
     <script src="../../public/assets/js/novocartao.js"></script>
