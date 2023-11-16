@@ -39,6 +39,7 @@ class CadastroController
         $db->ligar();
         $db->iniciarTransacao();
 
+
         try {
             $nome = $_POST['nome_cuid'];
             $sobrenome = $_POST['sobrenome_cuid'];
@@ -50,8 +51,8 @@ class CadastroController
             $genero = $_POST['genero'];
             $senha = password_hash($_POST['senha_cuid'], PASSWORD_DEFAULT);
 
-            $sqlCuidador = "INSERT INTO infoCuidador (nome_cuid, sobrenome_cuid, CPF_cuid, RG_cuid, dt_nasc, email_cuid, celular_cuid, genero, senha_cuid, dt_cadastro, tipo_contr) 
-            VALUES (:nome_cuid, :sobrenome_cuid, :CPF_cuid, :RG_cuid, :dt_nasc, :email_cuid, :celular_cuid, :genero, :senha_cuid, NOW(), :tipo_contr)";
+            $sqlCuidador = "INSERT INTO infoCuidador (nome_cuid, sobrenome_cuid, CPF_cuid, RG_cuid, dt_nasc, email_cuid, celular_cuid, genero, senha_cuid, dt_cadastro) 
+            VALUES (:nome_cuid, :sobrenome_cuid, :CPF_cuid, :RG_cuid, :dt_nasc, :email_cuid, :celular_cuid, :genero, :senha_cuid, NOW())";
 
             $parametrosCuidador = array(
                 ':nome_cuid' => $nome,
@@ -62,8 +63,7 @@ class CadastroController
                 ':email_cuid' => $email,
                 ':celular_cuid' => $celular,
                 ':genero' => $genero,
-                ':senha_cuid' => $senha,
-                ':tipo_contr' => $tipo
+                ':senha_cuid' => $senha
             );
 
             $lastIdCuidador = $db->insert($sqlCuidador, $parametrosCuidador);
@@ -77,8 +77,8 @@ class CadastroController
             $numero = $_POST['numero_cuid'];
             $complemento = $_POST['complemento_cuid'];
 
-            $sqlEndereco = "INSERT INTO enderecoCuidador (CEP_cuid, estado_cuid, cidade_cuid, bairro_cuid, end_cuid, numero_cuid, complemento_cuid, id_contr_FK) 
-            VALUES (:CEP_cuid, :estado_cuid, :cidade_cuid, :bairro_cuid, :end_cuid, :numero_cuid, :complemento_cuid, :id_contr_FK)";
+            $sqlEndereco = "INSERT INTO enderecoCuidador (CEP_cuid, estado_cuid, cidade_cuid, bairro_cuid, end_cuid, numero_cuid, complemento_cuid, infoCuidador_id) 
+            VALUES (:CEP_cuid, :estado_cuid, :cidade_cuid, :bairro_cuid, :end_cuid, :numero_cuid, :complemento_cuid, :infoCuidador_id)";
 
             $parametrosEndereco = array(
                 ':CEP_cuid' => $cep,
@@ -88,17 +88,41 @@ class CadastroController
                 ':end_cuid' => $endereco,
                 ':numero_cuid' => $numero,
                 ':complemento_cuid' => $complemento,
-                ':id_contr_FK' => $lastIdCuidador
+                ':infoCuidador_id' => $lastIdCuidador
             );
 
             $resultEndereco = $db->insert($sqlEndereco, $parametrosEndereco);
 
             /*------------------------------------------------------------------*/
-            $rgf = $_POST['rg_frente'];
-            $rgv = $_POST['rg_verso'];
-            $curriculo = $_POST['curriculo'];
-            $certif = $_POST['certificado'];
+
+
+            $rgf = $_FILES['rg_frente']['name'];
+            $rgv = $_FILES['rg_verso']['name'];
+            $curriculo = $_FILES['curriculo']['name'];
             $sobre = $_POST['sobre_txt'];
+            $certif = $_FILES['certificado']['name'];
+
+
+            $uploadDirectory = __DIR__ . '/../../public/assets/arqvs_cuid/';
+            move_uploaded_file($_FILES['rg_frente']['tmp_name'], $uploadDirectory . $rgf);
+            move_uploaded_file($_FILES['rg_verso']['tmp_name'], $uploadDirectory . $rgv);
+            move_uploaded_file($_FILES['curriculo']['tmp_name'], $uploadDirectory . $curriculo);
+
+            if (isset($_FILES['certificado']['name'])) {
+                $certif = $_FILES['certificado']['name'];
+                echo "existe certif <br>";
+            } else {
+                echo "não existe certif <br>";
+            }
+
+            if (!empty($_FILES['certificado']['name']) && $_FILES['certificado']['error'] === UPLOAD_ERR_OK) {
+                // File upload successful
+                move_uploaded_file($_FILES['certificado']['tmp_name'], $uploadDirectory . $certif);
+                // Continue with database insertion
+            } else {
+                // Handle the case where no file was uploaded or an error occurred for foto_perfil
+                echo "<br> No file uploaded para certificado or an error occurred. <br>";
+            }
 
             $sqlInfoCurricular = "INSERT INTO infoCurricular (rg_frente, rg_verso, curriculo, certificado, sobre_txt, id_cuid_FK) 
             VALUES (:rg_frente, :rg_verso, :curriculo, :certificado, :sobre_txt, :id_cuid_FK)";
@@ -114,12 +138,79 @@ class CadastroController
 
             $resultInfoCurricular = $db->insert($sqlInfoCurricular, $parametrosInfoCurricular);
 
-            if ($lastIdCuidador !== false && $resultEndereco !== false && $resultInfoCurricular !== false) {
+            /*------------------------------------------------------------------*/
+            $fotoperfil = $_FILES['foto_cuid']['name'];
+
+            if (isset($_FILES['foto_cuid']['name'])) {
+                $fotoperfil = $_FILES['foto_cuid']['name'];
+                echo "existe foto <br>";
+            } else {
+                echo "não existe foto <br>";
+            }
+
+            if (!empty($_FILES['foto_cuid']['name']) && $_FILES['foto_cuid']['error'] === UPLOAD_ERR_OK) {
+                // File upload successful
+                move_uploaded_file($_FILES['foto_cuid']['tmp_name'], $uploadDirectory . $fotoperfil);
+                // Continue with database insertion
+            } else {
+                // Handle the case where no file was uploaded or an error occurred for foto_perfil
+                echo "No file uploaded for foto_cuid or an error occurred.";
+            }
+
+
+            $sqlFotoPerfilCuid = "INSERT INTO fotoPerfilCuid (foto_cuid, id_cuid_FK) 
+            VALUES (:foto_cuid, :id_cuid_FK)";
+
+
+            $parametrosFotoPerfilCuid = array(
+                ':foto_cuid' => $fotoperfil,
+                ':id_cuid_FK' => $lastIdCuidador
+            );
+
+            $resultfotoperfil = $db->insert($sqlFotoPerfilCuid, $parametrosFotoPerfilCuid);
+
+            /*------------------------------------------------------------------*/
+
+            $uploadDirectory2 = __DIR__ . '/../../public/assets/videos/';
+            $videocv = $_FILES['videocv']['name'];
+
+            if (isset($_FILES['videocv']['name'])) {
+                $videocv = $_FILES['videocv']['name'];
+                echo "existe cvvideo";
+            } else {
+                echo "não existe cvvideo";
+            }
+
+            if (!empty($_FILES['videocv']['name']) && $_FILES['videocv']['error'] === UPLOAD_ERR_OK) {
+                // File upload successful
+                move_uploaded_file($_FILES['videocv']['tmp_name'], $uploadDirectory2 . $videocv);
+                // Continue with database insertion
+            } else {
+                // Handle the case where no file was uploaded or an error occurred for videocv
+                echo "No file uploaded for videocv or an error occurred.";
+            }
+            $sqlvideoCV = "INSERT INTO videoCV (videocv, id_cuid_FK) 
+            VALUES (:videocv, :id_cuid_FK)";
+
+
+            $parametrosvideoCV = array(
+                ':videocv' => $videocv,
+                ':id_cuid_FK' => $lastIdCuidador
+            );
+
+            $resultcvvideo = $db->insert($sqlvideoCV, $parametrosvideoCV);
+
+            if ($lastIdCuidador !== false && $resultEndereco !== false && $resultInfoCurricular !== false && $resultfotoperfil !== false && $resultcvvideo !== false) {
                 $db->confirmarTransacao();
                 echo "Cadastro realizado com sucesso! Último ID inserido: $lastIdCuidador <br>";
                 header('Location: /cuidador/login');
-            } else {
+            } else if ($lastIdCuidador == false || $resultEndereco == false || $resultInfoCurricular == false || $resultfotoperfil == false || $resultcvvideo == false) {
                 $db->cancelarTransacao();
+                \var_dump($lastIdCuidador);
+                \var_dump($resultEndereco);
+                \var_dump($resultInfoCurricular);
+                \var_dump($resultfotoperfil);
+                \var_dump($resultcvvideo);
                 echo "Erro ao cadastrar. Por favor, tente novamente.";
             }
         } catch (\PDOException $e) {

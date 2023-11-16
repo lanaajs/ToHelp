@@ -1,3 +1,6 @@
+<?php
+include("../controllers/BuscarCuidController.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,45 +56,52 @@
     <section class="sec2">
         <div class="topo">
             <h1 class="titulo-sec2">Encontre os melhores <br> cuidadores aqui</h1>
-            <form action="">
+            <form method="GET" action="">
+
                 <div class="input">
-                    <input id="inp" type="text" placeholder="Digite aqui">
-                    <button id="buscar"><span class="material-icons">search</span></button>
+                    <input id="inp" name="buscar" type="text" value="<?php if (isset($_GET['busca'])) echo $_GET['busca'] ?>" placeholder="Digite o nome do cuidador">
+                    <button type="submit" id="buscar"><span class="material-icons">search</span></button>
                 </div>
+                <div id="caixa-resultados">
+                    <ul>
+                    </ul>
+                </div>
+
                 <div class="caixastotal">
                     <div class="caixas">
-                        <select name="estado_cuid" id="selecao">
-                            <option disabled selected>Selecione o estado</option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
-                        <select name="cidade_cuid" id="selecao">
-                            <option disabled selected>Selecione a cidade</option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
-                        <select name="genero" id="selecao">
-                            <option disabled selected>Selecione um gênero</option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
-                        <select name="especialidade" id="selecao">
-                            <option disabled selected>Selecione uma especialidade</option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
+                        <form action="">
+                            <div class="div-filtro">
+                                <select name="estado" id="estado">
+                                    <option disabled selected>Selecione um estado</option>
+                                    <?php
+                                    $prepare = $conexaoPesquisa->prepare("SELECT id, nome FROM estados ORDER BY nome ASC");
+                                    $prepare->execute();
+                                    $estados = $prepare->fetchAll(PDO::FETCH_ASSOC);
+
+                                    foreach ($estados as $opcao) {
+                                    ?>
+                                        <option value="<?php echo $opcao['id'] ?>"><?php echo $opcao['nome'] ?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
+                                <select name="cidade" id="cidade">
+                                    <option disabled selected>Selecione uma cidade</option>
+                                </select>
+                                <select name="genero" id="selecao">
+                                    <option disabled selected>Selecione um gênero</option>
+                                    <option value="">Feminino</option>
+                                    <option value="">Masculino</option>
+                                    <option value="">Indefinido</option>
+                                </select>
+                        </form>
                     </div>
                 </div>
             </form>
         </div>
-
         <div class="cuidadores1">
             <div class="cuidadores2">
-                <div class="cuidcard">
+            <div class="cuidcard">
                     <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
                     <video id="cuidVideo">
                         <source src="alana.mp4" type="video/mp4">
@@ -107,10 +117,6 @@
                 </div>
                 <div class="cuidcard">
                     <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
-                    <video id="cuidVideo">
-                        <source src="alana copy 6.mp4" type="video/mp4">
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
                     <div class="txtcard">
                         <h2>Maria Lívia Barbosa</p>
                             <h3>Técnica em enfermagem</p>
@@ -121,10 +127,6 @@
                 </div>
                 <div class="cuidcard">
                     <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
-                    <video id="cuidVideo">
-                        <source src="alana copy 5.mp4" type="video/mp4">
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
                     <div class="txtcard">
                         <h2>Maria Lívia Barbosa</p>
                             <h3>Técnica em enfermagem</p>
@@ -135,10 +137,6 @@
                 </div>
                 <div class="cuidcard">
                     <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
-                    <video id="cuidVideo">
-                        <source src="alana copy 4.mp4" type="video/mp4">
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
                     <div class="txtcard">
                         <h2>Maria Lívia Barbosa</p>
                             <h3>Técnica em enfermagem</p>
@@ -149,10 +147,6 @@
                 </div>
                 <div class="cuidcard">
                     <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
-                    <video id="cuidVideo">
-                        <source src="alana copy 3.mp4" type="video/mp4">
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
                     <div class="txtcard">
                         <h2>Maria Lívia Barbosa</p>
                             <h3>Técnica em enfermagem</p>
@@ -163,10 +157,6 @@
                 </div>
                 <div class="cuidcard">
                     <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
-                    <video id="cuidVideo">
-                        <source src="alana copy 2.mp4" type="video/mp4">
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
                     <div class="txtcard">
                         <h2>Maria Lívia Barbosa</p>
                             <h3>Técnica em enfermagem</p>
@@ -177,10 +167,6 @@
                 </div>
                 <div class="cuidcard">
                     <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
-                    <video id="cuidVideo">
-                        <source src="alana copy.mp4" type="video/mp4">
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
                     <div class="txtcard">
                         <h2>Maria Lívia Barbosa</p>
                             <h3>Técnica em enfermagem</p>
@@ -207,7 +193,7 @@
 
         // Função para configurar o comportamento da imagem e vídeo
         function configurarComportamento(imagem, video, txtcard, contratarBtn) {
-            imagem.addEventListener("click", function () {
+            imagem.addEventListener("click", function() {
                 // Verificar se outros vídeos estão em reprodução
                 if (!videosEmReproducao) {
                     videosEmReproducao = true; // Bloquear outros vídeos
@@ -219,7 +205,7 @@
                 }
             });
 
-            video.addEventListener("ended", function () {
+            video.addEventListener("ended", function() {
                 videosEmReproducao = false; // Desbloquear outros vídeos após o término
                 imagem.style.display = "block";
                 video.style.display = "none";
@@ -232,7 +218,7 @@
         var cuidcards = document.querySelectorAll(".cuidcard");
 
         // Iterar sobre cada cuidcard e configurar o comportamento
-        cuidcards.forEach(function (cuidcard) {
+        cuidcards.forEach(function(cuidcard) {
             var imagem = cuidcard.querySelector("img");
             var video = cuidcard.querySelector("video");
             var txtcard = cuidcard.querySelector(".txtcard");
@@ -242,6 +228,12 @@
         });
     </script>
 
+    <!-- Biblioteca responsável pela realização das buscas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js" integrity="sha512-WrdC3CE9vf1nBf58JHepuWT4x24uTacky9fuzw2g/3L9JkihgwZ6Cfv+JGTtNyosOhEmttMtEZ6H3qJWfI7gIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Biblioteca responsável por impedir a sobrecarga do servidor decorrente das constantes requisições no banco de dados -->
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+    <script src="../../public/assets/js/BucarCuid.js"></script>
 </body>
 
 </html>

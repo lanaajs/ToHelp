@@ -195,6 +195,7 @@ select option {
     border-radius: 20px; 
     display: none;
 }
+
 h2 {
     font-family: Ubuntu, sans-serif;
     font-size: 15px;
@@ -247,7 +248,57 @@ a {
     color: rgb(163, 226, 255);
 }
 
+#caixa-resultados {
+    display: none;
+    background-color: rgb(255, 255, 255);
+    margin-left: 28.1%;
+    height: 20vh;
+    width: 41.5%;
+    overflow: scroll;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
 
+#caixa-resultados ::-webkit-scrollbar {
+    width: 5px;
+}
+
+#caixa-resultados ::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: #2c6dd5;
+}
+
+#caixa-resultados ul {
+    list-style: none;
+    font-family: Roboto, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    width: 100%;
+    padding: 0;
+}
+
+#caixa-resultados ul li {
+    padding: 4%;
+}
+
+#caixa-resultados #semResultados {
+    font-family: Roboto, sans-serif;
+    padding: 4%;
+}
+
+#semResultados #caixa-resultados {
+    width: 41.8%;
+}
+
+#caixa-resultados ul li:hover {
+    background-color: #E0EDFE;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#inp:focus {
+    outline: none;
+}
 
 
 
