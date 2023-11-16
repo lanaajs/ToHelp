@@ -9,7 +9,7 @@
 
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="../../public/assets/css/CadastroCuidador.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">   
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -22,51 +22,58 @@
 <body onload="senhaTAMCuid()">
 
 
-        <div id="setinha">
-            <a href=""><img src="../../public/assets/img/iconamoon_arrow-up-2-duotone.png" alt=""></a>
-        </div>
-    
-    <?php
-        if(isset($_POST['cadastrocuid'])) {
-            // Verifica se o formulário foi enviado
+    <div id="setinha">
+        <a href=""><img src="../../public/assets/img/iconamoon_arrow-up-2-duotone.png" alt=""></a>
+    </div>
 
-            $rg_frente = $_FILES['rg_frente'];
-            $rg_verso = $_FILES['rg_verso'];
-            $curriculo = $_FILES['curriculo'];
-            $certificados = $_FILES['certificado'];
-            $foto_perfil = $_FILES['foto_perfil'];
+    <!-- <?php
+    if (isset($_POST['cadastrocuid'])) {
+        // Verifica se o formulário foi enviado
 
-            if($rg_frente['name'] != "") {
-                $extensao = pathinfo($rg_frente['name'], PATHINFO_EXTENSION);
-                $novo_nome = "rg_frente." . $extensao;
-                move_uploaded_file($rg_frente['tmp_name'], 'uploads_arq_cuid/' . $novo_nome);
-            }
+        $rg_frente = $_FILES['rg_frente'];
+        $rg_verso = $_FILES['rg_verso'];
+        $curriculo = $_FILES['curriculo'];
+        $certificados = $_FILES['certificado'];
+        $foto_perfil = $_FILES['foto_perfil'];
+        $videocv = $_FILES['videocv'];
 
-            if($rg_verso['name'] != "") {
-                $extensao = pathinfo($rg_verso['name'], PATHINFO_EXTENSION);
-                $novo_nome = "rg_verso." . $extensao;
-                move_uploaded_file($rg_verso['tmp_name'], 'uploads_arq_cuid/' . $novo_nome);
-            }
-
-            if($curriculo['name'] != "") {
-                $extensao = pathinfo($curriculo['name'], PATHINFO_EXTENSION);
-                $novo_nome = "curriculo." . $extensao;
-                move_uploaded_file($curriculo['tmp_name'], 'uploads_arq_cuid/' . $novo_nome);
-            }
-
-            if($certificados['name'] != "") {
-                $extensao = pathinfo($certificados['name'], PATHINFO_EXTENSION);
-                $novo_nome = "certificados." . $extensao;
-                move_uploaded_file($certificados['tmp_name'], 'uploads_arq_cuid/' . $novo_nome);
-            }
-
-            if($foto_perfil['name'] != "") {
-                $extensao = pathinfo($foto_perfil['name'], PATHINFO_EXTENSION);
-                $novo_nome = "foto_perfil." . $extensao;
-                move_uploaded_file($foto_perfil['tmp_name'], 'uploads_arq_cuid/' . $novo_nome);
-            }
+        if ($rg_frente['name'] != "") {
+            $extensao = pathinfo($rg_frente['name'], PATHINFO_EXTENSION);
+            $novo_nome = "rg_frente.". $lastidCuidador."." . $extensao;
+            move_uploaded_file($rg_frente['tmp_name'], 'arqvs_cuid' . $novo_nome);
         }
-    ?>
+
+        if ($rg_verso['name'] != "") {
+            $extensao = pathinfo($rg_verso['name'], PATHINFO_EXTENSION);
+            $novo_nome = "rg_verso." . $lastidCuidador."."  . $extensao;
+            move_uploaded_file($rg_verso['tmp_name'], 'arqvs_cuid' . $novo_nome);
+        }
+
+        if ($curriculo['name'] != "") {
+            $extensao = pathinfo($curriculo['name'], PATHINFO_EXTENSION);
+            $novo_nome = "curriculo." . $lastidCuidador."."  . $extensao;
+            move_uploaded_file($curriculo['tmp_name'], 'arqvs_cuid' . $novo_nome);
+        }
+
+        if ($certificados['name'] != "") {
+            $extensao = pathinfo($certificados['name'], PATHINFO_EXTENSION);
+            $novo_nome = "certificados."  . $lastidCuidador."."  . $extensao;
+            move_uploaded_file($certificados['tmp_name'], 'arqvs_cuid/' . $novo_nome);
+        }
+
+        if ($foto_perfil['name'] != "") {
+            $extensao = pathinfo($foto_perfil['name'], PATHINFO_EXTENSION);
+            $novo_nome = "foto_perfil" . $lastidCuidador."."  . $extensao;
+            move_uploaded_file($foto_perfil['tmp_name'], 'arqvs_cuid/' . $novo_nome);
+        }
+
+        if ($videocv['name'] != "") {
+            $extensao = pathinfo($videocv['name'], PATHINFO_EXTENSION);
+            $novo_nome = "videocv" . $lastidCuidador."."  . $extensao;
+            move_uploaded_file($videocv['tmp_name'], 'videos/' . $novo_nome);
+        }
+    }
+    ?> -->
 
 
     <div class="tudo">
@@ -126,7 +133,7 @@
 
                             <div class="input-field">
                                 <label for="dt_nasc">Date de Nascimento</label>
-                                <input type="date" placeholder="Insira sua data de nascimento"  id="date" name="dt_nasc" required>
+                                <input type="date" placeholder="Insira sua data de nascimento" id="date" name="dt_nasc" required>
                             </div>
 
                             <div class="input-field">
@@ -136,7 +143,7 @@
 
                             <div class="input-field">
                                 <label for="celular_cuid">Celular</label>
-                                <input type="number" placeholder="Insira seu telefone celular" id="tel" name="celular_cuid" required>
+                                <input type="text" placeholder="Insira seu telefone celular" id="tel" name="celular_cuid" required>
                             </div>
 
                             <div class="input-field">
@@ -162,11 +169,11 @@
                             <div class="input-field">
                                 <label for="cidade_cuid">Cidade</label>
 
-                                <input type="text" placeholder="Insira uma cidade"  id="cidade" name="cidade_cuid" required>
+                                <input type="text" placeholder="Insira uma cidade" id="cidade" name="cidade_cuid" required>
                             </div>
                             <div class="input-field">
                                 <label for="bairro_cuid">Bairro</label>
-                                <input type="text" placeholder="Insira uma bairro" id="bairro" name="bairro_cuid"  required>
+                                <input type="text" placeholder="Insira uma bairro" id="bairro" name="bairro_cuid" required>
 
                             </div>
 
@@ -177,7 +184,7 @@
 
                             <div class="input-field">
                                 <label for="numero_cuid">Número</label>
-                                <input type="text" placeholder="Insira um número" id="numero" name="numero_cuid" required> 
+                                <input type="text" placeholder="Insira um número" id="numero" name="numero_cuid" required>
                             </div>
 
                             <div class="input-field">
@@ -264,16 +271,31 @@
                                 <div class="container2">
                                     <figure class="image-container">
                                         <img id="chosen-image">
-                                        <figcaption id="file-name"></figcaption>
+                                        <figcaption id="file-name1"></figcaption>
                                     </figure>
 
-                                    <input type="file" name="foto_perfil" id="upload-button" accept="image/*">
-                                    <label id="lbll" for="upload-button">
+                                    <input type="file" name="foto_cuid" id="upload-button1" accept="image/*">
+                                    <label id="lbll" for="upload-button1">
                                         <i class="fas fa-upload"></i> &nbsp; Selecione uma foto de perfil
                                     </label>
                                 </div>
                             </div>
-                            <input type="hidden" name="cadastrocuid" value="cadastrarcuid"> 
+
+                            <div class="fields">
+                                <div class="container2">
+                                    <figure class="media-container">
+                                            <video id="chosen-video" controls></video>
+                                        <figcaption id="file-name2"></figcaption>
+                                    </figure>
+
+                                    <input type="file" name="videocv" id="upload-button2" accept="video/mp4,video/x-m4v,video/*">
+                                    <label id="lbll" for="upload-button2">
+                                        <i class="fas fa-upload"></i> &nbsp; Selecione um vídeo de apresentação
+                                    </label>
+                                </div>
+                            </div>
+                            <p id="obs">Insira apenas vídeos na vertical para melhor visualização.</p>
+                            <input type="hidden" name="cadastrocuid" value="cadastrarcuid">
                             <div class="btnn">
                                 <div class="buttons">
                                     <button class="nextBtn" id="btn" onclick="analisar()">

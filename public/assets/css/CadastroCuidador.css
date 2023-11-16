@@ -425,7 +425,18 @@ input[type="file"] {
     margin: 0 auto 30px auto;
 }
 
+.media-container {
+    width: 90%;
+    margin: 0 auto 30px auto;
+}
+
 .image-container img {
+    display: block;
+    max-width: 100%;
+    max-height: 200px;
+    margin: auto;
+}
+.media-container video {
     display: block;
     max-width: 100%;
     max-height: 200px;
@@ -477,7 +488,13 @@ figcaption {
     width: 100%;
 }
 
+#obs{
+    font-size: 14px;
+}
 
+#chosen-video{
+    display: none;
+}
 
 @media (max-width: 850px) {
     .inputAll {
@@ -608,10 +625,8 @@ figcaption {
         max-width: 80%;
         max-height: 150px;
     }
-    
-    
-    
-    
-
-
+    .media-container video {
+        max-width: 80%;
+        max-height: 150px;
+    }
 }

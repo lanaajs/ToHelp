@@ -76,17 +76,17 @@ class Database
             throw new Exception('A instrução não é um INSERT');
         }
 
-        $resultados = null;
+        $resultado = null;
 
         try {
             if (!empty($parametros)) {
                 $executar = $this->ligacao->prepare($sql);
                 $executar->execute($parametros);
-                $resultados = $executar->fetchAll(\PDO::FETCH_CLASS);
+                $resultado = $executar->fetchAll(\PDO::FETCH_CLASS);
             } else {
                 $executar = $this->ligacao->prepare($sql);
                 $executar->execute();
-                $resultados = $executar->fetchAll(\PDO::FETCH_CLASS);
+                $resultado = $executar->fetchAll(\PDO::FETCH_CLASS);
             }
 
             $lastInsertId = (int)$this->ligacao->lastInsertId();
