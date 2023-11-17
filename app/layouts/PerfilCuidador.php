@@ -74,8 +74,14 @@
                         <div class="img-social-bar">
                             <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
+                      
+                        <div class="swiper-slide">
+                            <video>
+                                <source src="video_cuidadora.mp4" type="video/mp4">
+                                Seu navegador não suporta o elemento de vídeo.
+                            </video>
                     </div>
-                    <!--**Text************************-->
+                    
                     <div class="product-text">
                         <!--category-->
                         <span class="product-category">Código: C00002</span>
@@ -208,32 +214,47 @@
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            450: {
+                slidesPerView: 2,
+                spaceBetween: 0,
             },
-            breakpoints: {
-                450: {
-                    slidesPerView: 2,
-                    spaceBetween: 0,
-                },
-                820: {
-                    slidesPerView: 1,
-                    spaceBetween: 0,
-                },
-                1024: {
-                    slidesPerView: 2,
-                    spaceBetween: 0,
-                },
+            820: {
+                slidesPerView: 1,
+                spaceBetween: 0,
             },
-        });
+            1024: {
+                slidesPerView: 2,
+                spaceBetween: 0,
+            },
+        },
+        on: {
+            slideChange: function () {
+                //Pausa o vídeo anterior quando o slide mudar
+                var previousSlide = swiper.slides[swiper.previousIndex];
+                if (previousSlide.querySelector("video")) {
+                    previousSlide.querySelector("video").pause();
+                }
+            },
+            slideChangeTransitionEnd: function () {
+                // Reproduz o vídeo quando o slide ficar ativo
+                var currentSlide = swiper.slides[swiper.activeIndex];
+                if (currentSlide.querySelector("video")) {
+                    currentSlide.querySelector("video").play();
+                }
+            },
+        },
+    });
 
-
-        $('.s-checkbox').on('change', function() {
-            $('.s-checkbox').not(this).prop('checked', false);
-        });
+    $('.s-checkbox').on('change', function () {
+        $('.s-checkbox').not(this).prop('checked', false);
+    });
     </script>
 </body>
 
