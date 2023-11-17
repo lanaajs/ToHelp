@@ -57,11 +57,14 @@
                                 </div>
                                 <!--**3******-->
                                 <div class="swiper-slide">
-                                    <img src="images/3.jpg" />
+                                    <video>
+                                        <source src="/public/assets/videos/video_cuidadora.mp4" type="video/mp4">
+                                        Seu navegador não suporta o elemento de vídeo.
+                                    </video>
                                 </div>
                                 <!--**4******-->
                                 <div class="swiper-slide">
-                                    <img src="images/1.jpg" />
+                                    <img src="../../public/assets/img/cuidados-atividade.png" />
                                 </div>
                             </div>
                             <!--btns-->
@@ -74,14 +77,8 @@
                         <div class="img-social-bar">
                             <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
-                      
-                        <div class="swiper-slide">
-                            <video>
-                                <source src="video_cuidadora.mp4" type="video/mp4">
-                                Seu navegador não suporta o elemento de vídeo.
-                            </video>
                     </div>
-                    
+                    <!--**Text************************-->
                     <div class="product-text">
                         <!--category-->
                         <span class="product-category">Código: C00002</span>
