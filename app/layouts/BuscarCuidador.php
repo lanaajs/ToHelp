@@ -108,14 +108,14 @@ include("../controllers/BuscarCuidController.php");
                         Seu navegador não suporta o elemento de vídeo.
                     </video>
                     <div class="txtcard">
-                        <h2>Maria Lívia Barbosa</p>
+                        <h2>Lucia Ferreira</p>
                             <h3>Técnica em enfermagem</p>
                                 <p id="pdif">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis
                                     glavrid from dolor amet iquam lorem bibendum</p>
                     </div>
                     <button id="saiba">Contratar</button>
-                </div>
-                <div class="cuidcard">
+                </div> 
+                <!-- <div class="cuidcard">
                     <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
                     <div class="txtcard">
                         <h2>Maria Lívia Barbosa</p>
@@ -174,7 +174,7 @@ include("../controllers/BuscarCuidController.php");
                                     glavrid from dolor amet iquam lorem bibendum</p>
                     </div>
                     <button id="saiba">Contratar</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
