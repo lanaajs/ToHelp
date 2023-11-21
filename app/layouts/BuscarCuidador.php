@@ -99,7 +99,7 @@ include("../controllers/BuscarCuidController.php");
                 </div>
             </form>
         </div>
-        <div class="cuidadores1">
+        <div class="cuidadores1" id="cuidadores1">
             <div class="cuidadores2">
             <div class="cuidcard">
                     <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">

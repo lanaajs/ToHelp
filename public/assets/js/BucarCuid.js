@@ -90,6 +90,7 @@ let selectEstado = document.getElementById('estado');
 selectEstado.onchange = function () {
 
     let selectCidade = document.getElementById('cidade');
+    let cuidadores = document.getElementById('cuidadores1');
     let valor = selectEstado.value;
 
     fetch("../controllers/BuscarCuidController.php?estado=" + valor)
@@ -98,6 +99,7 @@ selectEstado.onchange = function () {
         })
         .then(select => {
             selectCidade.innerHTML = select;
+            cuidadores.innerHTML = select;
         });
 
 }
