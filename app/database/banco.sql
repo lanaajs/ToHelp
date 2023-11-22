@@ -5,10 +5,6 @@
 -- CREATE DATABASE IF NOT EXISTS tohelpdb;
 -- USE tohelpdb;
 
-
-
-
-
 -- -- Table infoContratante
 -- CREATE TABLE IF NOT EXISTS infoContratante(
 --   id INT NOT NULL AUTO_INCREMENT,
@@ -187,6 +183,7 @@
 -- INSERT INTO enderecoCuidador (CEP_cuid, estado_cuid, cidade_cuid, bairro_cuid, end_cuid, numero_cuid, complemento_cuid, infoCuidador_id)
 -- VALUES
 --     ('54321-987', 'Rio de Janeiro', 'Rio de Janeiro','Laranjeiras','Rua Laranja', '456', 'Casa', 1),
+-- 	('54321-987', 'Rio de Janeiro', 'Rio de Janeiro','Laranjeiras','Rua Laranja', '456', 'Casa', 3),
 --     ('12345-678', 'São Paulo', 'São Paulo', 'Joana Angelica','Av. Macapá', '758', 'Ao lado do mercado',2);
 
 

@@ -26,7 +26,7 @@ $estados = $prepare->fetchAll(PDO::FETCH_ASSOC);
 foreach ($estados as $opcao) {
 ?>
     <option value="<?php echo $opcao['id'] ?>"><?php echo $opcao['nome'] ?></option>
-<?php
+    <?php
 }
 
 /*------------------------------------------------------------------*/
@@ -51,12 +51,13 @@ try {
         $prepare->execute(['estado' => $nomeEstado]); // Use $nomeEstado em vez de $estado
         $cuidador = $prepare->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($cuidador);
-
         // 5. Saída HTML: Aplicar htmlspecialchars
-        foreach ($cuidador as $opcao) {
+        if (!empty($cuidador)) {
+            foreach ($cuidador as $opcao) {
             ?>
-            <option value="<?php echo htmlspecialchars($opcao['id']) ?>"><?php echo htmlspecialchars($opcao['nome_cuid'] . ' ' . $opcao['sobrenome_cuid']) ?></option>
-        <?php
+                <option value="<?php echo htmlspecialchars($opcao['id']) ?>"><?php echo htmlspecialchars($opcao['nome_cuid'] . ' ' . $opcao['sobrenome_cuid']) ?></option>
+            <?php
+            }
         }
     }
 } catch (PDOException $e) {
