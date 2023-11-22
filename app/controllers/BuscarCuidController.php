@@ -8,7 +8,7 @@ use PDOException;
 
 $conexaoPesquisa = new PDO('mysql:host=localhost;dbname=tohelpdb', 'root', 'Divergente2@X', [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ]);
 
-$prepare = $conexaoPesquisa->prepare("SELECT id, nome_cuid, sobrenome_cuid FROM infoCuidador WHERE id LIKE :busca OR nome_cuid LIKE :busca OR sobrenome_cuid LIKE :busca");
+$prepare = $conexaoPesquisa->prepare("SELECT id, nome_completo_cuid FROM infoCuidador WHERE id LIKE :busca OR nome_completo_cuid LIKE :busca");
 if (isset($_GET['busca'])) {
     $prepare->execute(['busca' =>  $_GET['busca'] . '%']);
     $BuscarCuidController = $prepare->fetchAll();
