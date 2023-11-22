@@ -30,7 +30,7 @@ inp.addEventListener('input', _.throttle(async event => {
         var resultados = '<ul>';
         resultados += data.map(busca => {
             return `
-            <li>${busca.nome_cuid} ${busca.sobrenome_cuid}</li>
+            <li>${busca.nome_completo_cuid}</li>
         `
         }).join('');
         resultados += '</ul>';
