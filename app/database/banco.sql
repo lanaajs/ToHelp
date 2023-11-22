@@ -93,8 +93,8 @@ CREATE TABLE IF NOT EXISTS enderecoDependente (
 
 INSERT INTO enderecoDependente (CEP_dep, estado_dep, cidade_dep, bairro_dep, end_dep, numero_dep, complemento_dep, id_dep_FK)
 VALUES
-    ('54321-987', 'RJ', 'Rio de Janeiro','Boreal', 'Rua Juca Bel','456', 'Casa', 1),
-    ('12345-678', 'SP', 'São Paulo','Mocaa', 'Rua K' ,'321', 'Apt 2C', 2);
+    ('54321-987', 'Rio de Janeiro', 'Rio de Janeiro','Boreal', 'Rua Juca Bel','456', 'Casa', 1),
+    ('12345-678', 'São Paulo', 'São Paulo','Mocaa', 'Rua K' ,'321', 'Apt 2C', 2);
 
 -- Table infoMedDependente
 CREATE TABLE IF NOT EXISTS infoMedDependente (
