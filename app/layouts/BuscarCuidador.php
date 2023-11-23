@@ -101,7 +101,7 @@ include("../controllers/BuscarCuidController.php");
         </div>
         <div class="cuidadores1" id="cuidadores1">
             <div class="cuidadores2">
-                <?php
+                <!-- <?php
                 require_once '../../classes/Database.php';
 
                 $db = new classes\Database();
@@ -124,7 +124,6 @@ include("../controllers/BuscarCuidController.php");
                             <img id="cuidft" src="../../public/assets/arqvs_cuid/<?php echo $row->FotoPerfil; ?>" alt="">
                             <div class="txtcard">
                                 <h2><?php echo $row->NomeCompleto; ?></h2>
-                                <h3>Cuidador(a)</h3>
                                 <p id="pdif"><?php echo $row->SobreText; ?></p>
                             </div>
                             <button id="saiba">Contratar</button>
@@ -136,68 +135,7 @@ include("../controllers/BuscarCuidController.php");
                 }
 
                 $db->desligar(); // Don't forget to close the database connection
-                ?>
-
-                <!-- <div class="cuidcard">
-                    <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
-                    <div class="txtcard">
-                        <h2>Maria Lívia Barbosa</p>
-                            <h3>Técnica em enfermagem</p>
-                                <p id="pdif">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis
-                                    glavrid from dolor amet iquam lorem bibendum</p>
-                    </div>
-                    <button id="saiba">Contratar</button>
-                </div>
-                <div class="cuidcard">
-                    <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
-                    <div class="txtcard">
-                        <h2>Maria Lívia Barbosa</p>
-                            <h3>Técnica em enfermagem</p>
-                                <p id="pdif">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis
-                                    glavrid from dolor amet iquam lorem bibendum</p>
-                    </div>
-                    <button id="saiba">Contratar</button>
-                </div>
-                <div class="cuidcard">
-                    <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
-                    <div class="txtcard">
-                        <h2>Maria Lívia Barbosa</p>
-                            <h3>Técnica em enfermagem</p>
-                                <p id="pdif">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis
-                                    glavrid from dolor amet iquam lorem bibendum</p>
-                    </div>
-                    <button id="saiba">Contratar</button>
-                </div>
-                <div class="cuidcard">
-                    <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
-                    <div class="txtcard">
-                        <h2>Maria Lívia Barbosa</p>
-                            <h3>Técnica em enfermagem</p>
-                                <p id="pdif">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis
-                                    glavrid from dolor amet iquam lorem bibendum</p>
-                    </div>
-                    <button id="saiba">Contratar</button>
-                </div>
-                <div class="cuidcard">
-                    <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
-                    <div class="txtcard">
-                        <h2>Maria Lívia Barbosa</p>
-                            <h3>Técnica em enfermagem</p>
-                                <p id="pdif">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis
-                                    glavrid from dolor amet iquam lorem bibendum</p>
-                    </div>
-                    <button id="saiba">Contratar</button>
-                </div>
-                <div class="cuidcard">
-                    <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
-                    <div class="txtcard">
-                        <h2>Maria Lívia Barbosa</p>
-                            <h3>Técnica em enfermagem</p>
-                                <p id="pdif">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis
-                                    glavrid from dolor amet iquam lorem bibendum</p>
-                    </div>
-                    <button id="saiba">Contratar</button>
-                </div> -->
+                ?> -->
             </div>
         </div>
     </section>

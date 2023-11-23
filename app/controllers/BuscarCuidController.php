@@ -39,12 +39,16 @@ try {
         $nomeEstado = $estado->fetchColumn(); // Obtém o valor do estado
     }
 
-    $prepare = $conexaoPesquisa->prepare("SELECT infoCuidador.id, 
+    $prepare = $conexaoPesquisa->prepare("SELECT 
+    infoCuidador.id, 
     infoCuidador.nome_cuid, 
-    infoCuidador.sobrenome_cuid
+    infoCuidador.sobrenome_cuid,
+    infoCuidador.nome_completo_cuid,
+    infoCurricular.sobre_txt
     FROM infoCuidador  
-    INNER JOIN enderecoCuidador
-    ON infoCuidador.id = enderecoCuidador.infoCuidador_id WHERE estado_cuid = :estado");
+    INNER JOIN enderecoCuidador ON infoCuidador.id = enderecoCuidador.infoCuidador_id 
+    INNER JOIN infoCurricular ON infoCuidador.id = infoCurricular.id_cuid_FK
+    WHERE estado_cuid = :estado");
 
     // 2. Segurança: Usar $nomeEstado em vez de $estado
     if (isset($_GET['estado']) && is_numeric($_GET['estado'])) {
@@ -54,9 +58,9 @@ try {
         // 5. Saída HTML: Aplicar htmlspecialchars
         if (!empty($cuidador)) {
             foreach ($cuidador as $opcao) {
-            ?>
-                <option value="<?php echo htmlspecialchars($opcao['id']) ?>"><?php echo htmlspecialchars($opcao['nome_cuid'] . ' ' . $opcao['sobrenome_cuid']) ?></option>
-            <?php
+    ?>
+                <option value="<?php echo htmlspecialchars($opcao['id']) ?>"><?php echo htmlspecialchars($opcao['nome_completo_cuid']) ?></option>      
+<?php
             }
         }
     }
