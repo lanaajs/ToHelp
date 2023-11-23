@@ -14,7 +14,7 @@ class Database
         try {
             $host = "localhost";
             $user = "root";
-            $password = "Divergente2@X";
+            $password = "2004";
             $db = "tohelpdb";
 
             $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";

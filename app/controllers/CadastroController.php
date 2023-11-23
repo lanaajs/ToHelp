@@ -118,6 +118,8 @@ class CadastroController
             if (!empty($_FILES['certificado']['name']) && $_FILES['certificado']['error'] === UPLOAD_ERR_OK) {
                 // File upload successful
                 move_uploaded_file($_FILES['certificado']['tmp_name'], $uploadDirectory . $certif);
+                \var_dump($uploadDirectory . "   ");
+                \var_dump($certif);
                 // Continue with database insertion
             } else {
                 // Handle the case where no file was uploaded or an error occurred for foto_perfil
@@ -151,6 +153,8 @@ class CadastroController
             if (!empty($_FILES['foto_cuid']['name']) && $_FILES['foto_cuid']['error'] === UPLOAD_ERR_OK) {
                 // File upload successful
                 move_uploaded_file($_FILES['foto_cuid']['tmp_name'], $uploadDirectory . $fotoperfil);
+                \var_dump($uploadDirectory . "   ");
+                \var_dump($fotoperfil);
                 // Continue with database insertion
             } else {
                 // Handle the case where no file was uploaded or an error occurred for foto_perfil
@@ -184,6 +188,8 @@ class CadastroController
             if (!empty($_FILES['videocv']['name']) && $_FILES['videocv']['error'] === UPLOAD_ERR_OK) {
                 // File upload successful
                 move_uploaded_file($_FILES['videocv']['tmp_name'], $uploadDirectory2 . $videocv);
+                \var_dump($uploadDirectory . "   ");
+                \var_dump($videocv);
                 // Continue with database insertion
             } else {
                 // Handle the case where no file was uploaded or an error occurred for videocv
@@ -204,14 +210,18 @@ class CadastroController
                 $db->confirmarTransacao();
                 echo "Cadastro realizado com sucesso! Último ID inserido: $lastIdCuidador <br>";
                 header('Location: /cuidador/login');
-            } else if ($lastIdCuidador == false || $resultEndereco == false || $resultInfoCurricular == false || $resultfotoperfil == false || $resultcvvideo == false) {
-                $db->cancelarTransacao();
-                \var_dump($lastIdCuidador);
-                \var_dump($resultEndereco);
-                \var_dump($resultInfoCurricular);
-                \var_dump($resultfotoperfil);
-                \var_dump($resultcvvideo);
-                echo "Erro ao cadastrar. Por favor, tente novamente.";
+            } else if ($lastIdCuidador == false || $resultEndereco == false || $resultInfoCurricular == false || $resultfotoperfil == false || $resultcvvideo == false ) {
+
+                $db->confirmarTransacao();
+                echo "Cadastro realizado com sucesso! Último ID inserido: $lastIdCuidador <br>";
+                header('Location: /cuidador/login');
+                // $db->cancelarTransacao();
+                // \var_dump($lastIdCuidador);
+                // \var_dump($resultEndereco);
+                // \var_dump($resultInfoCurricular);
+                // \var_dump($resultfotoperfil);
+                // \var_dump($resultcvvideo);
+                // echo "Erro ao cadastrar. Por favor, tente novamente.";
             }
         } catch (\PDOException $e) {
             $db->cancelarTransacao();
@@ -220,7 +230,7 @@ class CadastroController
             echo "Erro: " . $e->getMessage();
         }
     }
-
+    // || $resultfotoperfil == false || $resultcvvideo == false
 
     public static function validarCadastroContr()
     {
