@@ -101,20 +101,43 @@ include("../controllers/BuscarCuidController.php");
         </div>
         <div class="cuidadores1" id="cuidadores1">
             <div class="cuidadores2">
-            <div class="cuidcard">
-                    <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
-                    <video id="cuidVideo">
-                        <source src="alana.mp4" type="video/mp4">
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
-                    <div class="txtcard">
-                        <h2>Lucia Ferreira</p>
-                            <h3>Técnica em enfermagem</p>
-                                <p id="pdif">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis
-                                    glavrid from dolor amet iquam lorem bibendum</p>
-                    </div>
-                    <button id="saiba">Contratar</button>
-                </div> 
+                <?php
+                require_once '../../classes/Database.php';
+
+                $db = new classes\Database();
+                $db->ligar();
+
+                $query = 'SELECT
+                ic.nome_completo_cuid AS NomeCompleto,
+                icc.sobre_txt AS SobreText,
+                fpc.foto_cuid AS FotoPerfil
+                FROM infoCuidador ic
+                JOIN infoCurricular icc ON ic.id = icc.id_cuid_FK
+                JOIN fotoPerfilCuid fpc ON ic.id = fpc.id_cuid_FK;';
+
+                $resultSet = $db->select($query); // Using the select method from the Database class
+
+                if (!empty($resultSet)) {
+                    foreach ($resultSet as $row) {
+                ?>
+                        <div class="cuidcard">
+                            <img id="cuidft" src="../../public/assets/arqvs_cuid/<?php echo $row->FotoPerfil; ?>" alt="">
+                            <div class="txtcard">
+                                <h2><?php echo $row->NomeCompleto; ?></h2>
+                                <h3>Cuidador(a)</h3>
+                                <p id="pdif"><?php echo $row->SobreText; ?></p>
+                            </div>
+                            <button id="saiba">Contratar</button>
+                        </div>
+                <?php
+                    }
+                } else {
+                    echo "Nenhum resultado encontrado";
+                }
+
+                $db->desligar(); // Don't forget to close the database connection
+                ?>
+
                 <!-- <div class="cuidcard">
                     <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
                     <div class="txtcard">

@@ -27,7 +27,7 @@ class LoginController
         require 'app/layouts/LoginCuidador.php';
     }
 
-
+    
     public static function validarLoginCuid()
     {
         require_once __DIR__ . '/../../classes/Database.php';
