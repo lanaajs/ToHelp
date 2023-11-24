@@ -6,13 +6,20 @@ use classes\Database;
 use PDO;
 use PDOException;
 
-$conexaoPesquisa = new PDO('mysql:host=localhost;dbname=tohelpdb', 'root', '2004', [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ]);
+$conexaoPesquisa = new PDO('mysql:host=localhost;dbname=tohelpdb', 'root', 'Divergente2@X', [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ]);
 
-$prepare = $conexaoPesquisa->prepare("SELECT id, nome_completo_cuid FROM infoCuidador WHERE id LIKE :busca OR nome_completo_cuid LIKE :busca");
+$prepare = $conexaoPesquisa->prepare("SELECT ic.nome_cuid, ic.sobrenome_cuid, fpc.foto_cuid, icc.sobre_txt FROM infoCuidador ic
+INNER JOIN infoCurricular icc ON ic.id = icc.id_cuid_FK 
+INNER JOIN fotoPerfilCuid fpc ON ic.id = fpc.id_cuid_FK 
+WHERE ic.nome_cuid LIKE :busca OR ic.sobrenome_cuid LIKE :busca");
 if (isset($_GET['busca'])) {
-    $prepare->execute(['busca' =>  $_GET['busca'] . '%']);
-    $BuscarCuidController = $prepare->fetchAll();
-    echo json_encode($BuscarCuidController);
+    try {
+        $prepare->execute(['busca' =>  $_GET['busca'] . '%']);
+        $BuscarCuidController = $prepare->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($BuscarCuidController);
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
+    }
 }
 
 /*------------------------------------------------------------------*/
@@ -56,12 +63,10 @@ try {
         $cuidador = $prepare->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($cuidador);
         // 5. Saída HTML: Aplicar htmlspecialchars
-        if (!empty($cuidador)) {
-            foreach ($cuidador as $opcao) {
+        foreach ($cuidador as $opcao) {
     ?>
-                <option value="<?php echo htmlspecialchars($opcao['id']) ?>"><?php echo htmlspecialchars($opcao['nome_completo_cuid']) ?></option>      
+            <?php echo htmlspecialchars($opcao['nome_completo_cuid']) ?>
 <?php
-            }
         }
     }
 } catch (PDOException $e) {

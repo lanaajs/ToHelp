@@ -197,12 +197,17 @@ select option {
 h2 {
     font-family: Ubuntu, sans-serif;
     font-size: 15px;
-    color: rgb(78, 78, 78);
 }
 
 h3 {
     font-family: Roboto, sans-serif;
     font-size: 14px;
+}
+
+h4 {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    color: rgb(78, 78, 78);
 }
 
 
@@ -212,17 +217,17 @@ h3 {
     background-color: blue;
     color: white;
     font-family: Ubuntu, sans-serif;
-    border-radius: 5px; 
+    border-radius: 5px;
 }
 
 #pdif {
     text-align: justify;
-  }
+}
 
 .txtcard {
     height: 120px;
     text-align: center;
-  }
+}
 
 .cuidadores2 {
     width: 90%;
@@ -258,13 +263,6 @@ a {
 
 #caixa-resultados {
     display: none;
-    background-color: rgb(255, 255, 255);
-    margin-left: 28.1%;
-    height: 20vh;
-    width: 41.5%;
-    overflow: scroll;
-    overflow-x: hidden;
-    transition: 0.5s;
 }
 
 #caixa-resultados ::-webkit-scrollbar {

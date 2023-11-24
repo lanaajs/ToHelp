@@ -10,8 +10,8 @@ function criarCardCuidador(cuidador) { /*ADICIONEI ISSO*/
         <div class="cuidcard">
             <img id="cuidft" src="../../public/assets/arqvs_cuid/${cuidador.foto_cuid}" alt="">
             <div class="txtcard">
-                <h2>${cuidador.nome_cuid}</h2>
-                <p id="pdif">${cuidador.sobre}</p>
+                <h2>${cuidador.nome_cuid} ${cuidador.sobrenome_cuid}</h2>
+                <h4>${cuidador.sobre_txt}</h4>
             </div>
             <button id="saiba">Contratar</button>
         </div>
@@ -42,9 +42,8 @@ inp.addEventListener('input', _.throttle(async event => {
             return;
         }
 
-        caixaResultados.style.display = 'block';
         var resultados = '<ul>';
-        resultados += data.map(busca => `<li>${busca.nome_completo_cuid}</li>`).join('');
+        resultados += data.map(busca => `<li>${busca.nome_cuid} ${busca.sobrenome_cuid}</li>`).join('');
         resultados += '</ul>';
 
         var cards = data.map(busca => criarCardCuidador(busca)).join(''); /*ADICIONEI ISSO*/
