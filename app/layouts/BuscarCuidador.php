@@ -60,7 +60,13 @@ include("../controllers/BuscarCuidController.php");
 
                 <div class="input">
                     <input id="inp" name="buscar" type="text" value="<?php if (isset($_GET['busca'])) echo $_GET['busca'] ?>" placeholder="Digite o nome do cuidador">
-                    <button type="submit" id="buscar"><span class="material-icons">search</span></button>
+                    <!-- <input type="hidden" name="cadastrocontr" value="cadastrarcontr">
+                        <div class="btnn">
+                            <button class="nextBtn" id="btn" onclick="analisar()">
+                                <span class="btnText">Prosseguir</span>
+                                <i class="uil uil-navigator"></i>
+            
+                </button> -->
                 </div>
                 <div id="caixa-resultados">
                     <ul>
@@ -69,9 +75,9 @@ include("../controllers/BuscarCuidController.php");
 
                 <div class="caixastotal">
                     <div class="caixas">
-                        <form action="">
+                        <form action="/buscar" method="POST">
                             <div class="div-filtro">
-                                <select name="estado" id="estado">
+                                <select name="estado" id="estado" required>
                                     <option disabled selected>Selecione um estado</option>
                                     <?php
                                     $prepare = $conexaoPesquisa->prepare("SELECT id, nome FROM estados ORDER BY nome ASC");
@@ -85,15 +91,19 @@ include("../controllers/BuscarCuidController.php");
                                     }
                                     ?>
                                 </select>
-                                <select name="cidade" id="cidade">
+                                <select name="cidade" id="cidade" required>
                                     <option disabled selected>Selecione uma cidade</option>
                                 </select>
-                                <select name="genero" id="selecao">
+                                <select name="genero" id="selecao" required>
                                     <option disabled selected>Selecione um gênero</option>
-                                    <option value="">Feminino</option>
-                                    <option value="">Masculino</option>
-                                    <option value="">Indefinido</option>
+                                    <option value="Feminino">Feminino</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Indefinido">Indefinido</option>
                                 </select>
+
+                                <input type="hidden" name="buscando" value="buscarr">
+
+                                <button type="submit" id="buscar"><span class="material-icons">search</span> </button>
                         </form>
                     </div>
                 </div>
@@ -101,25 +111,20 @@ include("../controllers/BuscarCuidController.php");
         </div>
         <div class="cuidadores1" id="cuidadores1">
             <div class="cuidadores2">
-                <?php
-                require_once '../../classes/Database.php';
 
-                $db = new classes\Database();
-                $db->ligar();
 
-                $query = 'SELECT
-                ic.nome_completo_cuid AS NomeCompleto,
-                icc.sobre_txt AS SobreText,
-                fpc.foto_cuid AS FotoPerfil
-                FROM infoCuidador ic
-                JOIN infoCurricular icc ON ic.id = icc.id_cuid_FK
-                JOIN fotoPerfilCuid fpc ON ic.id = fpc.id_cuid_FK;';
 
-                $resultSet = $db->select($query); // Using the select method from the Database class
+                 <?php
+                        require_once '../../classes/Database.php';
 
-                if (!empty($resultSet)) {
-                    foreach ($resultSet as $row) {
-                ?>
+                        $db = new classes\Database();
+                        $db->ligar();
+
+                        $resultSet = $db->select($sqlfiltro); // Using the select method from the Database class
+
+                        if (!empty($resultSet)) {
+                            foreach ($resultSet as $row) {
+                        ?>
                         <div class="cuidcard">
                             <img id="cuidft" src="../../public/assets/arqvs_cuid/<?php echo $row->FotoPerfil; ?>" alt="">
                             <div class="txtcard">
@@ -130,13 +135,13 @@ include("../controllers/BuscarCuidController.php");
                             <button id="saiba">Contratar</button>
                         </div>
                 <?php
-                    }
-                } else {
-                    echo "Nenhum resultado encontrado";
-                }
+                            }
+                        } else {
+                            echo "Nenhum resultado encontrado";
+                        }
 
-                $db->desligar(); // Don't forget to close the database connection
-                ?>
+                        $db->desligar(); // Don't forget to close the database connection
+                ?> 
 
                 <!-- <div class="cuidcard">
                     <img id="cuidft" src="../../public/assets/img/yy.jpg" alt="">
