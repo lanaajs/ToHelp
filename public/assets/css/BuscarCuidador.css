@@ -110,7 +110,7 @@ hr {
     margin-top: 7vh;
 }
 
-select{
+select {
     padding: 10px;
     border: none;
     background: linear-gradient(45deg, #253fb6 0%, #293ad6 28%, #2c6dd5 91%, #2c6dd5 100%);
@@ -122,9 +122,9 @@ select{
 select option {
     color: black;
     border: none;
-  }
+}
 
-  #buscar {
+#buscar {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -165,11 +165,11 @@ select option {
     padding: 15px;
 }
 
-#inp:focus{
+#inp:focus {
     outline: none;
 }
 
-#inp::placeholder{
+#inp::placeholder {
     color: rgb(255, 255, 255);
 }
 
@@ -183,21 +183,31 @@ select option {
     background-color: white;
     padding: 20px;
     border-radius: 20px;
+    text-align: center;
 }
 
 #cuidft {
-    max-width: 200px;
+    max-width: 100%;
+    min-width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 20px;
 }
+
 h2 {
     font-family: Ubuntu, sans-serif;
     font-size: 15px;
-    color: rgb(78, 78, 78);
 }
 
 h3 {
     font-family: Roboto, sans-serif;
     font-size: 14px;
+}
+
+h4 {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    color: rgb(78, 78, 78);
 }
 
 
@@ -210,11 +220,21 @@ h3 {
     border-radius: 5px;
 }
 
+#pdif {
+    text-align: justify;
+}
+
+.txtcard {
+    height: 120px;
+    text-align: center;
+}
+
 .cuidadores2 {
     width: 90%;
-    flex-wrap: wrap;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
@@ -243,13 +263,6 @@ a {
 
 #caixa-resultados {
     display: none;
-    background-color: rgb(255, 255, 255);
-    margin-left: 28.1%;
-    height: 20vh;
-    width: 41.5%;
-    overflow: scroll;
-    overflow-x: hidden;
-    transition: 0.5s;
 }
 
 #caixa-resultados ::-webkit-scrollbar {
@@ -309,12 +322,12 @@ a {
         margin-top: 50px;
     }
 
-    .caixas{
+    .caixas {
         width: 80%;
         display: block;
     }
 
-    #selecao{
+    #selecao {
         width: 80%;
         margin-top: 10px;
         margin-left: 25px;

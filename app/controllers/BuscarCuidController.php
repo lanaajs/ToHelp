@@ -6,13 +6,21 @@ use classes\Database;
 use PDO;
 use PDOException;
 
-$conexaoPesquisa = new PDO('mysql:host=localhost;dbname=tohelpdb', 'root', '2004', [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ]);
+$conexaoPesquisa = new PDO('mysql:host=localhost;dbname=tohelpdb', 'root', 'Divergente2@X', [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ]);
 
-$prepare = $conexaoPesquisa->prepare("SELECT id, nome_completo_cuid FROM infoCuidador WHERE id LIKE :busca OR nome_completo_cuid LIKE :busca");
+$prepare = $conexaoPesquisa->prepare("SELECT ic.nome_cuid, ic.sobrenome_cuid, fpc.foto_cuid, icc.sobre_txt FROM infoCuidador ic
+INNER JOIN infoCurricular icc ON ic.id = icc.id_cuid_FK 
+INNER JOIN fotoPerfilCuid fpc ON ic.id = fpc.id_cuid_FK 
+INNER JOIN enderecoCuidador ec ON ic.id = ec.infoCuidador_id 
+WHERE ic.nome_cuid LIKE :busca OR ic.sobrenome_cuid LIKE :busca");
 if (isset($_GET['busca'])) {
-    $prepare->execute(['busca' =>  $_GET['busca'] . '%']);
-    $BuscarCuidController = $prepare->fetchAll();
-    echo json_encode($BuscarCuidController);
+    try {
+        $prepare->execute(['busca' =>  $_GET['busca'] . '%']);
+        $BuscarCuidController = $prepare->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($BuscarCuidController);
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
+    }
 }
 
 /*------------------------------------------------------------------*/
@@ -26,44 +34,33 @@ $estados = $prepare->fetchAll(PDO::FETCH_ASSOC);
 foreach ($estados as $opcao) {
 ?>
     <option value="<?php echo $opcao['id'] ?>"><?php echo $opcao['nome'] ?></option>
-    <?php
+<?php
 }
 
 /*------------------------------------------------------------------*/
 
+$cidade = $conexaoPesquisa->prepare("SELECT nome FROM cidades WHERE id = :id");
+
+if (isset($_GET['cidade']) && is_numeric($_GET['cidade'])) {
+    $cidade->execute(['id' => $_GET['cidade']]);
+    $nomeCidade = $cidade->fetchColumn(); // Obtém o valor do estado
+}
+
+$prepare = $conexaoPesquisa->prepare("SELECT ic.nome_cuid, ic.sobrenome_cuid, fpc.foto_cuid, icc.sobre_txt FROM infoCuidador ic
+    INNER JOIN infoCurricular icc ON ic.id = icc.id_cuid_FK 
+    INNER JOIN fotoPerfilCuid fpc ON ic.id = fpc.id_cuid_FK 
+    INNER JOIN enderecoCuidador ec ON ic.id = ec.infoCuidador_id 
+    INNER JOIN infoCurricular ON ic.id = infoCurricular.id_cuid_FK
+    WHERE cidade_cuid = :cidade");
 try {
-    $estado = $conexaoPesquisa->prepare("SELECT nome FROM estados WHERE id = :id");
-
-    if (isset($_GET['estado']) && is_numeric($_GET['estado'])) {
-        $estado->execute(['id' => $_GET['estado']]);
-        $nomeEstado = $estado->fetchColumn(); // Obtém o valor do estado
-    }
-
-    $prepare = $conexaoPesquisa->prepare("SELECT infoCuidador.id, 
-    infoCuidador.nome_cuid, 
-    infoCuidador.sobrenome_cuid
-    FROM infoCuidador  
-    INNER JOIN enderecoCuidador
-    ON infoCuidador.id = enderecoCuidador.infoCuidador_id WHERE estado_cuid = :estado");
-
-    // 2. Segurança: Usar $nomeEstado em vez de $estado
-    if (isset($_GET['estado']) && is_numeric($_GET['estado'])) {
-        $prepare->execute(['estado' => $nomeEstado]); // Use $nomeEstado em vez de $estado
-        $cuidador = $prepare->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode($cuidador);
-        // 5. Saída HTML: Aplicar htmlspecialchars
-        if (!empty($cuidador)) {
-            foreach ($cuidador as $opcao) {
-            ?>
-                <option value="<?php echo htmlspecialchars($opcao['id']) ?>"><?php echo htmlspecialchars($opcao['nome_cuid'] . ' ' . $opcao['sobrenome_cuid']) ?></option>
-            <?php
-            }
-        }
+    if (isset($_GET['cidade']) && is_numeric($_GET['cidade'])) {
+        $prepare->execute(['cidade' => $nomeCidade]); // Use $nomeEstado em vez de $estado
+        $CuidadorPorCidade = $prepare->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($CuidadorPorCidade);
     }
 } catch (PDOException $e) {
     echo "Erro: " . $e->getMessage();
 }
-
 
 /*------------------------------------------------------------------*/
 
@@ -71,6 +68,6 @@ class BuscarCuidController
 {
     function indexBuscarCuid(int $id)
     {
-        require 'app/layouts/BuscarCuidadores.php';
+        require 'app/layouts/BuscarCuidador.php';
     }
 }
