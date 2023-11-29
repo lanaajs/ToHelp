@@ -90,9 +90,9 @@ include("../controllers/BuscarCuidController.php");
                                 </select>
                                 <select name="genero" id="selecao">
                                     <option disabled selected>Selecione um gênero</option>
-                                    <option value="">Feminino</option>
-                                    <option value="">Masculino</option>
-                                    <option value="">Indefinido</option>
+                                    <option value="1">Feminino</option>
+                                    <option value="2">Masculino</option>
+                                    <option value="3">Outro</option>
                                 </select>
                         </form>
                     </div>

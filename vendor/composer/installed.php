@@ -3,7 +3,7 @@
         'name' => 'tohelp/tohelp',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'da209e86f947dd99dc8f327e9133f2e65c759ddf',
+        'reference' => '7b788ba7a7cf43cfe75f5f3eb4a0325d44b151f2',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'tohelp/tohelp' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'da209e86f947dd99dc8f327e9133f2e65c759ddf',
+            'reference' => '7b788ba7a7cf43cfe75f5f3eb4a0325d44b151f2',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

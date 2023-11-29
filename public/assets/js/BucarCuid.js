@@ -47,8 +47,7 @@ inp.addEventListener('input', _.throttle(async event => {
         resultados += '</ul>';
 
         var cards = data.map(busca => criarCardCuidador(busca)).join(''); /*ADICIONEI ISSO*/
-        caixaResultados.innerHTML = resultados; /*ADICIONEI ISSO*/
-        
+
         //divcards é exibida quando há resultados
         divcards.style.display = 'flex'; /*ADICIONEI ISSO*/
         divcards.innerHTML = cards; /*ADICIONEI ISSO*/
@@ -58,7 +57,9 @@ inp.addEventListener('input', _.throttle(async event => {
     }
 }, 500));
 
+
 let selectEstado = document.getElementById('estado');
+let selectCidade = document.getElementById('cidade');
 
 selectEstado.onchange = function () {
     let selectCidade = document.getElementById('cidade');
@@ -71,6 +72,29 @@ selectEstado.onchange = function () {
         })
         .then(select => {
             selectCidade.innerHTML = select;
-            cuidadores.innerHTML = select;
         });
+
 }
+
+
+selectCidade.addEventListener('change', (async event => {
+    try {
+        const { data } = await axios.get('/app/controllers/BuscarCuidController.php', {
+            params: {
+                cidade: event.target.value
+            }
+        });
+        console.log(data)
+
+        var cards = data.map(cidade => criarCardCuidador(cidade)).join(''); /*ADICIONEI ISSO*/
+       
+        //divcards é exibida quando há resultados
+        divcards.style.display = 'flex'; /*ADICIONEI ISSO*/
+        divcards.innerHTML = cards; /*ADICIONEI ISSO*/
+    }  catch (error) {
+        console.log(error);
+    }
+    }))
+
+
+
