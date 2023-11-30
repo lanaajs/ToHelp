@@ -8,7 +8,7 @@ use PDOException;
 
 $conexaoPesquisa = new PDO('mysql:host=localhost;dbname=tohelpdb', 'root', 'Divergente2@X', [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ]);
 
-$prepare = $conexaoPesquisa->prepare("SELECT ic.nome_cuid, ic.sobrenome_cuid, fpc.foto_cuid, icc.sobre_txt FROM infoCuidador ic
+$prepare = $conexaoPesquisa->prepare("SELECT ic.id, ic.nome_cuid, ic.sobrenome_cuid, fpc.foto_cuid, icc.sobre_txt FROM infoCuidador ic
 INNER JOIN infoCurricular icc ON ic.id = icc.id_cuid_FK 
 INNER JOIN fotoPerfilCuid fpc ON ic.id = fpc.id_cuid_FK 
 INNER JOIN enderecoCuidador ec ON ic.id = ec.infoCuidador_id 
@@ -46,7 +46,7 @@ if (isset($_GET['cidade']) && is_numeric($_GET['cidade'])) {
     $nomeCidade = $cidade->fetchColumn(); // Obtém o valor do estado
 }
 
-$prepare = $conexaoPesquisa->prepare("SELECT ic.nome_cuid, ic.sobrenome_cuid, fpc.foto_cuid, icc.sobre_txt FROM infoCuidador ic
+$prepare = $conexaoPesquisa->prepare("SELECT ic.id, ic.nome_cuid, ic.sobrenome_cuid, fpc.foto_cuid, icc.sobre_txt FROM infoCuidador ic
     INNER JOIN infoCurricular icc ON ic.id = icc.id_cuid_FK 
     INNER JOIN fotoPerfilCuid fpc ON ic.id = fpc.id_cuid_FK 
     INNER JOIN enderecoCuidador ec ON ic.id = ec.infoCuidador_id 

@@ -3,6 +3,7 @@ html {
     margin: 0;
     padding: 0;
     overflow-y: scroll;
+    overflow-x: hidden;
     height: 100%;
 }
 
@@ -217,8 +218,10 @@ h4 {
     background-color: blue;
     color: white;
     font-family: Ubuntu, sans-serif;
-    border-radius: 5px;
+    border-radius: 5px;  
+    cursor: pointer;
 }
+
 
 #pdif {
     text-align: justify;

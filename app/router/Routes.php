@@ -17,6 +17,7 @@ use app\controllers\InformacoesController;
 use app\controllers\LoginController;
 use app\controllers\NovoCartaoController;
 use app\controllers\RelatoriosController;
+use app\controllers\PerfilController;
 use FastRoute\RouteCollector;
 
 require __DIR__ . '/../../vendor/autoload.php';
@@ -90,6 +91,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
 
         //Rota para a página de conta do cuidador.
         $r->addRoute(['GET', 'POST'], '/conta/{id:[0-9]+}', ContasController::class . '@indexContaCuid');
+        
+        $r->addRoute(['GET', 'POST'], '/perfil/{id:[0-9]+}', PerfilController::class . '@indexPerfilCuid');
 
         //Rota para a página de contratos.
         $r->addRoute(['GET', 'POST'], '/^contratos/{id:[0-9]+}$', ContratosController::class . '@indexContratoCuid');

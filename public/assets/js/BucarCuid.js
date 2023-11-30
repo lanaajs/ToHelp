@@ -13,10 +13,20 @@ function criarCardCuidador(cuidador) { /*ADICIONEI ISSO*/
                 <h2>${cuidador.nome_cuid} ${cuidador.sobrenome_cuid}</h2>
                 <h4>${cuidador.sobre_txt}</h4>
             </div>
-            <button id="saiba">Contratar</button>
+            <a href="/cuidador/perfil/${cuidador.id}"><button id="saiba" value="${cuidador.id}" >Contratar</button></a>
         </div>
     `;
 }
+
+document.addEventListener('click', function(event) {
+    if (event.target && event.target.id === 'saiba') {
+        var valorContratar = event.target.value;
+        
+        console.log('Valor do botão:', valorContratar);
+    }
+});
+
+
 
 // O evento adicionado captura o conteúdo adicionado no input.
 inp.addEventListener('input', _.throttle(async event => {

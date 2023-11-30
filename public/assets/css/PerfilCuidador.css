@@ -12,7 +12,8 @@ a{
 }
 body{
     background-color: #f3f3f3;
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .product-details{
