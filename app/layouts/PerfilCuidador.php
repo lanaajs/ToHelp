@@ -48,9 +48,55 @@
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
                                 <!--**1******-->
-                                <div class="swiper-slide">
-                                    <img src="../../public/assets/img/yy.jpg" />
-                                </div>
+                                <?php
+                                // Verifique se o parâmetro de ID está presente na URL
+                                $url = $_SERVER['REQUEST_URI'];
+
+                                // Divide a URL com base na barra ("/")
+                                $parts = explode('/', $url);
+
+                                // Obtém o último item do array, que deve ser o número desejado
+                                $numero = end($parts);
+
+
+                                require_once(__DIR__ . '/../../classes/Database.php');
+
+                                $db = new classes\Database();
+                                $db->ligar();
+
+
+                                // Consulta para obter informações específicas do cuidador com base no ID
+                                $query = 'SELECT ic.id, fpc.foto_cuid FROM infoCuidador ic
+                                INNER JOIN fotoPerfilCuid fpc ON ic.id = fpc.id_cuid_FK
+                                WHERE ic.id = :id';
+
+                                $statement = $db->ligacao->prepare($query);
+
+                                // Substitui :id pelo valor de $numero
+                                $statement->bindParam(':id', $numero, PDO::PARAM_INT);
+
+                                // Executa a consulta
+                                $statement->execute();
+
+                                // Obtém os resultados
+                                $result = $statement->fetchAll(PDO::FETCH_CLASS);
+
+
+
+                                if (!empty($result)) {
+                                    foreach ($result as $row) {
+                                ?>
+                                        <div class="swiper-slide">
+                                            <img src="../../public/assets/arqvs_cuid/<?php echo $row->foto_cuid; ?>" />
+                                        </div>
+                                <?php
+                                    }
+                                } else {
+                                    echo "Nenhum resultado encontrado";
+                                }
+
+                                $db->desligar();
+                                ?>
                                 <!--**2******-->
                                 <div class="swiper-slide">
                                     <img src="../../public/assets/img/idosos.png" />
@@ -79,63 +125,119 @@
                         </div>
                     </div>
                     <!--**Text************************-->
-                    <div class="product-text">
-                        <!--category-->
-                        <span class="product-category">Código: C00002</span>
-                        <h3>Lucia Ferreira</h3>
-                        <span class="product-price">R$95/hr</span>
-                        <p>Sou uma cuidadora de idosos experiente e apaixonada, dedicada a oferecer cuidados personalizados, incluindo assistência em atividades diárias, apoio emocional e um ambiente acolhedor. Tenho habilidades em cuidados básicos, administração de medicamentos e estou comprometida em manter-me atualizada com as melhores práticas. Estou pronta para contribuir para o bem-estar de seus entes queridos.
-                        </p>
-                        <!--size-->
-                        <div class="product-size-container">
-                            <form class="forms" action="#">
-                                <strong>Selecione as ações desejadas:</strong>
-                                <div class="product-size">
-                                </div>
-                                <input type="checkbox" name="ac1">
-                                <label for="ac1">Administração de remédios</label><br>
-                                <input type="checkbox" name="ac2">
-                                <label for="ac2">Alimentação</label><br>
-                                <input type="checkbox" name="ac3">
-                                <label for="ac3">Apoio emocional</label><br>
-                                <input type="checkbox" name="ac4">
-                                <label for="ac4">Atividades domésticas</label><br>
-                                <input type="checkbox" name="ac5">
-                                <label for="ac5">Companhia</label><br>
-                                <input type="checkbox" name="ac6">
-                                <label for="ac6">Documentação</label><br>
-                                <input type="checkbox" name="ac7">
-                                <label for="ac7">Fisioterapia e exercícios/mobilidade</label><br>
-                                <input type="checkbox" name="ac8">
-                                <label for="ac8">Gerenciamento de agenda</label><br>
-                                <input type="checkbox" name="ac9">
-                                <label for="ac9">Higiene pessoal</label><br>
-                                <input type="checkbox" name="ac10">
-                                <label for="ac10">Monitoramento de saúde</label><br>
-                                <input type="checkbox" name="ac11">
-                                <label for="ac11">Segurança</label><br>
-                                <input type="checkbox" name="ac12">
-                                <label for="ac12">Transporte</label><br><br>
-                                <strong>Selecione o dependente beneficiado:</strong>
-                                <div class="product-size">
-                                </div>
-                                <div class="input-field">
-                                    <div class="mark">
-                                        <input type="radio" id="check" name="tipo_contr" value="0">
-                                        <p id="depen">Walter Cabral Santos - Código: D00004</p>
+                    <?php
+                    // Verifique se o parâmetro de ID está presente na URL
+                    $url = $_SERVER['REQUEST_URI'];
+
+                    // Divide a URL com base na barra ("/")
+                    $parts = explode('/', $url);
+
+                    // Obtém o último item do array, que deve ser o número desejado
+                    $numero = end($parts);
+
+
+                    require_once(__DIR__ . '/../../classes/Database.php');
+
+                    $db = new classes\Database();
+                    $db->ligar();
+
+
+                    // Consulta para obter informações específicas do cuidador com base no ID
+                    $query = 'SELECT ic.id, ic.nome_cuid, ic.sobrenome_cuid, fpc.foto_cuid, icc.sobre_txt FROM infoCuidador ic
+                    INNER JOIN infoCurricular icc ON ic.id = icc.id_cuid_FK
+                    INNER JOIN fotoPerfilCuid fpc ON ic.id = fpc.id_cuid_FK
+                    WHERE ic.id = :id';
+
+                    $statement = $db->ligacao->prepare($query);
+
+                    // Substitui :id pelo valor de $numero
+                    $statement->bindParam(':id', $numero, PDO::PARAM_INT);
+
+                    // Executa a consulta
+                    $statement->execute();
+
+                    // Obtém os resultados
+                    $result = $statement->fetchAll(PDO::FETCH_CLASS);
+
+
+
+                    if (!empty($result)) {
+                        foreach ($result as $row) {
+                    ?>
+                            <div class="product-text">
+                                <!--category-->
+                                <span class="product-category">Código: C000<?php echo $row->id ?></span>
+                                <h3><?php echo $row->nome_cuid . " " . $row->sobrenome_cuid; ?></h3>
+                                <span class="product-price">R$95/hr</span>
+                                <p><?php echo $row->sobre_txt; ?>
+                                </p>
+                                <!--size-->
+                                <div class="product-size-container">
+                                    <form class="forms" action="#">
+                                        <strong>Selecione as ações desejadas:</strong>
+                                        <div class="product-size">
+                                        </div>
+                                        <input type="checkbox" name="ac1">
+                                        <label for="ac1">Administração de remédios</label><br>
+                                        <input type="checkbox" name="ac2">
+                                        <label for="ac2">Alimentação</label><br>
+                                        <input type="checkbox" name="ac3">
+                                        <label for="ac3">Apoio emocional</label><br>
+                                        <input type="checkbox" name="ac4">
+                                        <label for="ac4">Atividades domésticas</label><br>
+                                        <input type="checkbox" name="ac5">
+                                        <label for="ac5">Companhia</label><br>
+                                        <input type="checkbox" name="ac6">
+                                        <label for="ac6">Documentação</label><br>
+                                        <input type="checkbox" name="ac7">
+                                        <label for="ac7">Fisioterapia e exercícios/mobilidade</label><br>
+                                        <input type="checkbox" name="ac8">
+                                        <label for="ac8">Gerenciamento de agenda</label><br>
+                                        <input type="checkbox" name="ac9">
+                                        <label for="ac9">Higiene pessoal</label><br>
+                                        <input type="checkbox" name="ac10">
+                                        <label for="ac10">Monitoramento de saúde</label><br>
+                                        <input type="checkbox" name="ac11">
+                                        <label for="ac11">Segurança</label><br>
+                                        <input type="checkbox" name="ac12">
+                                        <label for="ac12">Transporte</label><br><br>
+                                        <strong>Selecione o dependente beneficiado:</strong>
+                                        <div class="product-size">
+                                        </div>
+                                        <div class="input-field">
+                                            <div class="mark">
+                                                <input type="radio" id="check" name="tipo_contr" value="0">
+                                                <p id="depen">Walter Cabral Santos - Código: D00004</p>
+                                            </div>
+                                            <div class="mark" id="markdois">
+                                                <input type="radio" id="check" name="tipo_contr" value="1">
+                                                <p id="depen">Maria Joana Santos - Código: D00008</p>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <strong>Selecione um horário:</strong>
+                                        <div class="product-size">
+                                        </div>
+                                        <div class="input-field">
+                                            <div class="mark">
+                                                <input type="time" id="check" name="tipo_contr" value="0">
+                                            </div>
+                                    </form>
+                                    <div class="product-button">
+                                        <a href="#" class="add-wishlist-btn">Contratar</a>
                                     </div>
-                                    <div class="mark" id="markdois">
-                                        <input type="radio" id="check" name="tipo_contr" value="1">
-                                        <p id="depen">Maria Joana Santos - Código: D00008</p>
-                                    </div>
                                 </div>
-                            </form>
-                        </div>
-                        <!--btn-->
-                        <div class="product-button">
-                            <a href="#" class="add-wishlist-btn">Contratar</a>
-                        </div>
-                    </div>
+                                <!--btn-->
+                            </div>
+                    <?php
+                        }
+                    } else {
+                        echo "Nenhum resultado encontrado";
+                    }
+
+                    $db->desligar();
+                    ?>
+
                 </div>
             </section>
         </div>
@@ -212,47 +314,47 @@
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            450: {
-                slidesPerView: 2,
-                spaceBetween: 0,
+            slidesPerView: 1,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
             },
-            820: {
-                slidesPerView: 1,
-                spaceBetween: 0,
+            breakpoints: {
+                450: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                },
+                820: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                },
             },
-            1024: {
-                slidesPerView: 2,
-                spaceBetween: 0,
+            on: {
+                slideChange: function() {
+                    //Pausa o vídeo anterior quando o slide mudar
+                    var previousSlide = swiper.slides[swiper.previousIndex];
+                    if (previousSlide.querySelector("video")) {
+                        previousSlide.querySelector("video").pause();
+                    }
+                },
+                slideChangeTransitionEnd: function() {
+                    // Reproduz o vídeo quando o slide ficar ativo
+                    var currentSlide = swiper.slides[swiper.activeIndex];
+                    if (currentSlide.querySelector("video")) {
+                        currentSlide.querySelector("video").play();
+                    }
+                },
             },
-        },
-        on: {
-            slideChange: function () {
-                //Pausa o vídeo anterior quando o slide mudar
-                var previousSlide = swiper.slides[swiper.previousIndex];
-                if (previousSlide.querySelector("video")) {
-                    previousSlide.querySelector("video").pause();
-                }
-            },
-            slideChangeTransitionEnd: function () {
-                // Reproduz o vídeo quando o slide ficar ativo
-                var currentSlide = swiper.slides[swiper.activeIndex];
-                if (currentSlide.querySelector("video")) {
-                    currentSlide.querySelector("video").play();
-                }
-            },
-        },
-    });
+        });
 
-    $('.s-checkbox').on('change', function () {
-        $('.s-checkbox').not(this).prop('checked', false);
-    });
+        $('.s-checkbox').on('change', function() {
+            $('.s-checkbox').not(this).prop('checked', false);
+        });
     </script>
 </body>
 
