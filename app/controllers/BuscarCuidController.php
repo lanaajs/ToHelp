@@ -6,7 +6,7 @@ use classes\Database;
 use PDO;
 use PDOException;
 
-$conexaoPesquisa = new PDO('mysql:host=localhost;dbname=tohelpdb', 'root', 'Divergente2@X', [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ]);
+$conexaoPesquisa = new PDO('mysql:host=localhost;dbname=tohelpdb', 'root', '2004', [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ]);
 
 $prepare = $conexaoPesquisa->prepare("SELECT ic.id, ic.nome_cuid, ic.sobrenome_cuid, fpc.foto_cuid, icc.sobre_txt FROM infoCuidador ic
 INNER JOIN infoCurricular icc ON ic.id = icc.id_cuid_FK 
