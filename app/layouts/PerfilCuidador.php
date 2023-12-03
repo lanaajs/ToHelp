@@ -168,6 +168,7 @@
                                 <div class="whats">
                                     <span class="product-price">R$95/hr</span>
                                     <div class="img-social-bar">
+                                        <h5>(71) 9 9378-9288</h5>
                                         <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                                     </div>
                                 </div>
