@@ -120,9 +120,6 @@
                             </div>
                         </div>
                         <!--social-->
-                        <div class="img-social-bar">
-                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                        </div>
                     </div>
                     <!--**Text************************-->
                     <?php
@@ -168,7 +165,12 @@
                                 <!--category-->
                                 <span class="product-category">Código: C000<?php echo $row->id ?></span>
                                 <h3><?php echo $row->nome_cuid . " " . $row->sobrenome_cuid; ?></h3>
-                                <span class="product-price">R$95/hr</span>
+                                <div class="whats">
+                                    <span class="product-price">R$95/hr</span>
+                                    <div class="img-social-bar">
+                                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                                    </div>
+                                </div>
                                 <p><?php echo $row->sobre_txt; ?>
                                 </p>
                                 <!--size-->

@@ -37,11 +37,13 @@ body{
     position: absolute;
     left: 0px;
     top: 0px;
+    width: 80px;
     background-color:#106FFF;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 0px 0px 10px 0px;
     box-shadow: 2px 16px 30px rgba(0,0,0,0.08);
     z-index: 101;
 }
